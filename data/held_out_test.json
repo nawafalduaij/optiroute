@@ -1,0 +1,1080 @@
+[
+ {
+  "task_id": "std_en_01",
+  "language": "en",
+  "category": "standard",
+  "query": "What is the monthly platform fee under the agreement?",
+  "context": [
+   "MASTER SERVICES AGREEMENT between Najd Cloud Services LLC (\"Provider\") and Al-Waha Retail Co. (\"Customer\"), effective 2025-03-01.",
+   "Najd Cloud Services LLC — Confidential. All rights reserved.",
+   "Section 2 – Fees. The Customer shall pay a monthly platform fee of SAR 48,000, invoiced on the first business day of each month. Payment is due within 30 days of the invoice date.",
+   "Section 3 – Late Payment. Overdue amounts accrue a late charge of 1.5% per month on the outstanding balance.",
+   "Section 4 – Support. Priority-1 incidents are acknowledged within 15 minutes, 24/7. Priority-2 incidents are acknowledged within 4 business hours.",
+   "Section 5 – Data Residency. All customer data shall be stored in data centres located within the Kingdom of Saudi Arabia (Riyadh and Dammam regions).",
+   "Section 6 – Service Credits. If monthly availability falls below 99.9%, the Customer receives a service credit of 10% of the monthly platform fee. If availability falls below 99.0%, the credit increases to 25% of the monthly platform fee.",
+   "Section 7 – Termination. Either party may terminate this Agreement for convenience with 90 days' written notice.",
+   "Section 8 – Governing Law. This Agreement is governed by the laws of the Kingdom of Saudi Arabia; disputes are referred to the Riyadh commercial courts.",
+   "Najd Cloud Services LLC — Confidential. All rights reserved."
+  ],
+  "expected_answer": 48000,
+  "answer_type": "number",
+  "required_facts": [
+   "48,000"
+  ],
+  "evidence": [
+   "SAR 48,000"
+  ],
+  "schema": null,
+  "cache_of": null,
+  "expect_cache_hit": null,
+  "doc": "msa_en"
+ },
+ {
+  "task_id": "std_en_02",
+  "language": "en",
+  "category": "standard",
+  "query": "How much written notice is required to terminate for convenience?",
+  "context": [
+   "MASTER SERVICES AGREEMENT between Najd Cloud Services LLC (\"Provider\") and Al-Waha Retail Co. (\"Customer\"), effective 2025-03-01.",
+   "Najd Cloud Services LLC — Confidential. All rights reserved.",
+   "Section 2 – Fees. The Customer shall pay a monthly platform fee of SAR 48,000, invoiced on the first business day of each month. Payment is due within 30 days of the invoice date.",
+   "Section 3 – Late Payment. Overdue amounts accrue a late charge of 1.5% per month on the outstanding balance.",
+   "Section 4 – Support. Priority-1 incidents are acknowledged within 15 minutes, 24/7. Priority-2 incidents are acknowledged within 4 business hours.",
+   "Section 5 – Data Residency. All customer data shall be stored in data centres located within the Kingdom of Saudi Arabia (Riyadh and Dammam regions).",
+   "Section 6 – Service Credits. If monthly availability falls below 99.9%, the Customer receives a service credit of 10% of the monthly platform fee. If availability falls below 99.0%, the credit increases to 25% of the monthly platform fee.",
+   "Section 7 – Termination. Either party may terminate this Agreement for convenience with 90 days' written notice.",
+   "Section 8 – Governing Law. This Agreement is governed by the laws of the Kingdom of Saudi Arabia; disputes are referred to the Riyadh commercial courts.",
+   "Najd Cloud Services LLC — Confidential. All rights reserved."
+  ],
+  "expected_answer": "90 days' written notice",
+  "answer_type": "text",
+  "required_facts": [
+   [
+    "90 days",
+    "ninety days"
+   ]
+  ],
+  "evidence": [
+   "90 days' written notice"
+  ],
+  "schema": null,
+  "cache_of": null,
+  "expect_cache_hit": null,
+  "doc": "msa_en"
+ },
+ {
+  "task_id": "std_en_03",
+  "language": "en",
+  "category": "standard",
+  "query": "Where must customer data be stored?",
+  "context": [
+   "MASTER SERVICES AGREEMENT between Najd Cloud Services LLC (\"Provider\") and Al-Waha Retail Co. (\"Customer\"), effective 2025-03-01.",
+   "Najd Cloud Services LLC — Confidential. All rights reserved.",
+   "Section 2 – Fees. The Customer shall pay a monthly platform fee of SAR 48,000, invoiced on the first business day of each month. Payment is due within 30 days of the invoice date.",
+   "Section 3 – Late Payment. Overdue amounts accrue a late charge of 1.5% per month on the outstanding balance.",
+   "Section 4 – Support. Priority-1 incidents are acknowledged within 15 minutes, 24/7. Priority-2 incidents are acknowledged within 4 business hours.",
+   "Section 5 – Data Residency. All customer data shall be stored in data centres located within the Kingdom of Saudi Arabia (Riyadh and Dammam regions).",
+   "Section 6 – Service Credits. If monthly availability falls below 99.9%, the Customer receives a service credit of 10% of the monthly platform fee. If availability falls below 99.0%, the credit increases to 25% of the monthly platform fee.",
+   "Section 7 – Termination. Either party may terminate this Agreement for convenience with 90 days' written notice.",
+   "Section 8 – Governing Law. This Agreement is governed by the laws of the Kingdom of Saudi Arabia; disputes are referred to the Riyadh commercial courts.",
+   "Najd Cloud Services LLC — Confidential. All rights reserved."
+  ],
+  "expected_answer": "In data centres within Saudi Arabia (Riyadh and Dammam regions).",
+  "answer_type": "text",
+  "required_facts": [
+   [
+    "Saudi Arabia",
+    "KSA"
+   ],
+   "Riyadh",
+   "Dammam"
+  ],
+  "evidence": [
+   "Riyadh and Dammam regions"
+  ],
+  "schema": null,
+  "cache_of": null,
+  "expect_cache_hit": null,
+  "doc": "msa_en"
+ },
+ {
+  "task_id": "std_en_04",
+  "language": "en",
+  "category": "standard",
+  "query": "What is the amount of invoice #INV-8841?",
+  "context": [
+   "Accounts Payable Register — Q3 2025, Al-Waha Retail Co. Prepared by the Finance Shared Services team.",
+   "Invoice #INV-8841 from Gulf Packaging Est.: amount SAR 12,400, due 2025-09-15, status unpaid. Invoice #INV-8842 from Gulf Packaging Est.: amount SAR 9,850, due 2025-09-30, status paid.",
+   "Invoice #INV-9017 from Red Sea Logistics: amount SAR 31,200, due 2025-10-05, status disputed because of a quantity mismatch against purchase order PO-5520.",
+   "VAT: all supplier invoices are subject to 15% VAT, which is already included in the amounts listed in this register unless stated otherwise.",
+   "Early payment discount: suppliers on the Preferred list (Gulf Packaging Est., Najm Office Supplies) grant a 2% discount on the invoice amount if paid within 10 days of the invoice date.",
+   "Invoice #INV-9120 from Najm Office Supplies: amount SAR 4,600, due 2025-10-12, status unpaid.",
+   "The AP team sits on the 3rd floor of Olaya Tower and can be reached at extension 4410.",
+   "Page 1 of 1 — Confidential."
+  ],
+  "expected_answer": 12400,
+  "answer_type": "number",
+  "required_facts": [
+   "12,400"
+  ],
+  "evidence": [
+   "amount SAR 12,400"
+  ],
+  "schema": null,
+  "cache_of": null,
+  "expect_cache_hit": null,
+  "doc": "ap_en"
+ },
+ {
+  "task_id": "std_en_05",
+  "language": "en",
+  "category": "standard",
+  "query": "Why is invoice #INV-9017 disputed?",
+  "context": [
+   "Accounts Payable Register — Q3 2025, Al-Waha Retail Co. Prepared by the Finance Shared Services team.",
+   "Invoice #INV-8841 from Gulf Packaging Est.: amount SAR 12,400, due 2025-09-15, status unpaid. Invoice #INV-8842 from Gulf Packaging Est.: amount SAR 9,850, due 2025-09-30, status paid.",
+   "Invoice #INV-9017 from Red Sea Logistics: amount SAR 31,200, due 2025-10-05, status disputed because of a quantity mismatch against purchase order PO-5520.",
+   "VAT: all supplier invoices are subject to 15% VAT, which is already included in the amounts listed in this register unless stated otherwise.",
+   "Early payment discount: suppliers on the Preferred list (Gulf Packaging Est., Najm Office Supplies) grant a 2% discount on the invoice amount if paid within 10 days of the invoice date.",
+   "Invoice #INV-9120 from Najm Office Supplies: amount SAR 4,600, due 2025-10-12, status unpaid.",
+   "The AP team sits on the 3rd floor of Olaya Tower and can be reached at extension 4410.",
+   "Page 1 of 1 — Confidential."
+  ],
+  "expected_answer": "Quantity mismatch against purchase order PO-5520.",
+  "answer_type": "text",
+  "required_facts": [
+   "quantity mismatch",
+   "PO-5520"
+  ],
+  "evidence": [
+   "quantity mismatch against purchase order PO-5520"
+  ],
+  "schema": null,
+  "cache_of": null,
+  "expect_cache_hit": null,
+  "doc": "ap_en"
+ },
+ {
+  "task_id": "std_en_06",
+  "language": "en",
+  "category": "standard",
+  "query": "Give the invoice ID, supplier and status for invoice #INV-9017 as JSON.",
+  "context": [
+   "Accounts Payable Register — Q3 2025, Al-Waha Retail Co. Prepared by the Finance Shared Services team.",
+   "Invoice #INV-8841 from Gulf Packaging Est.: amount SAR 12,400, due 2025-09-15, status unpaid. Invoice #INV-8842 from Gulf Packaging Est.: amount SAR 9,850, due 2025-09-30, status paid.",
+   "Invoice #INV-9017 from Red Sea Logistics: amount SAR 31,200, due 2025-10-05, status disputed because of a quantity mismatch against purchase order PO-5520.",
+   "VAT: all supplier invoices are subject to 15% VAT, which is already included in the amounts listed in this register unless stated otherwise.",
+   "Early payment discount: suppliers on the Preferred list (Gulf Packaging Est., Najm Office Supplies) grant a 2% discount on the invoice amount if paid within 10 days of the invoice date.",
+   "Invoice #INV-9120 from Najm Office Supplies: amount SAR 4,600, due 2025-10-12, status unpaid.",
+   "The AP team sits on the 3rd floor of Olaya Tower and can be reached at extension 4410.",
+   "Page 1 of 1 — Confidential."
+  ],
+  "expected_answer": {
+   "invoice_id": "INV-9017",
+   "supplier": "Red Sea Logistics",
+   "status": "disputed"
+  },
+  "answer_type": "json",
+  "required_facts": [
+   "Red Sea Logistics",
+   "disputed"
+  ],
+  "evidence": [
+   "Invoice #INV-9017 from Red Sea Logistics"
+  ],
+  "schema": {
+   "invoice_id": "string",
+   "supplier": "string",
+   "status": "string"
+  },
+  "cache_of": null,
+  "expect_cache_hit": null,
+  "doc": "ap_en"
+ },
+ {
+  "task_id": "std_en_07",
+  "language": "en",
+  "category": "standard",
+  "query": "What is the minimum password length?",
+  "context": [
+   "Information Security Policy — Al-Waha Retail Co., version 4.2, approved by the CISO.",
+   "Password Policy: passwords must be at least 14 characters long and rotated every 90 days. Reuse of the last 5 passwords is prohibited.",
+   "Multi-Factor Authentication: MFA is mandatory for all remote access and for every privileged account.",
+   "Incident Reporting: suspected security incidents must be reported to the Security Operations Centre (SOC) within 1 hour of detection.",
+   "Data Classification: data is classified as Public, Internal, Confidential or Restricted. Restricted data may not be stored on removable media.",
+   "Laptop Encryption: all company laptops must use full-disk encryption (BitLocker or FileVault).",
+   "Access Reviews: managers must review user access rights every quarter; privileged access is reviewed monthly.",
+   "Cafeteria opening hours are 7:30 to 15:00 on working days."
+  ],
+  "expected_answer": 14,
+  "answer_type": "number",
+  "required_facts": [
+   "14"
+  ],
+  "evidence": [
+   "at least 14 characters"
+  ],
+  "schema": null,
+  "cache_of": null,
+  "expect_cache_hit": null,
+  "doc": "sec_en"
+ },
+ {
+  "task_id": "std_en_08",
+  "language": "en",
+  "category": "standard",
+  "query": "How often is privileged access reviewed?",
+  "context": [
+   "Information Security Policy — Al-Waha Retail Co., version 4.2, approved by the CISO.",
+   "Password Policy: passwords must be at least 14 characters long and rotated every 90 days. Reuse of the last 5 passwords is prohibited.",
+   "Multi-Factor Authentication: MFA is mandatory for all remote access and for every privileged account.",
+   "Incident Reporting: suspected security incidents must be reported to the Security Operations Centre (SOC) within 1 hour of detection.",
+   "Data Classification: data is classified as Public, Internal, Confidential or Restricted. Restricted data may not be stored on removable media.",
+   "Laptop Encryption: all company laptops must use full-disk encryption (BitLocker or FileVault).",
+   "Access Reviews: managers must review user access rights every quarter; privileged access is reviewed monthly.",
+   "Cafeteria opening hours are 7:30 to 15:00 on working days."
+  ],
+  "expected_answer": "Monthly.",
+  "answer_type": "text",
+  "required_facts": [
+   "monthly"
+  ],
+  "evidence": [
+   "privileged access is reviewed monthly"
+  ],
+  "schema": null,
+  "cache_of": null,
+  "expect_cache_hit": null,
+  "doc": "sec_en"
+ },
+ {
+  "task_id": "std_en_09",
+  "language": "en",
+  "category": "standard",
+  "query": "Which full-disk encryption tools are approved for company laptops?",
+  "context": [
+   "Information Security Policy — Al-Waha Retail Co., version 4.2, approved by the CISO.",
+   "Password Policy: passwords must be at least 14 characters long and rotated every 90 days. Reuse of the last 5 passwords is prohibited.",
+   "Multi-Factor Authentication: MFA is mandatory for all remote access and for every privileged account.",
+   "Incident Reporting: suspected security incidents must be reported to the Security Operations Centre (SOC) within 1 hour of detection.",
+   "Data Classification: data is classified as Public, Internal, Confidential or Restricted. Restricted data may not be stored on removable media.",
+   "Laptop Encryption: all company laptops must use full-disk encryption (BitLocker or FileVault).",
+   "Access Reviews: managers must review user access rights every quarter; privileged access is reviewed monthly.",
+   "Cafeteria opening hours are 7:30 to 15:00 on working days."
+  ],
+  "expected_answer": "BitLocker or FileVault.",
+  "answer_type": "text",
+  "required_facts": [
+   "BitLocker",
+   "FileVault"
+  ],
+  "evidence": [
+   "BitLocker or FileVault"
+  ],
+  "schema": null,
+  "cache_of": null,
+  "expect_cache_hit": null,
+  "doc": "sec_en"
+ },
+ {
+  "task_id": "std_en_10",
+  "language": "en",
+  "category": "standard",
+  "query": "When is multi-factor authentication mandatory?",
+  "context": [
+   "Information Security Policy — Al-Waha Retail Co., version 4.2, approved by the CISO.",
+   "Password Policy: passwords must be at least 14 characters long and rotated every 90 days. Reuse of the last 5 passwords is prohibited.",
+   "Multi-Factor Authentication: MFA is mandatory for all remote access and for every privileged account.",
+   "Incident Reporting: suspected security incidents must be reported to the Security Operations Centre (SOC) within 1 hour of detection.",
+   "Data Classification: data is classified as Public, Internal, Confidential or Restricted. Restricted data may not be stored on removable media.",
+   "Laptop Encryption: all company laptops must use full-disk encryption (BitLocker or FileVault).",
+   "Access Reviews: managers must review user access rights every quarter; privileged access is reviewed monthly.",
+   "Cafeteria opening hours are 7:30 to 15:00 on working days."
+  ],
+  "expected_answer": "For all remote access and for every privileged account.",
+  "answer_type": "text",
+  "required_facts": [
+   "remote access",
+   "privileged"
+  ],
+  "evidence": [
+   "MFA is mandatory for all remote access"
+  ],
+  "schema": null,
+  "cache_of": null,
+  "expect_cache_hit": null,
+  "doc": "sec_en"
+ },
+ {
+  "task_id": "std_en_11",
+  "language": "en",
+  "category": "standard",
+  "query": "What is the domestic per diem?",
+  "context": [
+   "Travel & Expense Policy — Al-Waha Retail Co., effective 2025-01-01.",
+   "Per diem: employees travelling domestically receive a per diem of SAR 450 per day; the international travel per diem is SAR 900 per day.",
+   "Flights: economy class is used for flights under 6 hours; business class is permitted for flights of 6 hours or longer for Grade 12 and above.",
+   "Hotel cap: hotel accommodation is reimbursed up to SAR 1,200 per night in Riyadh, Jeddah and Dubai, and up to SAR 800 per night elsewhere.",
+   "Claims must be submitted within 30 days of return, together with original receipts.",
+   "Mileage: use of a personal car for business is reimbursed at SAR 0.75 per kilometre.",
+   "Corporate cards may not be used for personal expenses under any circumstances.",
+   "This document is property of Al-Waha Retail Co. Page 1 of 2."
+  ],
+  "expected_answer": 450,
+  "answer_type": "number",
+  "required_facts": [
+   "450"
+  ],
+  "evidence": [
+   "per diem of SAR 450"
+  ],
+  "schema": null,
+  "cache_of": null,
+  "expect_cache_hit": null,
+  "doc": "travel_en"
+ },
+ {
+  "task_id": "std_en_12",
+  "language": "en",
+  "category": "standard",
+  "query": "What is the hotel cap per night in Jeddah?",
+  "context": [
+   "Travel & Expense Policy — Al-Waha Retail Co., effective 2025-01-01.",
+   "Per diem: employees travelling domestically receive a per diem of SAR 450 per day; the international travel per diem is SAR 900 per day.",
+   "Flights: economy class is used for flights under 6 hours; business class is permitted for flights of 6 hours or longer for Grade 12 and above.",
+   "Hotel cap: hotel accommodation is reimbursed up to SAR 1,200 per night in Riyadh, Jeddah and Dubai, and up to SAR 800 per night elsewhere.",
+   "Claims must be submitted within 30 days of return, together with original receipts.",
+   "Mileage: use of a personal car for business is reimbursed at SAR 0.75 per kilometre.",
+   "Corporate cards may not be used for personal expenses under any circumstances.",
+   "This document is property of Al-Waha Retail Co. Page 1 of 2."
+  ],
+  "expected_answer": 1200,
+  "answer_type": "number",
+  "required_facts": [
+   "1,200"
+  ],
+  "evidence": [
+   "up to SAR 1,200 per night in Riyadh, Jeddah and Dubai"
+  ],
+  "schema": null,
+  "cache_of": null,
+  "expect_cache_hit": null,
+  "doc": "travel_en"
+ },
+ {
+  "task_id": "std_en_13",
+  "language": "en",
+  "category": "standard",
+  "query": "Which cabin class should be booked for a 4-hour flight?",
+  "context": [
+   "Travel & Expense Policy — Al-Waha Retail Co., effective 2025-01-01.",
+   "Per diem: employees travelling domestically receive a per diem of SAR 450 per day; the international travel per diem is SAR 900 per day.",
+   "Flights: economy class is used for flights under 6 hours; business class is permitted for flights of 6 hours or longer for Grade 12 and above.",
+   "Hotel cap: hotel accommodation is reimbursed up to SAR 1,200 per night in Riyadh, Jeddah and Dubai, and up to SAR 800 per night elsewhere.",
+   "Claims must be submitted within 30 days of return, together with original receipts.",
+   "Mileage: use of a personal car for business is reimbursed at SAR 0.75 per kilometre.",
+   "Corporate cards may not be used for personal expenses under any circumstances.",
+   "This document is property of Al-Waha Retail Co. Page 1 of 2."
+  ],
+  "expected_answer": "Economy class.",
+  "answer_type": "text",
+  "required_facts": [
+   "economy"
+  ],
+  "evidence": [
+   "economy class is used for flights under 6 hours"
+  ],
+  "schema": null,
+  "cache_of": null,
+  "expect_cache_hit": null,
+  "doc": "travel_en"
+ },
+ {
+  "task_id": "std_ar_01",
+  "language": "ar",
+  "category": "standard",
+  "query": "كم مدة الإجازة السنوية للموظف؟",
+  "context": [
+   "سياسة الموارد البشرية لشركة الواحة للتجزئة — الإصدار ٣، يناير ٢٠٢٥.",
+   "سري للغاية — جميع الحقوق محفوظة لشركة الواحة للتجزئة.",
+   "المادة ٤ – الإجازة السنوية: يستحق الموظف إجازة سنوية مدفوعة الأجر مدتها ٢١ يوماً، تزداد إلى ٣٠ يوماً بعد إتمام خمس سنوات من الخدمة المتصلة.",
+   "المادة ٥ – الإجازة المرضية: تُدفع الإجازة المرضية بالأجر الكامل لأول ٣٠ يوماً، ثم بثلاثة أرباع الأجر للـ ٦٠ يوماً التالية.",
+   "المادة ٦ – بدل السكن: يُصرف للموظف بدل سكن يعادل ٢٥٪ من الراتب الأساسي، ويُدفع شهرياً مع الراتب.",
+   "المادة ٧ – بدل النقل: يُصرف بدل نقل ثابت قدره ٨٠٠ ريال شهرياً لجميع الموظفين.",
+   "المادة ٩ – العمل عن بُعد: يجوز للموظف العمل عن بُعد بحد أقصى يومين في الأسبوع بعد موافقة المدير المباشر.",
+   "المادة ١٢ – فترة التجربة: تكون فترة التجربة ٩٠ يوماً، ويجوز تمديدها مرة واحدة بموافقة كتابية.",
+   "سري للغاية — جميع الحقوق محفوظة لشركة الواحة للتجزئة."
+  ],
+  "expected_answer": 21,
+  "answer_type": "number",
+  "required_facts": [
+   "21"
+  ],
+  "evidence": [
+   "مدتها ٢١ يوماً"
+  ],
+  "schema": null,
+  "cache_of": null,
+  "expect_cache_hit": null,
+  "doc": "hr_ar"
+ },
+ {
+  "task_id": "std_ar_02",
+  "language": "ar",
+  "category": "standard",
+  "query": "كم يبلغ بدل النقل الشهري؟",
+  "context": [
+   "سياسة الموارد البشرية لشركة الواحة للتجزئة — الإصدار ٣، يناير ٢٠٢٥.",
+   "سري للغاية — جميع الحقوق محفوظة لشركة الواحة للتجزئة.",
+   "المادة ٤ – الإجازة السنوية: يستحق الموظف إجازة سنوية مدفوعة الأجر مدتها ٢١ يوماً، تزداد إلى ٣٠ يوماً بعد إتمام خمس سنوات من الخدمة المتصلة.",
+   "المادة ٥ – الإجازة المرضية: تُدفع الإجازة المرضية بالأجر الكامل لأول ٣٠ يوماً، ثم بثلاثة أرباع الأجر للـ ٦٠ يوماً التالية.",
+   "المادة ٦ – بدل السكن: يُصرف للموظف بدل سكن يعادل ٢٥٪ من الراتب الأساسي، ويُدفع شهرياً مع الراتب.",
+   "المادة ٧ – بدل النقل: يُصرف بدل نقل ثابت قدره ٨٠٠ ريال شهرياً لجميع الموظفين.",
+   "المادة ٩ – العمل عن بُعد: يجوز للموظف العمل عن بُعد بحد أقصى يومين في الأسبوع بعد موافقة المدير المباشر.",
+   "المادة ١٢ – فترة التجربة: تكون فترة التجربة ٩٠ يوماً، ويجوز تمديدها مرة واحدة بموافقة كتابية.",
+   "سري للغاية — جميع الحقوق محفوظة لشركة الواحة للتجزئة."
+  ],
+  "expected_answer": 800,
+  "answer_type": "number",
+  "required_facts": [
+   "800"
+  ],
+  "evidence": [
+   "بدل نقل ثابت قدره ٨٠٠ ريال"
+  ],
+  "schema": null,
+  "cache_of": null,
+  "expect_cache_hit": null,
+  "doc": "hr_ar"
+ },
+ {
+  "task_id": "std_ar_03",
+  "language": "ar",
+  "category": "standard",
+  "query": "ما مدة فترة التجربة؟",
+  "context": [
+   "سياسة الموارد البشرية لشركة الواحة للتجزئة — الإصدار ٣، يناير ٢٠٢٥.",
+   "سري للغاية — جميع الحقوق محفوظة لشركة الواحة للتجزئة.",
+   "المادة ٤ – الإجازة السنوية: يستحق الموظف إجازة سنوية مدفوعة الأجر مدتها ٢١ يوماً، تزداد إلى ٣٠ يوماً بعد إتمام خمس سنوات من الخدمة المتصلة.",
+   "المادة ٥ – الإجازة المرضية: تُدفع الإجازة المرضية بالأجر الكامل لأول ٣٠ يوماً، ثم بثلاثة أرباع الأجر للـ ٦٠ يوماً التالية.",
+   "المادة ٦ – بدل السكن: يُصرف للموظف بدل سكن يعادل ٢٥٪ من الراتب الأساسي، ويُدفع شهرياً مع الراتب.",
+   "المادة ٧ – بدل النقل: يُصرف بدل نقل ثابت قدره ٨٠٠ ريال شهرياً لجميع الموظفين.",
+   "المادة ٩ – العمل عن بُعد: يجوز للموظف العمل عن بُعد بحد أقصى يومين في الأسبوع بعد موافقة المدير المباشر.",
+   "المادة ١٢ – فترة التجربة: تكون فترة التجربة ٩٠ يوماً، ويجوز تمديدها مرة واحدة بموافقة كتابية.",
+   "سري للغاية — جميع الحقوق محفوظة لشركة الواحة للتجزئة."
+  ],
+  "expected_answer": 90,
+  "answer_type": "number",
+  "required_facts": [
+   "90"
+  ],
+  "evidence": [
+   "فترة التجربة ٩٠ يوماً"
+  ],
+  "schema": null,
+  "cache_of": null,
+  "expect_cache_hit": null,
+  "doc": "hr_ar"
+ },
+ {
+  "task_id": "std_ar_04",
+  "language": "ar",
+  "category": "standard",
+  "query": "ما القيمة الإجمالية لأمر الشراء PO-7310؟",
+  "context": [
+   "عقد توريد بين شركة الواحة للتجزئة ومؤسسة الخليج للتغليف، حُرر في الرياض بتاريخ ٢٠٢٥/٠٢/١٠.",
+   "البند ٣ – قيمة العقد: القيمة الإجمالية لأمر الشراء PO-7310 هي ٢٤٠٬٠٠٠ ريال سعودي، وقيمة أمر الشراء الملحق PO-7311 هي ٣٦٬٥٠٠ ريال سعودي، غير شاملة ضريبة القيمة المضافة.",
+   "البند ٥ – مدة التوريد: يلتزم المورد بتسليم الطلبات خلال ١٤ يوم عمل من تاريخ أمر الشراء.",
+   "البند ٨ – غرامة التأخير: في حال تأخر التسليم تُفرض غرامة قدرها ٠٫٥٪ من قيمة أمر الشراء PO-7310 عن كل يوم تأخير، بحد أقصى ١٠٪ من قيمة العقد.",
+   "البند ١٠ – الضمان: يضمن المورد المنتجات ضد عيوب التصنيع لمدة ١٢ شهراً من تاريخ الاستلام.",
+   "البند ١١ – الدفع: تُسدد الفواتير خلال ٤٥ يوماً من تاريخ استلام الفاتورة المعتمدة.",
+   "البند ١٥ – اللغة: حُرر هذا العقد باللغتين العربية والإنجليزية، ويُعتمد النص العربي عند الاختلاف.",
+   "هذه الوثيقة ملك لشركة الواحة للتجزئة — صفحة ١ من ٣."
+  ],
+  "expected_answer": 240000,
+  "answer_type": "number",
+  "required_facts": [
+   "240,000"
+  ],
+  "evidence": [
+   "هي ٢٤٠٬٠٠٠ ريال سعودي"
+  ],
+  "schema": null,
+  "cache_of": null,
+  "expect_cache_hit": null,
+  "doc": "proc_ar"
+ },
+ {
+  "task_id": "std_ar_05",
+  "language": "ar",
+  "category": "standard",
+  "query": "خلال كم يوماً يجب سداد الفواتير؟",
+  "context": [
+   "عقد توريد بين شركة الواحة للتجزئة ومؤسسة الخليج للتغليف، حُرر في الرياض بتاريخ ٢٠٢٥/٠٢/١٠.",
+   "البند ٣ – قيمة العقد: القيمة الإجمالية لأمر الشراء PO-7310 هي ٢٤٠٬٠٠٠ ريال سعودي، وقيمة أمر الشراء الملحق PO-7311 هي ٣٦٬٥٠٠ ريال سعودي، غير شاملة ضريبة القيمة المضافة.",
+   "البند ٥ – مدة التوريد: يلتزم المورد بتسليم الطلبات خلال ١٤ يوم عمل من تاريخ أمر الشراء.",
+   "البند ٨ – غرامة التأخير: في حال تأخر التسليم تُفرض غرامة قدرها ٠٫٥٪ من قيمة أمر الشراء PO-7310 عن كل يوم تأخير، بحد أقصى ١٠٪ من قيمة العقد.",
+   "البند ١٠ – الضمان: يضمن المورد المنتجات ضد عيوب التصنيع لمدة ١٢ شهراً من تاريخ الاستلام.",
+   "البند ١١ – الدفع: تُسدد الفواتير خلال ٤٥ يوماً من تاريخ استلام الفاتورة المعتمدة.",
+   "البند ١٥ – اللغة: حُرر هذا العقد باللغتين العربية والإنجليزية، ويُعتمد النص العربي عند الاختلاف.",
+   "هذه الوثيقة ملك لشركة الواحة للتجزئة — صفحة ١ من ٣."
+  ],
+  "expected_answer": 45,
+  "answer_type": "number",
+  "required_facts": [
+   "45"
+  ],
+  "evidence": [
+   "خلال ٤٥ يوماً"
+  ],
+  "schema": null,
+  "cache_of": null,
+  "expect_cache_hit": null,
+  "doc": "proc_ar"
+ },
+ {
+  "task_id": "std_ar_06",
+  "language": "ar",
+  "category": "standard",
+  "query": "كم يوماً لدى العميل لإرجاع المنتجات؟",
+  "context": [
+   "سياسة الإرجاع والاستبدال لمتاجر الواحة — سارية من ١ مارس ٢٠٢٥.",
+   "يحق للعميل إرجاع المنتجات غير المستخدمة خلال ١٤ يوماً من تاريخ الشراء مع تقديم الفاتورة الأصلية.",
+   "تُسترد المبالغ إلى وسيلة الدفع الأصلية خلال ٧ أيام عمل من استلام المنتج المرتجع.",
+   "لا تشمل سياسة الإرجاع المنتجات المخفضة بنسبة ٥٠٪ أو أكثر، ولا المواد الغذائية، ولا البطاقات مسبقة الدفع.",
+   "رسوم شحن الإرجاع: مجانية للطلبات التي تزيد قيمتها على ٣٠٠ ريال، و٢٥ ريالاً للطلبات الأقل من ذلك.",
+   "برنامج الولاء: يحصل العميل على نقطة واحدة لكل ١٠ ريالات يتم إنفاقها، وتعادل كل ١٠٠ نقطة خصماً بقيمة ٥ ريالات.",
+   "جميع الحقوق محفوظة لمتاجر الواحة."
+  ],
+  "expected_answer": 14,
+  "answer_type": "number",
+  "required_facts": [
+   "14"
+  ],
+  "evidence": [
+   "خلال ١٤ يوماً من تاريخ الشراء"
+  ],
+  "schema": null,
+  "cache_of": null,
+  "expect_cache_hit": null,
+  "doc": "returns_ar"
+ },
+ {
+  "task_id": "std_ar_07",
+  "language": "ar",
+  "category": "standard",
+  "query": "خلال كم يوم عمل يتم استرداد المبلغ؟",
+  "context": [
+   "سياسة الإرجاع والاستبدال لمتاجر الواحة — سارية من ١ مارس ٢٠٢٥.",
+   "يحق للعميل إرجاع المنتجات غير المستخدمة خلال ١٤ يوماً من تاريخ الشراء مع تقديم الفاتورة الأصلية.",
+   "تُسترد المبالغ إلى وسيلة الدفع الأصلية خلال ٧ أيام عمل من استلام المنتج المرتجع.",
+   "لا تشمل سياسة الإرجاع المنتجات المخفضة بنسبة ٥٠٪ أو أكثر، ولا المواد الغذائية، ولا البطاقات مسبقة الدفع.",
+   "رسوم شحن الإرجاع: مجانية للطلبات التي تزيد قيمتها على ٣٠٠ ريال، و٢٥ ريالاً للطلبات الأقل من ذلك.",
+   "برنامج الولاء: يحصل العميل على نقطة واحدة لكل ١٠ ريالات يتم إنفاقها، وتعادل كل ١٠٠ نقطة خصماً بقيمة ٥ ريالات.",
+   "جميع الحقوق محفوظة لمتاجر الواحة."
+  ],
+  "expected_answer": 7,
+  "answer_type": "number",
+  "required_facts": [
+   "7"
+  ],
+  "evidence": [
+   "خلال ٧ أيام عمل"
+  ],
+  "schema": null,
+  "cache_of": null,
+  "expect_cache_hit": null,
+  "doc": "returns_ar"
+ },
+ {
+  "task_id": "llo_en_01",
+  "language": "en",
+  "category": "low_lexical_overlap",
+  "query": "How fast must the vendor respond to a critical outage?",
+  "context": [
+   "MASTER SERVICES AGREEMENT between Najd Cloud Services LLC (\"Provider\") and Al-Waha Retail Co. (\"Customer\"), effective 2025-03-01.",
+   "Najd Cloud Services LLC — Confidential. All rights reserved.",
+   "Section 2 – Fees. The Customer shall pay a monthly platform fee of SAR 48,000, invoiced on the first business day of each month. Payment is due within 30 days of the invoice date.",
+   "Section 3 – Late Payment. Overdue amounts accrue a late charge of 1.5% per month on the outstanding balance.",
+   "Section 4 – Support. Priority-1 incidents are acknowledged within 15 minutes, 24/7. Priority-2 incidents are acknowledged within 4 business hours.",
+   "Section 5 – Data Residency. All customer data shall be stored in data centres located within the Kingdom of Saudi Arabia (Riyadh and Dammam regions).",
+   "Section 6 – Service Credits. If monthly availability falls below 99.9%, the Customer receives a service credit of 10% of the monthly platform fee. If availability falls below 99.0%, the credit increases to 25% of the monthly platform fee.",
+   "Section 7 – Termination. Either party may terminate this Agreement for convenience with 90 days' written notice.",
+   "Section 8 – Governing Law. This Agreement is governed by the laws of the Kingdom of Saudi Arabia; disputes are referred to the Riyadh commercial courts.",
+   "Najd Cloud Services LLC — Confidential. All rights reserved."
+  ],
+  "expected_answer": "Within 15 minutes, 24/7.",
+  "answer_type": "text",
+  "required_facts": [
+   [
+    "15 minutes",
+    "fifteen minutes"
+   ]
+  ],
+  "evidence": [
+   "acknowledged within 15 minutes"
+  ],
+  "schema": null,
+  "cache_of": null,
+  "expect_cache_hit": null,
+  "doc": "msa_en"
+ },
+ {
+  "task_id": "llo_en_02",
+  "language": "en",
+  "category": "low_lexical_overlap",
+  "query": "Am I allowed to copy top-secret files onto a USB stick?",
+  "context": [
+   "Information Security Policy — Al-Waha Retail Co., version 4.2, approved by the CISO.",
+   "Password Policy: passwords must be at least 14 characters long and rotated every 90 days. Reuse of the last 5 passwords is prohibited.",
+   "Multi-Factor Authentication: MFA is mandatory for all remote access and for every privileged account.",
+   "Incident Reporting: suspected security incidents must be reported to the Security Operations Centre (SOC) within 1 hour of detection.",
+   "Data Classification: data is classified as Public, Internal, Confidential or Restricted. Restricted data may not be stored on removable media.",
+   "Laptop Encryption: all company laptops must use full-disk encryption (BitLocker or FileVault).",
+   "Access Reviews: managers must review user access rights every quarter; privileged access is reviewed monthly.",
+   "Cafeteria opening hours are 7:30 to 15:00 on working days."
+  ],
+  "expected_answer": "No. Restricted data may not be stored on removable media.",
+  "answer_type": "text",
+  "required_facts": [
+   [
+    "no",
+    "not",
+    "prohibited",
+    "cannot"
+   ],
+   "restricted"
+  ],
+  "evidence": [
+   "may not be stored on removable media"
+  ],
+  "schema": null,
+  "cache_of": null,
+  "expect_cache_hit": null,
+  "doc": "sec_en"
+ },
+ {
+  "task_id": "llo_en_03",
+  "language": "en",
+  "category": "low_lexical_overlap",
+  "query": "What's the deadline for filing my expense paperwork after I get back from a trip?",
+  "context": [
+   "Travel & Expense Policy — Al-Waha Retail Co., effective 2025-01-01.",
+   "Per diem: employees travelling domestically receive a per diem of SAR 450 per day; the international travel per diem is SAR 900 per day.",
+   "Flights: economy class is used for flights under 6 hours; business class is permitted for flights of 6 hours or longer for Grade 12 and above.",
+   "Hotel cap: hotel accommodation is reimbursed up to SAR 1,200 per night in Riyadh, Jeddah and Dubai, and up to SAR 800 per night elsewhere.",
+   "Claims must be submitted within 30 days of return, together with original receipts.",
+   "Mileage: use of a personal car for business is reimbursed at SAR 0.75 per kilometre.",
+   "Corporate cards may not be used for personal expenses under any circumstances.",
+   "This document is property of Al-Waha Retail Co. Page 1 of 2."
+  ],
+  "expected_answer": "Within 30 days of return, with original receipts.",
+  "answer_type": "text",
+  "required_facts": [
+   [
+    "30 days",
+    "thirty days"
+   ]
+  ],
+  "evidence": [
+   "within 30 days of return"
+  ],
+  "schema": null,
+  "cache_of": null,
+  "expect_cache_hit": null,
+  "doc": "travel_en"
+ },
+ {
+  "task_id": "llo_ar_01",
+  "language": "ar",
+  "category": "low_lexical_overlap",
+  "query": "ما الحد الأعلى للعقوبة المالية عند التأخر؟",
+  "context": [
+   "عقد توريد بين شركة الواحة للتجزئة ومؤسسة الخليج للتغليف، حُرر في الرياض بتاريخ ٢٠٢٥/٠٢/١٠.",
+   "البند ٣ – قيمة العقد: القيمة الإجمالية لأمر الشراء PO-7310 هي ٢٤٠٬٠٠٠ ريال سعودي، وقيمة أمر الشراء الملحق PO-7311 هي ٣٦٬٥٠٠ ريال سعودي، غير شاملة ضريبة القيمة المضافة.",
+   "البند ٥ – مدة التوريد: يلتزم المورد بتسليم الطلبات خلال ١٤ يوم عمل من تاريخ أمر الشراء.",
+   "البند ٨ – غرامة التأخير: في حال تأخر التسليم تُفرض غرامة قدرها ٠٫٥٪ من قيمة أمر الشراء PO-7310 عن كل يوم تأخير، بحد أقصى ١٠٪ من قيمة العقد.",
+   "البند ١٠ – الضمان: يضمن المورد المنتجات ضد عيوب التصنيع لمدة ١٢ شهراً من تاريخ الاستلام.",
+   "البند ١١ – الدفع: تُسدد الفواتير خلال ٤٥ يوماً من تاريخ استلام الفاتورة المعتمدة.",
+   "البند ١٥ – اللغة: حُرر هذا العقد باللغتين العربية والإنجليزية، ويُعتمد النص العربي عند الاختلاف.",
+   "هذه الوثيقة ملك لشركة الواحة للتجزئة — صفحة ١ من ٣."
+  ],
+  "expected_answer": "١٠٪ من قيمة العقد",
+  "answer_type": "text",
+  "required_facts": [
+   [
+    "10%",
+    "24,000"
+   ]
+  ],
+  "evidence": [
+   "بحد أقصى ١٠٪ من قيمة العقد"
+  ],
+  "schema": null,
+  "cache_of": null,
+  "expect_cache_hit": null,
+  "doc": "proc_ar"
+ },
+ {
+  "task_id": "mh_en_01",
+  "language": "en",
+  "category": "multi_hop",
+  "query": "Calculate the service credit in SAR for a month in which availability was 98.7%.",
+  "context": [
+   "MASTER SERVICES AGREEMENT between Najd Cloud Services LLC (\"Provider\") and Al-Waha Retail Co. (\"Customer\"), effective 2025-03-01.",
+   "Najd Cloud Services LLC — Confidential. All rights reserved.",
+   "Section 2 – Fees. The Customer shall pay a monthly platform fee of SAR 48,000, invoiced on the first business day of each month. Payment is due within 30 days of the invoice date.",
+   "Section 3 – Late Payment. Overdue amounts accrue a late charge of 1.5% per month on the outstanding balance.",
+   "Section 4 – Support. Priority-1 incidents are acknowledged within 15 minutes, 24/7. Priority-2 incidents are acknowledged within 4 business hours.",
+   "Section 5 – Data Residency. All customer data shall be stored in data centres located within the Kingdom of Saudi Arabia (Riyadh and Dammam regions).",
+   "Section 6 – Service Credits. If monthly availability falls below 99.9%, the Customer receives a service credit of 10% of the monthly platform fee. If availability falls below 99.0%, the credit increases to 25% of the monthly platform fee.",
+   "Section 7 – Termination. Either party may terminate this Agreement for convenience with 90 days' written notice.",
+   "Section 8 – Governing Law. This Agreement is governed by the laws of the Kingdom of Saudi Arabia; disputes are referred to the Riyadh commercial courts.",
+   "Najd Cloud Services LLC — Confidential. All rights reserved."
+  ],
+  "expected_answer": 12000,
+  "answer_type": "number",
+  "required_facts": [
+   "12,000"
+  ],
+  "evidence": [
+   "SAR 48,000",
+   "the credit increases to 25%"
+  ],
+  "schema": null,
+  "cache_of": null,
+  "expect_cache_hit": null,
+  "doc": "msa_en"
+ },
+ {
+  "task_id": "mh_en_02",
+  "language": "en",
+  "category": "multi_hop",
+  "query": "Calculate the amount payable for invoice #INV-9120 if it is paid within the early payment window.",
+  "context": [
+   "Accounts Payable Register — Q3 2025, Al-Waha Retail Co. Prepared by the Finance Shared Services team.",
+   "Invoice #INV-8841 from Gulf Packaging Est.: amount SAR 12,400, due 2025-09-15, status unpaid. Invoice #INV-8842 from Gulf Packaging Est.: amount SAR 9,850, due 2025-09-30, status paid.",
+   "Invoice #INV-9017 from Red Sea Logistics: amount SAR 31,200, due 2025-10-05, status disputed because of a quantity mismatch against purchase order PO-5520.",
+   "VAT: all supplier invoices are subject to 15% VAT, which is already included in the amounts listed in this register unless stated otherwise.",
+   "Early payment discount: suppliers on the Preferred list (Gulf Packaging Est., Najm Office Supplies) grant a 2% discount on the invoice amount if paid within 10 days of the invoice date.",
+   "Invoice #INV-9120 from Najm Office Supplies: amount SAR 4,600, due 2025-10-12, status unpaid.",
+   "The AP team sits on the 3rd floor of Olaya Tower and can be reached at extension 4410.",
+   "Page 1 of 1 — Confidential."
+  ],
+  "expected_answer": {
+   "invoice_id": "INV-9120",
+   "amount_payable": 4508
+  },
+  "answer_type": "json",
+  "required_facts": [
+   "4,508"
+  ],
+  "evidence": [
+   "amount SAR 4,600",
+   "2% discount"
+  ],
+  "schema": {
+   "invoice_id": "string",
+   "amount_payable": "number"
+  },
+  "cache_of": null,
+  "expect_cache_hit": null,
+  "doc": "ap_en"
+ },
+ {
+  "task_id": "mh_en_03",
+  "language": "en",
+  "category": "multi_hop",
+  "query": "Calculate the total reimbursable amount for a 3-night international trip to Dubai: per diem for 4 days plus hotel at the cap for 3 nights.",
+  "context": [
+   "Travel & Expense Policy — Al-Waha Retail Co., effective 2025-01-01.",
+   "Per diem: employees travelling domestically receive a per diem of SAR 450 per day; the international travel per diem is SAR 900 per day.",
+   "Flights: economy class is used for flights under 6 hours; business class is permitted for flights of 6 hours or longer for Grade 12 and above.",
+   "Hotel cap: hotel accommodation is reimbursed up to SAR 1,200 per night in Riyadh, Jeddah and Dubai, and up to SAR 800 per night elsewhere.",
+   "Claims must be submitted within 30 days of return, together with original receipts.",
+   "Mileage: use of a personal car for business is reimbursed at SAR 0.75 per kilometre.",
+   "Corporate cards may not be used for personal expenses under any circumstances.",
+   "This document is property of Al-Waha Retail Co. Page 1 of 2."
+  ],
+  "expected_answer": 7200,
+  "answer_type": "number",
+  "required_facts": [
+   "7,200"
+  ],
+  "evidence": [
+   "SAR 900 per day",
+   "up to SAR 1,200 per night in Riyadh, Jeddah and Dubai"
+  ],
+  "schema": null,
+  "cache_of": null,
+  "expect_cache_hit": null,
+  "doc": "travel_en"
+ },
+ {
+  "task_id": "mh_ar_01",
+  "language": "ar",
+  "category": "multi_hop",
+  "query": "احسب قيمة غرامة التأخير إذا تأخر المورد ٦ أيام في تسليم أمر الشراء PO-7310.",
+  "context": [
+   "عقد توريد بين شركة الواحة للتجزئة ومؤسسة الخليج للتغليف، حُرر في الرياض بتاريخ ٢٠٢٥/٠٢/١٠.",
+   "البند ٣ – قيمة العقد: القيمة الإجمالية لأمر الشراء PO-7310 هي ٢٤٠٬٠٠٠ ريال سعودي، وقيمة أمر الشراء الملحق PO-7311 هي ٣٦٬٥٠٠ ريال سعودي، غير شاملة ضريبة القيمة المضافة.",
+   "البند ٥ – مدة التوريد: يلتزم المورد بتسليم الطلبات خلال ١٤ يوم عمل من تاريخ أمر الشراء.",
+   "البند ٨ – غرامة التأخير: في حال تأخر التسليم تُفرض غرامة قدرها ٠٫٥٪ من قيمة أمر الشراء PO-7310 عن كل يوم تأخير، بحد أقصى ١٠٪ من قيمة العقد.",
+   "البند ١٠ – الضمان: يضمن المورد المنتجات ضد عيوب التصنيع لمدة ١٢ شهراً من تاريخ الاستلام.",
+   "البند ١١ – الدفع: تُسدد الفواتير خلال ٤٥ يوماً من تاريخ استلام الفاتورة المعتمدة.",
+   "البند ١٥ – اللغة: حُرر هذا العقد باللغتين العربية والإنجليزية، ويُعتمد النص العربي عند الاختلاف.",
+   "هذه الوثيقة ملك لشركة الواحة للتجزئة — صفحة ١ من ٣."
+  ],
+  "expected_answer": 7200,
+  "answer_type": "number",
+  "required_facts": [
+   "7,200"
+  ],
+  "evidence": [
+   "٢٤٠٬٠٠٠ ريال",
+   "غرامة قدرها ٠٫٥٪"
+  ],
+  "schema": null,
+  "cache_of": null,
+  "expect_cache_hit": null,
+  "doc": "proc_ar"
+ },
+ {
+  "task_id": "aro_ar_01",
+  "language": "ar",
+  "category": "arabic_orthographic_variants",
+  "query": "ما نسبه بدل السكن بالنسبه للراتب الاساسي؟",
+  "context": [
+   "سياسة الموارد البشرية لشركة الواحة للتجزئة — الإصدار ٣، يناير ٢٠٢٥.",
+   "سري للغاية — جميع الحقوق محفوظة لشركة الواحة للتجزئة.",
+   "المادة ٤ – الإجازة السنوية: يستحق الموظف إجازة سنوية مدفوعة الأجر مدتها ٢١ يوماً، تزداد إلى ٣٠ يوماً بعد إتمام خمس سنوات من الخدمة المتصلة.",
+   "المادة ٥ – الإجازة المرضية: تُدفع الإجازة المرضية بالأجر الكامل لأول ٣٠ يوماً، ثم بثلاثة أرباع الأجر للـ ٦٠ يوماً التالية.",
+   "المادة ٦ – بدل السكن: يُصرف للموظف بدل سكن يعادل ٢٥٪ من الراتب الأساسي، ويُدفع شهرياً مع الراتب.",
+   "المادة ٧ – بدل النقل: يُصرف بدل نقل ثابت قدره ٨٠٠ ريال شهرياً لجميع الموظفين.",
+   "المادة ٩ – العمل عن بُعد: يجوز للموظف العمل عن بُعد بحد أقصى يومين في الأسبوع بعد موافقة المدير المباشر.",
+   "المادة ١٢ – فترة التجربة: تكون فترة التجربة ٩٠ يوماً، ويجوز تمديدها مرة واحدة بموافقة كتابية.",
+   "سري للغاية — جميع الحقوق محفوظة لشركة الواحة للتجزئة."
+  ],
+  "expected_answer": "٢٥٪ من الراتب الأساسي",
+  "answer_type": "text",
+  "required_facts": [
+   [
+    "25%",
+    "25"
+   ]
+  ],
+  "evidence": [
+   "بدل سكن يعادل ٢٥٪"
+  ],
+  "schema": null,
+  "cache_of": null,
+  "expect_cache_hit": null,
+  "doc": "hr_ar"
+ },
+ {
+  "task_id": "aro_ar_02",
+  "language": "ar",
+  "category": "arabic_orthographic_variants",
+  "query": "هل يستحق الموظف 30 يوما اجازه سنويه بعد 5 سنوات خدمه؟",
+  "context": [
+   "سياسة الموارد البشرية لشركة الواحة للتجزئة — الإصدار ٣، يناير ٢٠٢٥.",
+   "سري للغاية — جميع الحقوق محفوظة لشركة الواحة للتجزئة.",
+   "المادة ٤ – الإجازة السنوية: يستحق الموظف إجازة سنوية مدفوعة الأجر مدتها ٢١ يوماً، تزداد إلى ٣٠ يوماً بعد إتمام خمس سنوات من الخدمة المتصلة.",
+   "المادة ٥ – الإجازة المرضية: تُدفع الإجازة المرضية بالأجر الكامل لأول ٣٠ يوماً، ثم بثلاثة أرباع الأجر للـ ٦٠ يوماً التالية.",
+   "المادة ٦ – بدل السكن: يُصرف للموظف بدل سكن يعادل ٢٥٪ من الراتب الأساسي، ويُدفع شهرياً مع الراتب.",
+   "المادة ٧ – بدل النقل: يُصرف بدل نقل ثابت قدره ٨٠٠ ريال شهرياً لجميع الموظفين.",
+   "المادة ٩ – العمل عن بُعد: يجوز للموظف العمل عن بُعد بحد أقصى يومين في الأسبوع بعد موافقة المدير المباشر.",
+   "المادة ١٢ – فترة التجربة: تكون فترة التجربة ٩٠ يوماً، ويجوز تمديدها مرة واحدة بموافقة كتابية.",
+   "سري للغاية — جميع الحقوق محفوظة لشركة الواحة للتجزئة."
+  ],
+  "expected_answer": "نعم، تزداد الإجازة السنوية إلى ٣٠ يوماً بعد خمس سنوات.",
+  "answer_type": "text",
+  "required_facts": [
+   [
+    "نعم",
+    "يستحق"
+   ],
+   "30"
+  ],
+  "evidence": [
+   "تزداد إلى ٣٠ يوماً"
+  ],
+  "schema": null,
+  "cache_of": null,
+  "expect_cache_hit": null,
+  "doc": "hr_ar"
+ },
+ {
+  "task_id": "aro_ar_03",
+  "language": "ar",
+  "category": "arabic_orthographic_variants",
+  "query": "ما مده الضمان علي المنتجات ضد عيوب التصنيع؟",
+  "context": [
+   "عقد توريد بين شركة الواحة للتجزئة ومؤسسة الخليج للتغليف، حُرر في الرياض بتاريخ ٢٠٢٥/٠٢/١٠.",
+   "البند ٣ – قيمة العقد: القيمة الإجمالية لأمر الشراء PO-7310 هي ٢٤٠٬٠٠٠ ريال سعودي، وقيمة أمر الشراء الملحق PO-7311 هي ٣٦٬٥٠٠ ريال سعودي، غير شاملة ضريبة القيمة المضافة.",
+   "البند ٥ – مدة التوريد: يلتزم المورد بتسليم الطلبات خلال ١٤ يوم عمل من تاريخ أمر الشراء.",
+   "البند ٨ – غرامة التأخير: في حال تأخر التسليم تُفرض غرامة قدرها ٠٫٥٪ من قيمة أمر الشراء PO-7310 عن كل يوم تأخير، بحد أقصى ١٠٪ من قيمة العقد.",
+   "البند ١٠ – الضمان: يضمن المورد المنتجات ضد عيوب التصنيع لمدة ١٢ شهراً من تاريخ الاستلام.",
+   "البند ١١ – الدفع: تُسدد الفواتير خلال ٤٥ يوماً من تاريخ استلام الفاتورة المعتمدة.",
+   "البند ١٥ – اللغة: حُرر هذا العقد باللغتين العربية والإنجليزية، ويُعتمد النص العربي عند الاختلاف.",
+   "هذه الوثيقة ملك لشركة الواحة للتجزئة — صفحة ١ من ٣."
+  ],
+  "expected_answer": 12,
+  "answer_type": "number",
+  "required_facts": [
+   "12"
+  ],
+  "evidence": [
+   "لمدة ١٢ شهراً"
+  ],
+  "schema": null,
+  "cache_of": null,
+  "expect_cache_hit": null,
+  "doc": "proc_ar"
+ },
+ {
+  "task_id": "aro_ar_04",
+  "language": "ar",
+  "category": "arabic_orthographic_variants",
+  "query": "هل يمكن ارجاع المنتجات المخفضه بنسبه ٦٠٪؟",
+  "context": [
+   "سياسة الإرجاع والاستبدال لمتاجر الواحة — سارية من ١ مارس ٢٠٢٥.",
+   "يحق للعميل إرجاع المنتجات غير المستخدمة خلال ١٤ يوماً من تاريخ الشراء مع تقديم الفاتورة الأصلية.",
+   "تُسترد المبالغ إلى وسيلة الدفع الأصلية خلال ٧ أيام عمل من استلام المنتج المرتجع.",
+   "لا تشمل سياسة الإرجاع المنتجات المخفضة بنسبة ٥٠٪ أو أكثر، ولا المواد الغذائية، ولا البطاقات مسبقة الدفع.",
+   "رسوم شحن الإرجاع: مجانية للطلبات التي تزيد قيمتها على ٣٠٠ ريال، و٢٥ ريالاً للطلبات الأقل من ذلك.",
+   "برنامج الولاء: يحصل العميل على نقطة واحدة لكل ١٠ ريالات يتم إنفاقها، وتعادل كل ١٠٠ نقطة خصماً بقيمة ٥ ريالات.",
+   "جميع الحقوق محفوظة لمتاجر الواحة."
+  ],
+  "expected_answer": "لا، المنتجات المخفضة بنسبة ٥٠٪ أو أكثر غير مشمولة بسياسة الإرجاع.",
+  "answer_type": "text",
+  "required_facts": [
+   [
+    "لا",
+    "غير مشموله",
+    "لا تشمل",
+    "لا يمكن"
+   ]
+  ],
+  "evidence": [
+   "المخفضة بنسبة ٥٠٪ أو أكثر"
+  ],
+  "schema": null,
+  "cache_of": null,
+  "expect_cache_hit": null,
+  "doc": "returns_ar"
+ },
+ {
+  "task_id": "cache_en_hit",
+  "language": "en",
+  "category": "cache_near_duplicates",
+  "query": "what's the amount of invoice #INV-8841",
+  "context": [
+   "Accounts Payable Register — Q3 2025, Al-Waha Retail Co. Prepared by the Finance Shared Services team.",
+   "Invoice #INV-8841 from Gulf Packaging Est.: amount SAR 12,400, due 2025-09-15, status unpaid. Invoice #INV-8842 from Gulf Packaging Est.: amount SAR 9,850, due 2025-09-30, status paid.",
+   "Invoice #INV-9017 from Red Sea Logistics: amount SAR 31,200, due 2025-10-05, status disputed because of a quantity mismatch against purchase order PO-5520.",
+   "VAT: all supplier invoices are subject to 15% VAT, which is already included in the amounts listed in this register unless stated otherwise.",
+   "Early payment discount: suppliers on the Preferred list (Gulf Packaging Est., Najm Office Supplies) grant a 2% discount on the invoice amount if paid within 10 days of the invoice date.",
+   "Invoice #INV-9120 from Najm Office Supplies: amount SAR 4,600, due 2025-10-12, status unpaid.",
+   "The AP team sits on the 3rd floor of Olaya Tower and can be reached at extension 4410.",
+   "Page 1 of 1 — Confidential."
+  ],
+  "expected_answer": 12400,
+  "answer_type": "number",
+  "required_facts": [
+   "12,400"
+  ],
+  "evidence": [
+   "amount SAR 12,400"
+  ],
+  "schema": null,
+  "cache_of": "std_en_04",
+  "expect_cache_hit": true,
+  "doc": "ap_en"
+ },
+ {
+  "task_id": "cache_en_trap",
+  "language": "en",
+  "category": "cache_near_duplicates",
+  "query": "What is the amount of invoice #INV-8842?",
+  "context": [
+   "Accounts Payable Register — Q3 2025, Al-Waha Retail Co. Prepared by the Finance Shared Services team.",
+   "Invoice #INV-8841 from Gulf Packaging Est.: amount SAR 12,400, due 2025-09-15, status unpaid. Invoice #INV-8842 from Gulf Packaging Est.: amount SAR 9,850, due 2025-09-30, status paid.",
+   "Invoice #INV-9017 from Red Sea Logistics: amount SAR 31,200, due 2025-10-05, status disputed because of a quantity mismatch against purchase order PO-5520.",
+   "VAT: all supplier invoices are subject to 15% VAT, which is already included in the amounts listed in this register unless stated otherwise.",
+   "Early payment discount: suppliers on the Preferred list (Gulf Packaging Est., Najm Office Supplies) grant a 2% discount on the invoice amount if paid within 10 days of the invoice date.",
+   "Invoice #INV-9120 from Najm Office Supplies: amount SAR 4,600, due 2025-10-12, status unpaid.",
+   "The AP team sits on the 3rd floor of Olaya Tower and can be reached at extension 4410.",
+   "Page 1 of 1 — Confidential."
+  ],
+  "expected_answer": 9850,
+  "answer_type": "number",
+  "required_facts": [
+   "9,850"
+  ],
+  "evidence": [
+   "amount SAR 9,850"
+  ],
+  "schema": null,
+  "cache_of": "std_en_04",
+  "expect_cache_hit": false,
+  "doc": "ap_en"
+ },
+ {
+  "task_id": "cache_ar_hit",
+  "language": "ar",
+  "category": "cache_near_duplicates",
+  "query": "ما هي القيمة الاجمالية لامر الشراء PO-7310؟",
+  "context": [
+   "عقد توريد بين شركة الواحة للتجزئة ومؤسسة الخليج للتغليف، حُرر في الرياض بتاريخ ٢٠٢٥/٠٢/١٠.",
+   "البند ٣ – قيمة العقد: القيمة الإجمالية لأمر الشراء PO-7310 هي ٢٤٠٬٠٠٠ ريال سعودي، وقيمة أمر الشراء الملحق PO-7311 هي ٣٦٬٥٠٠ ريال سعودي، غير شاملة ضريبة القيمة المضافة.",
+   "البند ٥ – مدة التوريد: يلتزم المورد بتسليم الطلبات خلال ١٤ يوم عمل من تاريخ أمر الشراء.",
+   "البند ٨ – غرامة التأخير: في حال تأخر التسليم تُفرض غرامة قدرها ٠٫٥٪ من قيمة أمر الشراء PO-7310 عن كل يوم تأخير، بحد أقصى ١٠٪ من قيمة العقد.",
+   "البند ١٠ – الضمان: يضمن المورد المنتجات ضد عيوب التصنيع لمدة ١٢ شهراً من تاريخ الاستلام.",
+   "البند ١١ – الدفع: تُسدد الفواتير خلال ٤٥ يوماً من تاريخ استلام الفاتورة المعتمدة.",
+   "البند ١٥ – اللغة: حُرر هذا العقد باللغتين العربية والإنجليزية، ويُعتمد النص العربي عند الاختلاف.",
+   "هذه الوثيقة ملك لشركة الواحة للتجزئة — صفحة ١ من ٣."
+  ],
+  "expected_answer": 240000,
+  "answer_type": "number",
+  "required_facts": [
+   "240,000"
+  ],
+  "evidence": [
+   "هي ٢٤٠٬٠٠٠ ريال سعودي"
+  ],
+  "schema": null,
+  "cache_of": "std_ar_04",
+  "expect_cache_hit": true,
+  "doc": "proc_ar"
+ },
+ {
+  "task_id": "cache_ar_trap",
+  "language": "ar",
+  "category": "cache_near_duplicates",
+  "query": "احسب قيمة غرامة التأخير إذا تأخر المورد ٨ أيام في تسليم أمر الشراء PO-7310.",
+  "context": [
+   "عقد توريد بين شركة الواحة للتجزئة ومؤسسة الخليج للتغليف، حُرر في الرياض بتاريخ ٢٠٢٥/٠٢/١٠.",
+   "البند ٣ – قيمة العقد: القيمة الإجمالية لأمر الشراء PO-7310 هي ٢٤٠٬٠٠٠ ريال سعودي، وقيمة أمر الشراء الملحق PO-7311 هي ٣٦٬٥٠٠ ريال سعودي، غير شاملة ضريبة القيمة المضافة.",
+   "البند ٥ – مدة التوريد: يلتزم المورد بتسليم الطلبات خلال ١٤ يوم عمل من تاريخ أمر الشراء.",
+   "البند ٨ – غرامة التأخير: في حال تأخر التسليم تُفرض غرامة قدرها ٠٫٥٪ من قيمة أمر الشراء PO-7310 عن كل يوم تأخير، بحد أقصى ١٠٪ من قيمة العقد.",
+   "البند ١٠ – الضمان: يضمن المورد المنتجات ضد عيوب التصنيع لمدة ١٢ شهراً من تاريخ الاستلام.",
+   "البند ١١ – الدفع: تُسدد الفواتير خلال ٤٥ يوماً من تاريخ استلام الفاتورة المعتمدة.",
+   "البند ١٥ – اللغة: حُرر هذا العقد باللغتين العربية والإنجليزية، ويُعتمد النص العربي عند الاختلاف.",
+   "هذه الوثيقة ملك لشركة الواحة للتجزئة — صفحة ١ من ٣."
+  ],
+  "expected_answer": 9600,
+  "answer_type": "number",
+  "required_facts": [
+   "9,600"
+  ],
+  "evidence": [
+   "٢٤٠٬٠٠٠ ريال",
+   "غرامة قدرها ٠٫٥٪"
+  ],
+  "schema": null,
+  "cache_of": "mh_ar_01",
+  "expect_cache_hit": false,
+  "doc": "proc_ar"
+ }
+]

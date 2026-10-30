@@ -1,0 +1,376 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>OptiRoute Cascade</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500&family=Noto+Sans+Arabic:wght@400;600&display=swap" rel="stylesheet">
+<script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/4.4.1/chart.umd.min.js"></script>
+<style>
+:root{
+  --bg:#07110e; --panel:#0d1a16; --panel2:#112520; --line:#1d3a32; --text:#e6f2ee; --muted:#8aa69d;
+  --em:#10b981; --em2:#34d399; --emdim:#0b3b2c; --amber:#f59e0b; --red:#f87171; --blue:#60a5fa; --violet:#a78bfa;
+  --r:12px; --mono:'JetBrains Mono',ui-monospace,monospace;
+}
+*{box-sizing:border-box}
+body{margin:0;background:var(--bg);color:var(--text);font:14px/1.5 Inter,'Noto Sans Arabic',system-ui,sans-serif}
+[dir=rtl],.ar{font-family:'Noto Sans Arabic',Inter,sans-serif}
+header{display:flex;align-items:center;gap:20px;padding:14px 24px;border-bottom:1px solid var(--line);background:#081512;position:sticky;top:0;z-index:5}
+.logo{font-weight:700;font-size:18px;letter-spacing:-.02em}.logo b{color:var(--em)}
+.sub{color:var(--muted);font-size:12px}
+.tabs{display:flex;gap:4px;margin-left:auto;background:var(--panel);padding:4px;border-radius:10px;border:1px solid var(--line)}
+.tabs button{background:none;border:0;color:var(--muted);padding:7px 14px;border-radius:7px;font:inherit;font-weight:600;cursor:pointer}
+.tabs button.on{background:var(--emdim);color:var(--em2)}
+.pill{font:12px var(--mono);padding:4px 10px;border-radius:99px;background:var(--panel2);border:1px solid var(--line);color:var(--muted)}
+.pill b{color:var(--text)}
+.btn{background:var(--panel2);border:1px solid var(--line);color:var(--text);padding:7px 12px;border-radius:8px;font:inherit;font-weight:600;cursor:pointer}
+.btn:hover{border-color:var(--em)}.btn.primary{background:var(--em);color:#04120c;border-color:var(--em)}
+main{padding:20px 24px;max-width:1500px;margin:0 auto}
+.view{display:none}.view.on{display:block}
+.layout{display:grid;grid-template-columns:300px 1fr;gap:20px}
+.card{background:var(--panel);border:1px solid var(--line);border-radius:var(--r);padding:16px}
+.card h3{margin:0 0 10px;font-size:12px;text-transform:uppercase;letter-spacing:.08em;color:var(--muted);display:flex;align-items:center;gap:8px}
+.presets{display:flex;flex-direction:column;gap:6px}
+.preset{text-align:left;background:var(--panel2);border:1px solid var(--line);color:var(--text);border-radius:9px;padding:9px 11px;cursor:pointer;font:inherit}
+.preset:hover,.preset.on{border-color:var(--em)}
+.preset small{display:block;color:var(--muted);font-size:11px;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+textarea,input[type=text]{width:100%;background:#06100d;border:1px solid var(--line);color:var(--text);border-radius:8px;padding:8px;font:13px Inter,'Noto Sans Arabic',sans-serif;resize:vertical}
+label{font-size:12px;color:var(--muted);display:block;margin:8px 0 4px}
+.query{font-size:17px;font-weight:600;margin:0 0 6px}
+.tag{display:inline-block;font:11px var(--mono);padding:2px 8px;border-radius:6px;background:var(--panel2);border:1px solid var(--line);color:var(--muted);margin-right:6px}
+/* stage rail */
+.rail{display:grid;grid-template-columns:repeat(5,1fr);gap:10px;margin:16px 0}
+.stage{position:relative;background:var(--panel);border:1px solid var(--line);border-radius:var(--r);padding:12px;opacity:.35;transition:all .35s}
+.stage.lit{opacity:1}
+.stage .n{font:11px var(--mono);color:var(--muted)}.stage .t{font-weight:700;margin:2px 0}
+.stage .s{font:12px var(--mono)}
+.stage.ok{border-color:var(--em)}.stage.ok .s{color:var(--em2)}
+.stage.warn{border-color:var(--amber)}.stage.warn .s{color:var(--amber)}
+.stage.bad{border-color:var(--red)}.stage.bad .s{color:var(--red)}
+.stage.skip .s{color:var(--muted)}
+.stage:not(:last-child)::after{content:'→';position:absolute;right:-10px;top:50%;transform:translate(50%,-50%);color:var(--muted)}
+.grid2{display:grid;grid-template-columns:1fr 1fr;gap:14px}
+.reveal{opacity:0;transform:translateY(6px);transition:all .4s}.reveal.in{opacity:1;transform:none}
+.chunk{display:grid;grid-template-columns:54px 1fr;gap:10px;padding:7px 9px;border-radius:8px;margin-bottom:5px;border:1px solid transparent;font-size:12.5px}
+.chunk.kept{background:#0b2a20;border-color:#165a43}
+.chunk.drop{color:#5f7a72;text-decoration:line-through;text-decoration-color:#3b524b}
+.chunk.boiler{color:#4b5f59;font-style:italic}
+.score{font:11px var(--mono);color:var(--muted)}.score i{display:block;height:4px;border-radius:2px;background:var(--em);margin-top:3px}
+.bar{height:8px;background:#06100d;border-radius:4px;position:relative;overflow:visible;border:1px solid var(--line)}
+.bar>i{position:absolute;left:0;top:0;bottom:0;border-radius:4px;background:var(--em)}
+.bar>.mark{position:absolute;top:-5px;bottom:-5px;width:2px;background:var(--amber)}
+.sig{display:grid;grid-template-columns:170px 1fr 70px;gap:10px;align-items:center;font-size:12.5px;margin:6px 0}
+.sig span:last-child{font:12px var(--mono);color:var(--muted);text-align:right}
+.chips span{display:inline-block;font:12px var(--mono);padding:2px 8px;border-radius:6px;margin:2px;background:var(--panel2);border:1px solid var(--line)}
+.chips span.diff{border-color:var(--red);color:var(--red)}
+.check{display:flex;justify-content:space-between;font-size:13px;padding:5px 0;border-bottom:1px dashed var(--line)}
+.check b.ok{color:var(--em2)}.check b.bad{color:var(--red)}.check b.na{color:var(--muted);font-weight:400}
+.out{background:#06100d;border:1px solid var(--line);border-radius:8px;padding:10px;font-size:13.5px;white-space:pre-wrap;margin:8px 0}
+.meta{font:12px var(--mono);color:var(--muted)}
+.badge{font:12px var(--mono);font-weight:600;padding:3px 9px;border-radius:6px}
+.b-ok{background:#0b3b2c;color:var(--em2)}.b-warn{background:#3d2a07;color:var(--amber)}.b-bad{background:#3b1414;color:var(--red)}.b-info{background:#13233d;color:var(--blue)}
+.final{border-color:var(--em);background:linear-gradient(180deg,#0d1f19,#0d1a16)}
+.kpis{display:grid;grid-template-columns:repeat(4,1fr);gap:12px;margin-top:12px}
+.kpi .v{font-size:24px;font-weight:700;letter-spacing:-.02em}.kpi .l{font-size:12px;color:var(--muted)}
+.kpi .v small{font-size:13px;color:var(--muted);font-weight:500}
+table{width:100%;border-collapse:collapse;font-size:12.5px}
+th,td{padding:7px 8px;border-bottom:1px solid var(--line);text-align:right;white-space:nowrap}
+th:first-child,td:first-child{text-align:left}
+th{color:var(--muted);font-weight:600;font-size:11.5px}
+tr.hl td{background:#0b2a20;color:var(--em2);font-weight:600}
+.note{font-size:12px;color:var(--muted);margin-top:8px}
+.err{color:var(--red);font-size:13px}
+.empty{color:var(--muted);text-align:center;padding:60px 0}
+@media (max-width:1000px){.layout,.grid2{grid-template-columns:1fr}.rail{grid-template-columns:1fr 1fr}.kpis{grid-template-columns:1fr 1fr}}
+</style>
+</head>
+<body>
+<header>
+  <div>
+    <div class="logo">Opti<b>Route</b></div>
+    <div class="sub" id="models">bilingual compute cascade</div>
+  </div>
+  <span class="pill">τ <b id="tau">0.55</b></span>
+  <span class="pill">cache entries <b id="csize">0</b></span>
+  <button class="btn" id="reset" title="Clear cache and reset τ">Reset session</button>
+  <div class="tabs"><button class="on" data-v="live">Live Cascade</button><button data-v="bench">Benchmark &amp; Adaptation</button></div>
+</header>
+
+<main>
+<!-- ============================ LIVE ============================ -->
+<section class="view on" id="v-live">
+  <div class="layout">
+    <aside>
+      <div class="card">
+        <h3>Preset cases</h3>
+        <div class="presets" id="presets"></div>
+        <p class="note">Presets replay the recorded real outputs of qwen2.5 on this GPU. Run the cache seed (#INV-8841) before the paraphrase and trap cases.</p>
+      </div>
+      <div class="card" style="margin-top:14px">
+        <h3>Custom input (live models)</h3>
+        <label>Question (English or Arabic)</label>
+        <textarea id="cq" rows="2" dir="auto"></textarea>
+        <label>Context: paragraphs separated by a blank line</label>
+        <textarea id="cc" rows="6" dir="auto"></textarea>
+        <label>JSON keys (optional), e.g. <code>amount:number, status:string</code></label>
+        <input type="text" id="ck">
+        <div style="display:flex;gap:8px;margin-top:10px;align-items:center">
+          <button class="btn primary" id="crun">Run cascade</button>
+          <label style="margin:0"><input type="checkbox" id="forceLive"> force live on presets</label>
+        </div>
+      </div>
+    </aside>
+
+    <div id="stagewrap">
+      <div class="card" id="qcard"><div class="empty">Pick a preset case or enter a custom question to run the cascade.</div></div>
+      <div class="rail" id="rail">
+        <div class="stage" data-k="prune"><div class="n">01</div><div class="t">Pruner</div><div class="s">–</div></div>
+        <div class="stage" data-k="cache"><div class="n">02 · Tier-0</div><div class="t">Cache Guard</div><div class="s">–</div></div>
+        <div class="stage" data-k="route"><div class="n">03</div><div class="t">Router</div><div class="s">–</div></div>
+        <div class="stage" data-k="t1"><div class="n">04 · Tier-1</div><div class="t">Small + Verifier</div><div class="s">–</div></div>
+        <div class="stage" data-k="t2"><div class="n">05 · Tier-2</div><div class="t">Large model</div><div class="s">–</div></div>
+      </div>
+      <div id="details"></div>
+    </div>
+  </div>
+</section>
+
+<!-- ============================ BENCH ============================ -->
+<section class="view" id="v-bench">
+  <div class="card">
+    <h3>Held-out benchmark: 36 bilingual cases, replayed from recorded real runs <span class="badge b-ok" id="srcbadge">REPLAY</span></h3>
+    <div class="kpis" id="kpis"></div>
+  </div>
+  <div class="grid2" style="margin-top:14px">
+    <div class="card"><h3>Accuracy vs compute per configuration</h3><canvas id="cmpChart" height="210"></canvas></div>
+    <div class="card"><h3>Adaptive τ(t) across a wave workload</h3><canvas id="waveChart" height="210"></canvas>
+      <p class="note" id="wavenote"></p></div>
+  </div>
+  <div class="card" style="margin-top:14px"><h3>Table 1: cumulative progression</h3><div id="t1"></div></div>
+  <div class="card" style="margin-top:14px"><h3>Table 2: leave-one-out ablation</h3><div id="t2"></div></div>
+  <div class="grid2" style="margin-top:14px">
+    <div class="card"><h3>Runtime verifier (graded offline against ground truth)</h3><div id="vtab"></div></div>
+    <div class="card"><h3>Pruner under bilingual noise</h3><div id="ntab"></div></div>
+  </div>
+  <div class="card" style="margin-top:14px"><h3>Same cascade, other models (recorded real runs)</h3><div id="xtab"></div></div>
+</section>
+</main>
+
+<script>
+const $ = s => document.querySelector(s);
+const esc = s => String(s ?? '').replace(/[&<>"]/g, c => ({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;'}[c]));
+const sleep = ms => new Promise(r => setTimeout(r, ms));
+const pct = (x, d=1) => (x*100).toFixed(d) + '%';
+const CSS = n => getComputedStyle(document.documentElement).getPropertyValue(n).trim();
+let META = null, RESULTS = null, running = false;
+
+document.querySelectorAll('.tabs button').forEach(b => b.onclick = () => {
+  document.querySelectorAll('.tabs button').forEach(x => x.classList.toggle('on', x === b));
+  document.querySelectorAll('.view').forEach(v => v.classList.toggle('on', v.id === 'v-' + b.dataset.v));
+  if (b.dataset.v === 'bench') loadBench();
+});
+
+async function init() {
+  META = await (await fetch('/api/presets')).json();
+  $('#models').textContent = `Tier-1 ${META.models.tier1[0]} (${META.models.tier1[1]}B) → Tier-2 ${META.models.tier2[0]} (${META.models.tier2[1]}B) · local GPU`;
+  $('#presets').innerHTML = META.presets.map((p, i) =>
+    `<button class="preset" data-i="${i}">${esc(p.label)}<small dir="auto">${esc(p.query)}</small></button>`).join('');
+  document.querySelectorAll('.preset').forEach(b => b.onclick = () => {
+    document.querySelectorAll('.preset').forEach(x => x.classList.toggle('on', x === b));
+    run({task_id: META.presets[b.dataset.i].task_id, live: $('#forceLive').checked});
+  });
+}
+$('#reset').onclick = async () => {
+  const r = await (await fetch('/api/reset', {method:'POST'})).json();
+  $('#tau').textContent = r.tau.toFixed(2); $('#csize').textContent = 0;
+  $('#qcard').innerHTML = '<div class="empty">Session reset: cache cleared, τ back to baseline.</div>';
+  $('#details').innerHTML = ''; setStages({});
+};
+$('#crun').onclick = () => {
+  const q = $('#cq').value.trim(), c = $('#cc').value.trim();
+  if (!q || !c) return alert('Enter a question and a context.');
+  run({query: q, context: c, json_keys: $('#ck').value.trim() || null, live: true});
+};
+
+function setStages(st) {
+  document.querySelectorAll('.stage').forEach(el => {
+    const s = st[el.dataset.k];
+    el.className = 'stage' + (s ? ' lit ' + s.cls : '');
+    el.querySelector('.s').textContent = s ? s.txt : '–';
+  });
+}
+
+async function run(body) {
+  if (running) return; running = true;
+  setStages({}); $('#details').innerHTML = '';
+  $('#qcard').innerHTML = '<div class="empty">Running cascade…</div>';
+  let r;
+  try {
+    const resp = await fetch('/api/run', {method:'POST', headers:{'Content-Type':'application/json'}, body: JSON.stringify(body)});
+    r = await resp.json();
+    if (!resp.ok) throw new Error(r.detail || resp.statusText);
+  } catch (e) { $('#qcard').innerHTML = `<div class="err">${esc(e.message)}</div>`; running = false; return; }
+  await render(r); running = false;
+}
+
+async function render(r) {
+  const t = r.task, tr = r.trace, call1 = r.calls.find(c => c.tier === 1), call2 = r.calls.find(c => c.tier === 2);
+  $('#qcard').innerHTML = `<p class="query" dir="auto">${esc(t.query)}</p>
+    <span class="tag">${t.language.toUpperCase()}</span><span class="tag">${esc(t.category)}</span><span class="tag">${esc(t.task_id)}</span>
+    <span class="tag">τ at routing = ${r.tau.toFixed(2)}</span>`;
+  const st = {}, D = $('#details'), step = 450;
+  const add = html => { const d = document.createElement('div'); d.className = 'reveal'; d.innerHTML = html; D.appendChild(d); requestAnimationFrame(() => requestAnimationFrame(() => d.classList.add('in'))); return d; };
+
+  // 1. Pruner
+  const p = tr.prune, saved = 1 - p.tokens_after / p.tokens_before;
+  st.prune = p.enabled ? {cls:'ok', txt:`${p.tokens_before}→${p.tokens_after} tok (−${pct(saved,0)})`} : {cls:'skip', txt:'disabled'};
+  setStages(st);
+  const maxS = Math.max(...Object.values(p.scores), 0.01);
+  add(`<div class="card" style="margin-bottom:14px"><h3>01 · Context pruner <span class="badge b-ok">−${pct(saved,0)} context tokens</span>
+      <span class="meta" style="margin-left:auto">θ=${p.theta} · min top-2 · tiktoken o200k</span></h3>
+    ${t.context.map((c, i) => {
+      const boil = p.boilerplate.includes(i), kept = p.kept.includes(i), s = p.scores[i];
+      return `<div class="chunk ${boil ? 'boiler' : kept ? 'kept' : 'drop'}">
+        <div class="score">${boil ? 'boiler-<br>plate' : s.toFixed(3) + `<i style="width:${Math.max(4, s/maxS*100)}%;${kept?'':'background:#2a4a40'}"></i>`}</div>
+        <div dir="auto">${esc(c)}</div></div>`; }).join('')}</div>`);
+  await sleep(step);
+
+  // 2. Cache guard
+  const c = tr.cache;
+  const cmap = {hit:{cls:'ok', txt:`HIT · 0 LLM tokens`}, blocked_trap:{cls:'warn', txt:'TRAP BLOCKED'}, miss:{cls:'skip', txt:'miss'}};
+  st.cache = c ? cmap[c.event] : {cls:'skip', txt:'disabled'}; setStages(st);
+  if (c) {
+    const newE = new Set(c.entities_new), oldE = new Set(c.entities_cached || []);
+    const chips = (arr, other) => arr.length ? arr.map(e => `<span class="${other && !other.has(e) ? 'diff' : ''}">${esc(e)}</span>`).join('') : '<span>∅</span>';
+    add(`<div class="card" style="margin-bottom:14px"><h3>02 · Tier-0 semantic cache + entity guard
+        <span class="badge ${c.event==='hit'?'b-ok':c.event==='blocked_trap'?'b-warn':'b-info'}">${c.event.replace('_',' ').toUpperCase()}</span></h3>
+      <div class="sig"><span>cosine (numbers masked)</span><div class="bar"><i style="width:${c.cosine*100}%"></i><div class="mark" style="left:${c.threshold*100}%"></div></div><span>${c.cosine.toFixed(3)} / ${c.threshold}</span></div>
+      ${c.matched_query ? `<div class="meta" style="margin:8px 0">nearest cached query (${esc(c.matched_task)}): <span dir="auto" style="color:var(--text)">${esc(c.matched_query)}</span></div>
+      <div class="grid2"><div><label>entities in new query</label><div class="chips">${chips(c.entities_new, oldE)}</div></div>
+      <div><label>entities in cached query</label><div class="chips">${chips(c.entities_cached, newE)}</div></div></div>` : `<div class="meta">no cached query above threshold (cache holds ${r.cache_size - (r.final_tier ? 1 : 0)} entries)</div>`}
+      ${c.event==='blocked_trap' ? '<p class="note" style="color:var(--amber)">Wording matches, but the numbers/IDs differ, so the cached answer would be wrong. The guard forces fresh inference.</p>' : ''}
+      ${c.event==='hit' ? '<p class="note" style="color:var(--em2)">Same wording, same entities, same top-2 context hash: answered from cache with 0 LLM tokens.</p>' : ''}</div>`);
+    await sleep(step);
+  }
+
+  // 3. Router
+  if (r.route) {
+    const ro = r.route, W = {multi_hop_markers:.30, quantitative_reasoning:.30, structural_strictness:.25, context_dispersion:.15};
+    st.route = {cls: ro.tier === 1 ? 'ok' : 'warn', txt:`C=${ro.complexity.toFixed(2)} ${ro.tier===1?'<':'≥'} τ=${ro.tau.toFixed(2)} → T${ro.tier}`}; setStages(st);
+    add(`<div class="card" style="margin-bottom:14px"><h3>03 · Complexity router <span class="badge ${ro.tier===1?'b-ok':'b-warn'}">→ Tier-${ro.tier}</span></h3>
+      ${Object.entries(ro.signals).map(([k,v]) => `<div class="sig"><span>${k.replaceAll('_',' ')} <span class="meta">×${W[k]}</span></span><div class="bar"><i style="width:${v*100}%;background:var(--blue)"></i></div><span>${v.toFixed(2)}</span></div>`).join('')}
+      <div class="sig" style="margin-top:12px"><span><b>complexity C</b> vs τ</span><div class="bar"><i style="width:${ro.complexity*100}%;background:${ro.tier===1?'var(--em)':'var(--amber)'}"></i><div class="mark" style="left:${ro.tau*100}%"></div></div><span>${ro.complexity.toFixed(3)}</span></div></div>`);
+    await sleep(step);
+  } else if (r.final_tier !== 0) { st.route = {cls:'skip', txt:'bypassed'}; setStages(st); }
+
+  // 4. Tier-1 + verifier
+  if (call1) {
+    const v = r.verifier, failed = new Set(v ? v.failed : []);
+    st.t1 = v && !v.passed ? {cls:'bad', txt:`verifier ✗ → escalate`} : {cls:'ok', txt:`verified ✓ · ${call1.latency_ms.toFixed(0)} ms`}; setStages(st);
+    const checks = [['degenerate_or_refusal','Refusal / degeneracy'],['json_schema','JSON schema'],['numeric_grounding','Numeric grounding (+ − × ÷ %)'],['language_match','Language match']];
+    add(`<div class="card" style="margin-bottom:14px"><h3>04 · Tier-1 ${esc(call1.model)} <span class="meta">(${call1.variant} context · ${call1.prompt_tokens}+${call1.completion_tokens} tok · ${call1.latency_ms.toFixed(0)} ms · ${call1.source})</span></h3>
+      <div class="out" dir="auto">${esc(call1.output)}</div>
+      ${v ? checks.map(([k,l]) => {
+        const na = k==='json_schema' && !t.schema;
+        return `<div class="check"><span>${l}</span><b class="${na?'na':failed.has(k)?'bad':'ok'}">${na?'n/a':failed.has(k)?'✗ FAIL':'✓ pass'}</b></div>`; }).join('') + `<div class="meta" style="margin-top:6px">verifier time ${v.ms.toFixed(2)} ms · no access to ground truth</div>` : ''}</div>`);
+    await sleep(step);
+  } else if (r.final_tier !== 0) { st.t1 = {cls:'skip', txt:'skipped by router'}; setStages(st); }
+
+  // 5. Tier-2
+  if (call2) {
+    const why = call1 ? (call2.variant === 'raw' ? 'refusal → full-context recovery' : 'escalated with top-4 context') : 'routed directly';
+    st.t2 = {cls:'warn', txt:`${why.split(' ')[0]} · ${call2.latency_ms.toFixed(0)} ms`}; setStages(st);
+    add(`<div class="card" style="margin-bottom:14px"><h3>05 · Tier-2 ${esc(call2.model)} <span class="badge b-warn">${why}</span>
+      <span class="meta">(${call2.variant} context · ${call2.prompt_tokens}+${call2.completion_tokens} tok · ${call2.latency_ms.toFixed(0)} ms · ${call2.source})</span></h3>
+      <div class="out" dir="auto">${esc(call2.output)}</div></div>`);
+    await sleep(step);
+  } else { st.t2 = {cls:'skip', txt:'not needed'}; setStages(st); }
+
+  // Final
+  const b = r.baseline, g = r.graded;
+  const tierTxt = ['Tier-0 cache', 'Tier-1 small', 'Tier-2 large'][r.final_tier];
+  add(`<div class="card final"><h3>Final answer · ${tierTxt}
+      ${g ? `<span class="badge ${g.correct?'b-ok':'b-bad'}">${g.correct?'✓ correct':'✗ incorrect'} vs ground truth</span>` : ''}</h3>
+    <div class="out" dir="auto" style="font-size:15px">${esc(r.answer)}</div>
+    ${g ? `<div class="meta" dir="auto">expected: ${esc(typeof g.expected === 'object' ? JSON.stringify(g.expected) : g.expected)}</div>` : ''}
+    <div class="kpis">
+      <div class="kpi"><div class="v">${r.tokens.toLocaleString()} <small>tok</small></div><div class="l">LLM tokens${b ? ` (always-Tier-2: ${b.tokens.toLocaleString()})` : ''}</div></div>
+      <div class="kpi"><div class="v">${r.compute.toFixed(2)} <small>kTok·B</small></div><div class="l">compute${b ? ` · <b style="color:${r.compute <= b.compute ? 'var(--em2)' : 'var(--red)'}">${r.compute <= b.compute ? '−' : '+'}${pct(Math.abs(1 - r.compute/b.compute),0)}</b> vs always-Tier-2 ${b.compute.toFixed(2)}` : ''}</div></div>
+      <div class="kpi"><div class="v">${r.latency_ms.toFixed(0)} <small>ms</small></div><div class="l">end-to-end${b ? ` (always-Tier-2: ${b.latency_ms.toFixed(0)} ms)` : ''}</div></div>
+      <div class="kpi"><div class="v">${Object.values(r.overhead_ms).reduce((a,x)=>a+x,0).toFixed(2)} <small>ms</small></div><div class="l">CPU overhead (pruner+cache+router+verifier)</div></div>
+    </div></div>`);
+  $('#tau').textContent = r.tau_after.toFixed(2); $('#csize').textContent = r.cache_size;
+}
+
+// ============================ BENCH ============================
+let charts = {};
+async function loadBench() {
+  if (RESULTS) return;
+  const resp = await fetch('/api/results');
+  if (!resp.ok) { $('#kpis').innerHTML = `<div class="err">${esc((await resp.json()).detail)}</div>`; return; }
+  RESULTS = await resp.json();
+  const C = RESULTS.cumulative, L = RESULTS.loo, full = C['5_OptiRoute_Full'], t2 = C['1_Always_Tier2_Raw'], v = RESULTS.verifier[0];
+  $('#srcbadge').textContent = RESULTS.mode.toUpperCase();
+  $('#kpis').innerHTML = [
+    [pct(full.accuracy), `accuracy, Full cascade (always-Tier-2: ${pct(t2.accuracy)})`],
+    ['−' + pct(1 - full.compute_units / t2.compute_units), `compute vs always-Tier-2 (${full.compute_units.toFixed(1)} vs ${t2.compute_units.toFixed(1)} kTok·B)`],
+    [(t2.cps / full.cps).toFixed(1) + '×', `cheaper per successful task (CPS ${full.cps.toFixed(2)} vs ${t2.cps.toFixed(2)})`],
+    [`${pct(v.precision,0)} / ${pct(v.recall,0)}`, 'verifier precision / recall on Tier-1 outputs'],
+    ['−' + pct(1 - full.total_tokens / t2.total_tokens), 'LLM tokens vs always-Tier-2'],
+    [`${full.p50_ms.toFixed(0)} ms`, `P50 latency (always-Tier-2: ${t2.p50_ms.toFixed(0)} ms)`],
+    [`${L['Full_OptiRoute'].false_cache_hits}/${L['Full_OptiRoute'].n_traps} vs ${L['LOO_No_Cache_Entity_Guard'].false_cache_hits}/${L['LOO_No_Cache_Entity_Guard'].n_traps}`, 'false cache hits on traps: with vs without entity guard'],
+    [`${Object.values(full.overhead_ms).reduce((a,x)=>a+x,0).toFixed(2)} ms`, 'mean CPU overhead per task (all 4 components)'],
+  ].map(([a,b]) => `<div class="kpi"><div class="v">${a}</div><div class="l">${b}</div></div>`).join('');
+
+  const head = '<tr><th>Config</th><th>Accuracy</th><th>Tokens</th><th>Compute kTok·B</th><th>Δ compute</th><th>CPS</th><th>P50 ms</th><th>P95 ms</th><th>Tier 0/1/2</th><th>Escal.</th><th>False cache hits</th></tr>';
+  const row = (k, m, hl) => `<tr class="${hl?'hl':''}"><td>${k}</td><td>${pct(m.accuracy)} (${m.correct}/${m.n})</td><td>${m.total_tokens.toLocaleString()}</td><td>${m.compute_units.toFixed(2)}</td><td>${pct(m.compute_units/t2.compute_units - 1)}</td><td>${m.cps.toFixed(3)}</td><td>${m.p50_ms.toFixed(0)}</td><td>${m.p95_ms.toFixed(0)}</td><td>${m.tier0}/${m.tier1}/${m.tier2}</td><td>${m.escalations}</td><td>${m.false_cache_hits}/${m.n_traps}</td></tr>`;
+  $('#t1').innerHTML = `<table>${head}${Object.entries(C).map(([k,m]) => row(k, m, k.includes('Full'))).join('')}</table>`;
+  $('#t2').innerHTML = `<table>${head}${Object.entries(L).map(([k,m]) => row(k, m, k === 'Full_OptiRoute')).join('')}</table>`;
+  $('#vtab').innerHTML = `<table><tr><th>Tier-1 context</th><th>Error rate</th><th>TP</th><th>FP</th><th>FN</th><th>TN</th><th>Precision</th><th>Recall</th></tr>${RESULTS.verifier.map(x => `<tr><td>${x.variant}</td><td>${pct(x.tier1_error_rate)}</td><td>${x.tp}</td><td>${x.fp}</td><td>${x.fn}</td><td>${x.tn}</td><td>${pct(x.precision)}</td><td>${pct(x.recall)}</td></tr>`).join('')}</table>
+    <p class="note">Misses are wrong answers that are still grounded (e.g. 10% of the fee instead of 25%). They need semantic checks, not cheap rules.</p>`;
+  $('#ntab').innerHTML = `<table><tr><th>Distractors</th><th>Evidence recall</th><th>Tokens in</th><th>Tokens kept</th><th>Reduction</th><th>ms</th></tr>${RESULTS.noise_scaling.map(x => `<tr><td>${x.noise}</td><td>${pct(x.evidence_recall)}</td><td>${x.tokens_before.toLocaleString()}</td><td>${x.tokens_after.toLocaleString()}</td><td>${pct(x.reduction)}</td><td>${x.prune_ms_mean.toFixed(2)}</td></tr>`).join('')}</table>`;
+  if (RESULTS.cross_model && RESULTS.cross_model.length) {
+    $('#xtab').innerHTML = `<table><tr><th>Tier-1</th><th>Tier-2</th><th>Always-T2 acc</th><th>Always-T1 acc</th><th>Full acc</th><th>Full compute vs T2</th><th>CPS T2 → Full</th><th>Verifier P / R</th></tr>${RESULTS.cross_model.map(r => {
+      const c = r.configs, t2 = c['1_Always_Tier2_Raw'], t1 = c['2_Always_Tier1_Raw'], f = c['5_OptiRoute_Full'];
+      return `<tr><td>${esc(r.tier1)}</td><td>${esc(r.tier2)}</td><td>${pct(t2.accuracy)}</td><td>${pct(t1.accuracy)}</td><td><b>${pct(f.accuracy)}</b></td><td>${pct(f.compute_units / t2.compute_units - 1)}</td><td>${t2.cps.toFixed(2)} → ${f.cps.toFixed(2)}</td><td>${pct(r.verifier.precision,0)} / ${pct(r.verifier.recall,0)}</td></tr>`; }).join('')}</table>
+      <p class="note">Only the recording changes; the cascade code and thresholds are identical. ${(() => {
+        const w = RESULTS.cross_model.reduce((a, r) => r.configs['2_Always_Tier1_Raw'].accuracy < a.configs['2_Always_Tier1_Raw'].accuracy ? r : a);
+        const g = w.configs['5_OptiRoute_Full'].accuracy - w.configs['2_Always_Tier1_Raw'].accuracy;
+        return `With the weakest Tier-1 (${esc(w.tier1)}) the cascade adds ${(g*100).toFixed(1)} accuracy points over using that model alone, by escalating what the verifier catches.`; })()}</p>`;
+  } else { $('#xtab').closest('.card').style.display = 'none'; }
+  drawCharts();
+}
+
+function drawCharts() {
+  Chart.defaults.color = CSS('--muted'); Chart.defaults.borderColor = CSS('--line'); Chart.defaults.font.family = 'Inter';
+  const C = RESULTS.cumulative, names = Object.keys(C);
+  charts.cmp = new Chart($('#cmpChart'), {
+    data: { labels: names.map(n => n.replace(/^\d_/, '').replaceAll('_', ' ')),
+      datasets: [
+        {type:'bar', label:'Compute (kTok·B)', data: names.map(n => C[n].compute_units), backgroundColor: names.map(n => n.includes('Full') ? CSS('--em') : '#1f4d40'), yAxisID:'y', borderRadius:6},
+        {type:'line', label:'Accuracy', data: names.map(n => C[n].accuracy * 100), borderColor: CSS('--amber'), backgroundColor: CSS('--amber'), yAxisID:'y1', tension:.2, pointRadius:5}]},
+    options: { plugins:{legend:{position:'bottom'}}, scales:{ y:{title:{display:true,text:'kTok·B'}}, y1:{position:'right', min:50, max:100, grid:{drawOnChartArea:false}, title:{display:true,text:'accuracy %'}}}}
+  });
+  const W = RESULTS.wave, real = W.adaptive.trace.map(x => x.tau), audit = W.adaptive_audit.trace.map(x => x.tau);
+  const ph = W.phases, n = real.length;
+  const shade = {id:'shade', beforeDraw(ch) { const {ctx, chartArea:a, scales:{x}} = ch;
+    const [s, e] = ph.hard_burst; ctx.save(); ctx.fillStyle = 'rgba(245,158,11,.08)';
+    ctx.fillRect(x.getPixelForValue(s), a.top, x.getPixelForValue(e) - x.getPixelForValue(s), a.bottom - a.top);
+    ctx.fillStyle = CSS('--amber'); ctx.font = '11px Inter'; ctx.fillText('hard burst', x.getPixelForValue(s) + 6, a.top + 14); ctx.restore(); }};
+  charts.wave = new Chart($('#waveChart'), {
+    type:'line', plugins:[shade],
+    data: { labels: [...Array(n).keys()], datasets: [
+      {label:'verifier + shadow audit (real)', data: audit, borderColor: CSS('--em'), stepped:true, pointRadius:0, borderWidth:2.5},
+      {label:'verifier-only signal (real)', data: real, borderColor: CSS('--violet'), borderDash:[6,4], stepped:true, pointRadius:0, borderWidth:2}]},
+    options: { plugins:{legend:{position:'bottom'}}, scales:{ y:{min:0.25, max:0.75, title:{display:true,text:'τ'}}, x:{title:{display:true,text:'request #'}, ticks:{maxTicksLimit:12}}}}
+  });
+  const rates = W.adaptive.trace.map(x => x.pass_rate).filter(x => x !== null);
+  const A = W.adaptive_audit.summary, F = W.adaptive.summary;
+  const acts = W.adaptive_audit.trace.filter(x => x.action !== 'hold').map(x => `${x.action} @${x.step}`).join(', ');
+  $('#wavenote').innerHTML = `Both lines are replays of the recorded qwen2.5 runs. With the verifier alone, the pass rate never fell below <b>${pct(Math.min(...rates),0)}</b>, because confident wrong answers pass rule checks, so τ stays flat. Auditing every 4th verified answer against Tier-2 exposes those errors: <b>${acts}</b>. Cost: the audit raises compute from ${F.compute_units.toFixed(0)} to ${A.compute_units.toFixed(0)} kTok·B on this stream, and accuracy is unchanged (${pct(A.accuracy)}).`;
+}
+init();
+</script>
+</body>
+</html>

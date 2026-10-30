@@ -1,0 +1,6404 @@
+{
+ "1_Always_Tier2_Raw": [
+  {
+   "task_id": "std_en_01",
+   "answer": "The monthly platform fee under the agreement is SAR 48,000.",
+   "final_tier": 2,
+   "path": [
+    "tier2:raw"
+   ],
+   "correct": true,
+   "tokens": 421,
+   "compute_units": 5.894,
+   "latency_ms": 421.1934490000096,
+   "cache_event": "disabled",
+   "tau": 0.55,
+   "complexity": null,
+   "verifier_failed": null
+  },
+  {
+   "task_id": "std_en_02",
+   "answer": "90 days' written notice is required to terminate the agreement for convenience.",
+   "final_tier": 2,
+   "path": [
+    "tier2:raw"
+   ],
+   "correct": true,
+   "tokens": 422,
+   "compute_units": 5.9079999999999995,
+   "latency_ms": 261.62380400115626,
+   "cache_event": "disabled",
+   "tau": 0.55,
+   "complexity": null,
+   "verifier_failed": null
+  },
+  {
+   "task_id": "std_en_03",
+   "answer": "Customer data must be stored in data centres located within the Kingdom of Saudi Arabia, specifically in the Riyadh and Dammam regions.",
+   "final_tier": 2,
+   "path": [
+    "tier2:raw"
+   ],
+   "correct": true,
+   "tokens": 431,
+   "compute_units": 6.034,
+   "latency_ms": 404.43966799699587,
+   "cache_event": "disabled",
+   "tau": 0.55,
+   "complexity": null,
+   "verifier_failed": null
+  },
+  {
+   "task_id": "std_en_04",
+   "answer": "The amount of invoice #INV-8841 is SAR 12,400.",
+   "final_tier": 2,
+   "path": [
+    "tier2:raw"
+   ],
+   "correct": true,
+   "tokens": 375,
+   "compute_units": 5.25,
+   "latency_ms": 504.1429350026662,
+   "cache_event": "disabled",
+   "tau": 0.55,
+   "complexity": null,
+   "verifier_failed": null
+  },
+  {
+   "task_id": "std_en_05",
+   "answer": "Invoice #INV-9017 from Red Sea Logistics is disputed due to a quantity mismatch against purchase order PO-5520.",
+   "final_tier": 2,
+   "path": [
+    "tier2:raw"
+   ],
+   "correct": true,
+   "tokens": 382,
+   "compute_units": 5.348,
+   "latency_ms": 467.96791799791856,
+   "cache_event": "disabled",
+   "tau": 0.55,
+   "complexity": null,
+   "verifier_failed": null
+  },
+  {
+   "task_id": "std_en_06",
+   "answer": "{\"invoice_id\": \"INV-9017\", \"supplier\": \"Red Sea Logistics\", \"status\": \"disputed\"}",
+   "final_tier": 2,
+   "path": [
+    "tier2:raw"
+   ],
+   "correct": true,
+   "tokens": 420,
+   "compute_units": 5.88,
+   "latency_ms": 454.9032130020496,
+   "cache_event": "disabled",
+   "tau": 0.55,
+   "complexity": null,
+   "verifier_failed": null
+  },
+  {
+   "task_id": "std_en_07",
+   "answer": "The minimum password length is 14 characters.",
+   "final_tier": 2,
+   "path": [
+    "tier2:raw"
+   ],
+   "correct": true,
+   "tokens": 278,
+   "compute_units": 3.8920000000000003,
+   "latency_ms": 296.78800899973487,
+   "cache_event": "disabled",
+   "tau": 0.55,
+   "complexity": null,
+   "verifier_failed": null
+  },
+  {
+   "task_id": "std_en_08",
+   "answer": "Privileged access is reviewed monthly.",
+   "final_tier": 2,
+   "path": [
+    "tier2:raw"
+   ],
+   "correct": true,
+   "tokens": 276,
+   "compute_units": 3.8640000000000003,
+   "latency_ms": 190.0917179996695,
+   "cache_event": "disabled",
+   "tau": 0.55,
+   "complexity": null,
+   "verifier_failed": null
+  },
+  {
+   "task_id": "std_en_09",
+   "answer": "The approved full-disk encryption tools for company laptops are BitLocker and FileVault.",
+   "final_tier": 2,
+   "path": [
+    "tier2:raw"
+   ],
+   "correct": true,
+   "tokens": 291,
+   "compute_units": 4.074,
+   "latency_ms": 291.9314419995062,
+   "cache_event": "disabled",
+   "tau": 0.55,
+   "complexity": null,
+   "verifier_failed": null
+  },
+  {
+   "task_id": "std_en_10",
+   "answer": "Multi-Factor Authentication is mandatory for all remote access and for every privileged account.",
+   "final_tier": 2,
+   "path": [
+    "tier2:raw"
+   ],
+   "correct": true,
+   "tokens": 285,
+   "compute_units": 3.9899999999999998,
+   "latency_ms": 280.751257002271,
+   "cache_event": "disabled",
+   "tau": 0.55,
+   "complexity": null,
+   "verifier_failed": null
+  },
+  {
+   "task_id": "std_en_11",
+   "answer": "The domestic per diem is SAR 450 per day.",
+   "final_tier": 2,
+   "path": [
+    "tier2:raw"
+   ],
+   "correct": true,
+   "tokens": 293,
+   "compute_units": 4.101999999999999,
+   "latency_ms": 345.13310299689647,
+   "cache_event": "disabled",
+   "tau": 0.55,
+   "complexity": null,
+   "verifier_failed": null
+  },
+  {
+   "task_id": "std_en_12",
+   "answer": "The hotel cap per night in Jeddah is SAR 1,200.",
+   "final_tier": 2,
+   "path": [
+    "tier2:raw"
+   ],
+   "correct": true,
+   "tokens": 303,
+   "compute_units": 4.242,
+   "latency_ms": 311.6183900016174,
+   "cache_event": "disabled",
+   "tau": 0.55,
+   "complexity": null,
+   "verifier_failed": null
+  },
+  {
+   "task_id": "std_en_13",
+   "answer": "For a 4-hour flight, economy class should be booked according to the travel policy.",
+   "final_tier": 2,
+   "path": [
+    "tier2:raw"
+   ],
+   "correct": true,
+   "tokens": 306,
+   "compute_units": 4.284,
+   "latency_ms": 306.6566260002635,
+   "cache_event": "disabled",
+   "tau": 0.55,
+   "complexity": null,
+   "verifier_failed": null
+  },
+  {
+   "task_id": "std_ar_01",
+   "answer": "المدة الإجمالية للإجازة السنوية للموظف هي ٢١ يوماً، وتزداد إلى ٣٠ يوماً بعد خمس سنوات من الخدمة المتصلة.",
+   "final_tier": 2,
+   "path": [
+    "tier2:raw"
+   ],
+   "correct": true,
+   "tokens": 427,
+   "compute_units": 5.978,
+   "latency_ms": 906.603155001147,
+   "cache_event": "disabled",
+   "tau": 0.55,
+   "complexity": null,
+   "verifier_failed": null
+  },
+  {
+   "task_id": "std_ar_02",
+   "answer": "بدل النقل الشهري يبلغ 800 ريال للجميع الموظفين.",
+   "final_tier": 2,
+   "path": [
+    "tier2:raw"
+   ],
+   "correct": true,
+   "tokens": 399,
+   "compute_units": 5.586,
+   "latency_ms": 356.05406099964983,
+   "cache_event": "disabled",
+   "tau": 0.55,
+   "complexity": null,
+   "verifier_failed": null
+  },
+  {
+   "task_id": "std_ar_03",
+   "answer": "فترة التجربة هي ٩٠ يوماً، ويجوز تمديدها مرة واحدة بموافقة كتابية.",
+   "final_tier": 2,
+   "path": [
+    "tier2:raw"
+   ],
+   "correct": true,
+   "tokens": 409,
+   "compute_units": 5.726,
+   "latency_ms": 476.9027709983359,
+   "cache_event": "disabled",
+   "tau": 0.55,
+   "complexity": null,
+   "verifier_failed": null
+  },
+  {
+   "task_id": "std_ar_04",
+   "answer": "القيمة الإجمالية لأمر الشراء PO-7310 هي ٢٤٠٬٠٠٠ ريال سعودي.",
+   "final_tier": 2,
+   "path": [
+    "tier2:raw"
+   ],
+   "correct": true,
+   "tokens": 425,
+   "compute_units": 5.95,
+   "latency_ms": 752.8433049986511,
+   "cache_event": "disabled",
+   "tau": 0.55,
+   "complexity": null,
+   "verifier_failed": null
+  },
+  {
+   "task_id": "std_ar_05",
+   "answer": "تُسدد الفواتير خلال ٤٥ يوماً من تاريخ استلام الفاتورة المعتمدة.",
+   "final_tier": 2,
+   "path": [
+    "tier2:raw"
+   ],
+   "correct": true,
+   "tokens": 423,
+   "compute_units": 5.922,
+   "latency_ms": 499.92584600103436,
+   "cache_event": "disabled",
+   "tau": 0.55,
+   "complexity": null,
+   "verifier_failed": null
+  },
+  {
+   "task_id": "std_ar_06",
+   "answer": "العميل لديه الحق في إرجاع المنتجات غير المستخدمة خلال ١٤ يوماً من تاريخ الشراء.",
+   "final_tier": 2,
+   "path": [
+    "tier2:raw"
+   ],
+   "correct": true,
+   "tokens": 308,
+   "compute_units": 4.312,
+   "latency_ms": 652.3641659974284,
+   "cache_event": "disabled",
+   "tau": 0.55,
+   "complexity": null,
+   "verifier_failed": null
+  },
+  {
+   "task_id": "std_ar_07",
+   "answer": "تُسترد المبالغ إلى وسيلة الدفع الأصلية خلال ٧ أيام عمل من استلام المنتج المرتجع.",
+   "final_tier": 2,
+   "path": [
+    "tier2:raw"
+   ],
+   "correct": true,
+   "tokens": 311,
+   "compute_units": 4.354,
+   "latency_ms": 577.3992109977349,
+   "cache_event": "disabled",
+   "tau": 0.55,
+   "complexity": null,
+   "verifier_failed": null
+  },
+  {
+   "task_id": "llo_en_01",
+   "answer": "The vendor must acknowledge a Priority-1 incident, which represents a critical outage, within 15 minutes, 24/7.",
+   "final_tier": 2,
+   "path": [
+    "tier2:raw"
+   ],
+   "correct": true,
+   "tokens": 434,
+   "compute_units": 6.076,
+   "latency_ms": 460.6866209977912,
+   "cache_event": "disabled",
+   "tau": 0.55,
+   "complexity": null,
+   "verifier_failed": null
+  },
+  {
+   "task_id": "llo_en_02",
+   "answer": "No, top-secret files, which would fall under the \"Restricted\" classification, may not be stored on removable media according to the Data Classification policy.",
+   "final_tier": 2,
+   "path": [
+    "tier2:raw"
+   ],
+   "correct": true,
+   "tokens": 305,
+   "compute_units": 4.27,
+   "latency_ms": 477.686351000797,
+   "cache_event": "disabled",
+   "tau": 0.55,
+   "complexity": null,
+   "verifier_failed": null
+  },
+  {
+   "task_id": "llo_en_03",
+   "answer": "Claims must be submitted within 30 days of return.",
+   "final_tier": 2,
+   "path": [
+    "tier2:raw"
+   ],
+   "correct": true,
+   "tokens": 302,
+   "compute_units": 4.228,
+   "latency_ms": 229.27510500295904,
+   "cache_event": "disabled",
+   "tau": 0.55,
+   "complexity": null,
+   "verifier_failed": null
+  },
+  {
+   "task_id": "llo_ar_01",
+   "answer": "الحد الأعلى للعقوبة المالية عند التأخر هو ٢٤٬٠٠٠ ريال سعودي، وهو ١٠٪ من قيمة أمر الشراء PO-7310 التي تبلغ ٢٤٠٬٠٠٠ ريال سعودي.",
+   "final_tier": 2,
+   "path": [
+    "tier2:raw"
+   ],
+   "correct": true,
+   "tokens": 447,
+   "compute_units": 6.258,
+   "latency_ms": 1028.1943379993481,
+   "cache_event": "disabled",
+   "tau": 0.55,
+   "complexity": null,
+   "verifier_failed": null
+  },
+  {
+   "task_id": "mh_en_01",
+   "answer": "The service credit for a month with 98.7% availability is SAR 12,000, as it falls below 99.9% and thus applies the 10% credit rate of the monthly platform fee (SAR 48,000).",
+   "final_tier": 2,
+   "path": [
+    "tier2:raw"
+   ],
+   "correct": true,
+   "tokens": 465,
+   "compute_units": 6.510000000000001,
+   "latency_ms": 917.9772190007137,
+   "cache_event": "disabled",
+   "tau": 0.55,
+   "complexity": null,
+   "verifier_failed": null
+  },
+  {
+   "task_id": "mh_en_02",
+   "answer": "{\n  \"invoice_id\": \"INV-9120\",\n  \"amount_payable\": 4507.8\n}",
+   "final_tier": 2,
+   "path": [
+    "tier2:raw"
+   ],
+   "correct": true,
+   "tokens": 419,
+   "compute_units": 5.866,
+   "latency_ms": 481.087938999061,
+   "cache_event": "disabled",
+   "tau": 0.55,
+   "complexity": null,
+   "verifier_failed": null
+  },
+  {
+   "task_id": "mh_en_03",
+   "answer": "The total reimbursable amount for a 3-night international trip to Dubai is SAR 4,500 (SAR 900 per diem for 4 days plus SAR 1,200 per night hotel cap for 3 nights).",
+   "final_tier": 2,
+   "path": [
+    "tier2:raw"
+   ],
+   "correct": false,
+   "tokens": 354,
+   "compute_units": 4.9559999999999995,
+   "latency_ms": 819.3683630001347,
+   "cache_event": "disabled",
+   "tau": 0.55,
+   "complexity": null,
+   "verifier_failed": null
+  },
+  {
+   "task_id": "mh_ar_01",
+   "answer": "غرامة التأخير عن ٦ أيام تأخير في تسليم أمر الشراء PO-7310 هي ٧٢٠ ريال سعودي، حيث أن ٠٫٥٪ من قيمة أمر الشراء PO-7310 (٢٤٠٬٠٠٠ ريال سعودي) تساوي ١٢٠ ريال سعودي في اليوم، وبالتالي ٦ أيام تعادل ٧٢٠ ريال سعودي.",
+   "final_tier": 2,
+   "path": [
+    "tier2:raw"
+   ],
+   "correct": false,
+   "tokens": 492,
+   "compute_units": 6.888,
+   "latency_ms": 1639.5399300000352,
+   "cache_event": "disabled",
+   "tau": 0.55,
+   "complexity": null,
+   "verifier_failed": null
+  },
+  {
+   "task_id": "aro_ar_01",
+   "answer": "بدل السكن يعادل ٢٥٪ من الراتب الأساسي.",
+   "final_tier": 2,
+   "path": [
+    "tier2:raw"
+   ],
+   "correct": true,
+   "tokens": 408,
+   "compute_units": 5.712,
+   "latency_ms": 357.9423649986379,
+   "cache_event": "disabled",
+   "tau": 0.55,
+   "complexity": null,
+   "verifier_failed": null
+  },
+  {
+   "task_id": "aro_ar_02",
+   "answer": "لا، يحق للموظف 21 يوماً من الإجازة السنوية مدفوعة الأجر في كل عام، وتزداد إلى 30 يوماً بعد إتمام خمس سنوات من الخدمة المتصلة.",
+   "final_tier": 2,
+   "path": [
+    "tier2:raw"
+   ],
+   "correct": false,
+   "tokens": 443,
+   "compute_units": 6.202,
+   "latency_ms": 816.8667610007559,
+   "cache_event": "disabled",
+   "tau": 0.55,
+   "complexity": null,
+   "verifier_failed": null
+  },
+  {
+   "task_id": "aro_ar_03",
+   "answer": "يضمن المورد المنتجات ضد عيوب التصنيف لمدة ١٢ شهراً من تاريخ الاستلام.",
+   "final_tier": 2,
+   "path": [
+    "tier2:raw"
+   ],
+   "correct": true,
+   "tokens": 421,
+   "compute_units": 5.894,
+   "latency_ms": 551.5760739996844,
+   "cache_event": "disabled",
+   "tau": 0.55,
+   "complexity": null,
+   "verifier_failed": null
+  },
+  {
+   "task_id": "aro_ar_04",
+   "answer": "لا يمكن إرجاع المنتجات المخفضة بنسبة ٦٠٪ وفقاً لسياسة الإرجاع والاستبدال لمتاجر الواحة.",
+   "final_tier": 2,
+   "path": [
+    "tier2:raw"
+   ],
+   "correct": true,
+   "tokens": 323,
+   "compute_units": 4.522,
+   "latency_ms": 582.7038140008983,
+   "cache_event": "disabled",
+   "tau": 0.55,
+   "complexity": null,
+   "verifier_failed": null
+  },
+  {
+   "task_id": "cache_en_hit",
+   "answer": "The amount of invoice #INV-8841 is SAR 12,400.",
+   "final_tier": 2,
+   "path": [
+    "tier2:raw"
+   ],
+   "correct": true,
+   "tokens": 373,
+   "compute_units": 5.2219999999999995,
+   "latency_ms": 460.09368299980764,
+   "cache_event": "disabled",
+   "tau": 0.55,
+   "complexity": null,
+   "verifier_failed": null
+  },
+  {
+   "task_id": "cache_en_trap",
+   "answer": "The amount of invoice #INV-8842 is SAR 9,850.",
+   "final_tier": 2,
+   "path": [
+    "tier2:raw"
+   ],
+   "correct": true,
+   "tokens": 375,
+   "compute_units": 5.25,
+   "latency_ms": 339.0090470002277,
+   "cache_event": "disabled",
+   "tau": 0.55,
+   "complexity": null,
+   "verifier_failed": null
+  },
+  {
+   "task_id": "cache_ar_hit",
+   "answer": "قيمة أمر الشراء PO-7310 هي ٢٤٠٬٠٠٠ ريال سعودي.",
+   "final_tier": 2,
+   "path": [
+    "tier2:raw"
+   ],
+   "correct": true,
+   "tokens": 423,
+   "compute_units": 5.922,
+   "latency_ms": 489.0516310006403,
+   "cache_event": "disabled",
+   "tau": 0.55,
+   "complexity": null,
+   "verifier_failed": null
+  },
+  {
+   "task_id": "cache_ar_trap",
+   "answer": "غرامة التأخير عن ٨ أيام هي ٢٤٠٠ ريال سعودي، حيث أن ٠٫٥٪ من قيمة أمر الشراء PO-7310 (٢٤٠٬٠٠٠ ريال سعودي) تساوي ١٢٠ ريال سعودي لكل يوم تأخير،所以在8天延迟的情况下，罚款金额是960人民币（原文中单位应为沙特里亚尔，此处翻译时保持一致，即960沙特里亚尔）。但根据精确计算，应该是2400沙特里亚尔。因此，最终答案是：2400沙特里亚尔。",
+   "final_tier": 2,
+   "path": [
+    "tier2:raw"
+   ],
+   "correct": false,
+   "tokens": 543,
+   "compute_units": 7.602,
+   "latency_ms": 2195.0534229993737,
+   "cache_event": "disabled",
+   "tau": 0.55,
+   "complexity": null,
+   "verifier_failed": null
+  }
+ ],
+ "2_Always_Tier1_Raw": [
+  {
+   "task_id": "std_en_01",
+   "answer": "The monthly platform fee under the agreement is SAR 48,000.",
+   "final_tier": 1,
+   "path": [
+    "tier1:raw"
+   ],
+   "correct": true,
+   "tokens": 421,
+   "compute_units": 1.263,
+   "latency_ms": 147.03717400017894,
+   "cache_event": "disabled",
+   "tau": 0.55,
+   "complexity": null,
+   "verifier_failed": null
+  },
+  {
+   "task_id": "std_en_02",
+   "answer": "Either party may terminate this Agreement for convenience with 90 days' written notice.",
+   "final_tier": 1,
+   "path": [
+    "tier1:raw"
+   ],
+   "correct": true,
+   "tokens": 424,
+   "compute_units": 1.272,
+   "latency_ms": 106.46044299749076,
+   "cache_event": "disabled",
+   "tau": 0.55,
+   "complexity": null,
+   "verifier_failed": null
+  },
+  {
+   "task_id": "std_en_03",
+   "answer": "All customer data must be stored in data centres located within the Kingdom of Saudi Arabia (Riyadh and Dammam regions).",
+   "final_tier": 1,
+   "path": [
+    "tier1:raw"
+   ],
+   "correct": true,
+   "tokens": 430,
+   "compute_units": 1.29,
+   "latency_ms": 148.37846400012845,
+   "cache_event": "disabled",
+   "tau": 0.55,
+   "complexity": null,
+   "verifier_failed": null
+  },
+  {
+   "task_id": "std_en_04",
+   "answer": "The amount of invoice #INV-8841 is SAR 12,400.",
+   "final_tier": 1,
+   "path": [
+    "tier1:raw"
+   ],
+   "correct": true,
+   "tokens": 375,
+   "compute_units": 1.125,
+   "latency_ms": 166.9598280012654,
+   "cache_event": "disabled",
+   "tau": 0.55,
+   "complexity": null,
+   "verifier_failed": null
+  },
+  {
+   "task_id": "std_en_05",
+   "answer": "Invoice #INV-9017 from Red Sea Logistics is disputed due to a quantity mismatch against purchase order PO-5520.",
+   "final_tier": 1,
+   "path": [
+    "tier1:raw"
+   ],
+   "correct": true,
+   "tokens": 382,
+   "compute_units": 1.146,
+   "latency_ms": 171.13999299941935,
+   "cache_event": "disabled",
+   "tau": 0.55,
+   "complexity": null,
+   "verifier_failed": null
+  },
+  {
+   "task_id": "std_en_06",
+   "answer": "{\n    \"invoice_id\": \"INV-9017\",\n    \"supplier\": \"Red Sea Logistics\",\n    \"status\": \"disputed\"\n}",
+   "final_tier": 1,
+   "path": [
+    "tier1:raw"
+   ],
+   "correct": true,
+   "tokens": 425,
+   "compute_units": 1.275,
+   "latency_ms": 190.7780330004415,
+   "cache_event": "disabled",
+   "tau": 0.55,
+   "complexity": null,
+   "verifier_failed": null
+  },
+  {
+   "task_id": "std_en_07",
+   "answer": "The minimum password length is 14 characters.",
+   "final_tier": 1,
+   "path": [
+    "tier1:raw"
+   ],
+   "correct": true,
+   "tokens": 278,
+   "compute_units": 0.8340000000000001,
+   "latency_ms": 97.07504299926921,
+   "cache_event": "disabled",
+   "tau": 0.55,
+   "complexity": null,
+   "verifier_failed": null
+  },
+  {
+   "task_id": "std_en_08",
+   "answer": "Privileged access is reviewed monthly.",
+   "final_tier": 1,
+   "path": [
+    "tier1:raw"
+   ],
+   "correct": true,
+   "tokens": 276,
+   "compute_units": 0.8280000000000001,
+   "latency_ms": 72.92740999975358,
+   "cache_event": "disabled",
+   "tau": 0.55,
+   "complexity": null,
+   "verifier_failed": null
+  },
+  {
+   "task_id": "std_en_09",
+   "answer": "Laptop Encryption policy approves BitLocker or FileVault for company laptops.",
+   "final_tier": 1,
+   "path": [
+    "tier1:raw"
+   ],
+   "correct": true,
+   "tokens": 287,
+   "compute_units": 0.861,
+   "latency_ms": 114.28663700029952,
+   "cache_event": "disabled",
+   "tau": 0.55,
+   "complexity": null,
+   "verifier_failed": null
+  },
+  {
+   "task_id": "std_en_10",
+   "answer": "Multi-factor Authentication is mandatory for all remote access and for every privileged account.",
+   "final_tier": 1,
+   "path": [
+    "tier1:raw"
+   ],
+   "correct": true,
+   "tokens": 284,
+   "compute_units": 0.8519999999999999,
+   "latency_ms": 114.05220600102679,
+   "cache_event": "disabled",
+   "tau": 0.55,
+   "complexity": null,
+   "verifier_failed": null
+  },
+  {
+   "task_id": "std_en_11",
+   "answer": "The domestic per diem is SAR 450.",
+   "final_tier": 1,
+   "path": [
+    "tier1:raw"
+   ],
+   "correct": true,
+   "tokens": 291,
+   "compute_units": 0.873,
+   "latency_ms": 105.56747100163484,
+   "cache_event": "disabled",
+   "tau": 0.55,
+   "complexity": null,
+   "verifier_failed": null
+  },
+  {
+   "task_id": "std_en_12",
+   "answer": "The hotel cap per night in Jeddah is SAR 1,200.",
+   "final_tier": 1,
+   "path": [
+    "tier1:raw"
+   ],
+   "correct": true,
+   "tokens": 303,
+   "compute_units": 0.909,
+   "latency_ms": 112.03044699926627,
+   "cache_event": "disabled",
+   "tau": 0.55,
+   "complexity": null,
+   "verifier_failed": null
+  },
+  {
+   "task_id": "std_en_13",
+   "answer": "Business class should be booked for a 4-hour flight.",
+   "final_tier": 1,
+   "path": [
+    "tier1:raw"
+   ],
+   "correct": false,
+   "tokens": 300,
+   "compute_units": 0.8999999999999999,
+   "latency_ms": 87.22489000356524,
+   "cache_event": "disabled",
+   "tau": 0.55,
+   "complexity": null,
+   "verifier_failed": null
+  },
+  {
+   "task_id": "std_ar_01",
+   "answer": "مدة الإجازة السنوية للموظف 21 يوماً مدفوعة الأجر، قد تزيد إلى 30 يوماً بعد خمس سنوات من الخدمة المتصلة.",
+   "final_tier": 1,
+   "path": [
+    "tier1:raw"
+   ],
+   "correct": true,
+   "tokens": 425,
+   "compute_units": 1.275,
+   "latency_ms": 289.6573530020239,
+   "cache_event": "disabled",
+   "tau": 0.55,
+   "complexity": null,
+   "verifier_failed": null
+  },
+  {
+   "task_id": "std_ar_02",
+   "answer": "بدل النقل الشهري يبلغ 800 ريال.",
+   "final_tier": 1,
+   "path": [
+    "tier1:raw"
+   ],
+   "correct": true,
+   "tokens": 395,
+   "compute_units": 1.185,
+   "latency_ms": 98.50959400212275,
+   "cache_event": "disabled",
+   "tau": 0.55,
+   "complexity": null,
+   "verifier_failed": null
+  },
+  {
+   "task_id": "std_ar_03",
+   "answer": "فترة التجربة مدتها 90 يوماً.",
+   "final_tier": 1,
+   "path": [
+    "tier1:raw"
+   ],
+   "correct": true,
+   "tokens": 395,
+   "compute_units": 1.185,
+   "latency_ms": 92.79719099732,
+   "cache_event": "disabled",
+   "tau": 0.55,
+   "complexity": null,
+   "verifier_failed": null
+  },
+  {
+   "task_id": "std_ar_04",
+   "answer": "قيمة أمر الشراء PO-7310 هي 240,000 ريال سعودي.",
+   "final_tier": 1,
+   "path": [
+    "tier1:raw"
+   ],
+   "correct": true,
+   "tokens": 418,
+   "compute_units": 1.254,
+   "latency_ms": 190.81099900004804,
+   "cache_event": "disabled",
+   "tau": 0.55,
+   "complexity": null,
+   "verifier_failed": null
+  },
+  {
+   "task_id": "std_ar_05",
+   "answer": "وفقاً للبند 11، يجب سداد الفواتير خلال 45 يوماً من تاريخ استلام الفاتورة المعتمدة.",
+   "final_tier": 1,
+   "path": [
+    "tier1:raw"
+   ],
+   "correct": true,
+   "tokens": 428,
+   "compute_units": 1.284,
+   "latency_ms": 198.68497499978636,
+   "cache_event": "disabled",
+   "tau": 0.55,
+   "complexity": null,
+   "verifier_failed": null
+  },
+  {
+   "task_id": "std_ar_06",
+   "answer": "العميل لديه 14 يوماً لإرجاع المنتجات.",
+   "final_tier": 1,
+   "path": [
+    "tier1:raw"
+   ],
+   "correct": true,
+   "tokens": 298,
+   "compute_units": 0.8939999999999999,
+   "latency_ms": 144.70636400257936,
+   "cache_event": "disabled",
+   "tau": 0.55,
+   "complexity": null,
+   "verifier_failed": null
+  },
+  {
+   "task_id": "std_ar_07",
+   "answer": "تم استرداد المبلغ خلال 7 أيام عمل.",
+   "final_tier": 1,
+   "path": [
+    "tier1:raw"
+   ],
+   "correct": true,
+   "tokens": 298,
+   "compute_units": 0.8939999999999999,
+   "latency_ms": 84.05731899798731,
+   "cache_event": "disabled",
+   "tau": 0.55,
+   "complexity": null,
+   "verifier_failed": null
+  },
+  {
+   "task_id": "llo_en_01",
+   "answer": "Priority-1 incidents are acknowledged within 15 minutes, 24/7.",
+   "final_tier": 1,
+   "path": [
+    "tier1:raw"
+   ],
+   "correct": true,
+   "tokens": 424,
+   "compute_units": 1.272,
+   "latency_ms": 115.04630199823413,
+   "cache_event": "disabled",
+   "tau": 0.55,
+   "complexity": null,
+   "verifier_failed": null
+  },
+  {
+   "task_id": "llo_en_02",
+   "answer": "No, you are not allowed to copy top-secret files onto a USB stick as per policy [5], which states that restricted data may not be stored on removable media.",
+   "final_tier": 1,
+   "path": [
+    "tier1:raw"
+   ],
+   "correct": true,
+   "tokens": 309,
+   "compute_units": 0.927,
+   "latency_ms": 192.210897997478,
+   "cache_event": "disabled",
+   "tau": 0.55,
+   "complexity": null,
+   "verifier_failed": null
+  },
+  {
+   "task_id": "llo_en_03",
+   "answer": "The deadline for filing expense paperwork is within 30 days of return.",
+   "final_tier": 1,
+   "path": [
+    "tier1:raw"
+   ],
+   "correct": true,
+   "tokens": 305,
+   "compute_units": 0.915,
+   "latency_ms": 99.08688799794763,
+   "cache_event": "disabled",
+   "tau": 0.55,
+   "complexity": null,
+   "verifier_failed": null
+  },
+  {
+   "task_id": "llo_ar_01",
+   "answer": "الحد الأعلى للعقوبة المالية عند التأخر هو 10% من قيمة العقد، أي 24,000 ريال سعودي.",
+   "final_tier": 1,
+   "path": [
+    "tier1:raw"
+   ],
+   "correct": true,
+   "tokens": 425,
+   "compute_units": 1.275,
+   "latency_ms": 191.3358029979025,
+   "cache_event": "disabled",
+   "tau": 0.55,
+   "complexity": null,
+   "verifier_failed": null
+  },
+  {
+   "task_id": "mh_en_01",
+   "answer": "The service credit for a month with 98.7% availability is SAR 4320.",
+   "final_tier": 1,
+   "path": [
+    "tier1:raw"
+   ],
+   "correct": false,
+   "tokens": 434,
+   "compute_units": 1.302,
+   "latency_ms": 136.51320899805054,
+   "cache_event": "disabled",
+   "tau": 0.55,
+   "complexity": null,
+   "verifier_failed": null
+  },
+  {
+   "task_id": "mh_en_02",
+   "answer": "{\n    \"invoice_id\": \"INV-9120\",\n    \"amount_payable\": 4508\n}",
+   "final_tier": 1,
+   "path": [
+    "tier1:raw"
+   ],
+   "correct": true,
+   "tokens": 417,
+   "compute_units": 1.251,
+   "latency_ms": 165.03859399971319,
+   "cache_event": "disabled",
+   "tau": 0.55,
+   "complexity": null,
+   "verifier_failed": null
+  },
+  {
+   "task_id": "mh_en_03",
+   "answer": "The total reimbursable amount for the trip is SAR 3,900.",
+   "final_tier": 1,
+   "path": [
+    "tier1:raw"
+   ],
+   "correct": false,
+   "tokens": 324,
+   "compute_units": 0.972,
+   "latency_ms": 116.65683100021793,
+   "cache_event": "disabled",
+   "tau": 0.55,
+   "complexity": null,
+   "verifier_failed": null
+  },
+  {
+   "task_id": "mh_ar_01",
+   "answer": "٢٥٫٦٠٠٠٠ ريال سعودي.",
+   "final_tier": 1,
+   "path": [
+    "tier1:raw"
+   ],
+   "correct": false,
+   "tokens": 425,
+   "compute_units": 1.275,
+   "latency_ms": 125.70145500098587,
+   "cache_event": "disabled",
+   "tau": 0.55,
+   "complexity": null,
+   "verifier_failed": null
+  },
+  {
+   "task_id": "aro_ar_01",
+   "answer": "بدل السكن يعادل 25% من الراتب الأساسي.",
+   "final_tier": 1,
+   "path": [
+    "tier1:raw"
+   ],
+   "correct": true,
+   "tokens": 407,
+   "compute_units": 1.2209999999999999,
+   "latency_ms": 110.0709520003933,
+   "cache_event": "disabled",
+   "tau": 0.55,
+   "complexity": null,
+   "verifier_failed": null
+  },
+  {
+   "task_id": "aro_ar_02",
+   "answer": "نعم، يستحق الموظف 30 يوماً إجازة سنوية بعد إتمام خمس سنوات من الخدمة المتصلة وفقاً للمرأة 4.",
+   "final_tier": 1,
+   "path": [
+    "tier1:raw"
+   ],
+   "correct": true,
+   "tokens": 430,
+   "compute_units": 1.29,
+   "latency_ms": 241.07694900346686,
+   "cache_event": "disabled",
+   "tau": 0.55,
+   "complexity": null,
+   "verifier_failed": null
+  },
+  {
+   "task_id": "aro_ar_03",
+   "answer": "ضمان المنتجات ضد عيوب التصنيع يمتد لـ 12 شهراً من تاريخ الاستلام.",
+   "final_tier": 1,
+   "path": [
+    "tier1:raw"
+   ],
+   "correct": true,
+   "tokens": 421,
+   "compute_units": 1.263,
+   "latency_ms": 177.1285170004261,
+   "cache_event": "disabled",
+   "tau": 0.55,
+   "complexity": null,
+   "verifier_failed": null
+  },
+  {
+   "task_id": "aro_ar_04",
+   "answer": "لا يمكن ارجاع المنتجات المخفضه بنسبه 60٪، كما ورد في البند الرابع من السياسة.",
+   "final_tier": 1,
+   "path": [
+    "tier1:raw"
+   ],
+   "correct": true,
+   "tokens": 317,
+   "compute_units": 0.9510000000000001,
+   "latency_ms": 177.916353997885,
+   "cache_event": "disabled",
+   "tau": 0.55,
+   "complexity": null,
+   "verifier_failed": null
+  },
+  {
+   "task_id": "cache_en_hit",
+   "answer": "The amount of invoice #INV-8841 is SAR 12,400.",
+   "final_tier": 1,
+   "path": [
+    "tier1:raw"
+   ],
+   "correct": true,
+   "tokens": 373,
+   "compute_units": 1.119,
+   "latency_ms": 132.20662899866585,
+   "cache_event": "disabled",
+   "tau": 0.55,
+   "complexity": null,
+   "verifier_failed": null
+  },
+  {
+   "task_id": "cache_en_trap",
+   "answer": "The amount of invoice #INV-8842 is SAR 9,850.",
+   "final_tier": 1,
+   "path": [
+    "tier1:raw"
+   ],
+   "correct": true,
+   "tokens": 375,
+   "compute_units": 1.125,
+   "latency_ms": 124.36816500136977,
+   "cache_event": "disabled",
+   "tau": 0.55,
+   "complexity": null,
+   "verifier_failed": null
+  },
+  {
+   "task_id": "cache_ar_hit",
+   "answer": "قيمة أمر الشراء PO-7310 هي 240,000 ريال سعودي.",
+   "final_tier": 1,
+   "path": [
+    "tier1:raw"
+   ],
+   "correct": true,
+   "tokens": 419,
+   "compute_units": 1.257,
+   "latency_ms": 146.6171919971076,
+   "cache_event": "disabled",
+   "tau": 0.55,
+   "complexity": null,
+   "verifier_failed": null
+  },
+  {
+   "task_id": "cache_ar_trap",
+   "answer": "٢٥٫٦٠٠٠٠ ريال سعودي.",
+   "final_tier": 1,
+   "path": [
+    "tier1:raw"
+   ],
+   "correct": false,
+   "tokens": 425,
+   "compute_units": 1.275,
+   "latency_ms": 124.15213899996714,
+   "cache_event": "disabled",
+   "tau": 0.55,
+   "complexity": null,
+   "verifier_failed": null
+  }
+ ],
+ "3_Router_Only": [
+  {
+   "task_id": "std_en_01",
+   "answer": "The monthly platform fee under the agreement is SAR 48,000.",
+   "final_tier": 1,
+   "path": [
+    "tier1:raw"
+   ],
+   "correct": true,
+   "tokens": 421,
+   "compute_units": 1.263,
+   "latency_ms": 147.51753500288004,
+   "cache_event": "disabled",
+   "tau": 0.55,
+   "complexity": 0.1386,
+   "verifier_failed": null
+  },
+  {
+   "task_id": "std_en_02",
+   "answer": "Either party may terminate this Agreement for convenience with 90 days' written notice.",
+   "final_tier": 1,
+   "path": [
+    "tier1:raw"
+   ],
+   "correct": true,
+   "tokens": 424,
+   "compute_units": 1.272,
+   "latency_ms": 106.60869399901014,
+   "cache_event": "disabled",
+   "tau": 0.55,
+   "complexity": 0.0802,
+   "verifier_failed": null
+  },
+  {
+   "task_id": "std_en_03",
+   "answer": "All customer data must be stored in data centres located within the Kingdom of Saudi Arabia (Riyadh and Dammam regions).",
+   "final_tier": 1,
+   "path": [
+    "tier1:raw"
+   ],
+   "correct": true,
+   "tokens": 430,
+   "compute_units": 1.29,
+   "latency_ms": 148.39153899782454,
+   "cache_event": "disabled",
+   "tau": 0.55,
+   "complexity": 0.1115,
+   "verifier_failed": null
+  },
+  {
+   "task_id": "std_en_04",
+   "answer": "The amount of invoice #INV-8841 is SAR 12,400.",
+   "final_tier": 1,
+   "path": [
+    "tier1:raw"
+   ],
+   "correct": true,
+   "tokens": 375,
+   "compute_units": 1.125,
+   "latency_ms": 166.98857199923833,
+   "cache_event": "disabled",
+   "tau": 0.55,
+   "complexity": 0.1393,
+   "verifier_failed": null
+  },
+  {
+   "task_id": "std_en_05",
+   "answer": "Invoice #INV-9017 from Red Sea Logistics is disputed due to a quantity mismatch against purchase order PO-5520.",
+   "final_tier": 1,
+   "path": [
+    "tier1:raw"
+   ],
+   "correct": true,
+   "tokens": 382,
+   "compute_units": 1.146,
+   "latency_ms": 171.1747090015386,
+   "cache_event": "disabled",
+   "tau": 0.55,
+   "complexity": 0.1255,
+   "verifier_failed": null
+  },
+  {
+   "task_id": "std_en_06",
+   "answer": "{\n    \"invoice_id\": \"INV-9017\",\n    \"supplier\": \"Red Sea Logistics\",\n    \"status\": \"disputed\"\n}",
+   "final_tier": 1,
+   "path": [
+    "tier1:raw"
+   ],
+   "correct": true,
+   "tokens": 425,
+   "compute_units": 1.275,
+   "latency_ms": 190.82260799788753,
+   "cache_event": "disabled",
+   "tau": 0.55,
+   "complexity": 0.3958,
+   "verifier_failed": null
+  },
+  {
+   "task_id": "std_en_07",
+   "answer": "The minimum password length is 14 characters.",
+   "final_tier": 1,
+   "path": [
+    "tier1:raw"
+   ],
+   "correct": true,
+   "tokens": 278,
+   "compute_units": 0.8340000000000001,
+   "latency_ms": 98.37605200350635,
+   "cache_event": "disabled",
+   "tau": 0.55,
+   "complexity": 0.1002,
+   "verifier_failed": null
+  },
+  {
+   "task_id": "std_en_08",
+   "answer": "Privileged access is reviewed monthly.",
+   "final_tier": 1,
+   "path": [
+    "tier1:raw"
+   ],
+   "correct": true,
+   "tokens": 276,
+   "compute_units": 0.8280000000000001,
+   "latency_ms": 72.97568200221285,
+   "cache_event": "disabled",
+   "tau": 0.55,
+   "complexity": 0.0918,
+   "verifier_failed": null
+  },
+  {
+   "task_id": "std_en_09",
+   "answer": "Laptop Encryption policy approves BitLocker or FileVault for company laptops.",
+   "final_tier": 1,
+   "path": [
+    "tier1:raw"
+   ],
+   "correct": true,
+   "tokens": 287,
+   "compute_units": 0.861,
+   "latency_ms": 113.885145002536,
+   "cache_event": "disabled",
+   "tau": 0.55,
+   "complexity": 0.1101,
+   "verifier_failed": null
+  },
+  {
+   "task_id": "std_en_10",
+   "answer": "Multi-factor Authentication is mandatory for all remote access and for every privileged account.",
+   "final_tier": 1,
+   "path": [
+    "tier1:raw"
+   ],
+   "correct": true,
+   "tokens": 284,
+   "compute_units": 0.8519999999999999,
+   "latency_ms": 114.05952900134493,
+   "cache_event": "disabled",
+   "tau": 0.55,
+   "complexity": 0.0643,
+   "verifier_failed": null
+  },
+  {
+   "task_id": "std_en_11",
+   "answer": "The domestic per diem is SAR 450.",
+   "final_tier": 1,
+   "path": [
+    "tier1:raw"
+   ],
+   "correct": true,
+   "tokens": 291,
+   "compute_units": 0.873,
+   "latency_ms": 105.59267899698462,
+   "cache_event": "disabled",
+   "tau": 0.55,
+   "complexity": 0.1037,
+   "verifier_failed": null
+  },
+  {
+   "task_id": "std_en_12",
+   "answer": "The hotel cap per night in Jeddah is SAR 1,200.",
+   "final_tier": 1,
+   "path": [
+    "tier1:raw"
+   ],
+   "correct": true,
+   "tokens": 303,
+   "compute_units": 0.909,
+   "latency_ms": 112.05566400225158,
+   "cache_event": "disabled",
+   "tau": 0.55,
+   "complexity": 0.1104,
+   "verifier_failed": null
+  },
+  {
+   "task_id": "std_en_13",
+   "answer": "Business class should be booked for a 4-hour flight.",
+   "final_tier": 1,
+   "path": [
+    "tier1:raw"
+   ],
+   "correct": false,
+   "tokens": 300,
+   "compute_units": 0.8999999999999999,
+   "latency_ms": 87.72410699966946,
+   "cache_event": "disabled",
+   "tau": 0.55,
+   "complexity": 0.1221,
+   "verifier_failed": null
+  },
+  {
+   "task_id": "std_ar_01",
+   "answer": "مدة الإجازة السنوية للموظف 21 يوماً مدفوعة الأجر، قد تزيد إلى 30 يوماً بعد خمس سنوات من الخدمة المتصلة.",
+   "final_tier": 1,
+   "path": [
+    "tier1:raw"
+   ],
+   "correct": true,
+   "tokens": 425,
+   "compute_units": 1.275,
+   "latency_ms": 289.6956050031283,
+   "cache_event": "disabled",
+   "tau": 0.55,
+   "complexity": 0.1015,
+   "verifier_failed": null
+  },
+  {
+   "task_id": "std_ar_02",
+   "answer": "بدل النقل الشهري يبلغ 800 ريال.",
+   "final_tier": 1,
+   "path": [
+    "tier1:raw"
+   ],
+   "correct": true,
+   "tokens": 395,
+   "compute_units": 1.185,
+   "latency_ms": 98.55129299906082,
+   "cache_event": "disabled",
+   "tau": 0.55,
+   "complexity": 0.0668,
+   "verifier_failed": null
+  },
+  {
+   "task_id": "std_ar_03",
+   "answer": "فترة التجربة مدتها 90 يوماً.",
+   "final_tier": 1,
+   "path": [
+    "tier1:raw"
+   ],
+   "correct": true,
+   "tokens": 395,
+   "compute_units": 1.185,
+   "latency_ms": 92.83282800106798,
+   "cache_event": "disabled",
+   "tau": 0.55,
+   "complexity": 0.0508,
+   "verifier_failed": null
+  },
+  {
+   "task_id": "std_ar_04",
+   "answer": "قيمة أمر الشراء PO-7310 هي 240,000 ريال سعودي.",
+   "final_tier": 1,
+   "path": [
+    "tier1:raw"
+   ],
+   "correct": true,
+   "tokens": 418,
+   "compute_units": 1.254,
+   "latency_ms": 190.81703100174084,
+   "cache_event": "disabled",
+   "tau": 0.55,
+   "complexity": 0.0997,
+   "verifier_failed": null
+  },
+  {
+   "task_id": "std_ar_05",
+   "answer": "وفقاً للبند 11، يجب سداد الفواتير خلال 45 يوماً من تاريخ استلام الفاتورة المعتمدة.",
+   "final_tier": 1,
+   "path": [
+    "tier1:raw"
+   ],
+   "correct": true,
+   "tokens": 428,
+   "compute_units": 1.284,
+   "latency_ms": 198.6992729986459,
+   "cache_event": "disabled",
+   "tau": 0.55,
+   "complexity": 0.0786,
+   "verifier_failed": null
+  },
+  {
+   "task_id": "std_ar_06",
+   "answer": "العميل لديه 14 يوماً لإرجاع المنتجات.",
+   "final_tier": 1,
+   "path": [
+    "tier1:raw"
+   ],
+   "correct": true,
+   "tokens": 298,
+   "compute_units": 0.8939999999999999,
+   "latency_ms": 144.72217399636284,
+   "cache_event": "disabled",
+   "tau": 0.55,
+   "complexity": 0.1205,
+   "verifier_failed": null
+  },
+  {
+   "task_id": "std_ar_07",
+   "answer": "تم استرداد المبلغ خلال 7 أيام عمل.",
+   "final_tier": 1,
+   "path": [
+    "tier1:raw"
+   ],
+   "correct": true,
+   "tokens": 298,
+   "compute_units": 0.8939999999999999,
+   "latency_ms": 84.07214699942735,
+   "cache_event": "disabled",
+   "tau": 0.55,
+   "complexity": 0.1252,
+   "verifier_failed": null
+  },
+  {
+   "task_id": "llo_en_01",
+   "answer": "Priority-1 incidents are acknowledged within 15 minutes, 24/7.",
+   "final_tier": 1,
+   "path": [
+    "tier1:raw"
+   ],
+   "correct": true,
+   "tokens": 424,
+   "compute_units": 1.272,
+   "latency_ms": 115.11212699741708,
+   "cache_event": "disabled",
+   "tau": 0.55,
+   "complexity": 0.149,
+   "verifier_failed": null
+  },
+  {
+   "task_id": "llo_en_02",
+   "answer": "No, you are not allowed to copy top-secret files onto a USB stick as per policy [5], which states that restricted data may not be stored on removable media.",
+   "final_tier": 1,
+   "path": [
+    "tier1:raw"
+   ],
+   "correct": true,
+   "tokens": 309,
+   "compute_units": 0.927,
+   "latency_ms": 192.23100599764962,
+   "cache_event": "disabled",
+   "tau": 0.55,
+   "complexity": 0.1462,
+   "verifier_failed": null
+  },
+  {
+   "task_id": "llo_en_03",
+   "answer": "The deadline for filing expense paperwork is within 30 days of return.",
+   "final_tier": 1,
+   "path": [
+    "tier1:raw"
+   ],
+   "correct": true,
+   "tokens": 305,
+   "compute_units": 0.915,
+   "latency_ms": 99.12043999964371,
+   "cache_event": "disabled",
+   "tau": 0.55,
+   "complexity": 0.1493,
+   "verifier_failed": null
+  },
+  {
+   "task_id": "llo_ar_01",
+   "answer": "الحد الأعلى للعقوبة المالية عند التأخر هو 10% من قيمة العقد، أي 24,000 ريال سعودي.",
+   "final_tier": 1,
+   "path": [
+    "tier1:raw"
+   ],
+   "correct": true,
+   "tokens": 425,
+   "compute_units": 1.275,
+   "latency_ms": 190.8966190003883,
+   "cache_event": "disabled",
+   "tau": 0.55,
+   "complexity": 0.1331,
+   "verifier_failed": null
+  },
+  {
+   "task_id": "mh_en_01",
+   "answer": "The service credit for a month with 98.7% availability is SAR 4320.",
+   "final_tier": 1,
+   "path": [
+    "tier1:raw"
+   ],
+   "correct": false,
+   "tokens": 434,
+   "compute_units": 1.302,
+   "latency_ms": 136.5361429983494,
+   "cache_event": "disabled",
+   "tau": 0.55,
+   "complexity": 0.4294,
+   "verifier_failed": null
+  },
+  {
+   "task_id": "mh_en_02",
+   "answer": "{\n  \"invoice_id\": \"INV-9120\",\n  \"amount_payable\": 4507.8\n}",
+   "final_tier": 2,
+   "path": [
+    "tier2:raw"
+   ],
+   "correct": true,
+   "tokens": 419,
+   "compute_units": 5.866,
+   "latency_ms": 481.61515999914496,
+   "cache_event": "disabled",
+   "tau": 0.55,
+   "complexity": 0.9875,
+   "verifier_failed": null
+  },
+  {
+   "task_id": "mh_en_03",
+   "answer": "The total reimbursable amount for a 3-night international trip to Dubai is SAR 4,500 (SAR 900 per diem for 4 days plus SAR 1,200 per night hotel cap for 3 nights).",
+   "final_tier": 2,
+   "path": [
+    "tier2:raw"
+   ],
+   "correct": false,
+   "tokens": 354,
+   "compute_units": 4.9559999999999995,
+   "latency_ms": 819.3892420007928,
+   "cache_event": "disabled",
+   "tau": 0.55,
+   "complexity": 0.7421,
+   "verifier_failed": null
+  },
+  {
+   "task_id": "mh_ar_01",
+   "answer": "غرامة التأخير عن ٦ أيام تأخير في تسليم أمر الشراء PO-7310 هي ٧٢٠ ريال سعودي، حيث أن ٠٫٥٪ من قيمة أمر الشراء PO-7310 (٢٤٠٬٠٠٠ ريال سعودي) تساوي ١٢٠ ريال سعودي في اليوم، وبالتالي ٦ أيام تعادل ٧٢٠ ريال سعودي.",
+   "final_tier": 2,
+   "path": [
+    "tier2:raw"
+   ],
+   "correct": false,
+   "tokens": 492,
+   "compute_units": 6.888,
+   "latency_ms": 1639.5548900018982,
+   "cache_event": "disabled",
+   "tau": 0.55,
+   "complexity": 0.7191,
+   "verifier_failed": null
+  },
+  {
+   "task_id": "aro_ar_01",
+   "answer": "بدل السكن يعادل 25% من الراتب الأساسي.",
+   "final_tier": 1,
+   "path": [
+    "tier1:raw"
+   ],
+   "correct": true,
+   "tokens": 407,
+   "compute_units": 1.2209999999999999,
+   "latency_ms": 110.09279300270137,
+   "cache_event": "disabled",
+   "tau": 0.55,
+   "complexity": 0.0706,
+   "verifier_failed": null
+  },
+  {
+   "task_id": "aro_ar_02",
+   "answer": "نعم، يستحق الموظف 30 يوماً إجازة سنوية بعد إتمام خمس سنوات من الخدمة المتصلة وفقاً للمرأة 4.",
+   "final_tier": 1,
+   "path": [
+    "tier1:raw"
+   ],
+   "correct": true,
+   "tokens": 430,
+   "compute_units": 1.29,
+   "latency_ms": 241.07951299636042,
+   "cache_event": "disabled",
+   "tau": 0.55,
+   "complexity": 0.26,
+   "verifier_failed": null
+  },
+  {
+   "task_id": "aro_ar_03",
+   "answer": "ضمان المنتجات ضد عيوب التصنيع يمتد لـ 12 شهراً من تاريخ الاستلام.",
+   "final_tier": 1,
+   "path": [
+    "tier1:raw"
+   ],
+   "correct": true,
+   "tokens": 421,
+   "compute_units": 1.263,
+   "latency_ms": 177.13442900338794,
+   "cache_event": "disabled",
+   "tau": 0.55,
+   "complexity": 0.0636,
+   "verifier_failed": null
+  },
+  {
+   "task_id": "aro_ar_04",
+   "answer": "لا يمكن ارجاع المنتجات المخفضه بنسبه 60٪، كما ورد في البند الرابع من السياسة.",
+   "final_tier": 1,
+   "path": [
+    "tier1:raw"
+   ],
+   "correct": true,
+   "tokens": 317,
+   "compute_units": 0.9510000000000001,
+   "latency_ms": 177.93752400046796,
+   "cache_event": "disabled",
+   "tau": 0.55,
+   "complexity": 0.1208,
+   "verifier_failed": null
+  },
+  {
+   "task_id": "cache_en_hit",
+   "answer": "The amount of invoice #INV-8841 is SAR 12,400.",
+   "final_tier": 1,
+   "path": [
+    "tier1:raw"
+   ],
+   "correct": true,
+   "tokens": 373,
+   "compute_units": 1.119,
+   "latency_ms": 132.2180409962137,
+   "cache_event": "disabled",
+   "tau": 0.55,
+   "complexity": 0.1393,
+   "verifier_failed": null
+  },
+  {
+   "task_id": "cache_en_trap",
+   "answer": "The amount of invoice #INV-8842 is SAR 9,850.",
+   "final_tier": 1,
+   "path": [
+    "tier1:raw"
+   ],
+   "correct": true,
+   "tokens": 375,
+   "compute_units": 1.125,
+   "latency_ms": 124.40187000190257,
+   "cache_event": "disabled",
+   "tau": 0.55,
+   "complexity": 0.1393,
+   "verifier_failed": null
+  },
+  {
+   "task_id": "cache_ar_hit",
+   "answer": "قيمة أمر الشراء PO-7310 هي 240,000 ريال سعودي.",
+   "final_tier": 1,
+   "path": [
+    "tier1:raw"
+   ],
+   "correct": true,
+   "tokens": 419,
+   "compute_units": 1.257,
+   "latency_ms": 146.62796299734154,
+   "cache_event": "disabled",
+   "tau": 0.55,
+   "complexity": 0.0972,
+   "verifier_failed": null
+  },
+  {
+   "task_id": "cache_ar_trap",
+   "answer": "غرامة التأخير عن ٨ أيام هي ٢٤٠٠ ريال سعودي، حيث أن ٠٫٥٪ من قيمة أمر الشراء PO-7310 (٢٤٠٬٠٠٠ ريال سعودي) تساوي ١٢٠ ريال سعودي لكل يوم تأخير،所以在8天延迟的情况下，罚款金额是960人民币（原文中单位应为沙特里亚尔，此处翻译时保持一致，即960沙特里亚尔）。但根据精确计算，应该是2400沙特里亚尔。因此，最终答案是：2400沙特里亚尔。",
+   "final_tier": 2,
+   "path": [
+    "tier2:raw"
+   ],
+   "correct": false,
+   "tokens": 543,
+   "compute_units": 7.602,
+   "latency_ms": 2195.0765970007724,
+   "cache_event": "disabled",
+   "tau": 0.55,
+   "complexity": 0.7182,
+   "verifier_failed": null
+  }
+ ],
+ "4_Pruner_Plus_Router": [
+  {
+   "task_id": "std_en_01",
+   "answer": "The monthly platform fee under the agreement is SAR 48,000.",
+   "final_tier": 1,
+   "path": [
+    "tier1:pruned"
+   ],
+   "correct": true,
+   "tokens": 192,
+   "compute_units": 0.5760000000000001,
+   "latency_ms": 120.89777099876665,
+   "cache_event": "disabled",
+   "tau": 0.55,
+   "complexity": 0.1386,
+   "verifier_failed": null
+  },
+  {
+   "task_id": "std_en_02",
+   "answer": "90 days' written notice is required to terminate for convenience.",
+   "final_tier": 1,
+   "path": [
+    "tier1:pruned"
+   ],
+   "correct": true,
+   "tokens": 147,
+   "compute_units": 0.44099999999999995,
+   "latency_ms": 96.60817199861863,
+   "cache_event": "disabled",
+   "tau": 0.55,
+   "complexity": 0.0802,
+   "verifier_failed": null
+  },
+  {
+   "task_id": "std_en_03",
+   "answer": "Customer data must be stored in data centres located within the Kingdom of Saudi Arabia (Riyadh and Dammam regions).",
+   "final_tier": 1,
+   "path": [
+    "tier1:pruned"
+   ],
+   "correct": true,
+   "tokens": 178,
+   "compute_units": 0.534,
+   "latency_ms": 160.98547699953195,
+   "cache_event": "disabled",
+   "tau": 0.55,
+   "complexity": 0.1115,
+   "verifier_failed": null
+  },
+  {
+   "task_id": "std_en_04",
+   "answer": "The amount of invoice #INV-8841 is SAR 12,400.",
+   "final_tier": 1,
+   "path": [
+    "tier1:pruned"
+   ],
+   "correct": true,
+   "tokens": 198,
+   "compute_units": 0.5940000000000001,
+   "latency_ms": 148.4246529969771,
+   "cache_event": "disabled",
+   "tau": 0.55,
+   "complexity": 0.1393,
+   "verifier_failed": null
+  },
+  {
+   "task_id": "std_en_05",
+   "answer": "Invoice #INV-9017 is disputed due to a quantity mismatch against purchase order PO-5520, amounting to SAR 31,200.",
+   "final_tier": 1,
+   "path": [
+    "tier1:pruned"
+   ],
+   "correct": true,
+   "tokens": 182,
+   "compute_units": 0.546,
+   "latency_ms": 222.8111200003349,
+   "cache_event": "disabled",
+   "tau": 0.55,
+   "complexity": 0.1255,
+   "verifier_failed": null
+  },
+  {
+   "task_id": "std_en_06",
+   "answer": "{\n  \"invoice_id\": \"INV-9017\",\n  \"supplier\": \"Red Sea Logistics\",\n  \"status\": \"disputed\"\n}",
+   "final_tier": 1,
+   "path": [
+    "tier1:pruned"
+   ],
+   "correct": true,
+   "tokens": 220,
+   "compute_units": 0.66,
+   "latency_ms": 189.46360899503227,
+   "cache_event": "disabled",
+   "tau": 0.55,
+   "complexity": 0.3958,
+   "verifier_failed": null
+  },
+  {
+   "task_id": "std_en_07",
+   "answer": "The minimum password length is 14 characters.",
+   "final_tier": 1,
+   "path": [
+    "tier1:pruned"
+   ],
+   "correct": true,
+   "tokens": 137,
+   "compute_units": 0.41100000000000003,
+   "latency_ms": 69.57677399975947,
+   "cache_event": "disabled",
+   "tau": 0.55,
+   "complexity": 0.1002,
+   "verifier_failed": null
+  },
+  {
+   "task_id": "std_en_08",
+   "answer": "Privileged access is reviewed monthly.",
+   "final_tier": 1,
+   "path": [
+    "tier1:pruned"
+   ],
+   "correct": true,
+   "tokens": 119,
+   "compute_units": 0.357,
+   "latency_ms": 60.9299909994402,
+   "cache_event": "disabled",
+   "tau": 0.55,
+   "complexity": 0.0918,
+   "verifier_failed": null
+  },
+  {
+   "task_id": "std_en_09",
+   "answer": "BitLocker and FileVault are approved for company laptops.",
+   "final_tier": 1,
+   "path": [
+    "tier1:pruned"
+   ],
+   "correct": true,
+   "tokens": 133,
+   "compute_units": 0.399,
+   "latency_ms": 79.05506600044086,
+   "cache_event": "disabled",
+   "tau": 0.55,
+   "complexity": 0.1101,
+   "verifier_failed": null
+  },
+  {
+   "task_id": "std_en_10",
+   "answer": "Multi-factor authentication is mandatory for all remote access and every privileged account, as stated in [1].",
+   "final_tier": 1,
+   "path": [
+    "tier1:pruned"
+   ],
+   "correct": true,
+   "tokens": 132,
+   "compute_units": 0.396,
+   "latency_ms": 137.96042699902318,
+   "cache_event": "disabled",
+   "tau": 0.55,
+   "complexity": 0.0643,
+   "verifier_failed": null
+  },
+  {
+   "task_id": "std_en_11",
+   "answer": "The domestic per diem is SAR 450.",
+   "final_tier": 1,
+   "path": [
+    "tier1:pruned"
+   ],
+   "correct": true,
+   "tokens": 137,
+   "compute_units": 0.41100000000000003,
+   "latency_ms": 90.69018399835913,
+   "cache_event": "disabled",
+   "tau": 0.55,
+   "complexity": 0.1037,
+   "verifier_failed": null
+  },
+  {
+   "task_id": "std_en_12",
+   "answer": "The hotel cap per night in Jeddah is SAR 1,200.",
+   "final_tier": 1,
+   "path": [
+    "tier1:pruned"
+   ],
+   "correct": true,
+   "tokens": 164,
+   "compute_units": 0.492,
+   "latency_ms": 117.88198600517237,
+   "cache_event": "disabled",
+   "tau": 0.55,
+   "complexity": 0.1104,
+   "verifier_failed": null
+  },
+  {
+   "task_id": "std_en_13",
+   "answer": "Economy class should be booked for a 4-hour flight.",
+   "final_tier": 1,
+   "path": [
+    "tier1:pruned"
+   ],
+   "correct": true,
+   "tokens": 140,
+   "compute_units": 0.42000000000000004,
+   "latency_ms": 94.42026899847086,
+   "cache_event": "disabled",
+   "tau": 0.55,
+   "complexity": 0.1221,
+   "verifier_failed": null
+  },
+  {
+   "task_id": "std_ar_01",
+   "answer": "مدة الإجازة السنوية للموظف 21 يوماً، قد تزيد إلى 30 يوماً بعد خمس سنوات من الخدمة المتصلة.",
+   "final_tier": 1,
+   "path": [
+    "tier1:pruned"
+   ],
+   "correct": true,
+   "tokens": 212,
+   "compute_units": 0.636,
+   "latency_ms": 213.23119899631595,
+   "cache_event": "disabled",
+   "tau": 0.55,
+   "complexity": 0.1015,
+   "verifier_failed": null
+  },
+  {
+   "task_id": "std_ar_02",
+   "answer": "بدل النقل الشهري يبلغ 800 ريال.",
+   "final_tier": 1,
+   "path": [
+    "tier1:pruned"
+   ],
+   "correct": true,
+   "tokens": 156,
+   "compute_units": 0.46799999999999997,
+   "latency_ms": 107.63869900037069,
+   "cache_event": "disabled",
+   "tau": 0.55,
+   "complexity": 0.0668,
+   "verifier_failed": null
+  },
+  {
+   "task_id": "std_ar_03",
+   "answer": "تبلغ مدة فترة التجربة 90 يوماً، ويجوز تمديدها بموافقة كتابية.",
+   "final_tier": 1,
+   "path": [
+    "tier1:pruned"
+   ],
+   "correct": true,
+   "tokens": 187,
+   "compute_units": 0.5609999999999999,
+   "latency_ms": 173.52259799738647,
+   "cache_event": "disabled",
+   "tau": 0.55,
+   "complexity": 0.0508,
+   "verifier_failed": null
+  },
+  {
+   "task_id": "std_ar_04",
+   "answer": "قيمة أمر الشراء PO-7310 هي 240,000 ريال سعودي.",
+   "final_tier": 1,
+   "path": [
+    "tier1:pruned"
+   ],
+   "correct": true,
+   "tokens": 222,
+   "compute_units": 0.666,
+   "latency_ms": 165.70768200349644,
+   "cache_event": "disabled",
+   "tau": 0.55,
+   "complexity": 0.0997,
+   "verifier_failed": null
+  },
+  {
+   "task_id": "std_ar_05",
+   "answer": "يجب سداد الفواتير خلال 45 يوماً من تاريخ استلام الفاتورة المعتمدة.",
+   "final_tier": 1,
+   "path": [
+    "tier1:pruned"
+   ],
+   "correct": true,
+   "tokens": 170,
+   "compute_units": 0.51,
+   "latency_ms": 161.85832600239547,
+   "cache_event": "disabled",
+   "tau": 0.55,
+   "complexity": 0.0786,
+   "verifier_failed": null
+  },
+  {
+   "task_id": "std_ar_06",
+   "answer": "العميل لديه 14 يوماً لإرجاع المنتجات غير المستخدمة.",
+   "final_tier": 1,
+   "path": [
+    "tier1:pruned"
+   ],
+   "correct": true,
+   "tokens": 158,
+   "compute_units": 0.474,
+   "latency_ms": 137.138505996702,
+   "cache_event": "disabled",
+   "tau": 0.55,
+   "complexity": 0.1205,
+   "verifier_failed": null
+  },
+  {
+   "task_id": "std_ar_07",
+   "answer": "يتم استرداد المبلغ خلال 7 يوم عمل من استلام المنتج المرتجع.",
+   "final_tier": 1,
+   "path": [
+    "tier1:pruned"
+   ],
+   "correct": true,
+   "tokens": 157,
+   "compute_units": 0.471,
+   "latency_ms": 132.26354999686825,
+   "cache_event": "disabled",
+   "tau": 0.55,
+   "complexity": 0.1252,
+   "verifier_failed": null
+  },
+  {
+   "task_id": "llo_en_01",
+   "answer": "The context does not provide information on how fast the vendor must respond to a critical outage.",
+   "final_tier": 1,
+   "path": [
+    "tier1:pruned"
+   ],
+   "correct": false,
+   "tokens": 185,
+   "compute_units": 0.5549999999999999,
+   "latency_ms": 127.2456270032504,
+   "cache_event": "disabled",
+   "tau": 0.55,
+   "complexity": 0.149,
+   "verifier_failed": null
+  },
+  {
+   "task_id": "llo_en_02",
+   "answer": "No, you are not allowed to copy top-secret files onto a USB stick as per the laptop encryption policy, which mandates full-disk encryption on company laptops.",
+   "final_tier": 1,
+   "path": [
+    "tier1:pruned"
+   ],
+   "correct": false,
+   "tokens": 152,
+   "compute_units": 0.45599999999999996,
+   "latency_ms": 194.92423500266042,
+   "cache_event": "disabled",
+   "tau": 0.55,
+   "complexity": 0.1462,
+   "verifier_failed": null
+  },
+  {
+   "task_id": "llo_en_03",
+   "answer": "The deadline for filing your expense paperwork after a trip is not specified in the provided policy details.",
+   "final_tier": 1,
+   "path": [
+    "tier1:pruned"
+   ],
+   "correct": false,
+   "tokens": 154,
+   "compute_units": 0.46199999999999997,
+   "latency_ms": 124.25889900300535,
+   "cache_event": "disabled",
+   "tau": 0.55,
+   "complexity": 0.1493,
+   "verifier_failed": null
+  },
+  {
+   "task_id": "llo_ar_01",
+   "answer": "الحد الأعلى للعقوبة المالية عند التأخر هو 10% من قيمة العقد.",
+   "final_tier": 1,
+   "path": [
+    "tier1:pruned"
+   ],
+   "correct": true,
+   "tokens": 191,
+   "compute_units": 0.573,
+   "latency_ms": 146.8377339977422,
+   "cache_event": "disabled",
+   "tau": 0.55,
+   "complexity": 0.1331,
+   "verifier_failed": null
+  },
+  {
+   "task_id": "mh_en_01",
+   "answer": "The service credit for a month with 98.7% availability is SAR 4800.",
+   "final_tier": 1,
+   "path": [
+    "tier1:pruned"
+   ],
+   "correct": false,
+   "tokens": 205,
+   "compute_units": 0.615,
+   "latency_ms": 154.65865699788554,
+   "cache_event": "disabled",
+   "tau": 0.55,
+   "complexity": 0.4294,
+   "verifier_failed": null
+  },
+  {
+   "task_id": "mh_en_02",
+   "answer": "{\n  \"invoice_id\": \"INV-9120\",\n  \"amount_payable\": 4508\n}",
+   "final_tier": 2,
+   "path": [
+    "tier2:pruned"
+   ],
+   "correct": true,
+   "tokens": 211,
+   "compute_units": 2.9539999999999997,
+   "latency_ms": 503.1230909996515,
+   "cache_event": "disabled",
+   "tau": 0.55,
+   "complexity": 0.9875,
+   "verifier_failed": null
+  },
+  {
+   "task_id": "mh_en_03",
+   "answer": "The total reimbursable amount for a 3-night international trip to Dubai is SAR 4,500, calculated as (SAR 900 per diem × 4 days) + (SAR 1,200 hotel cap × 3 nights).",
+   "final_tier": 2,
+   "path": [
+    "tier2:pruned"
+   ],
+   "correct": false,
+   "tokens": 218,
+   "compute_units": 3.052,
+   "latency_ms": 895.6366190001357,
+   "cache_event": "disabled",
+   "tau": 0.55,
+   "complexity": 0.7421,
+   "verifier_failed": null
+  },
+  {
+   "task_id": "mh_ar_01",
+   "answer": "غرامة التأخير لمدة 6 أيام على أمر الشراء PO-7310 تبلغ 720 ريال سعودي، حيث أن الغرامة تقدر بـ 0.5٪ من قيمة العقد يومياً، والقيمة الإجمالية لأمر الشراء PO-7310 هي 240,000 ريال سعودي.",
+   "final_tier": 2,
+   "path": [
+    "tier2:pruned"
+   ],
+   "correct": false,
+   "tokens": 280,
+   "compute_units": 3.9200000000000004,
+   "latency_ms": 1221.1531969995913,
+   "cache_event": "disabled",
+   "tau": 0.55,
+   "complexity": 0.7191,
+   "verifier_failed": null
+  },
+  {
+   "task_id": "aro_ar_01",
+   "answer": "بدل السكن يعادل 25% من الراتب الأساسي.",
+   "final_tier": 1,
+   "path": [
+    "tier1:pruned"
+   ],
+   "correct": true,
+   "tokens": 168,
+   "compute_units": 0.504,
+   "latency_ms": 122.22227200048044,
+   "cache_event": "disabled",
+   "tau": 0.55,
+   "complexity": 0.0706,
+   "verifier_failed": null
+  },
+  {
+   "task_id": "aro_ar_02",
+   "answer": "نعم، يستحق الموظف 30 يوماً إجازة سنوية بعد إتمام خمس سنوات من الخدمة المتصلة.",
+   "final_tier": 1,
+   "path": [
+    "tier1:pruned"
+   ],
+   "correct": true,
+   "tokens": 216,
+   "compute_units": 0.648,
+   "latency_ms": 204.66109599735472,
+   "cache_event": "disabled",
+   "tau": 0.55,
+   "complexity": 0.26,
+   "verifier_failed": null
+  },
+  {
+   "task_id": "aro_ar_03",
+   "answer": "مدة الضمان على المنتجات ضد عيوب التصنيع هي 12 شهراً.",
+   "final_tier": 1,
+   "path": [
+    "tier1:pruned"
+   ],
+   "correct": true,
+   "tokens": 163,
+   "compute_units": 0.489,
+   "latency_ms": 162.36399200189626,
+   "cache_event": "disabled",
+   "tau": 0.55,
+   "complexity": 0.0636,
+   "verifier_failed": null
+  },
+  {
+   "task_id": "aro_ar_04",
+   "answer": "لا، لا تشمل سياسة الإرجاع المنتجات المخفضة بنسبة 60٪ أو أكثر، وفقًا للنقطة [2] من السياسات.",
+   "final_tier": 1,
+   "path": [
+    "tier1:pruned"
+   ],
+   "correct": true,
+   "tokens": 181,
+   "compute_units": 0.5429999999999999,
+   "latency_ms": 237.52544999966398,
+   "cache_event": "disabled",
+   "tau": 0.55,
+   "complexity": 0.1208,
+   "verifier_failed": null
+  },
+  {
+   "task_id": "cache_en_hit",
+   "answer": "SAR 12,400",
+   "final_tier": 1,
+   "path": [
+    "tier1:pruned"
+   ],
+   "correct": true,
+   "tokens": 185,
+   "compute_units": 0.5549999999999999,
+   "latency_ms": 90.44094799619168,
+   "cache_event": "disabled",
+   "tau": 0.55,
+   "complexity": 0.1393,
+   "verifier_failed": null
+  },
+  {
+   "task_id": "cache_en_trap",
+   "answer": "The amount of invoice #INV-8842 is SAR 9,850.",
+   "final_tier": 1,
+   "path": [
+    "tier1:pruned"
+   ],
+   "correct": true,
+   "tokens": 198,
+   "compute_units": 0.5940000000000001,
+   "latency_ms": 130.43535899895943,
+   "cache_event": "disabled",
+   "tau": 0.55,
+   "complexity": 0.1393,
+   "verifier_failed": null
+  },
+  {
+   "task_id": "cache_ar_hit",
+   "answer": "قيمة أمر الشراء PO-7310 هي 240,000 ريال سعودي.",
+   "final_tier": 1,
+   "path": [
+    "tier1:pruned"
+   ],
+   "correct": true,
+   "tokens": 223,
+   "compute_units": 0.669,
+   "latency_ms": 148.24908500093733,
+   "cache_event": "disabled",
+   "tau": 0.55,
+   "complexity": 0.0972,
+   "verifier_failed": null
+  },
+  {
+   "task_id": "cache_ar_trap",
+   "answer": "غرامة التأخير إذا تأخر المورد 8 أيام في تسليم أمر الشراء PO-7310 هي ٩٦٠ ريال سعودي.",
+   "final_tier": 2,
+   "path": [
+    "tier2:pruned"
+   ],
+   "correct": false,
+   "tokens": 248,
+   "compute_units": 3.472,
+   "latency_ms": 647.6804739986779,
+   "cache_event": "disabled",
+   "tau": 0.55,
+   "complexity": 0.7182,
+   "verifier_failed": null
+  }
+ ],
+ "5_OptiRoute_Full": [
+  {
+   "task_id": "std_en_01",
+   "answer": "The monthly platform fee under the agreement is SAR 48,000.",
+   "final_tier": 1,
+   "path": [
+    "tier1:pruned"
+   ],
+   "correct": true,
+   "tokens": 192,
+   "compute_units": 0.5760000000000001,
+   "latency_ms": 121.05546000142931,
+   "cache_event": "miss",
+   "tau": 0.55,
+   "complexity": 0.1386,
+   "verifier_failed": []
+  },
+  {
+   "task_id": "std_en_02",
+   "answer": "90 days' written notice is required to terminate for convenience.",
+   "final_tier": 1,
+   "path": [
+    "tier1:pruned"
+   ],
+   "correct": true,
+   "tokens": 147,
+   "compute_units": 0.44099999999999995,
+   "latency_ms": 96.86952799771912,
+   "cache_event": "miss",
+   "tau": 0.55,
+   "complexity": 0.0802,
+   "verifier_failed": []
+  },
+  {
+   "task_id": "std_en_03",
+   "answer": "Customer data must be stored in data centres located within the Kingdom of Saudi Arabia (Riyadh and Dammam regions).",
+   "final_tier": 1,
+   "path": [
+    "tier1:pruned"
+   ],
+   "correct": true,
+   "tokens": 178,
+   "compute_units": 0.534,
+   "latency_ms": 160.73823699848725,
+   "cache_event": "miss",
+   "tau": 0.55,
+   "complexity": 0.1115,
+   "verifier_failed": []
+  },
+  {
+   "task_id": "std_en_04",
+   "answer": "The amount of invoice #INV-8841 is SAR 12,400.",
+   "final_tier": 1,
+   "path": [
+    "tier1:pruned"
+   ],
+   "correct": true,
+   "tokens": 198,
+   "compute_units": 0.5940000000000001,
+   "latency_ms": 148.5814000068733,
+   "cache_event": "miss",
+   "tau": 0.55,
+   "complexity": 0.1393,
+   "verifier_failed": []
+  },
+  {
+   "task_id": "std_en_05",
+   "answer": "Invoice #INV-9017 is disputed due to a quantity mismatch against purchase order PO-5520, amounting to SAR 31,200.",
+   "final_tier": 1,
+   "path": [
+    "tier1:pruned"
+   ],
+   "correct": true,
+   "tokens": 182,
+   "compute_units": 0.546,
+   "latency_ms": 223.05606599380727,
+   "cache_event": "miss",
+   "tau": 0.55,
+   "complexity": 0.1255,
+   "verifier_failed": []
+  },
+  {
+   "task_id": "std_en_06",
+   "answer": "{\n  \"invoice_id\": \"INV-9017\",\n  \"supplier\": \"Red Sea Logistics\",\n  \"status\": \"disputed\"\n}",
+   "final_tier": 1,
+   "path": [
+    "tier1:pruned"
+   ],
+   "correct": true,
+   "tokens": 220,
+   "compute_units": 0.66,
+   "latency_ms": 189.72185000024504,
+   "cache_event": "miss",
+   "tau": 0.55,
+   "complexity": 0.3958,
+   "verifier_failed": []
+  },
+  {
+   "task_id": "std_en_07",
+   "answer": "The minimum password length is 14 characters.",
+   "final_tier": 1,
+   "path": [
+    "tier1:pruned"
+   ],
+   "correct": true,
+   "tokens": 137,
+   "compute_units": 0.41100000000000003,
+   "latency_ms": 69.76125199423987,
+   "cache_event": "miss",
+   "tau": 0.55,
+   "complexity": 0.1002,
+   "verifier_failed": []
+  },
+  {
+   "task_id": "std_en_08",
+   "answer": "Privileged access is reviewed monthly.",
+   "final_tier": 1,
+   "path": [
+    "tier1:pruned"
+   ],
+   "correct": true,
+   "tokens": 119,
+   "compute_units": 0.357,
+   "latency_ms": 61.07364299548092,
+   "cache_event": "miss",
+   "tau": 0.55,
+   "complexity": 0.0918,
+   "verifier_failed": []
+  },
+  {
+   "task_id": "std_en_09",
+   "answer": "BitLocker and FileVault are approved for company laptops.",
+   "final_tier": 1,
+   "path": [
+    "tier1:pruned"
+   ],
+   "correct": true,
+   "tokens": 133,
+   "compute_units": 0.399,
+   "latency_ms": 79.2533819968265,
+   "cache_event": "miss",
+   "tau": 0.55,
+   "complexity": 0.1101,
+   "verifier_failed": []
+  },
+  {
+   "task_id": "std_en_10",
+   "answer": "Multi-factor authentication is mandatory for all remote access and every privileged account, as stated in [1].",
+   "final_tier": 1,
+   "path": [
+    "tier1:pruned"
+   ],
+   "correct": true,
+   "tokens": 132,
+   "compute_units": 0.396,
+   "latency_ms": 138.21796500121127,
+   "cache_event": "miss",
+   "tau": 0.55,
+   "complexity": 0.0643,
+   "verifier_failed": []
+  },
+  {
+   "task_id": "std_en_11",
+   "answer": "The domestic per diem is SAR 450.",
+   "final_tier": 1,
+   "path": [
+    "tier1:pruned"
+   ],
+   "correct": true,
+   "tokens": 137,
+   "compute_units": 0.41100000000000003,
+   "latency_ms": 90.84390599977341,
+   "cache_event": "miss",
+   "tau": 0.55,
+   "complexity": 0.1037,
+   "verifier_failed": []
+  },
+  {
+   "task_id": "std_en_12",
+   "answer": "The hotel cap per night in Jeddah is SAR 1,200.",
+   "final_tier": 1,
+   "path": [
+    "tier1:pruned"
+   ],
+   "correct": true,
+   "tokens": 164,
+   "compute_units": 0.492,
+   "latency_ms": 118.07442000100738,
+   "cache_event": "miss",
+   "tau": 0.55,
+   "complexity": 0.1104,
+   "verifier_failed": []
+  },
+  {
+   "task_id": "std_en_13",
+   "answer": "Economy class should be booked for a 4-hour flight.",
+   "final_tier": 1,
+   "path": [
+    "tier1:pruned"
+   ],
+   "correct": true,
+   "tokens": 140,
+   "compute_units": 0.42000000000000004,
+   "latency_ms": 94.68365900243633,
+   "cache_event": "miss",
+   "tau": 0.55,
+   "complexity": 0.1221,
+   "verifier_failed": []
+  },
+  {
+   "task_id": "std_ar_01",
+   "answer": "مدة الإجازة السنوية للموظف 21 يوماً، قد تزيد إلى 30 يوماً بعد خمس سنوات من الخدمة المتصلة.",
+   "final_tier": 1,
+   "path": [
+    "tier1:pruned"
+   ],
+   "correct": true,
+   "tokens": 212,
+   "compute_units": 0.636,
+   "latency_ms": 213.70573900009506,
+   "cache_event": "miss",
+   "tau": 0.55,
+   "complexity": 0.1015,
+   "verifier_failed": []
+  },
+  {
+   "task_id": "std_ar_02",
+   "answer": "بدل النقل الشهري يبلغ 800 ريال.",
+   "final_tier": 1,
+   "path": [
+    "tier1:pruned"
+   ],
+   "correct": true,
+   "tokens": 156,
+   "compute_units": 0.46799999999999997,
+   "latency_ms": 107.84442900475231,
+   "cache_event": "miss",
+   "tau": 0.55,
+   "complexity": 0.0668,
+   "verifier_failed": []
+  },
+  {
+   "task_id": "std_ar_03",
+   "answer": "تبلغ مدة فترة التجربة 90 يوماً، ويجوز تمديدها بموافقة كتابية.",
+   "final_tier": 1,
+   "path": [
+    "tier1:pruned"
+   ],
+   "correct": true,
+   "tokens": 187,
+   "compute_units": 0.5609999999999999,
+   "latency_ms": 173.75510799686424,
+   "cache_event": "miss",
+   "tau": 0.55,
+   "complexity": 0.0508,
+   "verifier_failed": []
+  },
+  {
+   "task_id": "std_ar_04",
+   "answer": "قيمة أمر الشراء PO-7310 هي 240,000 ريال سعودي.",
+   "final_tier": 1,
+   "path": [
+    "tier1:pruned"
+   ],
+   "correct": true,
+   "tokens": 222,
+   "compute_units": 0.666,
+   "latency_ms": 165.96983000149717,
+   "cache_event": "miss",
+   "tau": 0.55,
+   "complexity": 0.0997,
+   "verifier_failed": []
+  },
+  {
+   "task_id": "std_ar_05",
+   "answer": "يجب سداد الفواتير خلال 45 يوماً من تاريخ استلام الفاتورة المعتمدة.",
+   "final_tier": 1,
+   "path": [
+    "tier1:pruned"
+   ],
+   "correct": true,
+   "tokens": 170,
+   "compute_units": 0.51,
+   "latency_ms": 162.07643799861427,
+   "cache_event": "miss",
+   "tau": 0.55,
+   "complexity": 0.0786,
+   "verifier_failed": []
+  },
+  {
+   "task_id": "std_ar_06",
+   "answer": "العميل لديه 14 يوماً لإرجاع المنتجات غير المستخدمة.",
+   "final_tier": 1,
+   "path": [
+    "tier1:pruned"
+   ],
+   "correct": true,
+   "tokens": 158,
+   "compute_units": 0.474,
+   "latency_ms": 137.8296570030239,
+   "cache_event": "miss",
+   "tau": 0.55,
+   "complexity": 0.1205,
+   "verifier_failed": []
+  },
+  {
+   "task_id": "std_ar_07",
+   "answer": "يتم استرداد المبلغ خلال 7 يوم عمل من استلام المنتج المرتجع.",
+   "final_tier": 1,
+   "path": [
+    "tier1:pruned"
+   ],
+   "correct": true,
+   "tokens": 157,
+   "compute_units": 0.471,
+   "latency_ms": 132.5438520002435,
+   "cache_event": "miss",
+   "tau": 0.55,
+   "complexity": 0.1252,
+   "verifier_failed": []
+  },
+  {
+   "task_id": "llo_en_01",
+   "answer": "The vendor must acknowledge a Priority-1 incident, which represents a critical outage, within 15 minutes, 24/7.",
+   "final_tier": 2,
+   "path": [
+    "tier1:pruned",
+    "escalate:degenerate_or_refusal",
+    "tier2:raw"
+   ],
+   "correct": true,
+   "tokens": 619,
+   "compute_units": 6.630999999999999,
+   "latency_ms": 586.2843310002319,
+   "cache_event": "miss",
+   "tau": 0.55,
+   "complexity": 0.149,
+   "verifier_failed": [
+    "degenerate_or_refusal"
+   ]
+  },
+  {
+   "task_id": "llo_en_02",
+   "answer": "No, you are not allowed to copy top-secret files onto a USB stick as per the laptop encryption policy, which mandates full-disk encryption on company laptops.",
+   "final_tier": 1,
+   "path": [
+    "tier1:pruned"
+   ],
+   "correct": false,
+   "tokens": 152,
+   "compute_units": 0.45599999999999996,
+   "latency_ms": 195.38888799867593,
+   "cache_event": "miss",
+   "tau": 0.55,
+   "complexity": 0.1462,
+   "verifier_failed": []
+  },
+  {
+   "task_id": "llo_en_03",
+   "answer": "Claims must be submitted within 30 days of return.",
+   "final_tier": 2,
+   "path": [
+    "tier1:pruned",
+    "escalate:degenerate_or_refusal",
+    "tier2:raw"
+   ],
+   "correct": true,
+   "tokens": 456,
+   "compute_units": 4.6899999999999995,
+   "latency_ms": 352.5622110016819,
+   "cache_event": "miss",
+   "tau": 0.55,
+   "complexity": 0.1493,
+   "verifier_failed": [
+    "degenerate_or_refusal"
+   ]
+  },
+  {
+   "task_id": "llo_ar_01",
+   "answer": "الحد الأعلى للعقوبة المالية عند التأخر هو 10% من قيمة العقد.",
+   "final_tier": 1,
+   "path": [
+    "tier1:pruned"
+   ],
+   "correct": true,
+   "tokens": 191,
+   "compute_units": 0.573,
+   "latency_ms": 147.1630299991346,
+   "cache_event": "miss",
+   "tau": 0.55,
+   "complexity": 0.1331,
+   "verifier_failed": []
+  },
+  {
+   "task_id": "mh_en_01",
+   "answer": "The service credit for a month with 98.7% availability is SAR 4800.",
+   "final_tier": 1,
+   "path": [
+    "tier1:pruned"
+   ],
+   "correct": false,
+   "tokens": 205,
+   "compute_units": 0.615,
+   "latency_ms": 155.37975500173633,
+   "cache_event": "miss",
+   "tau": 0.55,
+   "complexity": 0.4294,
+   "verifier_failed": []
+  },
+  {
+   "task_id": "mh_en_02",
+   "answer": "{\n  \"invoice_id\": \"INV-9120\",\n  \"amount_payable\": 4508\n}",
+   "final_tier": 2,
+   "path": [
+    "tier2:pruned"
+   ],
+   "correct": true,
+   "tokens": 211,
+   "compute_units": 2.9539999999999997,
+   "latency_ms": 503.4176209998981,
+   "cache_event": "miss",
+   "tau": 0.55,
+   "complexity": 0.9875,
+   "verifier_failed": null
+  },
+  {
+   "task_id": "mh_en_03",
+   "answer": "The total reimbursable amount for a 3-night international trip to Dubai is SAR 4,500, calculated as (SAR 900 per diem × 4 days) + (SAR 1,200 hotel cap × 3 nights).",
+   "final_tier": 2,
+   "path": [
+    "tier2:pruned"
+   ],
+   "correct": false,
+   "tokens": 218,
+   "compute_units": 3.052,
+   "latency_ms": 895.9659830003442,
+   "cache_event": "miss",
+   "tau": 0.55,
+   "complexity": 0.7421,
+   "verifier_failed": null
+  },
+  {
+   "task_id": "mh_ar_01",
+   "answer": "غرامة التأخير لمدة 6 أيام على أمر الشراء PO-7310 تبلغ 720 ريال سعودي، حيث أن الغرامة تقدر بـ 0.5٪ من قيمة العقد يومياً، والقيمة الإجمالية لأمر الشراء PO-7310 هي 240,000 ريال سعودي.",
+   "final_tier": 2,
+   "path": [
+    "tier2:pruned"
+   ],
+   "correct": false,
+   "tokens": 280,
+   "compute_units": 3.9200000000000004,
+   "latency_ms": 1221.4448589992453,
+   "cache_event": "miss",
+   "tau": 0.55,
+   "complexity": 0.7191,
+   "verifier_failed": null
+  },
+  {
+   "task_id": "aro_ar_01",
+   "answer": "بدل السكن يعادل 25% من الراتب الأساسي.",
+   "final_tier": 1,
+   "path": [
+    "tier1:pruned"
+   ],
+   "correct": true,
+   "tokens": 168,
+   "compute_units": 0.504,
+   "latency_ms": 122.98209499725024,
+   "cache_event": "miss",
+   "tau": 0.55,
+   "complexity": 0.0706,
+   "verifier_failed": []
+  },
+  {
+   "task_id": "aro_ar_02",
+   "answer": "نعم، يستحق الموظف 30 يوماً إجازة سنوية بعد إتمام خمس سنوات من الخدمة المتصلة.",
+   "final_tier": 1,
+   "path": [
+    "tier1:pruned"
+   ],
+   "correct": true,
+   "tokens": 216,
+   "compute_units": 0.648,
+   "latency_ms": 205.13728999728454,
+   "cache_event": "miss",
+   "tau": 0.55,
+   "complexity": 0.26,
+   "verifier_failed": []
+  },
+  {
+   "task_id": "aro_ar_03",
+   "answer": "مدة الضمان على المنتجات ضد عيوب التصنيع هي 12 شهراً.",
+   "final_tier": 1,
+   "path": [
+    "tier1:pruned"
+   ],
+   "correct": true,
+   "tokens": 163,
+   "compute_units": 0.489,
+   "latency_ms": 162.2621399930853,
+   "cache_event": "miss",
+   "tau": 0.55,
+   "complexity": 0.0636,
+   "verifier_failed": []
+  },
+  {
+   "task_id": "aro_ar_04",
+   "answer": "لا، لا تشمل سياسة الإرجاع المنتجات المخفضة بنسبة 60٪ أو أكثر، وفقًا للنقطة [2] من السياسات.",
+   "final_tier": 1,
+   "path": [
+    "tier1:pruned"
+   ],
+   "correct": true,
+   "tokens": 181,
+   "compute_units": 0.5429999999999999,
+   "latency_ms": 237.92760299998685,
+   "cache_event": "miss",
+   "tau": 0.55,
+   "complexity": 0.1208,
+   "verifier_failed": []
+  },
+  {
+   "task_id": "cache_en_hit",
+   "answer": "The amount of invoice #INV-8841 is SAR 12,400.",
+   "final_tier": 0,
+   "path": [
+    "cache_hit:std_en_04"
+   ],
+   "correct": true,
+   "tokens": 0,
+   "compute_units": 0.0,
+   "latency_ms": 1.610295999853406,
+   "cache_event": "hit",
+   "tau": 0.55,
+   "complexity": null,
+   "verifier_failed": null
+  },
+  {
+   "task_id": "cache_en_trap",
+   "answer": "The amount of invoice #INV-8842 is SAR 9,850.",
+   "final_tier": 1,
+   "path": [
+    "tier1:pruned"
+   ],
+   "correct": true,
+   "tokens": 198,
+   "compute_units": 0.5940000000000001,
+   "latency_ms": 130.74551799990587,
+   "cache_event": "blocked_trap",
+   "tau": 0.55,
+   "complexity": 0.1393,
+   "verifier_failed": []
+  },
+  {
+   "task_id": "cache_ar_hit",
+   "answer": "قيمة أمر الشراء PO-7310 هي 240,000 ريال سعودي.",
+   "final_tier": 0,
+   "path": [
+    "cache_hit:std_ar_04"
+   ],
+   "correct": true,
+   "tokens": 0,
+   "compute_units": 0.0,
+   "latency_ms": 1.5414449990203138,
+   "cache_event": "hit",
+   "tau": 0.55,
+   "complexity": null,
+   "verifier_failed": null
+  },
+  {
+   "task_id": "cache_ar_trap",
+   "answer": "غرامة التأخير إذا تأخر المورد 8 أيام في تسليم أمر الشراء PO-7310 هي ٩٦٠ ريال سعودي.",
+   "final_tier": 2,
+   "path": [
+    "tier2:pruned"
+   ],
+   "correct": false,
+   "tokens": 248,
+   "compute_units": 3.472,
+   "latency_ms": 648.0022259975318,
+   "cache_event": "blocked_trap",
+   "tau": 0.55,
+   "complexity": 0.7182,
+   "verifier_failed": null
+  }
+ ],
+ "Full_OptiRoute": [
+  {
+   "task_id": "std_en_01",
+   "answer": "The monthly platform fee under the agreement is SAR 48,000.",
+   "final_tier": 1,
+   "path": [
+    "tier1:pruned"
+   ],
+   "correct": true,
+   "tokens": 192,
+   "compute_units": 0.5760000000000001,
+   "latency_ms": 121.02819000332966,
+   "cache_event": "miss",
+   "tau": 0.55,
+   "complexity": 0.1386,
+   "verifier_failed": []
+  },
+  {
+   "task_id": "std_en_02",
+   "answer": "90 days' written notice is required to terminate for convenience.",
+   "final_tier": 1,
+   "path": [
+    "tier1:pruned"
+   ],
+   "correct": true,
+   "tokens": 147,
+   "compute_units": 0.44099999999999995,
+   "latency_ms": 96.81043599872733,
+   "cache_event": "miss",
+   "tau": 0.55,
+   "complexity": 0.0802,
+   "verifier_failed": []
+  },
+  {
+   "task_id": "std_en_03",
+   "answer": "Customer data must be stored in data centres located within the Kingdom of Saudi Arabia (Riyadh and Dammam regions).",
+   "final_tier": 1,
+   "path": [
+    "tier1:pruned"
+   ],
+   "correct": true,
+   "tokens": 178,
+   "compute_units": 0.534,
+   "latency_ms": 160.75539000671705,
+   "cache_event": "miss",
+   "tau": 0.55,
+   "complexity": 0.1115,
+   "verifier_failed": []
+  },
+  {
+   "task_id": "std_en_04",
+   "answer": "The amount of invoice #INV-8841 is SAR 12,400.",
+   "final_tier": 1,
+   "path": [
+    "tier1:pruned"
+   ],
+   "correct": true,
+   "tokens": 198,
+   "compute_units": 0.5940000000000001,
+   "latency_ms": 148.59060700000032,
+   "cache_event": "miss",
+   "tau": 0.55,
+   "complexity": 0.1393,
+   "verifier_failed": []
+  },
+  {
+   "task_id": "std_en_05",
+   "answer": "Invoice #INV-9017 is disputed due to a quantity mismatch against purchase order PO-5520, amounting to SAR 31,200.",
+   "final_tier": 1,
+   "path": [
+    "tier1:pruned"
+   ],
+   "correct": true,
+   "tokens": 182,
+   "compute_units": 0.546,
+   "latency_ms": 223.045815006264,
+   "cache_event": "miss",
+   "tau": 0.55,
+   "complexity": 0.1255,
+   "verifier_failed": []
+  },
+  {
+   "task_id": "std_en_06",
+   "answer": "{\n  \"invoice_id\": \"INV-9017\",\n  \"supplier\": \"Red Sea Logistics\",\n  \"status\": \"disputed\"\n}",
+   "final_tier": 1,
+   "path": [
+    "tier1:pruned"
+   ],
+   "correct": true,
+   "tokens": 220,
+   "compute_units": 0.66,
+   "latency_ms": 189.6761640004511,
+   "cache_event": "miss",
+   "tau": 0.55,
+   "complexity": 0.3958,
+   "verifier_failed": []
+  },
+  {
+   "task_id": "std_en_07",
+   "answer": "The minimum password length is 14 characters.",
+   "final_tier": 1,
+   "path": [
+    "tier1:pruned"
+   ],
+   "correct": true,
+   "tokens": 137,
+   "compute_units": 0.41100000000000003,
+   "latency_ms": 69.75198599673459,
+   "cache_event": "miss",
+   "tau": 0.55,
+   "complexity": 0.1002,
+   "verifier_failed": []
+  },
+  {
+   "task_id": "std_en_08",
+   "answer": "Privileged access is reviewed monthly.",
+   "final_tier": 1,
+   "path": [
+    "tier1:pruned"
+   ],
+   "correct": true,
+   "tokens": 119,
+   "compute_units": 0.357,
+   "latency_ms": 61.063294004426574,
+   "cache_event": "miss",
+   "tau": 0.55,
+   "complexity": 0.0918,
+   "verifier_failed": []
+  },
+  {
+   "task_id": "std_en_09",
+   "answer": "BitLocker and FileVault are approved for company laptops.",
+   "final_tier": 1,
+   "path": [
+    "tier1:pruned"
+   ],
+   "correct": true,
+   "tokens": 133,
+   "compute_units": 0.399,
+   "latency_ms": 79.24420599927893,
+   "cache_event": "miss",
+   "tau": 0.55,
+   "complexity": 0.1101,
+   "verifier_failed": []
+  },
+  {
+   "task_id": "std_en_10",
+   "answer": "Multi-factor authentication is mandatory for all remote access and every privileged account, as stated in [1].",
+   "final_tier": 1,
+   "path": [
+    "tier1:pruned"
+   ],
+   "correct": true,
+   "tokens": 132,
+   "compute_units": 0.396,
+   "latency_ms": 138.24102800423861,
+   "cache_event": "miss",
+   "tau": 0.55,
+   "complexity": 0.0643,
+   "verifier_failed": []
+  },
+  {
+   "task_id": "std_en_11",
+   "answer": "The domestic per diem is SAR 450.",
+   "final_tier": 1,
+   "path": [
+    "tier1:pruned"
+   ],
+   "correct": true,
+   "tokens": 137,
+   "compute_units": 0.41100000000000003,
+   "latency_ms": 90.83117099302471,
+   "cache_event": "miss",
+   "tau": 0.55,
+   "complexity": 0.1037,
+   "verifier_failed": []
+  },
+  {
+   "task_id": "std_en_12",
+   "answer": "The hotel cap per night in Jeddah is SAR 1,200.",
+   "final_tier": 1,
+   "path": [
+    "tier1:pruned"
+   ],
+   "correct": true,
+   "tokens": 164,
+   "compute_units": 0.492,
+   "latency_ms": 118.04952199783176,
+   "cache_event": "miss",
+   "tau": 0.55,
+   "complexity": 0.1104,
+   "verifier_failed": []
+  },
+  {
+   "task_id": "std_en_13",
+   "answer": "Economy class should be booked for a 4-hour flight.",
+   "final_tier": 1,
+   "path": [
+    "tier1:pruned"
+   ],
+   "correct": true,
+   "tokens": 140,
+   "compute_units": 0.42000000000000004,
+   "latency_ms": 94.6233240006736,
+   "cache_event": "miss",
+   "tau": 0.55,
+   "complexity": 0.1221,
+   "verifier_failed": []
+  },
+  {
+   "task_id": "std_ar_01",
+   "answer": "مدة الإجازة السنوية للموظف 21 يوماً، قد تزيد إلى 30 يوماً بعد خمس سنوات من الخدمة المتصلة.",
+   "final_tier": 1,
+   "path": [
+    "tier1:pruned"
+   ],
+   "correct": true,
+   "tokens": 212,
+   "compute_units": 0.636,
+   "latency_ms": 213.46706599894563,
+   "cache_event": "miss",
+   "tau": 0.55,
+   "complexity": 0.1015,
+   "verifier_failed": []
+  },
+  {
+   "task_id": "std_ar_02",
+   "answer": "بدل النقل الشهري يبلغ 800 ريال.",
+   "final_tier": 1,
+   "path": [
+    "tier1:pruned"
+   ],
+   "correct": true,
+   "tokens": 156,
+   "compute_units": 0.46799999999999997,
+   "latency_ms": 107.77147099869443,
+   "cache_event": "miss",
+   "tau": 0.55,
+   "complexity": 0.0668,
+   "verifier_failed": []
+  },
+  {
+   "task_id": "std_ar_03",
+   "answer": "تبلغ مدة فترة التجربة 90 يوماً، ويجوز تمديدها بموافقة كتابية.",
+   "final_tier": 1,
+   "path": [
+    "tier1:pruned"
+   ],
+   "correct": true,
+   "tokens": 187,
+   "compute_units": 0.5609999999999999,
+   "latency_ms": 174.24712299546343,
+   "cache_event": "miss",
+   "tau": 0.55,
+   "complexity": 0.0508,
+   "verifier_failed": []
+  },
+  {
+   "task_id": "std_ar_04",
+   "answer": "قيمة أمر الشراء PO-7310 هي 240,000 ريال سعودي.",
+   "final_tier": 1,
+   "path": [
+    "tier1:pruned"
+   ],
+   "correct": true,
+   "tokens": 222,
+   "compute_units": 0.666,
+   "latency_ms": 165.90939499533502,
+   "cache_event": "miss",
+   "tau": 0.55,
+   "complexity": 0.0997,
+   "verifier_failed": []
+  },
+  {
+   "task_id": "std_ar_05",
+   "answer": "يجب سداد الفواتير خلال 45 يوماً من تاريخ استلام الفاتورة المعتمدة.",
+   "final_tier": 1,
+   "path": [
+    "tier1:pruned"
+   ],
+   "correct": true,
+   "tokens": 170,
+   "compute_units": 0.51,
+   "latency_ms": 162.0061449975695,
+   "cache_event": "miss",
+   "tau": 0.55,
+   "complexity": 0.0786,
+   "verifier_failed": []
+  },
+  {
+   "task_id": "std_ar_06",
+   "answer": "العميل لديه 14 يوماً لإرجاع المنتجات غير المستخدمة.",
+   "final_tier": 1,
+   "path": [
+    "tier1:pruned"
+   ],
+   "correct": true,
+   "tokens": 158,
+   "compute_units": 0.474,
+   "latency_ms": 137.31863799621584,
+   "cache_event": "miss",
+   "tau": 0.55,
+   "complexity": 0.1205,
+   "verifier_failed": []
+  },
+  {
+   "task_id": "std_ar_07",
+   "answer": "يتم استرداد المبلغ خلال 7 يوم عمل من استلام المنتج المرتجع.",
+   "final_tier": 1,
+   "path": [
+    "tier1:pruned"
+   ],
+   "correct": true,
+   "tokens": 157,
+   "compute_units": 0.471,
+   "latency_ms": 132.45917999710306,
+   "cache_event": "miss",
+   "tau": 0.55,
+   "complexity": 0.1252,
+   "verifier_failed": []
+  },
+  {
+   "task_id": "llo_en_01",
+   "answer": "The vendor must acknowledge a Priority-1 incident, which represents a critical outage, within 15 minutes, 24/7.",
+   "final_tier": 2,
+   "path": [
+    "tier1:pruned",
+    "escalate:degenerate_or_refusal",
+    "tier2:raw"
+   ],
+   "correct": true,
+   "tokens": 619,
+   "compute_units": 6.630999999999999,
+   "latency_ms": 586.1336449976335,
+   "cache_event": "miss",
+   "tau": 0.55,
+   "complexity": 0.149,
+   "verifier_failed": [
+    "degenerate_or_refusal"
+   ]
+  },
+  {
+   "task_id": "llo_en_02",
+   "answer": "No, you are not allowed to copy top-secret files onto a USB stick as per the laptop encryption policy, which mandates full-disk encryption on company laptops.",
+   "final_tier": 1,
+   "path": [
+    "tier1:pruned"
+   ],
+   "correct": false,
+   "tokens": 152,
+   "compute_units": 0.45599999999999996,
+   "latency_ms": 195.3001689987711,
+   "cache_event": "miss",
+   "tau": 0.55,
+   "complexity": 0.1462,
+   "verifier_failed": []
+  },
+  {
+   "task_id": "llo_en_03",
+   "answer": "Claims must be submitted within 30 days of return.",
+   "final_tier": 2,
+   "path": [
+    "tier1:pruned",
+    "escalate:degenerate_or_refusal",
+    "tier2:raw"
+   ],
+   "correct": true,
+   "tokens": 456,
+   "compute_units": 4.6899999999999995,
+   "latency_ms": 352.45703200304416,
+   "cache_event": "miss",
+   "tau": 0.55,
+   "complexity": 0.1493,
+   "verifier_failed": [
+    "degenerate_or_refusal"
+   ]
+  },
+  {
+   "task_id": "llo_ar_01",
+   "answer": "الحد الأعلى للعقوبة المالية عند التأخر هو 10% من قيمة العقد.",
+   "final_tier": 1,
+   "path": [
+    "tier1:pruned"
+   ],
+   "correct": true,
+   "tokens": 191,
+   "compute_units": 0.573,
+   "latency_ms": 147.02414800085245,
+   "cache_event": "miss",
+   "tau": 0.55,
+   "complexity": 0.1331,
+   "verifier_failed": []
+  },
+  {
+   "task_id": "mh_en_01",
+   "answer": "The service credit for a month with 98.7% availability is SAR 4800.",
+   "final_tier": 1,
+   "path": [
+    "tier1:pruned"
+   ],
+   "correct": false,
+   "tokens": 205,
+   "compute_units": 0.615,
+   "latency_ms": 155.1205330046243,
+   "cache_event": "miss",
+   "tau": 0.55,
+   "complexity": 0.4294,
+   "verifier_failed": []
+  },
+  {
+   "task_id": "mh_en_02",
+   "answer": "{\n  \"invoice_id\": \"INV-9120\",\n  \"amount_payable\": 4508\n}",
+   "final_tier": 2,
+   "path": [
+    "tier2:pruned"
+   ],
+   "correct": true,
+   "tokens": 211,
+   "compute_units": 2.9539999999999997,
+   "latency_ms": 503.24640400205624,
+   "cache_event": "miss",
+   "tau": 0.55,
+   "complexity": 0.9875,
+   "verifier_failed": null
+  },
+  {
+   "task_id": "mh_en_03",
+   "answer": "The total reimbursable amount for a 3-night international trip to Dubai is SAR 4,500, calculated as (SAR 900 per diem × 4 days) + (SAR 1,200 hotel cap × 3 nights).",
+   "final_tier": 2,
+   "path": [
+    "tier2:pruned"
+   ],
+   "correct": false,
+   "tokens": 218,
+   "compute_units": 3.052,
+   "latency_ms": 896.2778560022638,
+   "cache_event": "miss",
+   "tau": 0.55,
+   "complexity": 0.7421,
+   "verifier_failed": null
+  },
+  {
+   "task_id": "mh_ar_01",
+   "answer": "غرامة التأخير لمدة 6 أيام على أمر الشراء PO-7310 تبلغ 720 ريال سعودي، حيث أن الغرامة تقدر بـ 0.5٪ من قيمة العقد يومياً، والقيمة الإجمالية لأمر الشراء PO-7310 هي 240,000 ريال سعودي.",
+   "final_tier": 2,
+   "path": [
+    "tier2:pruned"
+   ],
+   "correct": false,
+   "tokens": 280,
+   "compute_units": 3.9200000000000004,
+   "latency_ms": 1221.2951269983814,
+   "cache_event": "miss",
+   "tau": 0.55,
+   "complexity": 0.7191,
+   "verifier_failed": null
+  },
+  {
+   "task_id": "aro_ar_01",
+   "answer": "بدل السكن يعادل 25% من الراتب الأساسي.",
+   "final_tier": 1,
+   "path": [
+    "tier1:pruned"
+   ],
+   "correct": true,
+   "tokens": 168,
+   "compute_units": 0.504,
+   "latency_ms": 122.3704739984253,
+   "cache_event": "miss",
+   "tau": 0.55,
+   "complexity": 0.0706,
+   "verifier_failed": []
+  },
+  {
+   "task_id": "aro_ar_02",
+   "answer": "نعم، يستحق الموظف 30 يوماً إجازة سنوية بعد إتمام خمس سنوات من الخدمة المتصلة.",
+   "final_tier": 1,
+   "path": [
+    "tier1:pruned"
+   ],
+   "correct": true,
+   "tokens": 216,
+   "compute_units": 0.648,
+   "latency_ms": 204.96213699741173,
+   "cache_event": "miss",
+   "tau": 0.55,
+   "complexity": 0.26,
+   "verifier_failed": []
+  },
+  {
+   "task_id": "aro_ar_03",
+   "answer": "مدة الضمان على المنتجات ضد عيوب التصنيع هي 12 شهراً.",
+   "final_tier": 1,
+   "path": [
+    "tier1:pruned"
+   ],
+   "correct": true,
+   "tokens": 163,
+   "compute_units": 0.489,
+   "latency_ms": 162.2286969997862,
+   "cache_event": "miss",
+   "tau": 0.55,
+   "complexity": 0.0636,
+   "verifier_failed": []
+  },
+  {
+   "task_id": "aro_ar_04",
+   "answer": "لا، لا تشمل سياسة الإرجاع المنتجات المخفضة بنسبة 60٪ أو أكثر، وفقًا للنقطة [2] من السياسات.",
+   "final_tier": 1,
+   "path": [
+    "tier1:pruned"
+   ],
+   "correct": true,
+   "tokens": 181,
+   "compute_units": 0.5429999999999999,
+   "latency_ms": 237.82105999940308,
+   "cache_event": "miss",
+   "tau": 0.55,
+   "complexity": 0.1208,
+   "verifier_failed": []
+  },
+  {
+   "task_id": "cache_en_hit",
+   "answer": "The amount of invoice #INV-8841 is SAR 12,400.",
+   "final_tier": 0,
+   "path": [
+    "cache_hit:std_en_04"
+   ],
+   "correct": true,
+   "tokens": 0,
+   "compute_units": 0.0,
+   "latency_ms": 1.4937939959054347,
+   "cache_event": "hit",
+   "tau": 0.55,
+   "complexity": null,
+   "verifier_failed": null
+  },
+  {
+   "task_id": "cache_en_trap",
+   "answer": "The amount of invoice #INV-8842 is SAR 9,850.",
+   "final_tier": 1,
+   "path": [
+    "tier1:pruned"
+   ],
+   "correct": true,
+   "tokens": 198,
+   "compute_units": 0.5940000000000001,
+   "latency_ms": 130.6265419957461,
+   "cache_event": "blocked_trap",
+   "tau": 0.55,
+   "complexity": 0.1393,
+   "verifier_failed": []
+  },
+  {
+   "task_id": "cache_ar_hit",
+   "answer": "قيمة أمر الشراء PO-7310 هي 240,000 ريال سعودي.",
+   "final_tier": 0,
+   "path": [
+    "cache_hit:std_ar_04"
+   ],
+   "correct": true,
+   "tokens": 0,
+   "compute_units": 0.0,
+   "latency_ms": 1.3910999987274408,
+   "cache_event": "hit",
+   "tau": 0.55,
+   "complexity": null,
+   "verifier_failed": null
+  },
+  {
+   "task_id": "cache_ar_trap",
+   "answer": "غرامة التأخير إذا تأخر المورد 8 أيام في تسليم أمر الشراء PO-7310 هي ٩٦٠ ريال سعودي.",
+   "final_tier": 2,
+   "path": [
+    "tier2:pruned"
+   ],
+   "correct": false,
+   "tokens": 248,
+   "compute_units": 3.472,
+   "latency_ms": 647.8445669972804,
+   "cache_event": "blocked_trap",
+   "tau": 0.55,
+   "complexity": 0.7182,
+   "verifier_failed": null
+  }
+ ],
+ "LOO_No_Cache": [
+  {
+   "task_id": "std_en_01",
+   "answer": "The monthly platform fee under the agreement is SAR 48,000.",
+   "final_tier": 1,
+   "path": [
+    "tier1:pruned"
+   ],
+   "correct": true,
+   "tokens": 192,
+   "compute_units": 0.5760000000000001,
+   "latency_ms": 120.8250229950354,
+   "cache_event": "disabled",
+   "tau": 0.55,
+   "complexity": 0.1386,
+   "verifier_failed": []
+  },
+  {
+   "task_id": "std_en_02",
+   "answer": "90 days' written notice is required to terminate for convenience.",
+   "final_tier": 1,
+   "path": [
+    "tier1:pruned"
+   ],
+   "correct": true,
+   "tokens": 147,
+   "compute_units": 0.44099999999999995,
+   "latency_ms": 96.55673400144674,
+   "cache_event": "disabled",
+   "tau": 0.55,
+   "complexity": 0.0802,
+   "verifier_failed": []
+  },
+  {
+   "task_id": "std_en_03",
+   "answer": "Customer data must be stored in data centres located within the Kingdom of Saudi Arabia (Riyadh and Dammam regions).",
+   "final_tier": 1,
+   "path": [
+    "tier1:pruned"
+   ],
+   "correct": true,
+   "tokens": 178,
+   "compute_units": 0.534,
+   "latency_ms": 160.9373760002665,
+   "cache_event": "disabled",
+   "tau": 0.55,
+   "complexity": 0.1115,
+   "verifier_failed": []
+  },
+  {
+   "task_id": "std_en_04",
+   "answer": "The amount of invoice #INV-8841 is SAR 12,400.",
+   "final_tier": 1,
+   "path": [
+    "tier1:pruned"
+   ],
+   "correct": true,
+   "tokens": 198,
+   "compute_units": 0.5940000000000001,
+   "latency_ms": 148.36405599889463,
+   "cache_event": "disabled",
+   "tau": 0.55,
+   "complexity": 0.1393,
+   "verifier_failed": []
+  },
+  {
+   "task_id": "std_en_05",
+   "answer": "Invoice #INV-9017 is disputed due to a quantity mismatch against purchase order PO-5520, amounting to SAR 31,200.",
+   "final_tier": 1,
+   "path": [
+    "tier1:pruned"
+   ],
+   "correct": true,
+   "tokens": 182,
+   "compute_units": 0.546,
+   "latency_ms": 222.8533510007418,
+   "cache_event": "disabled",
+   "tau": 0.55,
+   "complexity": 0.1255,
+   "verifier_failed": []
+  },
+  {
+   "task_id": "std_en_06",
+   "answer": "{\n  \"invoice_id\": \"INV-9017\",\n  \"supplier\": \"Red Sea Logistics\",\n  \"status\": \"disputed\"\n}",
+   "final_tier": 1,
+   "path": [
+    "tier1:pruned"
+   ],
+   "correct": true,
+   "tokens": 220,
+   "compute_units": 0.66,
+   "latency_ms": 189.53838200326894,
+   "cache_event": "disabled",
+   "tau": 0.55,
+   "complexity": 0.3958,
+   "verifier_failed": []
+  },
+  {
+   "task_id": "std_en_07",
+   "answer": "The minimum password length is 14 characters.",
+   "final_tier": 1,
+   "path": [
+    "tier1:pruned"
+   ],
+   "correct": true,
+   "tokens": 137,
+   "compute_units": 0.41100000000000003,
+   "latency_ms": 69.56077399798087,
+   "cache_event": "disabled",
+   "tau": 0.55,
+   "complexity": 0.1002,
+   "verifier_failed": []
+  },
+  {
+   "task_id": "std_en_08",
+   "answer": "Privileged access is reviewed monthly.",
+   "final_tier": 1,
+   "path": [
+    "tier1:pruned"
+   ],
+   "correct": true,
+   "tokens": 119,
+   "compute_units": 0.357,
+   "latency_ms": 60.87089900044841,
+   "cache_event": "disabled",
+   "tau": 0.55,
+   "complexity": 0.0918,
+   "verifier_failed": []
+  },
+  {
+   "task_id": "std_en_09",
+   "answer": "BitLocker and FileVault are approved for company laptops.",
+   "final_tier": 1,
+   "path": [
+    "tier1:pruned"
+   ],
+   "correct": true,
+   "tokens": 133,
+   "compute_units": 0.399,
+   "latency_ms": 79.02658100109315,
+   "cache_event": "disabled",
+   "tau": 0.55,
+   "complexity": 0.1101,
+   "verifier_failed": []
+  },
+  {
+   "task_id": "std_en_10",
+   "answer": "Multi-factor authentication is mandatory for all remote access and every privileged account, as stated in [1].",
+   "final_tier": 1,
+   "path": [
+    "tier1:pruned"
+   ],
+   "correct": true,
+   "tokens": 132,
+   "compute_units": 0.396,
+   "latency_ms": 138.0199309954769,
+   "cache_event": "disabled",
+   "tau": 0.55,
+   "complexity": 0.0643,
+   "verifier_failed": []
+  },
+  {
+   "task_id": "std_en_11",
+   "answer": "The domestic per diem is SAR 450.",
+   "final_tier": 1,
+   "path": [
+    "tier1:pruned"
+   ],
+   "correct": true,
+   "tokens": 137,
+   "compute_units": 0.41100000000000003,
+   "latency_ms": 90.66675800144439,
+   "cache_event": "disabled",
+   "tau": 0.55,
+   "complexity": 0.1037,
+   "verifier_failed": []
+  },
+  {
+   "task_id": "std_en_12",
+   "answer": "The hotel cap per night in Jeddah is SAR 1,200.",
+   "final_tier": 1,
+   "path": [
+    "tier1:pruned"
+   ],
+   "correct": true,
+   "tokens": 164,
+   "compute_units": 0.492,
+   "latency_ms": 117.86290700366837,
+   "cache_event": "disabled",
+   "tau": 0.55,
+   "complexity": 0.1104,
+   "verifier_failed": []
+  },
+  {
+   "task_id": "std_en_13",
+   "answer": "Economy class should be booked for a 4-hour flight.",
+   "final_tier": 1,
+   "path": [
+    "tier1:pruned"
+   ],
+   "correct": true,
+   "tokens": 140,
+   "compute_units": 0.42000000000000004,
+   "latency_ms": 94.39023100054008,
+   "cache_event": "disabled",
+   "tau": 0.55,
+   "complexity": 0.1221,
+   "verifier_failed": []
+  },
+  {
+   "task_id": "std_ar_01",
+   "answer": "مدة الإجازة السنوية للموظف 21 يوماً، قد تزيد إلى 30 يوماً بعد خمس سنوات من الخدمة المتصلة.",
+   "final_tier": 1,
+   "path": [
+    "tier1:pruned"
+   ],
+   "correct": true,
+   "tokens": 212,
+   "compute_units": 0.636,
+   "latency_ms": 213.29571099801572,
+   "cache_event": "disabled",
+   "tau": 0.55,
+   "complexity": 0.1015,
+   "verifier_failed": []
+  },
+  {
+   "task_id": "std_ar_02",
+   "answer": "بدل النقل الشهري يبلغ 800 ريال.",
+   "final_tier": 1,
+   "path": [
+    "tier1:pruned"
+   ],
+   "correct": true,
+   "tokens": 156,
+   "compute_units": 0.46799999999999997,
+   "latency_ms": 107.62198699884583,
+   "cache_event": "disabled",
+   "tau": 0.55,
+   "complexity": 0.0668,
+   "verifier_failed": []
+  },
+  {
+   "task_id": "std_ar_03",
+   "answer": "تبلغ مدة فترة التجربة 90 يوماً، ويجوز تمديدها بموافقة كتابية.",
+   "final_tier": 1,
+   "path": [
+    "tier1:pruned"
+   ],
+   "correct": true,
+   "tokens": 187,
+   "compute_units": 0.5609999999999999,
+   "latency_ms": 173.52730899440473,
+   "cache_event": "disabled",
+   "tau": 0.55,
+   "complexity": 0.0508,
+   "verifier_failed": []
+  },
+  {
+   "task_id": "std_ar_04",
+   "answer": "قيمة أمر الشراء PO-7310 هي 240,000 ريال سعودي.",
+   "final_tier": 1,
+   "path": [
+    "tier1:pruned"
+   ],
+   "correct": true,
+   "tokens": 222,
+   "compute_units": 0.666,
+   "latency_ms": 165.70828300123335,
+   "cache_event": "disabled",
+   "tau": 0.55,
+   "complexity": 0.0997,
+   "verifier_failed": []
+  },
+  {
+   "task_id": "std_ar_05",
+   "answer": "يجب سداد الفواتير خلال 45 يوماً من تاريخ استلام الفاتورة المعتمدة.",
+   "final_tier": 1,
+   "path": [
+    "tier1:pruned"
+   ],
+   "correct": true,
+   "tokens": 170,
+   "compute_units": 0.51,
+   "latency_ms": 161.880856998316,
+   "cache_event": "disabled",
+   "tau": 0.55,
+   "complexity": 0.0786,
+   "verifier_failed": []
+  },
+  {
+   "task_id": "std_ar_06",
+   "answer": "العميل لديه 14 يوماً لإرجاع المنتجات غير المستخدمة.",
+   "final_tier": 1,
+   "path": [
+    "tier1:pruned"
+   ],
+   "correct": true,
+   "tokens": 158,
+   "compute_units": 0.474,
+   "latency_ms": 137.1316529977799,
+   "cache_event": "disabled",
+   "tau": 0.55,
+   "complexity": 0.1205,
+   "verifier_failed": []
+  },
+  {
+   "task_id": "std_ar_07",
+   "answer": "يتم استرداد المبلغ خلال 7 يوم عمل من استلام المنتج المرتجع.",
+   "final_tier": 1,
+   "path": [
+    "tier1:pruned"
+   ],
+   "correct": true,
+   "tokens": 157,
+   "compute_units": 0.471,
+   "latency_ms": 132.2740100008459,
+   "cache_event": "disabled",
+   "tau": 0.55,
+   "complexity": 0.1252,
+   "verifier_failed": []
+  },
+  {
+   "task_id": "llo_en_01",
+   "answer": "The vendor must acknowledge a Priority-1 incident, which represents a critical outage, within 15 minutes, 24/7.",
+   "final_tier": 2,
+   "path": [
+    "tier1:pruned",
+    "escalate:degenerate_or_refusal",
+    "tier2:raw"
+   ],
+   "correct": true,
+   "tokens": 619,
+   "compute_units": 6.630999999999999,
+   "latency_ms": 585.8920460028713,
+   "cache_event": "disabled",
+   "tau": 0.55,
+   "complexity": 0.149,
+   "verifier_failed": [
+    "degenerate_or_refusal"
+   ]
+  },
+  {
+   "task_id": "llo_en_02",
+   "answer": "No, you are not allowed to copy top-secret files onto a USB stick as per the laptop encryption policy, which mandates full-disk encryption on company laptops.",
+   "final_tier": 1,
+   "path": [
+    "tier1:pruned"
+   ],
+   "correct": false,
+   "tokens": 152,
+   "compute_units": 0.45599999999999996,
+   "latency_ms": 195.07120399863808,
+   "cache_event": "disabled",
+   "tau": 0.55,
+   "complexity": 0.1462,
+   "verifier_failed": []
+  },
+  {
+   "task_id": "llo_en_03",
+   "answer": "Claims must be submitted within 30 days of return.",
+   "final_tier": 2,
+   "path": [
+    "tier1:pruned",
+    "escalate:degenerate_or_refusal",
+    "tier2:raw"
+   ],
+   "correct": true,
+   "tokens": 456,
+   "compute_units": 4.6899999999999995,
+   "latency_ms": 352.21698400233873,
+   "cache_event": "disabled",
+   "tau": 0.55,
+   "complexity": 0.1493,
+   "verifier_failed": [
+    "degenerate_or_refusal"
+   ]
+  },
+  {
+   "task_id": "llo_ar_01",
+   "answer": "الحد الأعلى للعقوبة المالية عند التأخر هو 10% من قيمة العقد.",
+   "final_tier": 1,
+   "path": [
+    "tier1:pruned"
+   ],
+   "correct": true,
+   "tokens": 191,
+   "compute_units": 0.573,
+   "latency_ms": 146.86415300347727,
+   "cache_event": "disabled",
+   "tau": 0.55,
+   "complexity": 0.1331,
+   "verifier_failed": []
+  },
+  {
+   "task_id": "mh_en_01",
+   "answer": "The service credit for a month with 98.7% availability is SAR 4800.",
+   "final_tier": 1,
+   "path": [
+    "tier1:pruned"
+   ],
+   "correct": false,
+   "tokens": 205,
+   "compute_units": 0.615,
+   "latency_ms": 154.91697600136393,
+   "cache_event": "disabled",
+   "tau": 0.55,
+   "complexity": 0.4294,
+   "verifier_failed": []
+  },
+  {
+   "task_id": "mh_en_02",
+   "answer": "{\n  \"invoice_id\": \"INV-9120\",\n  \"amount_payable\": 4508\n}",
+   "final_tier": 2,
+   "path": [
+    "tier2:pruned"
+   ],
+   "correct": true,
+   "tokens": 211,
+   "compute_units": 2.9539999999999997,
+   "latency_ms": 503.02440400329886,
+   "cache_event": "disabled",
+   "tau": 0.55,
+   "complexity": 0.9875,
+   "verifier_failed": null
+  },
+  {
+   "task_id": "mh_en_03",
+   "answer": "The total reimbursable amount for a 3-night international trip to Dubai is SAR 4,500, calculated as (SAR 900 per diem × 4 days) + (SAR 1,200 hotel cap × 3 nights).",
+   "final_tier": 2,
+   "path": [
+    "tier2:pruned"
+   ],
+   "correct": false,
+   "tokens": 218,
+   "compute_units": 3.052,
+   "latency_ms": 895.5443040036993,
+   "cache_event": "disabled",
+   "tau": 0.55,
+   "complexity": 0.7421,
+   "verifier_failed": null
+  },
+  {
+   "task_id": "mh_ar_01",
+   "answer": "غرامة التأخير لمدة 6 أيام على أمر الشراء PO-7310 تبلغ 720 ريال سعودي، حيث أن الغرامة تقدر بـ 0.5٪ من قيمة العقد يومياً، والقيمة الإجمالية لأمر الشراء PO-7310 هي 240,000 ريال سعودي.",
+   "final_tier": 2,
+   "path": [
+    "tier2:pruned"
+   ],
+   "correct": false,
+   "tokens": 280,
+   "compute_units": 3.9200000000000004,
+   "latency_ms": 1221.043408001503,
+   "cache_event": "disabled",
+   "tau": 0.55,
+   "complexity": 0.7191,
+   "verifier_failed": null
+  },
+  {
+   "task_id": "aro_ar_01",
+   "answer": "بدل السكن يعادل 25% من الراتب الأساسي.",
+   "final_tier": 1,
+   "path": [
+    "tier1:pruned"
+   ],
+   "correct": true,
+   "tokens": 168,
+   "compute_units": 0.504,
+   "latency_ms": 122.22383500350523,
+   "cache_event": "disabled",
+   "tau": 0.55,
+   "complexity": 0.0706,
+   "verifier_failed": []
+  },
+  {
+   "task_id": "aro_ar_02",
+   "answer": "نعم، يستحق الموظف 30 يوماً إجازة سنوية بعد إتمام خمس سنوات من الخدمة المتصلة.",
+   "final_tier": 1,
+   "path": [
+    "tier1:pruned"
+   ],
+   "correct": true,
+   "tokens": 216,
+   "compute_units": 0.648,
+   "latency_ms": 204.72882500186796,
+   "cache_event": "disabled",
+   "tau": 0.55,
+   "complexity": 0.26,
+   "verifier_failed": []
+  },
+  {
+   "task_id": "aro_ar_03",
+   "answer": "مدة الضمان على المنتجات ضد عيوب التصنيع هي 12 شهراً.",
+   "final_tier": 1,
+   "path": [
+    "tier1:pruned"
+   ],
+   "correct": true,
+   "tokens": 163,
+   "compute_units": 0.489,
+   "latency_ms": 162.36696000325028,
+   "cache_event": "disabled",
+   "tau": 0.55,
+   "complexity": 0.0636,
+   "verifier_failed": []
+  },
+  {
+   "task_id": "aro_ar_04",
+   "answer": "لا، لا تشمل سياسة الإرجاع المنتجات المخفضة بنسبة 60٪ أو أكثر، وفقًا للنقطة [2] من السياسات.",
+   "final_tier": 1,
+   "path": [
+    "tier1:pruned"
+   ],
+   "correct": true,
+   "tokens": 181,
+   "compute_units": 0.5429999999999999,
+   "latency_ms": 237.5926570051501,
+   "cache_event": "disabled",
+   "tau": 0.55,
+   "complexity": 0.1208,
+   "verifier_failed": []
+  },
+  {
+   "task_id": "cache_en_hit",
+   "answer": "SAR 12,400",
+   "final_tier": 1,
+   "path": [
+    "tier1:pruned"
+   ],
+   "correct": true,
+   "tokens": 185,
+   "compute_units": 0.5549999999999999,
+   "latency_ms": 90.38826800033101,
+   "cache_event": "disabled",
+   "tau": 0.55,
+   "complexity": 0.1393,
+   "verifier_failed": []
+  },
+  {
+   "task_id": "cache_en_trap",
+   "answer": "The amount of invoice #INV-8842 is SAR 9,850.",
+   "final_tier": 1,
+   "path": [
+    "tier1:pruned"
+   ],
+   "correct": true,
+   "tokens": 198,
+   "compute_units": 0.5940000000000001,
+   "latency_ms": 130.38782900229563,
+   "cache_event": "disabled",
+   "tau": 0.55,
+   "complexity": 0.1393,
+   "verifier_failed": []
+  },
+  {
+   "task_id": "cache_ar_hit",
+   "answer": "قيمة أمر الشراء PO-7310 هي 240,000 ريال سعودي.",
+   "final_tier": 1,
+   "path": [
+    "tier1:pruned"
+   ],
+   "correct": true,
+   "tokens": 223,
+   "compute_units": 0.669,
+   "latency_ms": 148.26519499700515,
+   "cache_event": "disabled",
+   "tau": 0.55,
+   "complexity": 0.0972,
+   "verifier_failed": []
+  },
+  {
+   "task_id": "cache_ar_trap",
+   "answer": "غرامة التأخير إذا تأخر المورد 8 أيام في تسليم أمر الشراء PO-7310 هي ٩٦٠ ريال سعودي.",
+   "final_tier": 2,
+   "path": [
+    "tier2:pruned"
+   ],
+   "correct": false,
+   "tokens": 248,
+   "compute_units": 3.472,
+   "latency_ms": 647.5866370028758,
+   "cache_event": "disabled",
+   "tau": 0.55,
+   "complexity": 0.7182,
+   "verifier_failed": null
+  }
+ ],
+ "LOO_No_Cache_Entity_Guard": [
+  {
+   "task_id": "std_en_01",
+   "answer": "The monthly platform fee under the agreement is SAR 48,000.",
+   "final_tier": 1,
+   "path": [
+    "tier1:pruned"
+   ],
+   "correct": true,
+   "tokens": 192,
+   "compute_units": 0.5760000000000001,
+   "latency_ms": 120.90465399282402,
+   "cache_event": "miss",
+   "tau": 0.55,
+   "complexity": 0.1386,
+   "verifier_failed": []
+  },
+  {
+   "task_id": "std_en_02",
+   "answer": "90 days' written notice is required to terminate for convenience.",
+   "final_tier": 1,
+   "path": [
+    "tier1:pruned"
+   ],
+   "correct": true,
+   "tokens": 147,
+   "compute_units": 0.44099999999999995,
+   "latency_ms": 97.1130099993979,
+   "cache_event": "miss",
+   "tau": 0.55,
+   "complexity": 0.0802,
+   "verifier_failed": []
+  },
+  {
+   "task_id": "std_en_03",
+   "answer": "Customer data must be stored in data centres located within the Kingdom of Saudi Arabia (Riyadh and Dammam regions).",
+   "final_tier": 1,
+   "path": [
+    "tier1:pruned"
+   ],
+   "correct": true,
+   "tokens": 178,
+   "compute_units": 0.534,
+   "latency_ms": 160.58047899791853,
+   "cache_event": "miss",
+   "tau": 0.55,
+   "complexity": 0.1115,
+   "verifier_failed": []
+  },
+  {
+   "task_id": "std_en_04",
+   "answer": "The amount of invoice #INV-8841 is SAR 12,400.",
+   "final_tier": 1,
+   "path": [
+    "tier1:pruned"
+   ],
+   "correct": true,
+   "tokens": 198,
+   "compute_units": 0.5940000000000001,
+   "latency_ms": 148.4425459992001,
+   "cache_event": "miss",
+   "tau": 0.55,
+   "complexity": 0.1393,
+   "verifier_failed": []
+  },
+  {
+   "task_id": "std_en_05",
+   "answer": "Invoice #INV-9017 is disputed due to a quantity mismatch against purchase order PO-5520, amounting to SAR 31,200.",
+   "final_tier": 1,
+   "path": [
+    "tier1:pruned"
+   ],
+   "correct": true,
+   "tokens": 182,
+   "compute_units": 0.546,
+   "latency_ms": 222.91781299842287,
+   "cache_event": "miss",
+   "tau": 0.55,
+   "complexity": 0.1255,
+   "verifier_failed": []
+  },
+  {
+   "task_id": "std_en_06",
+   "answer": "{\n  \"invoice_id\": \"INV-9017\",\n  \"supplier\": \"Red Sea Logistics\",\n  \"status\": \"disputed\"\n}",
+   "final_tier": 1,
+   "path": [
+    "tier1:pruned"
+   ],
+   "correct": true,
+   "tokens": 220,
+   "compute_units": 0.66,
+   "latency_ms": 189.554442006232,
+   "cache_event": "miss",
+   "tau": 0.55,
+   "complexity": 0.3958,
+   "verifier_failed": []
+  },
+  {
+   "task_id": "std_en_07",
+   "answer": "The minimum password length is 14 characters.",
+   "final_tier": 1,
+   "path": [
+    "tier1:pruned"
+   ],
+   "correct": true,
+   "tokens": 137,
+   "compute_units": 0.41100000000000003,
+   "latency_ms": 69.64641599541065,
+   "cache_event": "miss",
+   "tau": 0.55,
+   "complexity": 0.1002,
+   "verifier_failed": []
+  },
+  {
+   "task_id": "std_en_08",
+   "answer": "Privileged access is reviewed monthly.",
+   "final_tier": 1,
+   "path": [
+    "tier1:pruned"
+   ],
+   "correct": true,
+   "tokens": 119,
+   "compute_units": 0.357,
+   "latency_ms": 61.00116599934292,
+   "cache_event": "miss",
+   "tau": 0.55,
+   "complexity": 0.0918,
+   "verifier_failed": []
+  },
+  {
+   "task_id": "std_en_09",
+   "answer": "BitLocker and FileVault are approved for company laptops.",
+   "final_tier": 1,
+   "path": [
+    "tier1:pruned"
+   ],
+   "correct": true,
+   "tokens": 133,
+   "compute_units": 0.399,
+   "latency_ms": 79.13755300076795,
+   "cache_event": "miss",
+   "tau": 0.55,
+   "complexity": 0.1101,
+   "verifier_failed": []
+  },
+  {
+   "task_id": "std_en_10",
+   "answer": "Multi-factor authentication is mandatory for all remote access and every privileged account, as stated in [1].",
+   "final_tier": 1,
+   "path": [
+    "tier1:pruned"
+   ],
+   "correct": true,
+   "tokens": 132,
+   "compute_units": 0.396,
+   "latency_ms": 138.07392199520837,
+   "cache_event": "miss",
+   "tau": 0.55,
+   "complexity": 0.0643,
+   "verifier_failed": []
+  },
+  {
+   "task_id": "std_en_11",
+   "answer": "The domestic per diem is SAR 450.",
+   "final_tier": 1,
+   "path": [
+    "tier1:pruned"
+   ],
+   "correct": true,
+   "tokens": 137,
+   "compute_units": 0.41100000000000003,
+   "latency_ms": 90.72859700185363,
+   "cache_event": "miss",
+   "tau": 0.55,
+   "complexity": 0.1037,
+   "verifier_failed": []
+  },
+  {
+   "task_id": "std_en_12",
+   "answer": "The hotel cap per night in Jeddah is SAR 1,200.",
+   "final_tier": 1,
+   "path": [
+    "tier1:pruned"
+   ],
+   "correct": true,
+   "tokens": 164,
+   "compute_units": 0.492,
+   "latency_ms": 117.98833700051065,
+   "cache_event": "miss",
+   "tau": 0.55,
+   "complexity": 0.1104,
+   "verifier_failed": []
+  },
+  {
+   "task_id": "std_en_13",
+   "answer": "Economy class should be booked for a 4-hour flight.",
+   "final_tier": 1,
+   "path": [
+    "tier1:pruned"
+   ],
+   "correct": true,
+   "tokens": 140,
+   "compute_units": 0.42000000000000004,
+   "latency_ms": 94.53456399710966,
+   "cache_event": "miss",
+   "tau": 0.55,
+   "complexity": 0.1221,
+   "verifier_failed": []
+  },
+  {
+   "task_id": "std_ar_01",
+   "answer": "مدة الإجازة السنوية للموظف 21 يوماً، قد تزيد إلى 30 يوماً بعد خمس سنوات من الخدمة المتصلة.",
+   "final_tier": 1,
+   "path": [
+    "tier1:pruned"
+   ],
+   "correct": true,
+   "tokens": 212,
+   "compute_units": 0.636,
+   "latency_ms": 213.3796100070572,
+   "cache_event": "miss",
+   "tau": 0.55,
+   "complexity": 0.1015,
+   "verifier_failed": []
+  },
+  {
+   "task_id": "std_ar_02",
+   "answer": "بدل النقل الشهري يبلغ 800 ريال.",
+   "final_tier": 1,
+   "path": [
+    "tier1:pruned"
+   ],
+   "correct": true,
+   "tokens": 156,
+   "compute_units": 0.46799999999999997,
+   "latency_ms": 107.68083899673773,
+   "cache_event": "miss",
+   "tau": 0.55,
+   "complexity": 0.0668,
+   "verifier_failed": []
+  },
+  {
+   "task_id": "std_ar_03",
+   "answer": "تبلغ مدة فترة التجربة 90 يوماً، ويجوز تمديدها بموافقة كتابية.",
+   "final_tier": 1,
+   "path": [
+    "tier1:pruned"
+   ],
+   "correct": true,
+   "tokens": 187,
+   "compute_units": 0.5609999999999999,
+   "latency_ms": 173.63058200137573,
+   "cache_event": "miss",
+   "tau": 0.55,
+   "complexity": 0.0508,
+   "verifier_failed": []
+  },
+  {
+   "task_id": "std_ar_04",
+   "answer": "قيمة أمر الشراء PO-7310 هي 240,000 ريال سعودي.",
+   "final_tier": 1,
+   "path": [
+    "tier1:pruned"
+   ],
+   "correct": true,
+   "tokens": 222,
+   "compute_units": 0.666,
+   "latency_ms": 165.805256997057,
+   "cache_event": "miss",
+   "tau": 0.55,
+   "complexity": 0.0997,
+   "verifier_failed": []
+  },
+  {
+   "task_id": "std_ar_05",
+   "answer": "يجب سداد الفواتير خلال 45 يوماً من تاريخ استلام الفاتورة المعتمدة.",
+   "final_tier": 1,
+   "path": [
+    "tier1:pruned"
+   ],
+   "correct": true,
+   "tokens": 170,
+   "compute_units": 0.51,
+   "latency_ms": 161.95842400338034,
+   "cache_event": "miss",
+   "tau": 0.55,
+   "complexity": 0.0786,
+   "verifier_failed": []
+  },
+  {
+   "task_id": "std_ar_06",
+   "answer": "العميل لديه 14 يوماً لإرجاع المنتجات غير المستخدمة.",
+   "final_tier": 1,
+   "path": [
+    "tier1:pruned"
+   ],
+   "correct": true,
+   "tokens": 158,
+   "compute_units": 0.474,
+   "latency_ms": 137.26402399625164,
+   "cache_event": "miss",
+   "tau": 0.55,
+   "complexity": 0.1205,
+   "verifier_failed": []
+  },
+  {
+   "task_id": "std_ar_07",
+   "answer": "يتم استرداد المبلغ خلال 7 يوم عمل من استلام المنتج المرتجع.",
+   "final_tier": 1,
+   "path": [
+    "tier1:pruned"
+   ],
+   "correct": true,
+   "tokens": 157,
+   "compute_units": 0.471,
+   "latency_ms": 132.44057599921595,
+   "cache_event": "miss",
+   "tau": 0.55,
+   "complexity": 0.1252,
+   "verifier_failed": []
+  },
+  {
+   "task_id": "llo_en_01",
+   "answer": "The vendor must acknowledge a Priority-1 incident, which represents a critical outage, within 15 minutes, 24/7.",
+   "final_tier": 2,
+   "path": [
+    "tier1:pruned",
+    "escalate:degenerate_or_refusal",
+    "tier2:raw"
+   ],
+   "correct": true,
+   "tokens": 619,
+   "compute_units": 6.630999999999999,
+   "latency_ms": 586.1677789995412,
+   "cache_event": "miss",
+   "tau": 0.55,
+   "complexity": 0.149,
+   "verifier_failed": [
+    "degenerate_or_refusal"
+   ]
+  },
+  {
+   "task_id": "llo_en_02",
+   "answer": "No, you are not allowed to copy top-secret files onto a USB stick as per the laptop encryption policy, which mandates full-disk encryption on company laptops.",
+   "final_tier": 1,
+   "path": [
+    "tier1:pruned"
+   ],
+   "correct": false,
+   "tokens": 152,
+   "compute_units": 0.45599999999999996,
+   "latency_ms": 195.23742899834062,
+   "cache_event": "miss",
+   "tau": 0.55,
+   "complexity": 0.1462,
+   "verifier_failed": []
+  },
+  {
+   "task_id": "llo_en_03",
+   "answer": "Claims must be submitted within 30 days of return.",
+   "final_tier": 2,
+   "path": [
+    "tier1:pruned",
+    "escalate:degenerate_or_refusal",
+    "tier2:raw"
+   ],
+   "correct": true,
+   "tokens": 456,
+   "compute_units": 4.6899999999999995,
+   "latency_ms": 352.42041000198225,
+   "cache_event": "miss",
+   "tau": 0.55,
+   "complexity": 0.1493,
+   "verifier_failed": [
+    "degenerate_or_refusal"
+   ]
+  },
+  {
+   "task_id": "llo_ar_01",
+   "answer": "الحد الأعلى للعقوبة المالية عند التأخر هو 10% من قيمة العقد.",
+   "final_tier": 1,
+   "path": [
+    "tier1:pruned"
+   ],
+   "correct": true,
+   "tokens": 191,
+   "compute_units": 0.573,
+   "latency_ms": 147.00792699913728,
+   "cache_event": "miss",
+   "tau": 0.55,
+   "complexity": 0.1331,
+   "verifier_failed": []
+  },
+  {
+   "task_id": "mh_en_01",
+   "answer": "The service credit for a month with 98.7% availability is SAR 4800.",
+   "final_tier": 1,
+   "path": [
+    "tier1:pruned"
+   ],
+   "correct": false,
+   "tokens": 205,
+   "compute_units": 0.615,
+   "latency_ms": 155.09722900369087,
+   "cache_event": "miss",
+   "tau": 0.55,
+   "complexity": 0.4294,
+   "verifier_failed": []
+  },
+  {
+   "task_id": "mh_en_02",
+   "answer": "{\n  \"invoice_id\": \"INV-9120\",\n  \"amount_payable\": 4508\n}",
+   "final_tier": 2,
+   "path": [
+    "tier2:pruned"
+   ],
+   "correct": true,
+   "tokens": 211,
+   "compute_units": 2.9539999999999997,
+   "latency_ms": 503.2529370007245,
+   "cache_event": "miss",
+   "tau": 0.55,
+   "complexity": 0.9875,
+   "verifier_failed": null
+  },
+  {
+   "task_id": "mh_en_03",
+   "answer": "The total reimbursable amount for a 3-night international trip to Dubai is SAR 4,500, calculated as (SAR 900 per diem × 4 days) + (SAR 1,200 hotel cap × 3 nights).",
+   "final_tier": 2,
+   "path": [
+    "tier2:pruned"
+   ],
+   "correct": false,
+   "tokens": 218,
+   "compute_units": 3.052,
+   "latency_ms": 895.8170210031607,
+   "cache_event": "miss",
+   "tau": 0.55,
+   "complexity": 0.7421,
+   "verifier_failed": null
+  },
+  {
+   "task_id": "mh_ar_01",
+   "answer": "غرامة التأخير لمدة 6 أيام على أمر الشراء PO-7310 تبلغ 720 ريال سعودي، حيث أن الغرامة تقدر بـ 0.5٪ من قيمة العقد يومياً، والقيمة الإجمالية لأمر الشراء PO-7310 هي 240,000 ريال سعودي.",
+   "final_tier": 2,
+   "path": [
+    "tier2:pruned"
+   ],
+   "correct": false,
+   "tokens": 280,
+   "compute_units": 3.9200000000000004,
+   "latency_ms": 1221.294976000433,
+   "cache_event": "miss",
+   "tau": 0.55,
+   "complexity": 0.7191,
+   "verifier_failed": null
+  },
+  {
+   "task_id": "aro_ar_01",
+   "answer": "بدل السكن يعادل 25% من الراتب الأساسي.",
+   "final_tier": 1,
+   "path": [
+    "tier1:pruned"
+   ],
+   "correct": true,
+   "tokens": 168,
+   "compute_units": 0.504,
+   "latency_ms": 122.35726899755653,
+   "cache_event": "miss",
+   "tau": 0.55,
+   "complexity": 0.0706,
+   "verifier_failed": []
+  },
+  {
+   "task_id": "aro_ar_02",
+   "answer": "نعم، يستحق الموظف 30 يوماً إجازة سنوية بعد إتمام خمس سنوات من الخدمة المتصلة.",
+   "final_tier": 1,
+   "path": [
+    "tier1:pruned"
+   ],
+   "correct": true,
+   "tokens": 216,
+   "compute_units": 0.648,
+   "latency_ms": 204.96304799823673,
+   "cache_event": "miss",
+   "tau": 0.55,
+   "complexity": 0.26,
+   "verifier_failed": []
+  },
+  {
+   "task_id": "aro_ar_03",
+   "answer": "مدة الضمان على المنتجات ضد عيوب التصنيع هي 12 شهراً.",
+   "final_tier": 1,
+   "path": [
+    "tier1:pruned"
+   ],
+   "correct": true,
+   "tokens": 163,
+   "compute_units": 0.489,
+   "latency_ms": 162.12366899909685,
+   "cache_event": "miss",
+   "tau": 0.55,
+   "complexity": 0.0636,
+   "verifier_failed": []
+  },
+  {
+   "task_id": "aro_ar_04",
+   "answer": "لا، لا تشمل سياسة الإرجاع المنتجات المخفضة بنسبة 60٪ أو أكثر، وفقًا للنقطة [2] من السياسات.",
+   "final_tier": 1,
+   "path": [
+    "tier1:pruned"
+   ],
+   "correct": true,
+   "tokens": 181,
+   "compute_units": 0.5429999999999999,
+   "latency_ms": 237.8197279971186,
+   "cache_event": "miss",
+   "tau": 0.55,
+   "complexity": 0.1208,
+   "verifier_failed": []
+  },
+  {
+   "task_id": "cache_en_hit",
+   "answer": "The amount of invoice #INV-8841 is SAR 12,400.",
+   "final_tier": 0,
+   "path": [
+    "cache_hit:std_en_04"
+   ],
+   "correct": true,
+   "tokens": 0,
+   "compute_units": 0.0,
+   "latency_ms": 1.4781850004510488,
+   "cache_event": "hit",
+   "tau": 0.55,
+   "complexity": null,
+   "verifier_failed": null
+  },
+  {
+   "task_id": "cache_en_trap",
+   "answer": "The amount of invoice #INV-8841 is SAR 12,400.",
+   "final_tier": 0,
+   "path": [
+    "cache_hit:std_en_04"
+   ],
+   "correct": false,
+   "tokens": 0,
+   "compute_units": 0.0,
+   "latency_ms": 1.457966001908062,
+   "cache_event": "hit",
+   "tau": 0.55,
+   "complexity": null,
+   "verifier_failed": null
+  },
+  {
+   "task_id": "cache_ar_hit",
+   "answer": "قيمة أمر الشراء PO-7310 هي 240,000 ريال سعودي.",
+   "final_tier": 0,
+   "path": [
+    "cache_hit:std_ar_04"
+   ],
+   "correct": true,
+   "tokens": 0,
+   "compute_units": 0.0,
+   "latency_ms": 1.3930229979450814,
+   "cache_event": "hit",
+   "tau": 0.55,
+   "complexity": null,
+   "verifier_failed": null
+  },
+  {
+   "task_id": "cache_ar_trap",
+   "answer": "غرامة التأخير لمدة 6 أيام على أمر الشراء PO-7310 تبلغ 720 ريال سعودي، حيث أن الغرامة تقدر بـ 0.5٪ من قيمة العقد يومياً، والقيمة الإجمالية لأمر الشراء PO-7310 هي 240,000 ريال سعودي.",
+   "final_tier": 0,
+   "path": [
+    "cache_hit:mh_ar_01"
+   ],
+   "correct": false,
+   "tokens": 0,
+   "compute_units": 0.0,
+   "latency_ms": 1.4797389994782861,
+   "cache_event": "hit",
+   "tau": 0.55,
+   "complexity": null,
+   "verifier_failed": null
+  }
+ ],
+ "LOO_No_Pruner": [
+  {
+   "task_id": "std_en_01",
+   "answer": "The monthly platform fee under the agreement is SAR 48,000.",
+   "final_tier": 1,
+   "path": [
+    "tier1:raw"
+   ],
+   "correct": true,
+   "tokens": 421,
+   "compute_units": 1.263,
+   "latency_ms": 147.1255729998299,
+   "cache_event": "miss",
+   "tau": 0.55,
+   "complexity": 0.1386,
+   "verifier_failed": []
+  },
+  {
+   "task_id": "std_en_02",
+   "answer": "Either party may terminate this Agreement for convenience with 90 days' written notice.",
+   "final_tier": 1,
+   "path": [
+    "tier1:raw"
+   ],
+   "correct": true,
+   "tokens": 424,
+   "compute_units": 1.272,
+   "latency_ms": 106.70435500098858,
+   "cache_event": "miss",
+   "tau": 0.55,
+   "complexity": 0.0802,
+   "verifier_failed": []
+  },
+  {
+   "task_id": "std_en_03",
+   "answer": "All customer data must be stored in data centres located within the Kingdom of Saudi Arabia (Riyadh and Dammam regions).",
+   "final_tier": 1,
+   "path": [
+    "tier1:raw"
+   ],
+   "correct": true,
+   "tokens": 430,
+   "compute_units": 1.29,
+   "latency_ms": 148.4774320012401,
+   "cache_event": "miss",
+   "tau": 0.55,
+   "complexity": 0.1115,
+   "verifier_failed": []
+  },
+  {
+   "task_id": "std_en_04",
+   "answer": "The amount of invoice #INV-8841 is SAR 12,400.",
+   "final_tier": 1,
+   "path": [
+    "tier1:raw"
+   ],
+   "correct": true,
+   "tokens": 375,
+   "compute_units": 1.125,
+   "latency_ms": 167.10334899732726,
+   "cache_event": "miss",
+   "tau": 0.55,
+   "complexity": 0.1393,
+   "verifier_failed": []
+  },
+  {
+   "task_id": "std_en_05",
+   "answer": "Invoice #INV-9017 from Red Sea Logistics is disputed due to a quantity mismatch against purchase order PO-5520.",
+   "final_tier": 1,
+   "path": [
+    "tier1:raw"
+   ],
+   "correct": true,
+   "tokens": 382,
+   "compute_units": 1.146,
+   "latency_ms": 171.25828699896812,
+   "cache_event": "miss",
+   "tau": 0.55,
+   "complexity": 0.1255,
+   "verifier_failed": []
+  },
+  {
+   "task_id": "std_en_06",
+   "answer": "{\n    \"invoice_id\": \"INV-9017\",\n    \"supplier\": \"Red Sea Logistics\",\n    \"status\": \"disputed\"\n}",
+   "final_tier": 1,
+   "path": [
+    "tier1:raw"
+   ],
+   "correct": true,
+   "tokens": 425,
+   "compute_units": 1.275,
+   "latency_ms": 190.92962199667352,
+   "cache_event": "miss",
+   "tau": 0.55,
+   "complexity": 0.3958,
+   "verifier_failed": []
+  },
+  {
+   "task_id": "std_en_07",
+   "answer": "The minimum password length is 14 characters.",
+   "final_tier": 1,
+   "path": [
+    "tier1:raw"
+   ],
+   "correct": true,
+   "tokens": 278,
+   "compute_units": 0.8340000000000001,
+   "latency_ms": 97.2208399985463,
+   "cache_event": "miss",
+   "tau": 0.55,
+   "complexity": 0.1002,
+   "verifier_failed": []
+  },
+  {
+   "task_id": "std_en_08",
+   "answer": "Privileged access is reviewed monthly.",
+   "final_tier": 1,
+   "path": [
+    "tier1:raw"
+   ],
+   "correct": true,
+   "tokens": 276,
+   "compute_units": 0.8280000000000001,
+   "latency_ms": 72.9714230022335,
+   "cache_event": "miss",
+   "tau": 0.55,
+   "complexity": 0.0918,
+   "verifier_failed": []
+  },
+  {
+   "task_id": "std_en_09",
+   "answer": "Laptop Encryption policy approves BitLocker or FileVault for company laptops.",
+   "final_tier": 1,
+   "path": [
+    "tier1:raw"
+   ],
+   "correct": true,
+   "tokens": 287,
+   "compute_units": 0.861,
+   "latency_ms": 113.96806200468214,
+   "cache_event": "miss",
+   "tau": 0.55,
+   "complexity": 0.1101,
+   "verifier_failed": []
+  },
+  {
+   "task_id": "std_en_10",
+   "answer": "Multi-factor Authentication is mandatory for all remote access and for every privileged account.",
+   "final_tier": 1,
+   "path": [
+    "tier1:raw"
+   ],
+   "correct": true,
+   "tokens": 284,
+   "compute_units": 0.8519999999999999,
+   "latency_ms": 114.18398500212119,
+   "cache_event": "miss",
+   "tau": 0.55,
+   "complexity": 0.0643,
+   "verifier_failed": []
+  },
+  {
+   "task_id": "std_en_11",
+   "answer": "The domestic per diem is SAR 450.",
+   "final_tier": 1,
+   "path": [
+    "tier1:raw"
+   ],
+   "correct": true,
+   "tokens": 291,
+   "compute_units": 0.873,
+   "latency_ms": 105.70408799794969,
+   "cache_event": "miss",
+   "tau": 0.55,
+   "complexity": 0.1037,
+   "verifier_failed": []
+  },
+  {
+   "task_id": "std_en_12",
+   "answer": "The hotel cap per night in Jeddah is SAR 1,200.",
+   "final_tier": 1,
+   "path": [
+    "tier1:raw"
+   ],
+   "correct": true,
+   "tokens": 303,
+   "compute_units": 0.909,
+   "latency_ms": 112.20846400159294,
+   "cache_event": "miss",
+   "tau": 0.55,
+   "complexity": 0.1104,
+   "verifier_failed": []
+  },
+  {
+   "task_id": "std_en_13",
+   "answer": "Business class should be booked for a 4-hour flight.",
+   "final_tier": 1,
+   "path": [
+    "tier1:raw"
+   ],
+   "correct": false,
+   "tokens": 300,
+   "compute_units": 0.8999999999999999,
+   "latency_ms": 87.43159400765086,
+   "cache_event": "miss",
+   "tau": 0.55,
+   "complexity": 0.1221,
+   "verifier_failed": []
+  },
+  {
+   "task_id": "std_ar_01",
+   "answer": "مدة الإجازة السنوية للموظف 21 يوماً مدفوعة الأجر، قد تزيد إلى 30 يوماً بعد خمس سنوات من الخدمة المتصلة.",
+   "final_tier": 1,
+   "path": [
+    "tier1:raw"
+   ],
+   "correct": true,
+   "tokens": 425,
+   "compute_units": 1.275,
+   "latency_ms": 289.9624130009604,
+   "cache_event": "miss",
+   "tau": 0.55,
+   "complexity": 0.1015,
+   "verifier_failed": []
+  },
+  {
+   "task_id": "std_ar_02",
+   "answer": "بدل النقل الشهري يبلغ 800 ريال.",
+   "final_tier": 1,
+   "path": [
+    "tier1:raw"
+   ],
+   "correct": true,
+   "tokens": 395,
+   "compute_units": 1.185,
+   "latency_ms": 98.69859300017822,
+   "cache_event": "miss",
+   "tau": 0.55,
+   "complexity": 0.0668,
+   "verifier_failed": []
+  },
+  {
+   "task_id": "std_ar_03",
+   "answer": "فترة التجربة مدتها 90 يوماً.",
+   "final_tier": 1,
+   "path": [
+    "tier1:raw"
+   ],
+   "correct": true,
+   "tokens": 395,
+   "compute_units": 1.185,
+   "latency_ms": 92.96376600332559,
+   "cache_event": "miss",
+   "tau": 0.55,
+   "complexity": 0.0508,
+   "verifier_failed": []
+  },
+  {
+   "task_id": "std_ar_04",
+   "answer": "قيمة أمر الشراء PO-7310 هي 240,000 ريال سعودي.",
+   "final_tier": 1,
+   "path": [
+    "tier1:raw"
+   ],
+   "correct": true,
+   "tokens": 418,
+   "compute_units": 1.254,
+   "latency_ms": 191.01485700239894,
+   "cache_event": "miss",
+   "tau": 0.55,
+   "complexity": 0.0997,
+   "verifier_failed": []
+  },
+  {
+   "task_id": "std_ar_05",
+   "answer": "وفقاً للبند 11، يجب سداد الفواتير خلال 45 يوماً من تاريخ استلام الفاتورة المعتمدة.",
+   "final_tier": 1,
+   "path": [
+    "tier1:raw"
+   ],
+   "correct": true,
+   "tokens": 428,
+   "compute_units": 1.284,
+   "latency_ms": 198.93155399463373,
+   "cache_event": "miss",
+   "tau": 0.55,
+   "complexity": 0.0786,
+   "verifier_failed": []
+  },
+  {
+   "task_id": "std_ar_06",
+   "answer": "العميل لديه 14 يوماً لإرجاع المنتجات.",
+   "final_tier": 1,
+   "path": [
+    "tier1:raw"
+   ],
+   "correct": true,
+   "tokens": 298,
+   "compute_units": 0.8939999999999999,
+   "latency_ms": 144.91237500444404,
+   "cache_event": "miss",
+   "tau": 0.55,
+   "complexity": 0.1205,
+   "verifier_failed": []
+  },
+  {
+   "task_id": "std_ar_07",
+   "answer": "تم استرداد المبلغ خلال 7 أيام عمل.",
+   "final_tier": 1,
+   "path": [
+    "tier1:raw"
+   ],
+   "correct": true,
+   "tokens": 298,
+   "compute_units": 0.8939999999999999,
+   "latency_ms": 84.27348800065694,
+   "cache_event": "miss",
+   "tau": 0.55,
+   "complexity": 0.1252,
+   "verifier_failed": []
+  },
+  {
+   "task_id": "llo_en_01",
+   "answer": "Priority-1 incidents are acknowledged within 15 minutes, 24/7.",
+   "final_tier": 1,
+   "path": [
+    "tier1:raw"
+   ],
+   "correct": true,
+   "tokens": 424,
+   "compute_units": 1.272,
+   "latency_ms": 115.40555300206296,
+   "cache_event": "miss",
+   "tau": 0.55,
+   "complexity": 0.149,
+   "verifier_failed": []
+  },
+  {
+   "task_id": "llo_en_02",
+   "answer": "No, you are not allowed to copy top-secret files onto a USB stick as per policy [5], which states that restricted data may not be stored on removable media.",
+   "final_tier": 1,
+   "path": [
+    "tier1:raw"
+   ],
+   "correct": true,
+   "tokens": 309,
+   "compute_units": 0.927,
+   "latency_ms": 192.62532599668134,
+   "cache_event": "miss",
+   "tau": 0.55,
+   "complexity": 0.1462,
+   "verifier_failed": []
+  },
+  {
+   "task_id": "llo_en_03",
+   "answer": "The deadline for filing expense paperwork is within 30 days of return.",
+   "final_tier": 1,
+   "path": [
+    "tier1:raw"
+   ],
+   "correct": true,
+   "tokens": 305,
+   "compute_units": 0.915,
+   "latency_ms": 99.40620400255429,
+   "cache_event": "miss",
+   "tau": 0.55,
+   "complexity": 0.1493,
+   "verifier_failed": []
+  },
+  {
+   "task_id": "llo_ar_01",
+   "answer": "الحد الأعلى للعقوبة المالية عند التأخر هو ٢٤٬٠٠٠ ريال سعودي، وهو ١٠٪ من قيمة أمر الشراء PO-7310 التي تبلغ ٢٤٠٬٠٠٠ ريال سعودي.",
+   "final_tier": 2,
+   "path": [
+    "tier1:raw",
+    "escalate:numeric_grounding",
+    "tier2:raw"
+   ],
+   "correct": true,
+   "tokens": 872,
+   "compute_units": 7.5329999999999995,
+   "latency_ms": 1218.090558004207,
+   "cache_event": "miss",
+   "tau": 0.55,
+   "complexity": 0.1331,
+   "verifier_failed": [
+    "numeric_grounding"
+   ]
+  },
+  {
+   "task_id": "mh_en_01",
+   "answer": "The service credit for a month with 98.7% availability is SAR 4320.",
+   "final_tier": 1,
+   "path": [
+    "tier1:raw"
+   ],
+   "correct": false,
+   "tokens": 434,
+   "compute_units": 1.302,
+   "latency_ms": 138.57964199848706,
+   "cache_event": "miss",
+   "tau": 0.55,
+   "complexity": 0.4294,
+   "verifier_failed": []
+  },
+  {
+   "task_id": "mh_en_02",
+   "answer": "{\n  \"invoice_id\": \"INV-9120\",\n  \"amount_payable\": 4507.8\n}",
+   "final_tier": 2,
+   "path": [
+    "tier2:raw"
+   ],
+   "correct": true,
+   "tokens": 419,
+   "compute_units": 5.866,
+   "latency_ms": 481.2381539961812,
+   "cache_event": "miss",
+   "tau": 0.55,
+   "complexity": 0.9875,
+   "verifier_failed": null
+  },
+  {
+   "task_id": "mh_en_03",
+   "answer": "The total reimbursable amount for a 3-night international trip to Dubai is SAR 4,500 (SAR 900 per diem for 4 days plus SAR 1,200 per night hotel cap for 3 nights).",
+   "final_tier": 2,
+   "path": [
+    "tier2:raw"
+   ],
+   "correct": false,
+   "tokens": 354,
+   "compute_units": 4.9559999999999995,
+   "latency_ms": 819.5712080000108,
+   "cache_event": "miss",
+   "tau": 0.55,
+   "complexity": 0.7421,
+   "verifier_failed": null
+  },
+  {
+   "task_id": "mh_ar_01",
+   "answer": "غرامة التأخير عن ٦ أيام تأخير في تسليم أمر الشراء PO-7310 هي ٧٢٠ ريال سعودي، حيث أن ٠٫٥٪ من قيمة أمر الشراء PO-7310 (٢٤٠٬٠٠٠ ريال سعودي) تساوي ١٢٠ ريال سعودي في اليوم، وبالتالي ٦ أيام تعادل ٧٢٠ ريال سعودي.",
+   "final_tier": 2,
+   "path": [
+    "tier2:raw"
+   ],
+   "correct": false,
+   "tokens": 492,
+   "compute_units": 6.888,
+   "latency_ms": 1639.740322001751,
+   "cache_event": "miss",
+   "tau": 0.55,
+   "complexity": 0.7191,
+   "verifier_failed": null
+  },
+  {
+   "task_id": "aro_ar_01",
+   "answer": "بدل السكن يعادل 25% من الراتب الأساسي.",
+   "final_tier": 1,
+   "path": [
+    "tier1:raw"
+   ],
+   "correct": true,
+   "tokens": 407,
+   "compute_units": 1.2209999999999999,
+   "latency_ms": 110.33974199454534,
+   "cache_event": "miss",
+   "tau": 0.55,
+   "complexity": 0.0706,
+   "verifier_failed": []
+  },
+  {
+   "task_id": "aro_ar_02",
+   "answer": "نعم، يستحق الموظف 30 يوماً إجازة سنوية بعد إتمام خمس سنوات من الخدمة المتصلة وفقاً للمرأة 4.",
+   "final_tier": 1,
+   "path": [
+    "tier1:raw"
+   ],
+   "correct": true,
+   "tokens": 430,
+   "compute_units": 1.29,
+   "latency_ms": 241.51463799905613,
+   "cache_event": "miss",
+   "tau": 0.55,
+   "complexity": 0.26,
+   "verifier_failed": []
+  },
+  {
+   "task_id": "aro_ar_03",
+   "answer": "ضمان المنتجات ضد عيوب التصنيع يمتد لـ 12 شهراً من تاريخ الاستلام.",
+   "final_tier": 1,
+   "path": [
+    "tier1:raw"
+   ],
+   "correct": true,
+   "tokens": 421,
+   "compute_units": 1.263,
+   "latency_ms": 177.42527000217467,
+   "cache_event": "miss",
+   "tau": 0.55,
+   "complexity": 0.0636,
+   "verifier_failed": []
+  },
+  {
+   "task_id": "aro_ar_04",
+   "answer": "لا يمكن ارجاع المنتجات المخفضه بنسبه 60٪، كما ورد في البند الرابع من السياسة.",
+   "final_tier": 1,
+   "path": [
+    "tier1:raw"
+   ],
+   "correct": true,
+   "tokens": 317,
+   "compute_units": 0.9510000000000001,
+   "latency_ms": 178.23062999758403,
+   "cache_event": "miss",
+   "tau": 0.55,
+   "complexity": 0.1208,
+   "verifier_failed": []
+  },
+  {
+   "task_id": "cache_en_hit",
+   "answer": "The amount of invoice #INV-8841 is SAR 12,400.",
+   "final_tier": 0,
+   "path": [
+    "cache_hit:std_en_04"
+   ],
+   "correct": true,
+   "tokens": 0,
+   "compute_units": 0.0,
+   "latency_ms": 1.5077799980645068,
+   "cache_event": "hit",
+   "tau": 0.55,
+   "complexity": null,
+   "verifier_failed": null
+  },
+  {
+   "task_id": "cache_en_trap",
+   "answer": "The amount of invoice #INV-8842 is SAR 9,850.",
+   "final_tier": 1,
+   "path": [
+    "tier1:raw"
+   ],
+   "correct": true,
+   "tokens": 375,
+   "compute_units": 1.125,
+   "latency_ms": 124.6006459988805,
+   "cache_event": "blocked_trap",
+   "tau": 0.55,
+   "complexity": 0.1393,
+   "verifier_failed": []
+  },
+  {
+   "task_id": "cache_ar_hit",
+   "answer": "قيمة أمر الشراء PO-7310 هي 240,000 ريال سعودي.",
+   "final_tier": 0,
+   "path": [
+    "cache_hit:std_ar_04"
+   ],
+   "correct": true,
+   "tokens": 0,
+   "compute_units": 0.0,
+   "latency_ms": 1.395707997289719,
+   "cache_event": "hit",
+   "tau": 0.55,
+   "complexity": null,
+   "verifier_failed": null
+  },
+  {
+   "task_id": "cache_ar_trap",
+   "answer": "غرامة التأخير عن ٨ أيام هي ٢٤٠٠ ريال سعودي، حيث أن ٠٫٥٪ من قيمة أمر الشراء PO-7310 (٢٤٠٬٠٠٠ ريال سعودي) تساوي ١٢٠ ريال سعودي لكل يوم تأخير،所以在8天延迟的情况下，罚款金额是960人民币（原文中单位应为沙特里亚尔，此处翻译时保持一致，即960沙特里亚尔）。但根据精确计算，应该是2400沙特里亚尔。因此，最终答案是：2400沙特里亚尔。",
+   "final_tier": 2,
+   "path": [
+    "tier2:raw"
+   ],
+   "correct": false,
+   "tokens": 543,
+   "compute_units": 7.602,
+   "latency_ms": 2195.28352899699,
+   "cache_event": "blocked_trap",
+   "tau": 0.55,
+   "complexity": 0.7182,
+   "verifier_failed": null
+  }
+ ],
+ "LOO_No_Verifier": [
+  {
+   "task_id": "std_en_01",
+   "answer": "The monthly platform fee under the agreement is SAR 48,000.",
+   "final_tier": 1,
+   "path": [
+    "tier1:pruned"
+   ],
+   "correct": true,
+   "tokens": 192,
+   "compute_units": 0.5760000000000001,
+   "latency_ms": 120.74647299718345,
+   "cache_event": "miss",
+   "tau": 0.55,
+   "complexity": 0.1386,
+   "verifier_failed": null
+  },
+  {
+   "task_id": "std_en_02",
+   "answer": "90 days' written notice is required to terminate for convenience.",
+   "final_tier": 1,
+   "path": [
+    "tier1:pruned"
+   ],
+   "correct": true,
+   "tokens": 147,
+   "compute_units": 0.44099999999999995,
+   "latency_ms": 96.54877899689832,
+   "cache_event": "miss",
+   "tau": 0.55,
+   "complexity": 0.0802,
+   "verifier_failed": null
+  },
+  {
+   "task_id": "std_en_03",
+   "answer": "Customer data must be stored in data centres located within the Kingdom of Saudi Arabia (Riyadh and Dammam regions).",
+   "final_tier": 1,
+   "path": [
+    "tier1:pruned"
+   ],
+   "correct": true,
+   "tokens": 178,
+   "compute_units": 0.534,
+   "latency_ms": 160.478984998964,
+   "cache_event": "miss",
+   "tau": 0.55,
+   "complexity": 0.1115,
+   "verifier_failed": null
+  },
+  {
+   "task_id": "std_en_04",
+   "answer": "The amount of invoice #INV-8841 is SAR 12,400.",
+   "final_tier": 1,
+   "path": [
+    "tier1:pruned"
+   ],
+   "correct": true,
+   "tokens": 198,
+   "compute_units": 0.5940000000000001,
+   "latency_ms": 148.35081199889305,
+   "cache_event": "miss",
+   "tau": 0.55,
+   "complexity": 0.1393,
+   "verifier_failed": null
+  },
+  {
+   "task_id": "std_en_05",
+   "answer": "Invoice #INV-9017 is disputed due to a quantity mismatch against purchase order PO-5520, amounting to SAR 31,200.",
+   "final_tier": 1,
+   "path": [
+    "tier1:pruned"
+   ],
+   "correct": true,
+   "tokens": 182,
+   "compute_units": 0.546,
+   "latency_ms": 222.7625070028461,
+   "cache_event": "miss",
+   "tau": 0.55,
+   "complexity": 0.1255,
+   "verifier_failed": null
+  },
+  {
+   "task_id": "std_en_06",
+   "answer": "{\n  \"invoice_id\": \"INV-9017\",\n  \"supplier\": \"Red Sea Logistics\",\n  \"status\": \"disputed\"\n}",
+   "final_tier": 1,
+   "path": [
+    "tier1:pruned"
+   ],
+   "correct": true,
+   "tokens": 220,
+   "compute_units": 0.66,
+   "latency_ms": 189.46370899579372,
+   "cache_event": "miss",
+   "tau": 0.55,
+   "complexity": 0.3958,
+   "verifier_failed": null
+  },
+  {
+   "task_id": "std_en_07",
+   "answer": "The minimum password length is 14 characters.",
+   "final_tier": 1,
+   "path": [
+    "tier1:pruned"
+   ],
+   "correct": true,
+   "tokens": 137,
+   "compute_units": 0.41100000000000003,
+   "latency_ms": 69.56723499741057,
+   "cache_event": "miss",
+   "tau": 0.55,
+   "complexity": 0.1002,
+   "verifier_failed": null
+  },
+  {
+   "task_id": "std_en_08",
+   "answer": "Privileged access is reviewed monthly.",
+   "final_tier": 1,
+   "path": [
+    "tier1:pruned"
+   ],
+   "correct": true,
+   "tokens": 119,
+   "compute_units": 0.357,
+   "latency_ms": 60.92350799751468,
+   "cache_event": "miss",
+   "tau": 0.55,
+   "complexity": 0.0918,
+   "verifier_failed": null
+  },
+  {
+   "task_id": "std_en_09",
+   "answer": "BitLocker and FileVault are approved for company laptops.",
+   "final_tier": 1,
+   "path": [
+    "tier1:pruned"
+   ],
+   "correct": true,
+   "tokens": 133,
+   "compute_units": 0.399,
+   "latency_ms": 79.09267600014923,
+   "cache_event": "miss",
+   "tau": 0.55,
+   "complexity": 0.1101,
+   "verifier_failed": null
+  },
+  {
+   "task_id": "std_en_10",
+   "answer": "Multi-factor authentication is mandatory for all remote access and every privileged account, as stated in [1].",
+   "final_tier": 1,
+   "path": [
+    "tier1:pruned"
+   ],
+   "correct": true,
+   "tokens": 132,
+   "compute_units": 0.396,
+   "latency_ms": 137.95120000065072,
+   "cache_event": "miss",
+   "tau": 0.55,
+   "complexity": 0.0643,
+   "verifier_failed": null
+  },
+  {
+   "task_id": "std_en_11",
+   "answer": "The domestic per diem is SAR 450.",
+   "final_tier": 1,
+   "path": [
+    "tier1:pruned"
+   ],
+   "correct": true,
+   "tokens": 137,
+   "compute_units": 0.41100000000000003,
+   "latency_ms": 90.69559400026337,
+   "cache_event": "miss",
+   "tau": 0.55,
+   "complexity": 0.1037,
+   "verifier_failed": null
+  },
+  {
+   "task_id": "std_en_12",
+   "answer": "The hotel cap per night in Jeddah is SAR 1,200.",
+   "final_tier": 1,
+   "path": [
+    "tier1:pruned"
+   ],
+   "correct": true,
+   "tokens": 164,
+   "compute_units": 0.492,
+   "latency_ms": 117.87581399950315,
+   "cache_event": "miss",
+   "tau": 0.55,
+   "complexity": 0.1104,
+   "verifier_failed": null
+  },
+  {
+   "task_id": "std_en_13",
+   "answer": "Economy class should be booked for a 4-hour flight.",
+   "final_tier": 1,
+   "path": [
+    "tier1:pruned"
+   ],
+   "correct": true,
+   "tokens": 140,
+   "compute_units": 0.42000000000000004,
+   "latency_ms": 94.46930300105713,
+   "cache_event": "miss",
+   "tau": 0.55,
+   "complexity": 0.1221,
+   "verifier_failed": null
+  },
+  {
+   "task_id": "std_ar_01",
+   "answer": "مدة الإجازة السنوية للموظف 21 يوماً، قد تزيد إلى 30 يوماً بعد خمس سنوات من الخدمة المتصلة.",
+   "final_tier": 1,
+   "path": [
+    "tier1:pruned"
+   ],
+   "correct": true,
+   "tokens": 212,
+   "compute_units": 0.636,
+   "latency_ms": 213.23787100215444,
+   "cache_event": "miss",
+   "tau": 0.55,
+   "complexity": 0.1015,
+   "verifier_failed": null
+  },
+  {
+   "task_id": "std_ar_02",
+   "answer": "بدل النقل الشهري يبلغ 800 ريال.",
+   "final_tier": 1,
+   "path": [
+    "tier1:pruned"
+   ],
+   "correct": true,
+   "tokens": 156,
+   "compute_units": 0.46799999999999997,
+   "latency_ms": 107.6670030029968,
+   "cache_event": "miss",
+   "tau": 0.55,
+   "complexity": 0.0668,
+   "verifier_failed": null
+  },
+  {
+   "task_id": "std_ar_03",
+   "answer": "تبلغ مدة فترة التجربة 90 يوماً، ويجوز تمديدها بموافقة كتابية.",
+   "final_tier": 1,
+   "path": [
+    "tier1:pruned"
+   ],
+   "correct": true,
+   "tokens": 187,
+   "compute_units": 0.5609999999999999,
+   "latency_ms": 173.59919400407932,
+   "cache_event": "miss",
+   "tau": 0.55,
+   "complexity": 0.0508,
+   "verifier_failed": null
+  },
+  {
+   "task_id": "std_ar_04",
+   "answer": "قيمة أمر الشراء PO-7310 هي 240,000 ريال سعودي.",
+   "final_tier": 1,
+   "path": [
+    "tier1:pruned"
+   ],
+   "correct": true,
+   "tokens": 222,
+   "compute_units": 0.666,
+   "latency_ms": 165.7341740052763,
+   "cache_event": "miss",
+   "tau": 0.55,
+   "complexity": 0.0997,
+   "verifier_failed": null
+  },
+  {
+   "task_id": "std_ar_05",
+   "answer": "يجب سداد الفواتير خلال 45 يوماً من تاريخ استلام الفاتورة المعتمدة.",
+   "final_tier": 1,
+   "path": [
+    "tier1:pruned"
+   ],
+   "correct": true,
+   "tokens": 170,
+   "compute_units": 0.51,
+   "latency_ms": 161.85664100702735,
+   "cache_event": "miss",
+   "tau": 0.55,
+   "complexity": 0.0786,
+   "verifier_failed": null
+  },
+  {
+   "task_id": "std_ar_06",
+   "answer": "العميل لديه 14 يوماً لإرجاع المنتجات غير المستخدمة.",
+   "final_tier": 1,
+   "path": [
+    "tier1:pruned"
+   ],
+   "correct": true,
+   "tokens": 158,
+   "compute_units": 0.474,
+   "latency_ms": 137.2010449988034,
+   "cache_event": "miss",
+   "tau": 0.55,
+   "complexity": 0.1205,
+   "verifier_failed": null
+  },
+  {
+   "task_id": "std_ar_07",
+   "answer": "يتم استرداد المبلغ خلال 7 يوم عمل من استلام المنتج المرتجع.",
+   "final_tier": 1,
+   "path": [
+    "tier1:pruned"
+   ],
+   "correct": true,
+   "tokens": 157,
+   "compute_units": 0.471,
+   "latency_ms": 132.3174810026912,
+   "cache_event": "miss",
+   "tau": 0.55,
+   "complexity": 0.1252,
+   "verifier_failed": null
+  },
+  {
+   "task_id": "llo_en_01",
+   "answer": "The context does not provide information on how fast the vendor must respond to a critical outage.",
+   "final_tier": 1,
+   "path": [
+    "tier1:pruned"
+   ],
+   "correct": false,
+   "tokens": 185,
+   "compute_units": 0.5549999999999999,
+   "latency_ms": 127.29846799786318,
+   "cache_event": "miss",
+   "tau": 0.55,
+   "complexity": 0.149,
+   "verifier_failed": null
+  },
+  {
+   "task_id": "llo_en_02",
+   "answer": "No, you are not allowed to copy top-secret files onto a USB stick as per the laptop encryption policy, which mandates full-disk encryption on company laptops.",
+   "final_tier": 1,
+   "path": [
+    "tier1:pruned"
+   ],
+   "correct": false,
+   "tokens": 152,
+   "compute_units": 0.45599999999999996,
+   "latency_ms": 194.9998890020349,
+   "cache_event": "miss",
+   "tau": 0.55,
+   "complexity": 0.1462,
+   "verifier_failed": null
+  },
+  {
+   "task_id": "llo_en_03",
+   "answer": "The deadline for filing your expense paperwork after a trip is not specified in the provided policy details.",
+   "final_tier": 1,
+   "path": [
+    "tier1:pruned"
+   ],
+   "correct": false,
+   "tokens": 154,
+   "compute_units": 0.46199999999999997,
+   "latency_ms": 124.39633000435424,
+   "cache_event": "miss",
+   "tau": 0.55,
+   "complexity": 0.1493,
+   "verifier_failed": null
+  },
+  {
+   "task_id": "llo_ar_01",
+   "answer": "الحد الأعلى للعقوبة المالية عند التأخر هو 10% من قيمة العقد.",
+   "final_tier": 1,
+   "path": [
+    "tier1:pruned"
+   ],
+   "correct": true,
+   "tokens": 191,
+   "compute_units": 0.573,
+   "latency_ms": 147.01216500070296,
+   "cache_event": "miss",
+   "tau": 0.55,
+   "complexity": 0.1331,
+   "verifier_failed": null
+  },
+  {
+   "task_id": "mh_en_01",
+   "answer": "The service credit for a month with 98.7% availability is SAR 4800.",
+   "final_tier": 1,
+   "path": [
+    "tier1:pruned"
+   ],
+   "correct": false,
+   "tokens": 205,
+   "compute_units": 0.615,
+   "latency_ms": 154.72089599406462,
+   "cache_event": "miss",
+   "tau": 0.55,
+   "complexity": 0.4294,
+   "verifier_failed": null
+  },
+  {
+   "task_id": "mh_en_02",
+   "answer": "{\n  \"invoice_id\": \"INV-9120\",\n  \"amount_payable\": 4508\n}",
+   "final_tier": 2,
+   "path": [
+    "tier2:pruned"
+   ],
+   "correct": true,
+   "tokens": 211,
+   "compute_units": 2.9539999999999997,
+   "latency_ms": 503.2723139999865,
+   "cache_event": "miss",
+   "tau": 0.55,
+   "complexity": 0.9875,
+   "verifier_failed": null
+  },
+  {
+   "task_id": "mh_en_03",
+   "answer": "The total reimbursable amount for a 3-night international trip to Dubai is SAR 4,500, calculated as (SAR 900 per diem × 4 days) + (SAR 1,200 hotel cap × 3 nights).",
+   "final_tier": 2,
+   "path": [
+    "tier2:pruned"
+   ],
+   "correct": false,
+   "tokens": 218,
+   "compute_units": 3.052,
+   "latency_ms": 895.8401650021482,
+   "cache_event": "miss",
+   "tau": 0.55,
+   "complexity": 0.7421,
+   "verifier_failed": null
+  },
+  {
+   "task_id": "mh_ar_01",
+   "answer": "غرامة التأخير لمدة 6 أيام على أمر الشراء PO-7310 تبلغ 720 ريال سعودي، حيث أن الغرامة تقدر بـ 0.5٪ من قيمة العقد يومياً، والقيمة الإجمالية لأمر الشراء PO-7310 هي 240,000 ريال سعودي.",
+   "final_tier": 2,
+   "path": [
+    "tier2:pruned"
+   ],
+   "correct": false,
+   "tokens": 280,
+   "compute_units": 3.9200000000000004,
+   "latency_ms": 1221.3048940001381,
+   "cache_event": "miss",
+   "tau": 0.55,
+   "complexity": 0.7191,
+   "verifier_failed": null
+  },
+  {
+   "task_id": "aro_ar_01",
+   "answer": "بدل السكن يعادل 25% من الراتب الأساسي.",
+   "final_tier": 1,
+   "path": [
+    "tier1:pruned"
+   ],
+   "correct": true,
+   "tokens": 168,
+   "compute_units": 0.504,
+   "latency_ms": 122.29832800015109,
+   "cache_event": "miss",
+   "tau": 0.55,
+   "complexity": 0.0706,
+   "verifier_failed": null
+  },
+  {
+   "task_id": "aro_ar_02",
+   "answer": "نعم، يستحق الموظف 30 يوماً إجازة سنوية بعد إتمام خمس سنوات من الخدمة المتصلة.",
+   "final_tier": 1,
+   "path": [
+    "tier1:pruned"
+   ],
+   "correct": true,
+   "tokens": 216,
+   "compute_units": 0.648,
+   "latency_ms": 204.79242599910475,
+   "cache_event": "miss",
+   "tau": 0.55,
+   "complexity": 0.26,
+   "verifier_failed": null
+  },
+  {
+   "task_id": "aro_ar_03",
+   "answer": "مدة الضمان على المنتجات ضد عيوب التصنيع هي 12 شهراً.",
+   "final_tier": 1,
+   "path": [
+    "tier1:pruned"
+   ],
+   "correct": true,
+   "tokens": 163,
+   "compute_units": 0.489,
+   "latency_ms": 162.0892199991562,
+   "cache_event": "miss",
+   "tau": 0.55,
+   "complexity": 0.0636,
+   "verifier_failed": null
+  },
+  {
+   "task_id": "aro_ar_04",
+   "answer": "لا، لا تشمل سياسة الإرجاع المنتجات المخفضة بنسبة 60٪ أو أكثر، وفقًا للنقطة [2] من السياسات.",
+   "final_tier": 1,
+   "path": [
+    "tier1:pruned"
+   ],
+   "correct": true,
+   "tokens": 181,
+   "compute_units": 0.5429999999999999,
+   "latency_ms": 237.64241199692827,
+   "cache_event": "miss",
+   "tau": 0.55,
+   "complexity": 0.1208,
+   "verifier_failed": null
+  },
+  {
+   "task_id": "cache_en_hit",
+   "answer": "The amount of invoice #INV-8841 is SAR 12,400.",
+   "final_tier": 0,
+   "path": [
+    "cache_hit:std_en_04"
+   ],
+   "correct": true,
+   "tokens": 0,
+   "compute_units": 0.0,
+   "latency_ms": 1.4794679991609883,
+   "cache_event": "hit",
+   "tau": 0.55,
+   "complexity": null,
+   "verifier_failed": null
+  },
+  {
+   "task_id": "cache_en_trap",
+   "answer": "The amount of invoice #INV-8842 is SAR 9,850.",
+   "final_tier": 1,
+   "path": [
+    "tier1:pruned"
+   ],
+   "correct": true,
+   "tokens": 198,
+   "compute_units": 0.5940000000000001,
+   "latency_ms": 130.5226140034327,
+   "cache_event": "blocked_trap",
+   "tau": 0.55,
+   "complexity": 0.1393,
+   "verifier_failed": null
+  },
+  {
+   "task_id": "cache_ar_hit",
+   "answer": "قيمة أمر الشراء PO-7310 هي 240,000 ريال سعودي.",
+   "final_tier": 0,
+   "path": [
+    "cache_hit:std_ar_04"
+   ],
+   "correct": true,
+   "tokens": 0,
+   "compute_units": 0.0,
+   "latency_ms": 1.4034019986866042,
+   "cache_event": "hit",
+   "tau": 0.55,
+   "complexity": null,
+   "verifier_failed": null
+  },
+  {
+   "task_id": "cache_ar_trap",
+   "answer": "غرامة التأخير إذا تأخر المورد 8 أيام في تسليم أمر الشراء PO-7310 هي ٩٦٠ ريال سعودي.",
+   "final_tier": 2,
+   "path": [
+    "tier2:pruned"
+   ],
+   "correct": false,
+   "tokens": 248,
+   "compute_units": 3.472,
+   "latency_ms": 647.86626799925,
+   "cache_event": "blocked_trap",
+   "tau": 0.55,
+   "complexity": 0.7182,
+   "verifier_failed": null
+  }
+ ],
+ "LOO_No_Adaptation": [
+  {
+   "task_id": "std_en_01",
+   "answer": "The monthly platform fee under the agreement is SAR 48,000.",
+   "final_tier": 1,
+   "path": [
+    "tier1:pruned"
+   ],
+   "correct": true,
+   "tokens": 192,
+   "compute_units": 0.5760000000000001,
+   "latency_ms": 120.88223200166249,
+   "cache_event": "miss",
+   "tau": 0.55,
+   "complexity": 0.1386,
+   "verifier_failed": []
+  },
+  {
+   "task_id": "std_en_02",
+   "answer": "90 days' written notice is required to terminate for convenience.",
+   "final_tier": 1,
+   "path": [
+    "tier1:pruned"
+   ],
+   "correct": true,
+   "tokens": 147,
+   "compute_units": 0.44099999999999995,
+   "latency_ms": 96.68036900135571,
+   "cache_event": "miss",
+   "tau": 0.55,
+   "complexity": 0.0802,
+   "verifier_failed": []
+  },
+  {
+   "task_id": "std_en_03",
+   "answer": "Customer data must be stored in data centres located within the Kingdom of Saudi Arabia (Riyadh and Dammam regions).",
+   "final_tier": 1,
+   "path": [
+    "tier1:pruned"
+   ],
+   "correct": true,
+   "tokens": 178,
+   "compute_units": 0.534,
+   "latency_ms": 160.60014600593712,
+   "cache_event": "miss",
+   "tau": 0.55,
+   "complexity": 0.1115,
+   "verifier_failed": []
+  },
+  {
+   "task_id": "std_en_04",
+   "answer": "The amount of invoice #INV-8841 is SAR 12,400.",
+   "final_tier": 1,
+   "path": [
+    "tier1:pruned"
+   ],
+   "correct": true,
+   "tokens": 198,
+   "compute_units": 0.5940000000000001,
+   "latency_ms": 148.46766299778596,
+   "cache_event": "miss",
+   "tau": 0.55,
+   "complexity": 0.1393,
+   "verifier_failed": []
+  },
+  {
+   "task_id": "std_en_05",
+   "answer": "Invoice #INV-9017 is disputed due to a quantity mismatch against purchase order PO-5520, amounting to SAR 31,200.",
+   "final_tier": 1,
+   "path": [
+    "tier1:pruned"
+   ],
+   "correct": true,
+   "tokens": 182,
+   "compute_units": 0.546,
+   "latency_ms": 222.92835300155448,
+   "cache_event": "miss",
+   "tau": 0.55,
+   "complexity": 0.1255,
+   "verifier_failed": []
+  },
+  {
+   "task_id": "std_en_06",
+   "answer": "{\n  \"invoice_id\": \"INV-9017\",\n  \"supplier\": \"Red Sea Logistics\",\n  \"status\": \"disputed\"\n}",
+   "final_tier": 1,
+   "path": [
+    "tier1:pruned"
+   ],
+   "correct": true,
+   "tokens": 220,
+   "compute_units": 0.66,
+   "latency_ms": 189.54458299635328,
+   "cache_event": "miss",
+   "tau": 0.55,
+   "complexity": 0.3958,
+   "verifier_failed": []
+  },
+  {
+   "task_id": "std_en_07",
+   "answer": "The minimum password length is 14 characters.",
+   "final_tier": 1,
+   "path": [
+    "tier1:pruned"
+   ],
+   "correct": true,
+   "tokens": 137,
+   "compute_units": 0.41100000000000003,
+   "latency_ms": 69.6320780006121,
+   "cache_event": "miss",
+   "tau": 0.55,
+   "complexity": 0.1002,
+   "verifier_failed": []
+  },
+  {
+   "task_id": "std_en_08",
+   "answer": "Privileged access is reviewed monthly.",
+   "final_tier": 1,
+   "path": [
+    "tier1:pruned"
+   ],
+   "correct": true,
+   "tokens": 119,
+   "compute_units": 0.357,
+   "latency_ms": 60.96682099830243,
+   "cache_event": "miss",
+   "tau": 0.55,
+   "complexity": 0.0918,
+   "verifier_failed": []
+  },
+  {
+   "task_id": "std_en_09",
+   "answer": "BitLocker and FileVault are approved for company laptops.",
+   "final_tier": 1,
+   "path": [
+    "tier1:pruned"
+   ],
+   "correct": true,
+   "tokens": 133,
+   "compute_units": 0.399,
+   "latency_ms": 79.1514389985276,
+   "cache_event": "miss",
+   "tau": 0.55,
+   "complexity": 0.1101,
+   "verifier_failed": []
+  },
+  {
+   "task_id": "std_en_10",
+   "answer": "Multi-factor authentication is mandatory for all remote access and every privileged account, as stated in [1].",
+   "final_tier": 1,
+   "path": [
+    "tier1:pruned"
+   ],
+   "correct": true,
+   "tokens": 132,
+   "compute_units": 0.396,
+   "latency_ms": 138.09628600426367,
+   "cache_event": "miss",
+   "tau": 0.55,
+   "complexity": 0.0643,
+   "verifier_failed": []
+  },
+  {
+   "task_id": "std_en_11",
+   "answer": "The domestic per diem is SAR 450.",
+   "final_tier": 1,
+   "path": [
+    "tier1:pruned"
+   ],
+   "correct": true,
+   "tokens": 137,
+   "compute_units": 0.41100000000000003,
+   "latency_ms": 90.76058699733112,
+   "cache_event": "miss",
+   "tau": 0.55,
+   "complexity": 0.1037,
+   "verifier_failed": []
+  },
+  {
+   "task_id": "std_en_12",
+   "answer": "The hotel cap per night in Jeddah is SAR 1,200.",
+   "final_tier": 1,
+   "path": [
+    "tier1:pruned"
+   ],
+   "correct": true,
+   "tokens": 164,
+   "compute_units": 0.492,
+   "latency_ms": 117.98245700084837,
+   "cache_event": "miss",
+   "tau": 0.55,
+   "complexity": 0.1104,
+   "verifier_failed": []
+  },
+  {
+   "task_id": "std_en_13",
+   "answer": "Economy class should be booked for a 4-hour flight.",
+   "final_tier": 1,
+   "path": [
+    "tier1:pruned"
+   ],
+   "correct": true,
+   "tokens": 140,
+   "compute_units": 0.42000000000000004,
+   "latency_ms": 94.54391300237738,
+   "cache_event": "miss",
+   "tau": 0.55,
+   "complexity": 0.1221,
+   "verifier_failed": []
+  },
+  {
+   "task_id": "std_ar_01",
+   "answer": "مدة الإجازة السنوية للموظف 21 يوماً، قد تزيد إلى 30 يوماً بعد خمس سنوات من الخدمة المتصلة.",
+   "final_tier": 1,
+   "path": [
+    "tier1:pruned"
+   ],
+   "correct": true,
+   "tokens": 212,
+   "compute_units": 0.636,
+   "latency_ms": 213.38895899777302,
+   "cache_event": "miss",
+   "tau": 0.55,
+   "complexity": 0.1015,
+   "verifier_failed": []
+  },
+  {
+   "task_id": "std_ar_02",
+   "answer": "بدل النقل الشهري يبلغ 800 ريال.",
+   "final_tier": 1,
+   "path": [
+    "tier1:pruned"
+   ],
+   "correct": true,
+   "tokens": 156,
+   "compute_units": 0.46799999999999997,
+   "latency_ms": 107.70616699809442,
+   "cache_event": "miss",
+   "tau": 0.55,
+   "complexity": 0.0668,
+   "verifier_failed": []
+  },
+  {
+   "task_id": "std_ar_03",
+   "answer": "تبلغ مدة فترة التجربة 90 يوماً، ويجوز تمديدها بموافقة كتابية.",
+   "final_tier": 1,
+   "path": [
+    "tier1:pruned"
+   ],
+   "correct": true,
+   "tokens": 187,
+   "compute_units": 0.5609999999999999,
+   "latency_ms": 173.6295699993451,
+   "cache_event": "miss",
+   "tau": 0.55,
+   "complexity": 0.0508,
+   "verifier_failed": []
+  },
+  {
+   "task_id": "std_ar_04",
+   "answer": "قيمة أمر الشراء PO-7310 هي 240,000 ريال سعودي.",
+   "final_tier": 1,
+   "path": [
+    "tier1:pruned"
+   ],
+   "correct": true,
+   "tokens": 222,
+   "compute_units": 0.666,
+   "latency_ms": 165.86712599623948,
+   "cache_event": "miss",
+   "tau": 0.55,
+   "complexity": 0.0997,
+   "verifier_failed": []
+  },
+  {
+   "task_id": "std_ar_05",
+   "answer": "يجب سداد الفواتير خلال 45 يوماً من تاريخ استلام الفاتورة المعتمدة.",
+   "final_tier": 1,
+   "path": [
+    "tier1:pruned"
+   ],
+   "correct": true,
+   "tokens": 170,
+   "compute_units": 0.51,
+   "latency_ms": 161.95684999910765,
+   "cache_event": "miss",
+   "tau": 0.55,
+   "complexity": 0.0786,
+   "verifier_failed": []
+  },
+  {
+   "task_id": "std_ar_06",
+   "answer": "العميل لديه 14 يوماً لإرجاع المنتجات غير المستخدمة.",
+   "final_tier": 1,
+   "path": [
+    "tier1:pruned"
+   ],
+   "correct": true,
+   "tokens": 158,
+   "compute_units": 0.474,
+   "latency_ms": 137.2809879969305,
+   "cache_event": "miss",
+   "tau": 0.55,
+   "complexity": 0.1205,
+   "verifier_failed": []
+  },
+  {
+   "task_id": "std_ar_07",
+   "answer": "يتم استرداد المبلغ خلال 7 يوم عمل من استلام المنتج المرتجع.",
+   "final_tier": 1,
+   "path": [
+    "tier1:pruned"
+   ],
+   "correct": true,
+   "tokens": 157,
+   "compute_units": 0.471,
+   "latency_ms": 132.44769900164917,
+   "cache_event": "miss",
+   "tau": 0.55,
+   "complexity": 0.1252,
+   "verifier_failed": []
+  },
+  {
+   "task_id": "llo_en_01",
+   "answer": "The vendor must acknowledge a Priority-1 incident, which represents a critical outage, within 15 minutes, 24/7.",
+   "final_tier": 2,
+   "path": [
+    "tier1:pruned",
+    "escalate:degenerate_or_refusal",
+    "tier2:raw"
+   ],
+   "correct": true,
+   "tokens": 619,
+   "compute_units": 6.630999999999999,
+   "latency_ms": 586.1096900022204,
+   "cache_event": "miss",
+   "tau": 0.55,
+   "complexity": 0.149,
+   "verifier_failed": [
+    "degenerate_or_refusal"
+   ]
+  },
+  {
+   "task_id": "llo_en_02",
+   "answer": "No, you are not allowed to copy top-secret files onto a USB stick as per the laptop encryption policy, which mandates full-disk encryption on company laptops.",
+   "final_tier": 1,
+   "path": [
+    "tier1:pruned"
+   ],
+   "correct": false,
+   "tokens": 152,
+   "compute_units": 0.45599999999999996,
+   "latency_ms": 195.2406859970931,
+   "cache_event": "miss",
+   "tau": 0.55,
+   "complexity": 0.1462,
+   "verifier_failed": []
+  },
+  {
+   "task_id": "llo_en_03",
+   "answer": "Claims must be submitted within 30 days of return.",
+   "final_tier": 2,
+   "path": [
+    "tier1:pruned",
+    "escalate:degenerate_or_refusal",
+    "tier2:raw"
+   ],
+   "correct": true,
+   "tokens": 456,
+   "compute_units": 4.6899999999999995,
+   "latency_ms": 352.4412989998062,
+   "cache_event": "miss",
+   "tau": 0.55,
+   "complexity": 0.1493,
+   "verifier_failed": [
+    "degenerate_or_refusal"
+   ]
+  },
+  {
+   "task_id": "llo_ar_01",
+   "answer": "الحد الأعلى للعقوبة المالية عند التأخر هو 10% من قيمة العقد.",
+   "final_tier": 1,
+   "path": [
+    "tier1:pruned"
+   ],
+   "correct": true,
+   "tokens": 191,
+   "compute_units": 0.573,
+   "latency_ms": 147.0239060025022,
+   "cache_event": "miss",
+   "tau": 0.55,
+   "complexity": 0.1331,
+   "verifier_failed": []
+  },
+  {
+   "task_id": "mh_en_01",
+   "answer": "The service credit for a month with 98.7% availability is SAR 4800.",
+   "final_tier": 1,
+   "path": [
+    "tier1:pruned"
+   ],
+   "correct": false,
+   "tokens": 205,
+   "compute_units": 0.615,
+   "latency_ms": 155.1235290038632,
+   "cache_event": "miss",
+   "tau": 0.55,
+   "complexity": 0.4294,
+   "verifier_failed": []
+  },
+  {
+   "task_id": "mh_en_02",
+   "answer": "{\n  \"invoice_id\": \"INV-9120\",\n  \"amount_payable\": 4508\n}",
+   "final_tier": 2,
+   "path": [
+    "tier2:pruned"
+   ],
+   "correct": true,
+   "tokens": 211,
+   "compute_units": 2.9539999999999997,
+   "latency_ms": 503.27817600256765,
+   "cache_event": "miss",
+   "tau": 0.55,
+   "complexity": 0.9875,
+   "verifier_failed": null
+  },
+  {
+   "task_id": "mh_en_03",
+   "answer": "The total reimbursable amount for a 3-night international trip to Dubai is SAR 4,500, calculated as (SAR 900 per diem × 4 days) + (SAR 1,200 hotel cap × 3 nights).",
+   "final_tier": 2,
+   "path": [
+    "tier2:pruned"
+   ],
+   "correct": false,
+   "tokens": 218,
+   "compute_units": 3.052,
+   "latency_ms": 895.833913000963,
+   "cache_event": "miss",
+   "tau": 0.55,
+   "complexity": 0.7421,
+   "verifier_failed": null
+  },
+  {
+   "task_id": "mh_ar_01",
+   "answer": "غرامة التأخير لمدة 6 أيام على أمر الشراء PO-7310 تبلغ 720 ريال سعودي، حيث أن الغرامة تقدر بـ 0.5٪ من قيمة العقد يومياً، والقيمة الإجمالية لأمر الشراء PO-7310 هي 240,000 ريال سعودي.",
+   "final_tier": 2,
+   "path": [
+    "tier2:pruned"
+   ],
+   "correct": false,
+   "tokens": 280,
+   "compute_units": 3.9200000000000004,
+   "latency_ms": 1221.3121489920804,
+   "cache_event": "miss",
+   "tau": 0.55,
+   "complexity": 0.7191,
+   "verifier_failed": null
+  },
+  {
+   "task_id": "aro_ar_01",
+   "answer": "بدل السكن يعادل 25% من الراتب الأساسي.",
+   "final_tier": 1,
+   "path": [
+    "tier1:pruned"
+   ],
+   "correct": true,
+   "tokens": 168,
+   "compute_units": 0.504,
+   "latency_ms": 122.38949999457807,
+   "cache_event": "miss",
+   "tau": 0.55,
+   "complexity": 0.0706,
+   "verifier_failed": []
+  },
+  {
+   "task_id": "aro_ar_02",
+   "answer": "نعم، يستحق الموظف 30 يوماً إجازة سنوية بعد إتمام خمس سنوات من الخدمة المتصلة.",
+   "final_tier": 1,
+   "path": [
+    "tier1:pruned"
+   ],
+   "correct": true,
+   "tokens": 216,
+   "compute_units": 0.648,
+   "latency_ms": 204.9830980017502,
+   "cache_event": "miss",
+   "tau": 0.55,
+   "complexity": 0.26,
+   "verifier_failed": []
+  },
+  {
+   "task_id": "aro_ar_03",
+   "answer": "مدة الضمان على المنتجات ضد عيوب التصنيع هي 12 شهراً.",
+   "final_tier": 1,
+   "path": [
+    "tier1:pruned"
+   ],
+   "correct": true,
+   "tokens": 163,
+   "compute_units": 0.489,
+   "latency_ms": 162.13854500002927,
+   "cache_event": "miss",
+   "tau": 0.55,
+   "complexity": 0.0636,
+   "verifier_failed": []
+  },
+  {
+   "task_id": "aro_ar_04",
+   "answer": "لا، لا تشمل سياسة الإرجاع المنتجات المخفضة بنسبة 60٪ أو أكثر، وفقًا للنقطة [2] من السياسات.",
+   "final_tier": 1,
+   "path": [
+    "tier1:pruned"
+   ],
+   "correct": true,
+   "tokens": 181,
+   "compute_units": 0.5429999999999999,
+   "latency_ms": 237.82170099671697,
+   "cache_event": "miss",
+   "tau": 0.55,
+   "complexity": 0.1208,
+   "verifier_failed": []
+  },
+  {
+   "task_id": "cache_en_hit",
+   "answer": "The amount of invoice #INV-8841 is SAR 12,400.",
+   "final_tier": 0,
+   "path": [
+    "cache_hit:std_en_04"
+   ],
+   "correct": true,
+   "tokens": 0,
+   "compute_units": 0.0,
+   "latency_ms": 1.4885249984217808,
+   "cache_event": "hit",
+   "tau": 0.55,
+   "complexity": null,
+   "verifier_failed": null
+  },
+  {
+   "task_id": "cache_en_trap",
+   "answer": "The amount of invoice #INV-8842 is SAR 9,850.",
+   "final_tier": 1,
+   "path": [
+    "tier1:pruned"
+   ],
+   "correct": true,
+   "tokens": 198,
+   "compute_units": 0.5940000000000001,
+   "latency_ms": 130.6252910039737,
+   "cache_event": "blocked_trap",
+   "tau": 0.55,
+   "complexity": 0.1393,
+   "verifier_failed": []
+  },
+  {
+   "task_id": "cache_ar_hit",
+   "answer": "قيمة أمر الشراء PO-7310 هي 240,000 ريال سعودي.",
+   "final_tier": 0,
+   "path": [
+    "cache_hit:std_ar_04"
+   ],
+   "correct": true,
+   "tokens": 0,
+   "compute_units": 0.0,
+   "latency_ms": 1.4101050001045223,
+   "cache_event": "hit",
+   "tau": 0.55,
+   "complexity": null,
+   "verifier_failed": null
+  },
+  {
+   "task_id": "cache_ar_trap",
+   "answer": "غرامة التأخير إذا تأخر المورد 8 أيام في تسليم أمر الشراء PO-7310 هي ٩٦٠ ريال سعودي.",
+   "final_tier": 2,
+   "path": [
+    "tier2:pruned"
+   ],
+   "correct": false,
+   "tokens": 248,
+   "compute_units": 3.472,
+   "latency_ms": 647.8669280013652,
+   "cache_event": "blocked_trap",
+   "tau": 0.55,
+   "complexity": 0.7182,
+   "verifier_failed": null
+  }
+ ]
+}

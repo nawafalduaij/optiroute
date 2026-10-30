@@ -1,0 +1,7216 @@
+{
+ "mode": "replay",
+ "source": "replay of `data/recorded_runs.jsonl`",
+ "eval_seconds": 2.6085356319999846,
+ "models": {
+  "tier1": [
+   "qwen2.5:3b",
+   3.0
+  ],
+  "tier2": [
+   "qwen2.5:14b",
+   14.0
+  ]
+ },
+ "cumulative": {
+  "1_Always_Tier2_Raw": {
+   "n": 36,
+   "accuracy": 0.8888888888888888,
+   "correct": 32,
+   "total_tokens": 13712,
+   "compute_units": 191.968,
+   "cps": 5.999,
+   "p50_ms": 472.4353444981272,
+   "p95_ms": 1028.1943379993481,
+   "tier0": 0,
+   "tier1": 0,
+   "tier2": 36,
+   "escalations": 0,
+   "cache_hits": 0,
+   "blocked_traps": 0,
+   "false_cache_hits": 0,
+   "n_traps": 2,
+   "overhead_ms": {
+    "pruner": 0.0,
+    "cache": 0.0,
+    "router": 1.3665753054333942,
+    "verifier": 0.0
+   },
+   "per_category": {
+    "standard": 1.0,
+    "low_lexical_overlap": 1.0,
+    "multi_hop": 0.5,
+    "arabic_orthographic_variants": 0.75,
+    "cache_near_duplicates": 0.75
+   }
+  },
+  "2_Always_Tier1_Raw": {
+   "n": 36,
+   "accuracy": 0.8611111111111112,
+   "correct": 31,
+   "total_tokens": 13363,
+   "compute_units": 40.089,
+   "cps": 1.2931935483870967,
+   "p50_ms": 128.95404199982585,
+   "p95_ms": 198.68497499978636,
+   "tier0": 0,
+   "tier1": 36,
+   "tier2": 0,
+   "escalations": 0,
+   "cache_hits": 0,
+   "blocked_traps": 0,
+   "false_cache_hits": 0,
+   "n_traps": 2,
+   "overhead_ms": {
+    "pruner": 0.0,
+    "cache": 0.0,
+    "router": 1.3435753054283042,
+    "verifier": 0.0
+   },
+   "per_category": {
+    "standard": 0.95,
+    "low_lexical_overlap": 1.0,
+    "multi_hop": 0.25,
+    "arabic_orthographic_variants": 1.0,
+    "cache_near_duplicates": 0.75
+   }
+  },
+  "3_Router_Only": {
+   "n": 36,
+   "accuracy": 0.8611111111111112,
+   "correct": 31,
+   "total_tokens": 13580,
+   "compute_units": 60.628,
+   "cps": 1.955741935483871,
+   "p50_ms": 145.6750684968522,
+   "p95_ms": 819.3892420007928,
+   "tier0": 0,
+   "tier1": 32,
+   "tier2": 4,
+   "escalations": 0,
+   "cache_hits": 0,
+   "blocked_traps": 0,
+   "false_cache_hits": 0,
+   "n_traps": 2,
+   "overhead_ms": {
+    "pruner": 0.0,
+    "cache": 0.0,
+    "router": 1.4229784166875308,
+    "verifier": 0.0
+   },
+   "per_category": {
+    "standard": 0.95,
+    "low_lexical_overlap": 1.0,
+    "multi_hop": 0.25,
+    "arabic_orthographic_variants": 1.0,
+    "cache_near_duplicates": 0.75
+   }
+  },
+  "4_Pruner_Plus_Router": {
+   "n": 36,
+   "accuracy": 0.8055555555555556,
+   "correct": 29,
+   "total_tokens": 6519,
+   "compute_units": 30.084,
+   "cps": 1.0373793103448277,
+   "p50_ms": 147.54340949933976,
+   "p95_ms": 647.6804739986779,
+   "tier0": 0,
+   "tier1": 32,
+   "tier2": 4,
+   "escalations": 0,
+   "cache_hits": 0,
+   "blocked_traps": 0,
+   "false_cache_hits": 0,
+   "n_traps": 2,
+   "overhead_ms": {
+    "pruner": 1.3503500830564816,
+    "cache": 0.0,
+    "router": 0.018616416430935107,
+    "verifier": 0.0
+   },
+   "per_category": {
+    "standard": 1.0,
+    "low_lexical_overlap": 0.25,
+    "multi_hop": 0.25,
+    "arabic_orthographic_variants": 1.0,
+    "cache_near_duplicates": 0.75
+   }
+  },
+  "5_OptiRoute_Full": {
+   "n": 36,
+   "accuracy": 0.8611111111111112,
+   "correct": 31,
+   "total_tokens": 6847,
+   "compute_units": 39.164,
+   "cps": 1.2633548387096776,
+   "p50_ms": 151.98057750430482,
+   "p95_ms": 648.0022259975318,
+   "tier0": 2,
+   "tier1": 28,
+   "tier2": 6,
+   "escalations": 2,
+   "cache_hits": 2,
+   "blocked_traps": 2,
+   "false_cache_hits": 0,
+   "n_traps": 2,
+   "overhead_ms": {
+    "pruner": 1.3417993608931686,
+    "cache": 0.1802920553220449,
+    "router": 0.0168116115067581,
+    "verifier": 0.11085008281952469
+   },
+   "per_category": {
+    "standard": 1.0,
+    "low_lexical_overlap": 0.75,
+    "multi_hop": 0.25,
+    "arabic_orthographic_variants": 1.0,
+    "cache_near_duplicates": 0.75
+   }
+  }
+ },
+ "loo": {
+  "Full_OptiRoute": {
+   "n": 36,
+   "accuracy": 0.8611111111111112,
+   "correct": 31,
+   "total_tokens": 6847,
+   "compute_units": 39.164,
+   "cps": 1.2633548387096776,
+   "p50_ms": 151.8555700023123,
+   "p95_ms": 647.8445669972804,
+   "tier0": 2,
+   "tier1": 28,
+   "tier2": 6,
+   "escalations": 2,
+   "cache_hits": 2,
+   "blocked_traps": 2,
+   "false_cache_hits": 0,
+   "n_traps": 2,
+   "overhead_ms": {
+    "pruner": 1.282108139093907,
+    "cache": 0.16900319405976916,
+    "router": 0.015951638690441743,
+    "verifier": 0.09969913874859533
+   },
+   "per_category": {
+    "standard": 1.0,
+    "low_lexical_overlap": 0.75,
+    "multi_hop": 0.25,
+    "arabic_orthographic_variants": 1.0,
+    "cache_near_duplicates": 0.75
+   }
+  },
+  "LOO_No_Cache": {
+   "n": 36,
+   "accuracy": 0.8611111111111112,
+   "correct": 31,
+   "total_tokens": 7255,
+   "compute_units": 40.388,
+   "cps": 1.3028387096774192,
+   "p50_ms": 151.64051600012928,
+   "p95_ms": 647.5866370028758,
+   "tier0": 0,
+   "tier1": 30,
+   "tier2": 6,
+   "escalations": 2,
+   "cache_hits": 0,
+   "blocked_traps": 0,
+   "false_cache_hits": 0,
+   "n_traps": 2,
+   "overhead_ms": {
+    "pruner": 1.2416117227379193,
+    "cache": 0.0,
+    "router": 0.01687866703529532,
+    "verifier": 0.10169011087176234
+   },
+   "per_category": {
+    "standard": 1.0,
+    "low_lexical_overlap": 0.75,
+    "multi_hop": 0.25,
+    "arabic_orthographic_variants": 1.0,
+    "cache_near_duplicates": 0.75
+   }
+  },
+  "LOO_No_Cache_Entity_Guard": {
+   "n": 36,
+   "accuracy": 0.8333333333333334,
+   "correct": 30,
+   "total_tokens": 6401,
+   "compute_units": 35.098,
+   "cps": 1.1699333333333333,
+   "p50_ms": 147.7252364991687,
+   "p95_ms": 586.1677789995412,
+   "tier0": 4,
+   "tier1": 27,
+   "tier2": 5,
+   "escalations": 2,
+   "cache_hits": 4,
+   "blocked_traps": 0,
+   "false_cache_hits": 2,
+   "n_traps": 2,
+   "overhead_ms": {
+    "pruner": 1.2134954441636283,
+    "cache": 0.1639105554810764,
+    "router": 0.014398722164009491,
+    "verifier": 0.09350488886007548
+   },
+   "per_category": {
+    "standard": 1.0,
+    "low_lexical_overlap": 0.75,
+    "multi_hop": 0.25,
+    "arabic_orthographic_variants": 1.0,
+    "cache_near_duplicates": 0.5
+   }
+  },
+  "LOO_No_Pruner": {
+   "n": 36,
+   "accuracy": 0.8611111111111112,
+   "correct": 31,
+   "total_tokens": 13235,
+   "compute_units": 64.51,
+   "cps": 2.080967741935484,
+   "p50_ms": 141.74600850146555,
+   "p95_ms": 1218.090558004207,
+   "tier0": 2,
+   "tier1": 29,
+   "tier2": 5,
+   "escalations": 1,
+   "cache_hits": 2,
+   "blocked_traps": 2,
+   "false_cache_hits": 0,
+   "n_traps": 2,
+   "overhead_ms": {
+    "pruner": 0.0,
+    "cache": 0.16411172166246818,
+    "router": 1.2288789448575699,
+    "verifier": 0.18614905578336524
+   },
+   "per_category": {
+    "standard": 0.95,
+    "low_lexical_overlap": 1.0,
+    "multi_hop": 0.25,
+    "arabic_orthographic_variants": 1.0,
+    "cache_near_duplicates": 0.75
+   }
+  },
+  "LOO_No_Verifier": {
+   "n": 36,
+   "accuracy": 0.8055555555555556,
+   "correct": 29,
+   "total_tokens": 6111,
+   "compute_units": 28.86,
+   "cps": 0.9951724137931034,
+   "p50_ms": 142.48168250067684,
+   "p95_ms": 647.86626799925,
+   "tier0": 2,
+   "tier1": 30,
+   "tier2": 4,
+   "escalations": 0,
+   "cache_hits": 2,
+   "blocked_traps": 2,
+   "false_cache_hits": 0,
+   "n_traps": 2,
+   "overhead_ms": {
+    "pruner": 1.2171886947827362,
+    "cache": 0.1635728610078028,
+    "router": 0.015329083301670229,
+    "verifier": 0.0
+   },
+   "per_category": {
+    "standard": 1.0,
+    "low_lexical_overlap": 0.25,
+    "multi_hop": 0.25,
+    "arabic_orthographic_variants": 1.0,
+    "cache_near_duplicates": 0.75
+   }
+  },
+  "LOO_No_Adaptation": {
+   "n": 36,
+   "accuracy": 0.8611111111111112,
+   "correct": 31,
+   "total_tokens": 6847,
+   "compute_units": 39.164,
+   "cps": 1.2633548387096776,
+   "p50_ms": 151.7955960008246,
+   "p95_ms": 647.8669280013652,
+   "tier0": 2,
+   "tier1": 28,
+   "tier2": 6,
+   "escalations": 2,
+   "cache_hits": 2,
+   "blocked_traps": 2,
+   "false_cache_hits": 0,
+   "n_traps": 2,
+   "overhead_ms": {
+    "pruner": 1.2120865832103946,
+    "cache": 0.16288291660910342,
+    "router": 0.01531075001063679,
+    "verifier": 0.09642327778338869
+   },
+   "per_category": {
+    "standard": 1.0,
+    "low_lexical_overlap": 0.75,
+    "multi_hop": 0.25,
+    "arabic_orthographic_variants": 1.0,
+    "cache_near_duplicates": 0.75
+   }
+  }
+ },
+ "verifier": [
+  {
+   "variant": "pruned",
+   "tp": 4,
+   "fp": 0,
+   "fn": 3,
+   "tn": 29,
+   "precision": 1.0,
+   "recall": 0.5714285714285714,
+   "tier1_error_rate": 0.19444444444444445
+  },
+  {
+   "variant": "raw",
+   "tp": 1,
+   "fp": 1,
+   "fn": 4,
+   "tn": 30,
+   "precision": 0.5,
+   "recall": 0.2,
+   "tier1_error_rate": 0.1388888888888889
+  }
+ ],
+ "noise_scaling": [
+  {
+   "noise": "0x",
+   "evidence_recall": 0.9166666666666666,
+   "tokens_before": 8999,
+   "tokens_after": 2693,
+   "reduction": 0.7007445271696855,
+   "prune_ms_mean": 1.1739985556131514
+  },
+  {
+   "noise": "1x",
+   "evidence_recall": 0.9166666666666666,
+   "tokens_before": 17836,
+   "tokens_after": 2823,
+   "reduction": 0.8417246019286836,
+   "prune_ms_mean": 2.3426203055755144
+  },
+  {
+   "noise": "2x",
+   "evidence_recall": 0.9166666666666666,
+   "tokens_before": 26522,
+   "tokens_after": 2718,
+   "reduction": 0.8975190407963201,
+   "prune_ms_mean": 2.4734823334963747
+  },
+  {
+   "noise": "4x",
+   "evidence_recall": 0.8888888888888888,
+   "tokens_before": 43821,
+   "tokens_after": 2642,
+   "reduction": 0.9397092718103193,
+   "prune_ms_mean": 3.0738009444475107
+  }
+ ],
+ "wave": {
+  "phases": {
+   "easy_1": [
+    0,
+    10
+   ],
+   "hard_burst": [
+    10,
+    34
+   ],
+   "easy_2": [
+    34,
+    54
+   ]
+  },
+  "adaptive": {
+   "summary": {
+    "n": 54,
+    "accuracy": 0.8518518518518519,
+    "correct": 46,
+    "total_tokens": 11099,
+    "compute_units": 65.087,
+    "cps": 1.4149347826086958,
+    "p50_ms": 160.5602700001793,
+    "p95_ms": 895.5609160008247,
+    "tier0": 0,
+    "tier1": 44,
+    "tier2": 10,
+    "escalations": 4,
+    "cache_hits": 0,
+    "blocked_traps": 0,
+    "false_cache_hits": 0,
+    "n_traps": 0,
+    "overhead_ms": {
+     "pruner": 1.2907544446702728,
+     "cache": 0.0,
+     "router": 0.017580851784226036,
+     "verifier": 0.10891988885877826
+    },
+    "per_category": {
+     "standard": 1.0,
+     "low_lexical_overlap": 0.75,
+     "multi_hop": 0.25,
+     "arabic_orthographic_variants": 1.0
+    }
+   },
+   "trace": [
+    {
+     "step": 0,
+     "task_id": "std_en_01",
+     "tau_used": 0.55,
+     "final_tier": 1,
+     "path": [
+      "tier1:pruned"
+     ],
+     "correct": true,
+     "tau": 0.55,
+     "action": "hold",
+     "pass_rate": null,
+     "p95_ms": 120.92
+    },
+    {
+     "step": 1,
+     "task_id": "std_en_02",
+     "tau_used": 0.55,
+     "final_tier": 1,
+     "path": [
+      "tier1:pruned"
+     ],
+     "correct": true,
+     "tau": 0.55,
+     "action": "hold",
+     "pass_rate": null,
+     "p95_ms": 120.92
+    },
+    {
+     "step": 2,
+     "task_id": "std_en_03",
+     "tau_used": 0.55,
+     "final_tier": 1,
+     "path": [
+      "tier1:pruned"
+     ],
+     "correct": true,
+     "tau": 0.55,
+     "action": "hold",
+     "pass_rate": null,
+     "p95_ms": 160.57
+    },
+    {
+     "step": 3,
+     "task_id": "std_en_04",
+     "tau_used": 0.55,
+     "final_tier": 1,
+     "path": [
+      "tier1:pruned"
+     ],
+     "correct": true,
+     "tau": 0.55,
+     "action": "hold",
+     "pass_rate": null,
+     "p95_ms": 160.57
+    },
+    {
+     "step": 4,
+     "task_id": "std_en_05",
+     "tau_used": 0.55,
+     "final_tier": 1,
+     "path": [
+      "tier1:pruned"
+     ],
+     "correct": true,
+     "tau": 0.55,
+     "action": "hold",
+     "pass_rate": 1.0,
+     "p95_ms": 222.94
+    },
+    {
+     "step": 5,
+     "task_id": "std_en_06",
+     "tau_used": 0.55,
+     "final_tier": 1,
+     "path": [
+      "tier1:pruned"
+     ],
+     "correct": true,
+     "tau": 0.55,
+     "action": "hold",
+     "pass_rate": 1.0,
+     "p95_ms": 222.94
+    },
+    {
+     "step": 6,
+     "task_id": "std_en_07",
+     "tau_used": 0.55,
+     "final_tier": 1,
+     "path": [
+      "tier1:pruned"
+     ],
+     "correct": true,
+     "tau": 0.55,
+     "action": "hold",
+     "pass_rate": 1.0,
+     "p95_ms": 222.94
+    },
+    {
+     "step": 7,
+     "task_id": "std_en_08",
+     "tau_used": 0.55,
+     "final_tier": 1,
+     "path": [
+      "tier1:pruned"
+     ],
+     "correct": true,
+     "tau": 0.55,
+     "action": "hold",
+     "pass_rate": 1.0,
+     "p95_ms": 222.94
+    },
+    {
+     "step": 8,
+     "task_id": "std_en_09",
+     "tau_used": 0.55,
+     "final_tier": 1,
+     "path": [
+      "tier1:pruned"
+     ],
+     "correct": true,
+     "tau": 0.55,
+     "action": "hold",
+     "pass_rate": 1.0,
+     "p95_ms": 222.94
+    },
+    {
+     "step": 9,
+     "task_id": "std_en_10",
+     "tau_used": 0.55,
+     "final_tier": 1,
+     "path": [
+      "tier1:pruned"
+     ],
+     "correct": true,
+     "tau": 0.55,
+     "action": "hold",
+     "pass_rate": 1.0,
+     "p95_ms": 222.94
+    },
+    {
+     "step": 10,
+     "task_id": "llo_en_01",
+     "tau_used": 0.55,
+     "final_tier": 2,
+     "path": [
+      "tier1:pruned",
+      "escalate:degenerate_or_refusal",
+      "tier2:raw"
+     ],
+     "correct": true,
+     "tau": 0.55,
+     "action": "hold",
+     "pass_rate": 0.9090909090909091,
+     "p95_ms": 585.97
+    },
+    {
+     "step": 11,
+     "task_id": "llo_en_02",
+     "tau_used": 0.55,
+     "final_tier": 1,
+     "path": [
+      "tier1:pruned"
+     ],
+     "correct": false,
+     "tau": 0.55,
+     "action": "hold",
+     "pass_rate": 0.9166666666666666,
+     "p95_ms": 222.94
+    },
+    {
+     "step": 12,
+     "task_id": "llo_en_03",
+     "tau_used": 0.55,
+     "final_tier": 2,
+     "path": [
+      "tier1:pruned",
+      "escalate:degenerate_or_refusal",
+      "tier2:raw"
+     ],
+     "correct": true,
+     "tau": 0.55,
+     "action": "hold",
+     "pass_rate": 0.8461538461538461,
+     "p95_ms": 352.26
+    },
+    {
+     "step": 13,
+     "task_id": "llo_ar_01",
+     "tau_used": 0.55,
+     "final_tier": 1,
+     "path": [
+      "tier1:pruned"
+     ],
+     "correct": true,
+     "tau": 0.55,
+     "action": "hold",
+     "pass_rate": 0.8571428571428571,
+     "p95_ms": 352.26
+    },
+    {
+     "step": 14,
+     "task_id": "mh_en_01",
+     "tau_used": 0.55,
+     "final_tier": 1,
+     "path": [
+      "tier1:pruned"
+     ],
+     "correct": false,
+     "tau": 0.55,
+     "action": "hold",
+     "pass_rate": 0.8666666666666667,
+     "p95_ms": 352.26
+    },
+    {
+     "step": 15,
+     "task_id": "mh_en_02",
+     "tau_used": 0.55,
+     "final_tier": 2,
+     "path": [
+      "tier2:pruned"
+     ],
+     "correct": true,
+     "tau": 0.55,
+     "action": "hold",
+     "pass_rate": 0.8666666666666667,
+     "p95_ms": 503.05
+    },
+    {
+     "step": 16,
+     "task_id": "mh_en_03",
+     "tau_used": 0.55,
+     "final_tier": 2,
+     "path": [
+      "tier2:pruned"
+     ],
+     "correct": false,
+     "tau": 0.55,
+     "action": "hold",
+     "pass_rate": 0.8666666666666667,
+     "p95_ms": 585.97
+    },
+    {
+     "step": 17,
+     "task_id": "mh_ar_01",
+     "tau_used": 0.55,
+     "final_tier": 2,
+     "path": [
+      "tier2:pruned"
+     ],
+     "correct": false,
+     "tau": 0.55,
+     "action": "hold",
+     "pass_rate": 0.8666666666666667,
+     "p95_ms": 895.6
+    },
+    {
+     "step": 18,
+     "task_id": "aro_ar_01",
+     "tau_used": 0.55,
+     "final_tier": 1,
+     "path": [
+      "tier1:pruned"
+     ],
+     "correct": true,
+     "tau": 0.55,
+     "action": "hold",
+     "pass_rate": 0.875,
+     "p95_ms": 895.6
+    },
+    {
+     "step": 19,
+     "task_id": "aro_ar_02",
+     "tau_used": 0.55,
+     "final_tier": 1,
+     "path": [
+      "tier1:pruned"
+     ],
+     "correct": true,
+     "tau": 0.55,
+     "action": "hold",
+     "pass_rate": 0.8823529411764706,
+     "p95_ms": 895.6
+    },
+    {
+     "step": 20,
+     "task_id": "aro_ar_03",
+     "tau_used": 0.55,
+     "final_tier": 1,
+     "path": [
+      "tier1:pruned"
+     ],
+     "correct": true,
+     "tau": 0.55,
+     "action": "hold",
+     "pass_rate": 0.8888888888888888,
+     "p95_ms": 895.6
+    },
+    {
+     "step": 21,
+     "task_id": "aro_ar_04",
+     "tau_used": 0.55,
+     "final_tier": 1,
+     "path": [
+      "tier1:pruned"
+     ],
+     "correct": true,
+     "tau": 0.55,
+     "action": "hold",
+     "pass_rate": 0.8947368421052632,
+     "p95_ms": 895.6
+    },
+    {
+     "step": 22,
+     "task_id": "llo_en_01",
+     "tau_used": 0.55,
+     "final_tier": 2,
+     "path": [
+      "tier1:pruned",
+      "escalate:degenerate_or_refusal",
+      "tier2:raw"
+     ],
+     "correct": true,
+     "tau": 0.55,
+     "action": "hold",
+     "pass_rate": 0.85,
+     "p95_ms": 895.6
+    },
+    {
+     "step": 23,
+     "task_id": "llo_en_02",
+     "tau_used": 0.55,
+     "final_tier": 1,
+     "path": [
+      "tier1:pruned"
+     ],
+     "correct": false,
+     "tau": 0.55,
+     "action": "hold",
+     "pass_rate": 0.85,
+     "p95_ms": 895.6
+    },
+    {
+     "step": 24,
+     "task_id": "llo_en_03",
+     "tau_used": 0.55,
+     "final_tier": 2,
+     "path": [
+      "tier1:pruned",
+      "escalate:degenerate_or_refusal",
+      "tier2:raw"
+     ],
+     "correct": true,
+     "tau": 0.55,
+     "action": "hold",
+     "pass_rate": 0.8,
+     "p95_ms": 895.6
+    },
+    {
+     "step": 25,
+     "task_id": "llo_ar_01",
+     "tau_used": 0.55,
+     "final_tier": 1,
+     "path": [
+      "tier1:pruned"
+     ],
+     "correct": true,
+     "tau": 0.55,
+     "action": "hold",
+     "pass_rate": 0.8,
+     "p95_ms": 895.6
+    },
+    {
+     "step": 26,
+     "task_id": "mh_en_01",
+     "tau_used": 0.55,
+     "final_tier": 1,
+     "path": [
+      "tier1:pruned"
+     ],
+     "correct": false,
+     "tau": 0.55,
+     "action": "hold",
+     "pass_rate": 0.8,
+     "p95_ms": 895.6
+    },
+    {
+     "step": 27,
+     "task_id": "mh_en_02",
+     "tau_used": 0.55,
+     "final_tier": 2,
+     "path": [
+      "tier2:pruned"
+     ],
+     "correct": true,
+     "tau": 0.55,
+     "action": "hold",
+     "pass_rate": 0.8,
+     "p95_ms": 895.6
+    },
+    {
+     "step": 28,
+     "task_id": "mh_en_03",
+     "tau_used": 0.55,
+     "final_tier": 2,
+     "path": [
+      "tier2:pruned"
+     ],
+     "correct": false,
+     "tau": 0.55,
+     "action": "hold",
+     "pass_rate": 0.8,
+     "p95_ms": 895.6
+    },
+    {
+     "step": 29,
+     "task_id": "mh_ar_01",
+     "tau_used": 0.55,
+     "final_tier": 2,
+     "path": [
+      "tier2:pruned"
+     ],
+     "correct": false,
+     "tau": 0.55,
+     "action": "hold",
+     "pass_rate": 0.8,
+     "p95_ms": 1221.09
+    },
+    {
+     "step": 30,
+     "task_id": "aro_ar_01",
+     "tau_used": 0.55,
+     "final_tier": 1,
+     "path": [
+      "tier1:pruned"
+     ],
+     "correct": true,
+     "tau": 0.55,
+     "action": "hold",
+     "pass_rate": 0.8,
+     "p95_ms": 1221.09
+    },
+    {
+     "step": 31,
+     "task_id": "aro_ar_02",
+     "tau_used": 0.55,
+     "final_tier": 1,
+     "path": [
+      "tier1:pruned"
+     ],
+     "correct": true,
+     "tau": 0.55,
+     "action": "hold",
+     "pass_rate": 0.8,
+     "p95_ms": 1221.09
+    },
+    {
+     "step": 32,
+     "task_id": "aro_ar_03",
+     "tau_used": 0.55,
+     "final_tier": 1,
+     "path": [
+      "tier1:pruned"
+     ],
+     "correct": true,
+     "tau": 0.55,
+     "action": "hold",
+     "pass_rate": 0.8,
+     "p95_ms": 1221.09
+    },
+    {
+     "step": 33,
+     "task_id": "aro_ar_04",
+     "tau_used": 0.55,
+     "final_tier": 1,
+     "path": [
+      "tier1:pruned"
+     ],
+     "correct": true,
+     "tau": 0.55,
+     "action": "hold",
+     "pass_rate": 0.8,
+     "p95_ms": 1221.09
+    },
+    {
+     "step": 34,
+     "task_id": "std_en_11",
+     "tau_used": 0.55,
+     "final_tier": 1,
+     "path": [
+      "tier1:pruned"
+     ],
+     "correct": true,
+     "tau": 0.55,
+     "action": "hold",
+     "pass_rate": 0.8,
+     "p95_ms": 1221.09
+    },
+    {
+     "step": 35,
+     "task_id": "std_en_12",
+     "tau_used": 0.55,
+     "final_tier": 1,
+     "path": [
+      "tier1:pruned"
+     ],
+     "correct": true,
+     "tau": 0.55,
+     "action": "hold",
+     "pass_rate": 0.8,
+     "p95_ms": 1221.09
+    },
+    {
+     "step": 36,
+     "task_id": "std_en_13",
+     "tau_used": 0.55,
+     "final_tier": 1,
+     "path": [
+      "tier1:pruned"
+     ],
+     "correct": true,
+     "tau": 0.55,
+     "action": "hold",
+     "pass_rate": 0.85,
+     "p95_ms": 1221.09
+    },
+    {
+     "step": 37,
+     "task_id": "std_ar_01",
+     "tau_used": 0.55,
+     "final_tier": 1,
+     "path": [
+      "tier1:pruned"
+     ],
+     "correct": true,
+     "tau": 0.55,
+     "action": "hold",
+     "pass_rate": 0.85,
+     "p95_ms": 895.56
+    },
+    {
+     "step": 38,
+     "task_id": "std_ar_02",
+     "tau_used": 0.55,
+     "final_tier": 1,
+     "path": [
+      "tier1:pruned"
+     ],
+     "correct": true,
+     "tau": 0.55,
+     "action": "hold",
+     "pass_rate": 0.9,
+     "p95_ms": 895.56
+    },
+    {
+     "step": 39,
+     "task_id": "std_ar_03",
+     "tau_used": 0.55,
+     "final_tier": 1,
+     "path": [
+      "tier1:pruned"
+     ],
+     "correct": true,
+     "tau": 0.55,
+     "action": "hold",
+     "pass_rate": 0.9,
+     "p95_ms": 895.56
+    },
+    {
+     "step": 40,
+     "task_id": "std_ar_04",
+     "tau_used": 0.55,
+     "final_tier": 1,
+     "path": [
+      "tier1:pruned"
+     ],
+     "correct": true,
+     "tau": 0.55,
+     "action": "hold",
+     "pass_rate": 0.9,
+     "p95_ms": 895.56
+    },
+    {
+     "step": 41,
+     "task_id": "std_ar_05",
+     "tau_used": 0.55,
+     "final_tier": 1,
+     "path": [
+      "tier1:pruned"
+     ],
+     "correct": true,
+     "tau": 0.55,
+     "action": "hold",
+     "pass_rate": 0.9,
+     "p95_ms": 895.56
+    },
+    {
+     "step": 42,
+     "task_id": "std_ar_06",
+     "tau_used": 0.55,
+     "final_tier": 1,
+     "path": [
+      "tier1:pruned"
+     ],
+     "correct": true,
+     "tau": 0.55,
+     "action": "hold",
+     "pass_rate": 0.9,
+     "p95_ms": 895.56
+    },
+    {
+     "step": 43,
+     "task_id": "std_ar_07",
+     "tau_used": 0.55,
+     "final_tier": 1,
+     "path": [
+      "tier1:pruned"
+     ],
+     "correct": true,
+     "tau": 0.55,
+     "action": "hold",
+     "pass_rate": 0.9,
+     "p95_ms": 895.56
+    },
+    {
+     "step": 44,
+     "task_id": "std_en_01",
+     "tau_used": 0.55,
+     "final_tier": 1,
+     "path": [
+      "tier1:pruned"
+     ],
+     "correct": true,
+     "tau": 0.55,
+     "action": "hold",
+     "pass_rate": 0.9,
+     "p95_ms": 895.56
+    },
+    {
+     "step": 45,
+     "task_id": "std_en_02",
+     "tau_used": 0.55,
+     "final_tier": 1,
+     "path": [
+      "tier1:pruned"
+     ],
+     "correct": true,
+     "tau": 0.55,
+     "action": "hold",
+     "pass_rate": 0.95,
+     "p95_ms": 895.56
+    },
+    {
+     "step": 46,
+     "task_id": "std_en_03",
+     "tau_used": 0.55,
+     "final_tier": 1,
+     "path": [
+      "tier1:pruned"
+     ],
+     "correct": true,
+     "tau": 0.55,
+     "action": "hold",
+     "pass_rate": 0.95,
+     "p95_ms": 895.56
+    },
+    {
+     "step": 47,
+     "task_id": "std_en_04",
+     "tau_used": 0.55,
+     "final_tier": 1,
+     "path": [
+      "tier1:pruned"
+     ],
+     "correct": true,
+     "tau": 0.55,
+     "action": "hold",
+     "pass_rate": 1.0,
+     "p95_ms": 895.56
+    },
+    {
+     "step": 48,
+     "task_id": "std_en_05",
+     "tau_used": 0.55,
+     "final_tier": 1,
+     "path": [
+      "tier1:pruned"
+     ],
+     "correct": true,
+     "tau": 0.55,
+     "action": "hold",
+     "pass_rate": 1.0,
+     "p95_ms": 237.65
+    },
+    {
+     "step": 49,
+     "task_id": "std_en_06",
+     "tau_used": 0.55,
+     "final_tier": 1,
+     "path": [
+      "tier1:pruned"
+     ],
+     "correct": true,
+     "tau": 0.55,
+     "action": "hold",
+     "pass_rate": 1.0,
+     "p95_ms": 222.9
+    },
+    {
+     "step": 50,
+     "task_id": "std_en_07",
+     "tau_used": 0.55,
+     "final_tier": 1,
+     "path": [
+      "tier1:pruned"
+     ],
+     "correct": true,
+     "tau": 0.55,
+     "action": "hold",
+     "pass_rate": 1.0,
+     "p95_ms": 222.9
+    },
+    {
+     "step": 51,
+     "task_id": "std_en_08",
+     "tau_used": 0.55,
+     "final_tier": 1,
+     "path": [
+      "tier1:pruned"
+     ],
+     "correct": true,
+     "tau": 0.55,
+     "action": "hold",
+     "pass_rate": 1.0,
+     "p95_ms": 222.9
+    },
+    {
+     "step": 52,
+     "task_id": "std_en_09",
+     "tau_used": 0.55,
+     "final_tier": 1,
+     "path": [
+      "tier1:pruned"
+     ],
+     "correct": true,
+     "tau": 0.55,
+     "action": "hold",
+     "pass_rate": 1.0,
+     "p95_ms": 222.9
+    },
+    {
+     "step": 53,
+     "task_id": "std_en_10",
+     "tau_used": 0.55,
+     "final_tier": 1,
+     "path": [
+      "tier1:pruned"
+     ],
+     "correct": true,
+     "tau": 0.55,
+     "action": "hold",
+     "pass_rate": 1.0,
+     "p95_ms": 213.32
+    }
+   ]
+  },
+  "fixed_tau": {
+   "summary": {
+    "n": 54,
+    "accuracy": 0.8518518518518519,
+    "correct": 46,
+    "total_tokens": 11099,
+    "compute_units": 65.087,
+    "cps": 1.4149347826086958,
+    "p50_ms": 160.51464800152752,
+    "p95_ms": 895.5160289994022,
+    "tier0": 0,
+    "tier1": 44,
+    "tier2": 10,
+    "escalations": 4,
+    "cache_hits": 0,
+    "blocked_traps": 0,
+    "false_cache_hits": 0,
+    "n_traps": 0,
+    "overhead_ms": {
+     "pruner": 1.2392359630110958,
+     "cache": 0.0,
+     "router": 0.017703407542689495,
+     "verifier": 0.1050209256963744
+    },
+    "per_category": {
+     "standard": 1.0,
+     "low_lexical_overlap": 0.75,
+     "multi_hop": 0.25,
+     "arabic_orthographic_variants": 1.0
+    }
+   },
+   "trace": [
+    {
+     "step": 0,
+     "task_id": "std_en_01",
+     "tau_used": 0.55,
+     "final_tier": 1,
+     "path": [
+      "tier1:pruned"
+     ],
+     "correct": true,
+     "tau": 0.55,
+     "action": "hold",
+     "pass_rate": null,
+     "p95_ms": 120.92
+    },
+    {
+     "step": 1,
+     "task_id": "std_en_02",
+     "tau_used": 0.55,
+     "final_tier": 1,
+     "path": [
+      "tier1:pruned"
+     ],
+     "correct": true,
+     "tau": 0.55,
+     "action": "hold",
+     "pass_rate": null,
+     "p95_ms": 120.92
+    },
+    {
+     "step": 2,
+     "task_id": "std_en_03",
+     "tau_used": 0.55,
+     "final_tier": 1,
+     "path": [
+      "tier1:pruned"
+     ],
+     "correct": true,
+     "tau": 0.55,
+     "action": "hold",
+     "pass_rate": null,
+     "p95_ms": 160.56
+    },
+    {
+     "step": 3,
+     "task_id": "std_en_04",
+     "tau_used": 0.55,
+     "final_tier": 1,
+     "path": [
+      "tier1:pruned"
+     ],
+     "correct": true,
+     "tau": 0.55,
+     "action": "hold",
+     "pass_rate": null,
+     "p95_ms": 160.56
+    },
+    {
+     "step": 4,
+     "task_id": "std_en_05",
+     "tau_used": 0.55,
+     "final_tier": 1,
+     "path": [
+      "tier1:pruned"
+     ],
+     "correct": true,
+     "tau": 0.55,
+     "action": "hold",
+     "pass_rate": 1.0,
+     "p95_ms": 222.9
+    },
+    {
+     "step": 5,
+     "task_id": "std_en_06",
+     "tau_used": 0.55,
+     "final_tier": 1,
+     "path": [
+      "tier1:pruned"
+     ],
+     "correct": true,
+     "tau": 0.55,
+     "action": "hold",
+     "pass_rate": 1.0,
+     "p95_ms": 222.9
+    },
+    {
+     "step": 6,
+     "task_id": "std_en_07",
+     "tau_used": 0.55,
+     "final_tier": 1,
+     "path": [
+      "tier1:pruned"
+     ],
+     "correct": true,
+     "tau": 0.55,
+     "action": "hold",
+     "pass_rate": 1.0,
+     "p95_ms": 222.9
+    },
+    {
+     "step": 7,
+     "task_id": "std_en_08",
+     "tau_used": 0.55,
+     "final_tier": 1,
+     "path": [
+      "tier1:pruned"
+     ],
+     "correct": true,
+     "tau": 0.55,
+     "action": "hold",
+     "pass_rate": 1.0,
+     "p95_ms": 222.9
+    },
+    {
+     "step": 8,
+     "task_id": "std_en_09",
+     "tau_used": 0.55,
+     "final_tier": 1,
+     "path": [
+      "tier1:pruned"
+     ],
+     "correct": true,
+     "tau": 0.55,
+     "action": "hold",
+     "pass_rate": 1.0,
+     "p95_ms": 222.9
+    },
+    {
+     "step": 9,
+     "task_id": "std_en_10",
+     "tau_used": 0.55,
+     "final_tier": 1,
+     "path": [
+      "tier1:pruned"
+     ],
+     "correct": true,
+     "tau": 0.55,
+     "action": "hold",
+     "pass_rate": 1.0,
+     "p95_ms": 222.9
+    },
+    {
+     "step": 10,
+     "task_id": "llo_en_01",
+     "tau_used": 0.55,
+     "final_tier": 2,
+     "path": [
+      "tier1:pruned",
+      "escalate:degenerate_or_refusal",
+      "tier2:raw"
+     ],
+     "correct": true,
+     "tau": 0.55,
+     "action": "hold",
+     "pass_rate": 0.9090909090909091,
+     "p95_ms": 585.88
+    },
+    {
+     "step": 11,
+     "task_id": "llo_en_02",
+     "tau_used": 0.55,
+     "final_tier": 1,
+     "path": [
+      "tier1:pruned"
+     ],
+     "correct": false,
+     "tau": 0.55,
+     "action": "hold",
+     "pass_rate": 0.9166666666666666,
+     "p95_ms": 222.9
+    },
+    {
+     "step": 12,
+     "task_id": "llo_en_03",
+     "tau_used": 0.55,
+     "final_tier": 2,
+     "path": [
+      "tier1:pruned",
+      "escalate:degenerate_or_refusal",
+      "tier2:raw"
+     ],
+     "correct": true,
+     "tau": 0.55,
+     "action": "hold",
+     "pass_rate": 0.8461538461538461,
+     "p95_ms": 352.25
+    },
+    {
+     "step": 13,
+     "task_id": "llo_ar_01",
+     "tau_used": 0.55,
+     "final_tier": 1,
+     "path": [
+      "tier1:pruned"
+     ],
+     "correct": true,
+     "tau": 0.55,
+     "action": "hold",
+     "pass_rate": 0.8571428571428571,
+     "p95_ms": 352.25
+    },
+    {
+     "step": 14,
+     "task_id": "mh_en_01",
+     "tau_used": 0.55,
+     "final_tier": 1,
+     "path": [
+      "tier1:pruned"
+     ],
+     "correct": false,
+     "tau": 0.55,
+     "action": "hold",
+     "pass_rate": 0.8666666666666667,
+     "p95_ms": 352.25
+    },
+    {
+     "step": 15,
+     "task_id": "mh_en_02",
+     "tau_used": 0.55,
+     "final_tier": 2,
+     "path": [
+      "tier2:pruned"
+     ],
+     "correct": true,
+     "tau": 0.55,
+     "action": "hold",
+     "pass_rate": 0.8666666666666667,
+     "p95_ms": 503.01
+    },
+    {
+     "step": 16,
+     "task_id": "mh_en_03",
+     "tau_used": 0.55,
+     "final_tier": 2,
+     "path": [
+      "tier2:pruned"
+     ],
+     "correct": false,
+     "tau": 0.55,
+     "action": "hold",
+     "pass_rate": 0.8666666666666667,
+     "p95_ms": 585.88
+    },
+    {
+     "step": 17,
+     "task_id": "mh_ar_01",
+     "tau_used": 0.55,
+     "final_tier": 2,
+     "path": [
+      "tier2:pruned"
+     ],
+     "correct": false,
+     "tau": 0.55,
+     "action": "hold",
+     "pass_rate": 0.8666666666666667,
+     "p95_ms": 895.53
+    },
+    {
+     "step": 18,
+     "task_id": "aro_ar_01",
+     "tau_used": 0.55,
+     "final_tier": 1,
+     "path": [
+      "tier1:pruned"
+     ],
+     "correct": true,
+     "tau": 0.55,
+     "action": "hold",
+     "pass_rate": 0.875,
+     "p95_ms": 895.53
+    },
+    {
+     "step": 19,
+     "task_id": "aro_ar_02",
+     "tau_used": 0.55,
+     "final_tier": 1,
+     "path": [
+      "tier1:pruned"
+     ],
+     "correct": true,
+     "tau": 0.55,
+     "action": "hold",
+     "pass_rate": 0.8823529411764706,
+     "p95_ms": 895.53
+    },
+    {
+     "step": 20,
+     "task_id": "aro_ar_03",
+     "tau_used": 0.55,
+     "final_tier": 1,
+     "path": [
+      "tier1:pruned"
+     ],
+     "correct": true,
+     "tau": 0.55,
+     "action": "hold",
+     "pass_rate": 0.8888888888888888,
+     "p95_ms": 895.53
+    },
+    {
+     "step": 21,
+     "task_id": "aro_ar_04",
+     "tau_used": 0.55,
+     "final_tier": 1,
+     "path": [
+      "tier1:pruned"
+     ],
+     "correct": true,
+     "tau": 0.55,
+     "action": "hold",
+     "pass_rate": 0.8947368421052632,
+     "p95_ms": 895.53
+    },
+    {
+     "step": 22,
+     "task_id": "llo_en_01",
+     "tau_used": 0.55,
+     "final_tier": 2,
+     "path": [
+      "tier1:pruned",
+      "escalate:degenerate_or_refusal",
+      "tier2:raw"
+     ],
+     "correct": true,
+     "tau": 0.55,
+     "action": "hold",
+     "pass_rate": 0.85,
+     "p95_ms": 895.53
+    },
+    {
+     "step": 23,
+     "task_id": "llo_en_02",
+     "tau_used": 0.55,
+     "final_tier": 1,
+     "path": [
+      "tier1:pruned"
+     ],
+     "correct": false,
+     "tau": 0.55,
+     "action": "hold",
+     "pass_rate": 0.85,
+     "p95_ms": 895.53
+    },
+    {
+     "step": 24,
+     "task_id": "llo_en_03",
+     "tau_used": 0.55,
+     "final_tier": 2,
+     "path": [
+      "tier1:pruned",
+      "escalate:degenerate_or_refusal",
+      "tier2:raw"
+     ],
+     "correct": true,
+     "tau": 0.55,
+     "action": "hold",
+     "pass_rate": 0.8,
+     "p95_ms": 895.53
+    },
+    {
+     "step": 25,
+     "task_id": "llo_ar_01",
+     "tau_used": 0.55,
+     "final_tier": 1,
+     "path": [
+      "tier1:pruned"
+     ],
+     "correct": true,
+     "tau": 0.55,
+     "action": "hold",
+     "pass_rate": 0.8,
+     "p95_ms": 895.53
+    },
+    {
+     "step": 26,
+     "task_id": "mh_en_01",
+     "tau_used": 0.55,
+     "final_tier": 1,
+     "path": [
+      "tier1:pruned"
+     ],
+     "correct": false,
+     "tau": 0.55,
+     "action": "hold",
+     "pass_rate": 0.8,
+     "p95_ms": 895.53
+    },
+    {
+     "step": 27,
+     "task_id": "mh_en_02",
+     "tau_used": 0.55,
+     "final_tier": 2,
+     "path": [
+      "tier2:pruned"
+     ],
+     "correct": true,
+     "tau": 0.55,
+     "action": "hold",
+     "pass_rate": 0.8,
+     "p95_ms": 895.53
+    },
+    {
+     "step": 28,
+     "task_id": "mh_en_03",
+     "tau_used": 0.55,
+     "final_tier": 2,
+     "path": [
+      "tier2:pruned"
+     ],
+     "correct": false,
+     "tau": 0.55,
+     "action": "hold",
+     "pass_rate": 0.8,
+     "p95_ms": 895.53
+    },
+    {
+     "step": 29,
+     "task_id": "mh_ar_01",
+     "tau_used": 0.55,
+     "final_tier": 2,
+     "path": [
+      "tier2:pruned"
+     ],
+     "correct": false,
+     "tau": 0.55,
+     "action": "hold",
+     "pass_rate": 0.8,
+     "p95_ms": 1221.01
+    },
+    {
+     "step": 30,
+     "task_id": "aro_ar_01",
+     "tau_used": 0.55,
+     "final_tier": 1,
+     "path": [
+      "tier1:pruned"
+     ],
+     "correct": true,
+     "tau": 0.55,
+     "action": "hold",
+     "pass_rate": 0.8,
+     "p95_ms": 1221.01
+    },
+    {
+     "step": 31,
+     "task_id": "aro_ar_02",
+     "tau_used": 0.55,
+     "final_tier": 1,
+     "path": [
+      "tier1:pruned"
+     ],
+     "correct": true,
+     "tau": 0.55,
+     "action": "hold",
+     "pass_rate": 0.8,
+     "p95_ms": 1221.01
+    },
+    {
+     "step": 32,
+     "task_id": "aro_ar_03",
+     "tau_used": 0.55,
+     "final_tier": 1,
+     "path": [
+      "tier1:pruned"
+     ],
+     "correct": true,
+     "tau": 0.55,
+     "action": "hold",
+     "pass_rate": 0.8,
+     "p95_ms": 1221.01
+    },
+    {
+     "step": 33,
+     "task_id": "aro_ar_04",
+     "tau_used": 0.55,
+     "final_tier": 1,
+     "path": [
+      "tier1:pruned"
+     ],
+     "correct": true,
+     "tau": 0.55,
+     "action": "hold",
+     "pass_rate": 0.8,
+     "p95_ms": 1221.01
+    },
+    {
+     "step": 34,
+     "task_id": "std_en_11",
+     "tau_used": 0.55,
+     "final_tier": 1,
+     "path": [
+      "tier1:pruned"
+     ],
+     "correct": true,
+     "tau": 0.55,
+     "action": "hold",
+     "pass_rate": 0.8,
+     "p95_ms": 1221.01
+    },
+    {
+     "step": 35,
+     "task_id": "std_en_12",
+     "tau_used": 0.55,
+     "final_tier": 1,
+     "path": [
+      "tier1:pruned"
+     ],
+     "correct": true,
+     "tau": 0.55,
+     "action": "hold",
+     "pass_rate": 0.8,
+     "p95_ms": 1221.01
+    },
+    {
+     "step": 36,
+     "task_id": "std_en_13",
+     "tau_used": 0.55,
+     "final_tier": 1,
+     "path": [
+      "tier1:pruned"
+     ],
+     "correct": true,
+     "tau": 0.55,
+     "action": "hold",
+     "pass_rate": 0.85,
+     "p95_ms": 1221.01
+    },
+    {
+     "step": 37,
+     "task_id": "std_ar_01",
+     "tau_used": 0.55,
+     "final_tier": 1,
+     "path": [
+      "tier1:pruned"
+     ],
+     "correct": true,
+     "tau": 0.55,
+     "action": "hold",
+     "pass_rate": 0.85,
+     "p95_ms": 895.52
+    },
+    {
+     "step": 38,
+     "task_id": "std_ar_02",
+     "tau_used": 0.55,
+     "final_tier": 1,
+     "path": [
+      "tier1:pruned"
+     ],
+     "correct": true,
+     "tau": 0.55,
+     "action": "hold",
+     "pass_rate": 0.9,
+     "p95_ms": 895.52
+    },
+    {
+     "step": 39,
+     "task_id": "std_ar_03",
+     "tau_used": 0.55,
+     "final_tier": 1,
+     "path": [
+      "tier1:pruned"
+     ],
+     "correct": true,
+     "tau": 0.55,
+     "action": "hold",
+     "pass_rate": 0.9,
+     "p95_ms": 895.52
+    },
+    {
+     "step": 40,
+     "task_id": "std_ar_04",
+     "tau_used": 0.55,
+     "final_tier": 1,
+     "path": [
+      "tier1:pruned"
+     ],
+     "correct": true,
+     "tau": 0.55,
+     "action": "hold",
+     "pass_rate": 0.9,
+     "p95_ms": 895.52
+    },
+    {
+     "step": 41,
+     "task_id": "std_ar_05",
+     "tau_used": 0.55,
+     "final_tier": 1,
+     "path": [
+      "tier1:pruned"
+     ],
+     "correct": true,
+     "tau": 0.55,
+     "action": "hold",
+     "pass_rate": 0.9,
+     "p95_ms": 895.52
+    },
+    {
+     "step": 42,
+     "task_id": "std_ar_06",
+     "tau_used": 0.55,
+     "final_tier": 1,
+     "path": [
+      "tier1:pruned"
+     ],
+     "correct": true,
+     "tau": 0.55,
+     "action": "hold",
+     "pass_rate": 0.9,
+     "p95_ms": 895.52
+    },
+    {
+     "step": 43,
+     "task_id": "std_ar_07",
+     "tau_used": 0.55,
+     "final_tier": 1,
+     "path": [
+      "tier1:pruned"
+     ],
+     "correct": true,
+     "tau": 0.55,
+     "action": "hold",
+     "pass_rate": 0.9,
+     "p95_ms": 895.52
+    },
+    {
+     "step": 44,
+     "task_id": "std_en_01",
+     "tau_used": 0.55,
+     "final_tier": 1,
+     "path": [
+      "tier1:pruned"
+     ],
+     "correct": true,
+     "tau": 0.55,
+     "action": "hold",
+     "pass_rate": 0.9,
+     "p95_ms": 895.52
+    },
+    {
+     "step": 45,
+     "task_id": "std_en_02",
+     "tau_used": 0.55,
+     "final_tier": 1,
+     "path": [
+      "tier1:pruned"
+     ],
+     "correct": true,
+     "tau": 0.55,
+     "action": "hold",
+     "pass_rate": 0.95,
+     "p95_ms": 895.52
+    },
+    {
+     "step": 46,
+     "task_id": "std_en_03",
+     "tau_used": 0.55,
+     "final_tier": 1,
+     "path": [
+      "tier1:pruned"
+     ],
+     "correct": true,
+     "tau": 0.55,
+     "action": "hold",
+     "pass_rate": 0.95,
+     "p95_ms": 895.52
+    },
+    {
+     "step": 47,
+     "task_id": "std_en_04",
+     "tau_used": 0.55,
+     "final_tier": 1,
+     "path": [
+      "tier1:pruned"
+     ],
+     "correct": true,
+     "tau": 0.55,
+     "action": "hold",
+     "pass_rate": 1.0,
+     "p95_ms": 895.52
+    },
+    {
+     "step": 48,
+     "task_id": "std_en_05",
+     "tau_used": 0.55,
+     "final_tier": 1,
+     "path": [
+      "tier1:pruned"
+     ],
+     "correct": true,
+     "tau": 0.55,
+     "action": "hold",
+     "pass_rate": 1.0,
+     "p95_ms": 237.59
+    },
+    {
+     "step": 49,
+     "task_id": "std_en_06",
+     "tau_used": 0.55,
+     "final_tier": 1,
+     "path": [
+      "tier1:pruned"
+     ],
+     "correct": true,
+     "tau": 0.55,
+     "action": "hold",
+     "pass_rate": 1.0,
+     "p95_ms": 222.82
+    },
+    {
+     "step": 50,
+     "task_id": "std_en_07",
+     "tau_used": 0.55,
+     "final_tier": 1,
+     "path": [
+      "tier1:pruned"
+     ],
+     "correct": true,
+     "tau": 0.55,
+     "action": "hold",
+     "pass_rate": 1.0,
+     "p95_ms": 222.82
+    },
+    {
+     "step": 51,
+     "task_id": "std_en_08",
+     "tau_used": 0.55,
+     "final_tier": 1,
+     "path": [
+      "tier1:pruned"
+     ],
+     "correct": true,
+     "tau": 0.55,
+     "action": "hold",
+     "pass_rate": 1.0,
+     "p95_ms": 222.82
+    },
+    {
+     "step": 52,
+     "task_id": "std_en_09",
+     "tau_used": 0.55,
+     "final_tier": 1,
+     "path": [
+      "tier1:pruned"
+     ],
+     "correct": true,
+     "tau": 0.55,
+     "action": "hold",
+     "pass_rate": 1.0,
+     "p95_ms": 222.82
+    },
+    {
+     "step": 53,
+     "task_id": "std_en_10",
+     "tau_used": 0.55,
+     "final_tier": 1,
+     "path": [
+      "tier1:pruned"
+     ],
+     "correct": true,
+     "tau": 0.55,
+     "action": "hold",
+     "pass_rate": 1.0,
+     "p95_ms": 213.26
+    }
+   ]
+  },
+  "adaptive_audit": {
+   "summary": {
+    "n": 54,
+    "accuracy": 0.8518518518518519,
+    "correct": 46,
+    "total_tokens": 13069,
+    "compute_units": 92.667,
+    "cps": 2.0145,
+    "p50_ms": 195.04535949887824,
+    "p95_ms": 895.5142860001,
+    "tier0": 0,
+    "tier1": 43,
+    "tier2": 11,
+    "escalations": 4,
+    "cache_hits": 0,
+    "blocked_traps": 0,
+    "false_cache_hits": 0,
+    "n_traps": 0,
+    "overhead_ms": {
+     "pruner": 1.231815592796516,
+     "cache": 0.0,
+     "router": 0.01725490761196448,
+     "verifier": 0.10462053709219347
+    },
+    "per_category": {
+     "standard": 1.0,
+     "low_lexical_overlap": 0.75,
+     "multi_hop": 0.25,
+     "arabic_orthographic_variants": 1.0
+    }
+   },
+   "trace": [
+    {
+     "step": 0,
+     "task_id": "std_en_01",
+     "tau_used": 0.55,
+     "final_tier": 1,
+     "path": [
+      "tier1:pruned"
+     ],
+     "correct": true,
+     "tau": 0.55,
+     "action": "hold",
+     "pass_rate": null,
+     "p95_ms": 120.83
+    },
+    {
+     "step": 1,
+     "task_id": "std_en_02",
+     "tau_used": 0.55,
+     "final_tier": 1,
+     "path": [
+      "tier1:pruned"
+     ],
+     "correct": true,
+     "tau": 0.55,
+     "action": "hold",
+     "pass_rate": null,
+     "p95_ms": 120.83
+    },
+    {
+     "step": 2,
+     "task_id": "std_en_03",
+     "tau_used": 0.55,
+     "final_tier": 1,
+     "path": [
+      "tier1:pruned"
+     ],
+     "correct": true,
+     "tau": 0.55,
+     "action": "hold",
+     "pass_rate": null,
+     "p95_ms": 160.51
+    },
+    {
+     "step": 3,
+     "task_id": "std_en_04",
+     "tau_used": 0.55,
+     "final_tier": 1,
+     "path": [
+      "tier1:pruned",
+      "shadow_audit:agree"
+     ],
+     "correct": true,
+     "tau": 0.55,
+     "action": "hold",
+     "pass_rate": null,
+     "p95_ms": 574.76
+    },
+    {
+     "step": 4,
+     "task_id": "std_en_05",
+     "tau_used": 0.55,
+     "final_tier": 1,
+     "path": [
+      "tier1:pruned"
+     ],
+     "correct": true,
+     "tau": 0.55,
+     "action": "hold",
+     "pass_rate": 1.0,
+     "p95_ms": 574.76
+    },
+    {
+     "step": 5,
+     "task_id": "std_en_06",
+     "tau_used": 0.55,
+     "final_tier": 1,
+     "path": [
+      "tier1:pruned"
+     ],
+     "correct": true,
+     "tau": 0.55,
+     "action": "hold",
+     "pass_rate": 1.0,
+     "p95_ms": 574.76
+    },
+    {
+     "step": 6,
+     "task_id": "std_en_07",
+     "tau_used": 0.55,
+     "final_tier": 1,
+     "path": [
+      "tier1:pruned"
+     ],
+     "correct": true,
+     "tau": 0.55,
+     "action": "hold",
+     "pass_rate": 1.0,
+     "p95_ms": 574.76
+    },
+    {
+     "step": 7,
+     "task_id": "std_en_08",
+     "tau_used": 0.55,
+     "final_tier": 1,
+     "path": [
+      "tier1:pruned",
+      "shadow_audit:agree"
+     ],
+     "correct": true,
+     "tau": 0.55,
+     "action": "hold",
+     "pass_rate": 1.0,
+     "p95_ms": 574.76
+    },
+    {
+     "step": 8,
+     "task_id": "std_en_09",
+     "tau_used": 0.55,
+     "final_tier": 1,
+     "path": [
+      "tier1:pruned"
+     ],
+     "correct": true,
+     "tau": 0.55,
+     "action": "hold",
+     "pass_rate": 1.0,
+     "p95_ms": 574.76
+    },
+    {
+     "step": 9,
+     "task_id": "std_en_10",
+     "tau_used": 0.55,
+     "final_tier": 1,
+     "path": [
+      "tier1:pruned"
+     ],
+     "correct": true,
+     "tau": 0.55,
+     "action": "hold",
+     "pass_rate": 1.0,
+     "p95_ms": 574.76
+    },
+    {
+     "step": 10,
+     "task_id": "llo_en_01",
+     "tau_used": 0.55,
+     "final_tier": 2,
+     "path": [
+      "tier1:pruned",
+      "escalate:degenerate_or_refusal",
+      "tier2:raw"
+     ],
+     "correct": true,
+     "tau": 0.55,
+     "action": "hold",
+     "pass_rate": 0.9090909090909091,
+     "p95_ms": 585.88
+    },
+    {
+     "step": 11,
+     "task_id": "llo_en_02",
+     "tau_used": 0.55,
+     "final_tier": 1,
+     "path": [
+      "tier1:pruned"
+     ],
+     "correct": false,
+     "tau": 0.55,
+     "action": "hold",
+     "pass_rate": 0.9166666666666666,
+     "p95_ms": 574.76
+    },
+    {
+     "step": 12,
+     "task_id": "llo_en_03",
+     "tau_used": 0.55,
+     "final_tier": 2,
+     "path": [
+      "tier1:pruned",
+      "escalate:degenerate_or_refusal",
+      "tier2:raw"
+     ],
+     "correct": true,
+     "tau": 0.55,
+     "action": "hold",
+     "pass_rate": 0.8461538461538461,
+     "p95_ms": 574.76
+    },
+    {
+     "step": 13,
+     "task_id": "llo_ar_01",
+     "tau_used": 0.55,
+     "final_tier": 1,
+     "path": [
+      "tier1:pruned",
+      "shadow_audit:agree"
+     ],
+     "correct": true,
+     "tau": 0.55,
+     "action": "hold",
+     "pass_rate": 0.8571428571428571,
+     "p95_ms": 585.88
+    },
+    {
+     "step": 14,
+     "task_id": "mh_en_01",
+     "tau_used": 0.55,
+     "final_tier": 1,
+     "path": [
+      "tier1:pruned"
+     ],
+     "correct": false,
+     "tau": 0.55,
+     "action": "hold",
+     "pass_rate": 0.8666666666666667,
+     "p95_ms": 585.88
+    },
+    {
+     "step": 15,
+     "task_id": "mh_en_02",
+     "tau_used": 0.55,
+     "final_tier": 2,
+     "path": [
+      "tier2:pruned"
+     ],
+     "correct": true,
+     "tau": 0.55,
+     "action": "hold",
+     "pass_rate": 0.8666666666666667,
+     "p95_ms": 585.88
+    },
+    {
+     "step": 16,
+     "task_id": "mh_en_03",
+     "tau_used": 0.55,
+     "final_tier": 2,
+     "path": [
+      "tier2:pruned"
+     ],
+     "correct": false,
+     "tau": 0.55,
+     "action": "hold",
+     "pass_rate": 0.8666666666666667,
+     "p95_ms": 615.38
+    },
+    {
+     "step": 17,
+     "task_id": "mh_ar_01",
+     "tau_used": 0.55,
+     "final_tier": 2,
+     "path": [
+      "tier2:pruned"
+     ],
+     "correct": false,
+     "tau": 0.55,
+     "action": "hold",
+     "pass_rate": 0.8666666666666667,
+     "p95_ms": 895.51
+    },
+    {
+     "step": 18,
+     "task_id": "aro_ar_01",
+     "tau_used": 0.55,
+     "final_tier": 1,
+     "path": [
+      "tier1:pruned"
+     ],
+     "correct": true,
+     "tau": 0.55,
+     "action": "hold",
+     "pass_rate": 0.875,
+     "p95_ms": 895.51
+    },
+    {
+     "step": 19,
+     "task_id": "aro_ar_02",
+     "tau_used": 0.55,
+     "final_tier": 1,
+     "path": [
+      "tier1:pruned"
+     ],
+     "correct": true,
+     "tau": 0.55,
+     "action": "hold",
+     "pass_rate": 0.8823529411764706,
+     "p95_ms": 895.51
+    },
+    {
+     "step": 20,
+     "task_id": "aro_ar_03",
+     "tau_used": 0.55,
+     "final_tier": 1,
+     "path": [
+      "tier1:pruned",
+      "shadow_audit:agree"
+     ],
+     "correct": true,
+     "tau": 0.55,
+     "action": "hold",
+     "pass_rate": 0.8888888888888888,
+     "p95_ms": 895.51
+    },
+    {
+     "step": 21,
+     "task_id": "aro_ar_04",
+     "tau_used": 0.55,
+     "final_tier": 1,
+     "path": [
+      "tier1:pruned"
+     ],
+     "correct": true,
+     "tau": 0.55,
+     "action": "hold",
+     "pass_rate": 0.8947368421052632,
+     "p95_ms": 895.51
+    },
+    {
+     "step": 22,
+     "task_id": "llo_en_01",
+     "tau_used": 0.55,
+     "final_tier": 2,
+     "path": [
+      "tier1:pruned",
+      "escalate:degenerate_or_refusal",
+      "tier2:raw"
+     ],
+     "correct": true,
+     "tau": 0.55,
+     "action": "hold",
+     "pass_rate": 0.85,
+     "p95_ms": 895.51
+    },
+    {
+     "step": 23,
+     "task_id": "llo_en_02",
+     "tau_used": 0.55,
+     "final_tier": 1,
+     "path": [
+      "tier1:pruned"
+     ],
+     "correct": false,
+     "tau": 0.55,
+     "action": "hold",
+     "pass_rate": 0.85,
+     "p95_ms": 895.51
+    },
+    {
+     "step": 24,
+     "task_id": "llo_en_03",
+     "tau_used": 0.55,
+     "final_tier": 2,
+     "path": [
+      "tier1:pruned",
+      "escalate:degenerate_or_refusal",
+      "tier2:raw"
+     ],
+     "correct": true,
+     "tau": 0.55,
+     "action": "hold",
+     "pass_rate": 0.8,
+     "p95_ms": 895.51
+    },
+    {
+     "step": 25,
+     "task_id": "llo_ar_01",
+     "tau_used": 0.55,
+     "final_tier": 1,
+     "path": [
+      "tier1:pruned"
+     ],
+     "correct": true,
+     "tau": 0.55,
+     "action": "hold",
+     "pass_rate": 0.8,
+     "p95_ms": 895.51
+    },
+    {
+     "step": 26,
+     "task_id": "mh_en_01",
+     "tau_used": 0.55,
+     "final_tier": 2,
+     "path": [
+      "tier1:pruned",
+      "shadow_audit:disagree"
+     ],
+     "correct": false,
+     "tau": 0.47,
+     "action": "tighten",
+     "pass_rate": null,
+     "p95_ms": 895.51
+    },
+    {
+     "step": 27,
+     "task_id": "mh_en_02",
+     "tau_used": 0.47,
+     "final_tier": 2,
+     "path": [
+      "tier2:pruned"
+     ],
+     "correct": true,
+     "tau": 0.47,
+     "action": "hold",
+     "pass_rate": null,
+     "p95_ms": 895.51
+    },
+    {
+     "step": 28,
+     "task_id": "mh_en_03",
+     "tau_used": 0.47,
+     "final_tier": 2,
+     "path": [
+      "tier2:pruned"
+     ],
+     "correct": false,
+     "tau": 0.47,
+     "action": "hold",
+     "pass_rate": null,
+     "p95_ms": 895.51
+    },
+    {
+     "step": 29,
+     "task_id": "mh_ar_01",
+     "tau_used": 0.47,
+     "final_tier": 2,
+     "path": [
+      "tier2:pruned"
+     ],
+     "correct": false,
+     "tau": 0.47,
+     "action": "hold",
+     "pass_rate": null,
+     "p95_ms": 1221.02
+    },
+    {
+     "step": 30,
+     "task_id": "aro_ar_01",
+     "tau_used": 0.47,
+     "final_tier": 1,
+     "path": [
+      "tier1:pruned"
+     ],
+     "correct": true,
+     "tau": 0.47,
+     "action": "hold",
+     "pass_rate": null,
+     "p95_ms": 1221.02
+    },
+    {
+     "step": 31,
+     "task_id": "aro_ar_02",
+     "tau_used": 0.47,
+     "final_tier": 1,
+     "path": [
+      "tier1:pruned"
+     ],
+     "correct": true,
+     "tau": 0.47,
+     "action": "hold",
+     "pass_rate": null,
+     "p95_ms": 1221.02
+    },
+    {
+     "step": 32,
+     "task_id": "aro_ar_03",
+     "tau_used": 0.47,
+     "final_tier": 1,
+     "path": [
+      "tier1:pruned"
+     ],
+     "correct": true,
+     "tau": 0.47,
+     "action": "hold",
+     "pass_rate": null,
+     "p95_ms": 1221.02
+    },
+    {
+     "step": 33,
+     "task_id": "aro_ar_04",
+     "tau_used": 0.47,
+     "final_tier": 1,
+     "path": [
+      "tier1:pruned",
+      "shadow_audit:agree"
+     ],
+     "correct": true,
+     "tau": 0.47,
+     "action": "hold",
+     "pass_rate": null,
+     "p95_ms": 1221.02
+    },
+    {
+     "step": 34,
+     "task_id": "std_en_11",
+     "tau_used": 0.47,
+     "final_tier": 1,
+     "path": [
+      "tier1:pruned"
+     ],
+     "correct": true,
+     "tau": 0.47,
+     "action": "hold",
+     "pass_rate": 1.0,
+     "p95_ms": 1221.02
+    },
+    {
+     "step": 35,
+     "task_id": "std_en_12",
+     "tau_used": 0.47,
+     "final_tier": 1,
+     "path": [
+      "tier1:pruned"
+     ],
+     "correct": true,
+     "tau": 0.47,
+     "action": "hold",
+     "pass_rate": 1.0,
+     "p95_ms": 1221.02
+    },
+    {
+     "step": 36,
+     "task_id": "std_en_13",
+     "tau_used": 0.47,
+     "final_tier": 1,
+     "path": [
+      "tier1:pruned"
+     ],
+     "correct": true,
+     "tau": 0.47,
+     "action": "hold",
+     "pass_rate": 1.0,
+     "p95_ms": 1221.02
+    },
+    {
+     "step": 37,
+     "task_id": "std_ar_01",
+     "tau_used": 0.47,
+     "final_tier": 1,
+     "path": [
+      "tier1:pruned",
+      "shadow_audit:agree"
+     ],
+     "correct": true,
+     "tau": 0.47,
+     "action": "hold",
+     "pass_rate": 1.0,
+     "p95_ms": 1221.03
+    },
+    {
+     "step": 38,
+     "task_id": "std_ar_02",
+     "tau_used": 0.47,
+     "final_tier": 1,
+     "path": [
+      "tier1:pruned"
+     ],
+     "correct": true,
+     "tau": 0.52,
+     "action": "recover",
+     "pass_rate": 1.0,
+     "p95_ms": 1221.03
+    },
+    {
+     "step": 39,
+     "task_id": "std_ar_03",
+     "tau_used": 0.52,
+     "final_tier": 1,
+     "path": [
+      "tier1:pruned"
+     ],
+     "correct": true,
+     "tau": 0.55,
+     "action": "recover",
+     "pass_rate": 1.0,
+     "p95_ms": 1221.03
+    },
+    {
+     "step": 40,
+     "task_id": "std_ar_04",
+     "tau_used": 0.55,
+     "final_tier": 1,
+     "path": [
+      "tier1:pruned"
+     ],
+     "correct": true,
+     "tau": 0.55,
+     "action": "hold",
+     "pass_rate": 1.0,
+     "p95_ms": 1221.03
+    },
+    {
+     "step": 41,
+     "task_id": "std_ar_05",
+     "tau_used": 0.55,
+     "final_tier": 1,
+     "path": [
+      "tier1:pruned",
+      "shadow_audit:agree"
+     ],
+     "correct": true,
+     "tau": 0.55,
+     "action": "hold",
+     "pass_rate": 1.0,
+     "p95_ms": 1221.03
+    },
+    {
+     "step": 42,
+     "task_id": "std_ar_06",
+     "tau_used": 0.55,
+     "final_tier": 1,
+     "path": [
+      "tier1:pruned"
+     ],
+     "correct": true,
+     "tau": 0.55,
+     "action": "hold",
+     "pass_rate": 1.0,
+     "p95_ms": 1221.03
+    },
+    {
+     "step": 43,
+     "task_id": "std_ar_07",
+     "tau_used": 0.55,
+     "final_tier": 1,
+     "path": [
+      "tier1:pruned"
+     ],
+     "correct": true,
+     "tau": 0.55,
+     "action": "hold",
+     "pass_rate": 1.0,
+     "p95_ms": 1221.03
+    },
+    {
+     "step": 44,
+     "task_id": "std_en_01",
+     "tau_used": 0.55,
+     "final_tier": 1,
+     "path": [
+      "tier1:pruned"
+     ],
+     "correct": true,
+     "tau": 0.55,
+     "action": "hold",
+     "pass_rate": 1.0,
+     "p95_ms": 1221.03
+    },
+    {
+     "step": 45,
+     "task_id": "std_en_02",
+     "tau_used": 0.55,
+     "final_tier": 1,
+     "path": [
+      "tier1:pruned",
+      "shadow_audit:agree"
+     ],
+     "correct": true,
+     "tau": 0.55,
+     "action": "hold",
+     "pass_rate": 1.0,
+     "p95_ms": 1221.03
+    },
+    {
+     "step": 46,
+     "task_id": "std_en_03",
+     "tau_used": 0.55,
+     "final_tier": 1,
+     "path": [
+      "tier1:pruned"
+     ],
+     "correct": true,
+     "tau": 0.55,
+     "action": "hold",
+     "pass_rate": 1.0,
+     "p95_ms": 1221.03
+    },
+    {
+     "step": 47,
+     "task_id": "std_en_04",
+     "tau_used": 0.55,
+     "final_tier": 1,
+     "path": [
+      "tier1:pruned"
+     ],
+     "correct": true,
+     "tau": 0.55,
+     "action": "hold",
+     "pass_rate": 1.0,
+     "p95_ms": 1221.03
+    },
+    {
+     "step": 48,
+     "task_id": "std_en_05",
+     "tau_used": 0.55,
+     "final_tier": 1,
+     "path": [
+      "tier1:pruned"
+     ],
+     "correct": true,
+     "tau": 0.55,
+     "action": "hold",
+     "pass_rate": 1.0,
+     "p95_ms": 1221.03
+    },
+    {
+     "step": 49,
+     "task_id": "std_en_06",
+     "tau_used": 0.55,
+     "final_tier": 1,
+     "path": [
+      "tier1:pruned",
+      "shadow_audit:agree"
+     ],
+     "correct": true,
+     "tau": 0.55,
+     "action": "hold",
+     "pass_rate": 1.0,
+     "p95_ms": 722.47
+    },
+    {
+     "step": 50,
+     "task_id": "std_en_07",
+     "tau_used": 0.55,
+     "final_tier": 1,
+     "path": [
+      "tier1:pruned"
+     ],
+     "correct": true,
+     "tau": 0.55,
+     "action": "hold",
+     "pass_rate": 1.0,
+     "p95_ms": 722.47
+    },
+    {
+     "step": 51,
+     "task_id": "std_en_08",
+     "tau_used": 0.55,
+     "final_tier": 1,
+     "path": [
+      "tier1:pruned"
+     ],
+     "correct": true,
+     "tau": 0.55,
+     "action": "hold",
+     "pass_rate": 1.0,
+     "p95_ms": 722.47
+    },
+    {
+     "step": 52,
+     "task_id": "std_en_09",
+     "tau_used": 0.55,
+     "final_tier": 1,
+     "path": [
+      "tier1:pruned"
+     ],
+     "correct": true,
+     "tau": 0.55,
+     "action": "hold",
+     "pass_rate": 1.0,
+     "p95_ms": 722.47
+    },
+    {
+     "step": 53,
+     "task_id": "std_en_10",
+     "tau_used": 0.55,
+     "final_tier": 1,
+     "path": [
+      "tier1:pruned",
+      "shadow_audit:agree"
+     ],
+     "correct": true,
+     "tau": 0.55,
+     "action": "hold",
+     "pass_rate": 1.0,
+     "p95_ms": 654.57
+    }
+   ]
+  },
+  "fixed_tau_audit": {
+   "summary": {
+    "n": 54,
+    "accuracy": 0.8518518518518519,
+    "correct": 46,
+    "total_tokens": 13069,
+    "compute_units": 92.667,
+    "cps": 2.0145,
+    "p50_ms": 195.0962120015599,
+    "p95_ms": 895.5313779994252,
+    "tier0": 0,
+    "tier1": 43,
+    "tier2": 11,
+    "escalations": 4,
+    "cache_hits": 0,
+    "blocked_traps": 0,
+    "false_cache_hits": 0,
+    "n_traps": 0,
+    "overhead_ms": {
+     "pruner": 1.2304492779717462,
+     "cache": 0.0,
+     "router": 0.017122537125639308,
+     "verifier": 0.10554809274186415
+    },
+    "per_category": {
+     "standard": 1.0,
+     "low_lexical_overlap": 0.75,
+     "multi_hop": 0.25,
+     "arabic_orthographic_variants": 1.0
+    }
+   },
+   "trace": [
+    {
+     "step": 0,
+     "task_id": "std_en_01",
+     "tau_used": 0.55,
+     "final_tier": 1,
+     "path": [
+      "tier1:pruned"
+     ],
+     "correct": true,
+     "tau": 0.55,
+     "action": "hold",
+     "pass_rate": null,
+     "p95_ms": 120.84
+    },
+    {
+     "step": 1,
+     "task_id": "std_en_02",
+     "tau_used": 0.55,
+     "final_tier": 1,
+     "path": [
+      "tier1:pruned"
+     ],
+     "correct": true,
+     "tau": 0.55,
+     "action": "hold",
+     "pass_rate": null,
+     "p95_ms": 120.84
+    },
+    {
+     "step": 2,
+     "task_id": "std_en_03",
+     "tau_used": 0.55,
+     "final_tier": 1,
+     "path": [
+      "tier1:pruned"
+     ],
+     "correct": true,
+     "tau": 0.55,
+     "action": "hold",
+     "pass_rate": null,
+     "p95_ms": 160.47
+    },
+    {
+     "step": 3,
+     "task_id": "std_en_04",
+     "tau_used": 0.55,
+     "final_tier": 1,
+     "path": [
+      "tier1:pruned",
+      "shadow_audit:agree"
+     ],
+     "correct": true,
+     "tau": 0.55,
+     "action": "hold",
+     "pass_rate": null,
+     "p95_ms": 574.75
+    },
+    {
+     "step": 4,
+     "task_id": "std_en_05",
+     "tau_used": 0.55,
+     "final_tier": 1,
+     "path": [
+      "tier1:pruned"
+     ],
+     "correct": true,
+     "tau": 0.55,
+     "action": "hold",
+     "pass_rate": 1.0,
+     "p95_ms": 574.75
+    },
+    {
+     "step": 5,
+     "task_id": "std_en_06",
+     "tau_used": 0.55,
+     "final_tier": 1,
+     "path": [
+      "tier1:pruned"
+     ],
+     "correct": true,
+     "tau": 0.55,
+     "action": "hold",
+     "pass_rate": 1.0,
+     "p95_ms": 574.75
+    },
+    {
+     "step": 6,
+     "task_id": "std_en_07",
+     "tau_used": 0.55,
+     "final_tier": 1,
+     "path": [
+      "tier1:pruned"
+     ],
+     "correct": true,
+     "tau": 0.55,
+     "action": "hold",
+     "pass_rate": 1.0,
+     "p95_ms": 574.75
+    },
+    {
+     "step": 7,
+     "task_id": "std_en_08",
+     "tau_used": 0.55,
+     "final_tier": 1,
+     "path": [
+      "tier1:pruned",
+      "shadow_audit:agree"
+     ],
+     "correct": true,
+     "tau": 0.55,
+     "action": "hold",
+     "pass_rate": 1.0,
+     "p95_ms": 574.75
+    },
+    {
+     "step": 8,
+     "task_id": "std_en_09",
+     "tau_used": 0.55,
+     "final_tier": 1,
+     "path": [
+      "tier1:pruned"
+     ],
+     "correct": true,
+     "tau": 0.55,
+     "action": "hold",
+     "pass_rate": 1.0,
+     "p95_ms": 574.75
+    },
+    {
+     "step": 9,
+     "task_id": "std_en_10",
+     "tau_used": 0.55,
+     "final_tier": 1,
+     "path": [
+      "tier1:pruned"
+     ],
+     "correct": true,
+     "tau": 0.55,
+     "action": "hold",
+     "pass_rate": 1.0,
+     "p95_ms": 574.75
+    },
+    {
+     "step": 10,
+     "task_id": "llo_en_01",
+     "tau_used": 0.55,
+     "final_tier": 2,
+     "path": [
+      "tier1:pruned",
+      "escalate:degenerate_or_refusal",
+      "tier2:raw"
+     ],
+     "correct": true,
+     "tau": 0.55,
+     "action": "hold",
+     "pass_rate": 0.9090909090909091,
+     "p95_ms": 585.93
+    },
+    {
+     "step": 11,
+     "task_id": "llo_en_02",
+     "tau_used": 0.55,
+     "final_tier": 1,
+     "path": [
+      "tier1:pruned"
+     ],
+     "correct": false,
+     "tau": 0.55,
+     "action": "hold",
+     "pass_rate": 0.9166666666666666,
+     "p95_ms": 574.75
+    },
+    {
+     "step": 12,
+     "task_id": "llo_en_03",
+     "tau_used": 0.55,
+     "final_tier": 2,
+     "path": [
+      "tier1:pruned",
+      "escalate:degenerate_or_refusal",
+      "tier2:raw"
+     ],
+     "correct": true,
+     "tau": 0.55,
+     "action": "hold",
+     "pass_rate": 0.8461538461538461,
+     "p95_ms": 574.75
+    },
+    {
+     "step": 13,
+     "task_id": "llo_ar_01",
+     "tau_used": 0.55,
+     "final_tier": 1,
+     "path": [
+      "tier1:pruned",
+      "shadow_audit:agree"
+     ],
+     "correct": true,
+     "tau": 0.55,
+     "action": "hold",
+     "pass_rate": 0.8571428571428571,
+     "p95_ms": 585.93
+    },
+    {
+     "step": 14,
+     "task_id": "mh_en_01",
+     "tau_used": 0.55,
+     "final_tier": 1,
+     "path": [
+      "tier1:pruned"
+     ],
+     "correct": false,
+     "tau": 0.55,
+     "action": "hold",
+     "pass_rate": 0.8666666666666667,
+     "p95_ms": 585.93
+    },
+    {
+     "step": 15,
+     "task_id": "mh_en_02",
+     "tau_used": 0.55,
+     "final_tier": 2,
+     "path": [
+      "tier2:pruned"
+     ],
+     "correct": true,
+     "tau": 0.55,
+     "action": "hold",
+     "pass_rate": 0.8666666666666667,
+     "p95_ms": 585.93
+    },
+    {
+     "step": 16,
+     "task_id": "mh_en_03",
+     "tau_used": 0.55,
+     "final_tier": 2,
+     "path": [
+      "tier2:pruned"
+     ],
+     "correct": false,
+     "tau": 0.55,
+     "action": "hold",
+     "pass_rate": 0.8666666666666667,
+     "p95_ms": 615.41
+    },
+    {
+     "step": 17,
+     "task_id": "mh_ar_01",
+     "tau_used": 0.55,
+     "final_tier": 2,
+     "path": [
+      "tier2:pruned"
+     ],
+     "correct": false,
+     "tau": 0.55,
+     "action": "hold",
+     "pass_rate": 0.8666666666666667,
+     "p95_ms": 895.53
+    },
+    {
+     "step": 18,
+     "task_id": "aro_ar_01",
+     "tau_used": 0.55,
+     "final_tier": 1,
+     "path": [
+      "tier1:pruned"
+     ],
+     "correct": true,
+     "tau": 0.55,
+     "action": "hold",
+     "pass_rate": 0.875,
+     "p95_ms": 895.53
+    },
+    {
+     "step": 19,
+     "task_id": "aro_ar_02",
+     "tau_used": 0.55,
+     "final_tier": 1,
+     "path": [
+      "tier1:pruned"
+     ],
+     "correct": true,
+     "tau": 0.55,
+     "action": "hold",
+     "pass_rate": 0.8823529411764706,
+     "p95_ms": 895.53
+    },
+    {
+     "step": 20,
+     "task_id": "aro_ar_03",
+     "tau_used": 0.55,
+     "final_tier": 1,
+     "path": [
+      "tier1:pruned",
+      "shadow_audit:agree"
+     ],
+     "correct": true,
+     "tau": 0.55,
+     "action": "hold",
+     "pass_rate": 0.8888888888888888,
+     "p95_ms": 895.53
+    },
+    {
+     "step": 21,
+     "task_id": "aro_ar_04",
+     "tau_used": 0.55,
+     "final_tier": 1,
+     "path": [
+      "tier1:pruned"
+     ],
+     "correct": true,
+     "tau": 0.55,
+     "action": "hold",
+     "pass_rate": 0.8947368421052632,
+     "p95_ms": 895.53
+    },
+    {
+     "step": 22,
+     "task_id": "llo_en_01",
+     "tau_used": 0.55,
+     "final_tier": 2,
+     "path": [
+      "tier1:pruned",
+      "escalate:degenerate_or_refusal",
+      "tier2:raw"
+     ],
+     "correct": true,
+     "tau": 0.55,
+     "action": "hold",
+     "pass_rate": 0.85,
+     "p95_ms": 895.53
+    },
+    {
+     "step": 23,
+     "task_id": "llo_en_02",
+     "tau_used": 0.55,
+     "final_tier": 1,
+     "path": [
+      "tier1:pruned"
+     ],
+     "correct": false,
+     "tau": 0.55,
+     "action": "hold",
+     "pass_rate": 0.85,
+     "p95_ms": 895.53
+    },
+    {
+     "step": 24,
+     "task_id": "llo_en_03",
+     "tau_used": 0.55,
+     "final_tier": 2,
+     "path": [
+      "tier1:pruned",
+      "escalate:degenerate_or_refusal",
+      "tier2:raw"
+     ],
+     "correct": true,
+     "tau": 0.55,
+     "action": "hold",
+     "pass_rate": 0.8,
+     "p95_ms": 895.53
+    },
+    {
+     "step": 25,
+     "task_id": "llo_ar_01",
+     "tau_used": 0.55,
+     "final_tier": 1,
+     "path": [
+      "tier1:pruned"
+     ],
+     "correct": true,
+     "tau": 0.55,
+     "action": "hold",
+     "pass_rate": 0.8,
+     "p95_ms": 895.53
+    },
+    {
+     "step": 26,
+     "task_id": "mh_en_01",
+     "tau_used": 0.55,
+     "final_tier": 2,
+     "path": [
+      "tier1:pruned",
+      "shadow_audit:disagree"
+     ],
+     "correct": false,
+     "tau": 0.55,
+     "action": "hold",
+     "pass_rate": 0.64,
+     "p95_ms": 895.53
+    },
+    {
+     "step": 27,
+     "task_id": "mh_en_02",
+     "tau_used": 0.55,
+     "final_tier": 2,
+     "path": [
+      "tier2:pruned"
+     ],
+     "correct": true,
+     "tau": 0.55,
+     "action": "hold",
+     "pass_rate": 0.64,
+     "p95_ms": 895.53
+    },
+    {
+     "step": 28,
+     "task_id": "mh_en_03",
+     "tau_used": 0.55,
+     "final_tier": 2,
+     "path": [
+      "tier2:pruned"
+     ],
+     "correct": false,
+     "tau": 0.55,
+     "action": "hold",
+     "pass_rate": 0.64,
+     "p95_ms": 895.53
+    },
+    {
+     "step": 29,
+     "task_id": "mh_ar_01",
+     "tau_used": 0.55,
+     "final_tier": 2,
+     "path": [
+      "tier2:pruned"
+     ],
+     "correct": false,
+     "tau": 0.55,
+     "action": "hold",
+     "pass_rate": 0.64,
+     "p95_ms": 1221.03
+    },
+    {
+     "step": 30,
+     "task_id": "aro_ar_01",
+     "tau_used": 0.55,
+     "final_tier": 1,
+     "path": [
+      "tier1:pruned"
+     ],
+     "correct": true,
+     "tau": 0.55,
+     "action": "hold",
+     "pass_rate": 0.64,
+     "p95_ms": 1221.03
+    },
+    {
+     "step": 31,
+     "task_id": "aro_ar_02",
+     "tau_used": 0.55,
+     "final_tier": 1,
+     "path": [
+      "tier1:pruned"
+     ],
+     "correct": true,
+     "tau": 0.55,
+     "action": "hold",
+     "pass_rate": 0.64,
+     "p95_ms": 1221.03
+    },
+    {
+     "step": 32,
+     "task_id": "aro_ar_03",
+     "tau_used": 0.55,
+     "final_tier": 1,
+     "path": [
+      "tier1:pruned"
+     ],
+     "correct": true,
+     "tau": 0.55,
+     "action": "hold",
+     "pass_rate": 0.64,
+     "p95_ms": 1221.03
+    },
+    {
+     "step": 33,
+     "task_id": "aro_ar_04",
+     "tau_used": 0.55,
+     "final_tier": 1,
+     "path": [
+      "tier1:pruned",
+      "shadow_audit:agree"
+     ],
+     "correct": true,
+     "tau": 0.55,
+     "action": "hold",
+     "pass_rate": 0.6666666666666666,
+     "p95_ms": 1221.03
+    },
+    {
+     "step": 34,
+     "task_id": "std_en_11",
+     "tau_used": 0.55,
+     "final_tier": 1,
+     "path": [
+      "tier1:pruned"
+     ],
+     "correct": true,
+     "tau": 0.55,
+     "action": "hold",
+     "pass_rate": 0.6666666666666666,
+     "p95_ms": 1221.03
+    },
+    {
+     "step": 35,
+     "task_id": "std_en_12",
+     "tau_used": 0.55,
+     "final_tier": 1,
+     "path": [
+      "tier1:pruned"
+     ],
+     "correct": true,
+     "tau": 0.55,
+     "action": "hold",
+     "pass_rate": 0.6666666666666666,
+     "p95_ms": 1221.03
+    },
+    {
+     "step": 36,
+     "task_id": "std_en_13",
+     "tau_used": 0.55,
+     "final_tier": 1,
+     "path": [
+      "tier1:pruned"
+     ],
+     "correct": true,
+     "tau": 0.55,
+     "action": "hold",
+     "pass_rate": 0.7083333333333334,
+     "p95_ms": 1221.03
+    },
+    {
+     "step": 37,
+     "task_id": "std_ar_01",
+     "tau_used": 0.55,
+     "final_tier": 1,
+     "path": [
+      "tier1:pruned",
+      "shadow_audit:agree"
+     ],
+     "correct": true,
+     "tau": 0.55,
+     "action": "hold",
+     "pass_rate": 0.7083333333333334,
+     "p95_ms": 1221.04
+    },
+    {
+     "step": 38,
+     "task_id": "std_ar_02",
+     "tau_used": 0.55,
+     "final_tier": 1,
+     "path": [
+      "tier1:pruned"
+     ],
+     "correct": true,
+     "tau": 0.55,
+     "action": "hold",
+     "pass_rate": 0.75,
+     "p95_ms": 1221.04
+    },
+    {
+     "step": 39,
+     "task_id": "std_ar_03",
+     "tau_used": 0.55,
+     "final_tier": 1,
+     "path": [
+      "tier1:pruned"
+     ],
+     "correct": true,
+     "tau": 0.55,
+     "action": "hold",
+     "pass_rate": 0.75,
+     "p95_ms": 1221.04
+    },
+    {
+     "step": 40,
+     "task_id": "std_ar_04",
+     "tau_used": 0.55,
+     "final_tier": 1,
+     "path": [
+      "tier1:pruned"
+     ],
+     "correct": true,
+     "tau": 0.55,
+     "action": "hold",
+     "pass_rate": 0.75,
+     "p95_ms": 1221.04
+    },
+    {
+     "step": 41,
+     "task_id": "std_ar_05",
+     "tau_used": 0.55,
+     "final_tier": 1,
+     "path": [
+      "tier1:pruned",
+      "shadow_audit:agree"
+     ],
+     "correct": true,
+     "tau": 0.55,
+     "action": "hold",
+     "pass_rate": 0.75,
+     "p95_ms": 1221.04
+    },
+    {
+     "step": 42,
+     "task_id": "std_ar_06",
+     "tau_used": 0.55,
+     "final_tier": 1,
+     "path": [
+      "tier1:pruned"
+     ],
+     "correct": true,
+     "tau": 0.55,
+     "action": "hold",
+     "pass_rate": 0.75,
+     "p95_ms": 1221.04
+    },
+    {
+     "step": 43,
+     "task_id": "std_ar_07",
+     "tau_used": 0.55,
+     "final_tier": 1,
+     "path": [
+      "tier1:pruned"
+     ],
+     "correct": true,
+     "tau": 0.55,
+     "action": "hold",
+     "pass_rate": 0.75,
+     "p95_ms": 1221.04
+    },
+    {
+     "step": 44,
+     "task_id": "std_en_01",
+     "tau_used": 0.55,
+     "final_tier": 1,
+     "path": [
+      "tier1:pruned"
+     ],
+     "correct": true,
+     "tau": 0.55,
+     "action": "hold",
+     "pass_rate": 0.75,
+     "p95_ms": 1221.04
+    },
+    {
+     "step": 45,
+     "task_id": "std_en_02",
+     "tau_used": 0.55,
+     "final_tier": 1,
+     "path": [
+      "tier1:pruned",
+      "shadow_audit:agree"
+     ],
+     "correct": true,
+     "tau": 0.55,
+     "action": "hold",
+     "pass_rate": 0.7916666666666666,
+     "p95_ms": 1221.04
+    },
+    {
+     "step": 46,
+     "task_id": "std_en_03",
+     "tau_used": 0.55,
+     "final_tier": 1,
+     "path": [
+      "tier1:pruned"
+     ],
+     "correct": true,
+     "tau": 0.55,
+     "action": "hold",
+     "pass_rate": 0.7916666666666666,
+     "p95_ms": 1221.04
+    },
+    {
+     "step": 47,
+     "task_id": "std_en_04",
+     "tau_used": 0.55,
+     "final_tier": 1,
+     "path": [
+      "tier1:pruned"
+     ],
+     "correct": true,
+     "tau": 0.55,
+     "action": "hold",
+     "pass_rate": 0.8333333333333334,
+     "p95_ms": 1221.04
+    },
+    {
+     "step": 48,
+     "task_id": "std_en_05",
+     "tau_used": 0.55,
+     "final_tier": 1,
+     "path": [
+      "tier1:pruned"
+     ],
+     "correct": true,
+     "tau": 0.55,
+     "action": "hold",
+     "pass_rate": 0.8333333333333334,
+     "p95_ms": 1221.04
+    },
+    {
+     "step": 49,
+     "task_id": "std_en_06",
+     "tau_used": 0.55,
+     "final_tier": 1,
+     "path": [
+      "tier1:pruned",
+      "shadow_audit:agree"
+     ],
+     "correct": true,
+     "tau": 0.55,
+     "action": "hold",
+     "pass_rate": 0.8333333333333334,
+     "p95_ms": 722.46
+    },
+    {
+     "step": 50,
+     "task_id": "std_en_07",
+     "tau_used": 0.55,
+     "final_tier": 1,
+     "path": [
+      "tier1:pruned"
+     ],
+     "correct": true,
+     "tau": 0.55,
+     "action": "hold",
+     "pass_rate": 0.8333333333333334,
+     "p95_ms": 722.46
+    },
+    {
+     "step": 51,
+     "task_id": "std_en_08",
+     "tau_used": 0.55,
+     "final_tier": 1,
+     "path": [
+      "tier1:pruned"
+     ],
+     "correct": true,
+     "tau": 0.55,
+     "action": "hold",
+     "pass_rate": 0.8333333333333334,
+     "p95_ms": 722.46
+    },
+    {
+     "step": 52,
+     "task_id": "std_en_09",
+     "tau_used": 0.55,
+     "final_tier": 1,
+     "path": [
+      "tier1:pruned"
+     ],
+     "correct": true,
+     "tau": 0.55,
+     "action": "hold",
+     "pass_rate": 0.8333333333333334,
+     "p95_ms": 722.46
+    },
+    {
+     "step": 53,
+     "task_id": "std_en_10",
+     "tau_used": 0.55,
+     "final_tier": 1,
+     "path": [
+      "tier1:pruned",
+      "shadow_audit:agree"
+     ],
+     "correct": true,
+     "tau": 0.55,
+     "action": "hold",
+     "pass_rate": 1.0,
+     "p95_ms": 654.51
+    }
+   ]
+  }
+ },
+ "stress": {
+  "phases": {
+   "easy_1": [
+    0,
+    10
+   ],
+   "hard_burst": [
+    10,
+    34
+   ],
+   "easy_2": [
+    34,
+    54
+   ]
+  },
+  "adaptive": {
+   "summary": {
+    "n": 54,
+    "accuracy": 0.7407407407407407,
+    "correct": 40,
+    "total_tokens": 10822,
+    "compute_units": 41.861000000000004,
+    "cps": 1.0465250000000001,
+    "p50_ms": 77.519894003144,
+    "p95_ms": 895.5190259954474,
+    "tier0": 0,
+    "tier1": 43,
+    "tier2": 11,
+    "escalations": 5,
+    "cache_hits": 0,
+    "blocked_traps": 0,
+    "false_cache_hits": 0,
+    "n_traps": 0,
+    "overhead_ms": {
+     "pruner": 1.2286536666916046,
+     "cache": 0.0,
+     "router": 0.01711985175831985,
+     "verifier": 0.09990470344847482
+    },
+    "per_category": {
+     "standard": 0.9333333333333333,
+     "low_lexical_overlap": 0.25,
+     "multi_hop": 0.25,
+     "arabic_orthographic_variants": 1.0
+    }
+   },
+   "trace": [
+    {
+     "step": 0,
+     "task_id": "std_en_01",
+     "tau_used": 0.55,
+     "final_tier": 1,
+     "path": [
+      "tier1:pruned"
+     ],
+     "correct": true,
+     "tau": 0.55,
+     "action": "hold",
+     "pass_rate": null,
+     "p95_ms": 61.85
+    },
+    {
+     "step": 1,
+     "task_id": "std_en_02",
+     "tau_used": 0.55,
+     "final_tier": 1,
+     "path": [
+      "tier1:pruned"
+     ],
+     "correct": true,
+     "tau": 0.55,
+     "action": "hold",
+     "pass_rate": null,
+     "p95_ms": 61.85
+    },
+    {
+     "step": 2,
+     "task_id": "std_en_03",
+     "tau_used": 0.55,
+     "final_tier": 1,
+     "path": [
+      "tier1:pruned"
+     ],
+     "correct": true,
+     "tau": 0.55,
+     "action": "hold",
+     "pass_rate": null,
+     "p95_ms": 82.67
+    },
+    {
+     "step": 3,
+     "task_id": "std_en_04",
+     "tau_used": 0.55,
+     "final_tier": 1,
+     "path": [
+      "tier1:pruned"
+     ],
+     "correct": true,
+     "tau": 0.55,
+     "action": "hold",
+     "pass_rate": null,
+     "p95_ms": 82.67
+    },
+    {
+     "step": 4,
+     "task_id": "std_en_05",
+     "tau_used": 0.55,
+     "final_tier": 1,
+     "path": [
+      "tier1:pruned"
+     ],
+     "correct": true,
+     "tau": 0.55,
+     "action": "hold",
+     "pass_rate": 1.0,
+     "p95_ms": 82.8
+    },
+    {
+     "step": 5,
+     "task_id": "std_en_06",
+     "tau_used": 0.55,
+     "final_tier": 1,
+     "path": [
+      "tier1:pruned"
+     ],
+     "correct": true,
+     "tau": 0.55,
+     "action": "hold",
+     "pass_rate": 1.0,
+     "p95_ms": 110.66
+    },
+    {
+     "step": 6,
+     "task_id": "std_en_07",
+     "tau_used": 0.55,
+     "final_tier": 1,
+     "path": [
+      "tier1:pruned"
+     ],
+     "correct": true,
+     "tau": 0.55,
+     "action": "hold",
+     "pass_rate": 1.0,
+     "p95_ms": 110.66
+    },
+    {
+     "step": 7,
+     "task_id": "std_en_08",
+     "tau_used": 0.55,
+     "final_tier": 1,
+     "path": [
+      "tier1:pruned"
+     ],
+     "correct": true,
+     "tau": 0.55,
+     "action": "hold",
+     "pass_rate": 1.0,
+     "p95_ms": 110.66
+    },
+    {
+     "step": 8,
+     "task_id": "std_en_09",
+     "tau_used": 0.55,
+     "final_tier": 1,
+     "path": [
+      "tier1:pruned"
+     ],
+     "correct": true,
+     "tau": 0.55,
+     "action": "hold",
+     "pass_rate": 1.0,
+     "p95_ms": 110.66
+    },
+    {
+     "step": 9,
+     "task_id": "std_en_10",
+     "tau_used": 0.55,
+     "final_tier": 1,
+     "path": [
+      "tier1:pruned"
+     ],
+     "correct": true,
+     "tau": 0.55,
+     "action": "hold",
+     "pass_rate": 1.0,
+     "p95_ms": 110.66
+    },
+    {
+     "step": 10,
+     "task_id": "llo_en_01",
+     "tau_used": 0.55,
+     "final_tier": 1,
+     "path": [
+      "tier1:pruned"
+     ],
+     "correct": false,
+     "tau": 0.55,
+     "action": "hold",
+     "pass_rate": 1.0,
+     "p95_ms": 110.66
+    },
+    {
+     "step": 11,
+     "task_id": "llo_en_02",
+     "tau_used": 0.55,
+     "final_tier": 1,
+     "path": [
+      "tier1:pruned"
+     ],
+     "correct": false,
+     "tau": 0.55,
+     "action": "hold",
+     "pass_rate": 1.0,
+     "p95_ms": 82.8
+    },
+    {
+     "step": 12,
+     "task_id": "llo_en_03",
+     "tau_used": 0.55,
+     "final_tier": 1,
+     "path": [
+      "tier1:pruned"
+     ],
+     "correct": false,
+     "tau": 0.55,
+     "action": "hold",
+     "pass_rate": 1.0,
+     "p95_ms": 85.76
+    },
+    {
+     "step": 13,
+     "task_id": "llo_ar_01",
+     "tau_used": 0.55,
+     "final_tier": 1,
+     "path": [
+      "tier1:pruned"
+     ],
+     "correct": true,
+     "tau": 0.55,
+     "action": "hold",
+     "pass_rate": 1.0,
+     "p95_ms": 85.76
+    },
+    {
+     "step": 14,
+     "task_id": "mh_en_01",
+     "tau_used": 0.55,
+     "final_tier": 1,
+     "path": [
+      "tier1:pruned"
+     ],
+     "correct": false,
+     "tau": 0.55,
+     "action": "hold",
+     "pass_rate": 1.0,
+     "p95_ms": 110.66
+    },
+    {
+     "step": 15,
+     "task_id": "mh_en_02",
+     "tau_used": 0.55,
+     "final_tier": 2,
+     "path": [
+      "tier2:pruned"
+     ],
+     "correct": true,
+     "tau": 0.55,
+     "action": "hold",
+     "pass_rate": 1.0,
+     "p95_ms": 135.22
+    },
+    {
+     "step": 16,
+     "task_id": "mh_en_03",
+     "tau_used": 0.55,
+     "final_tier": 2,
+     "path": [
+      "tier2:pruned"
+     ],
+     "correct": false,
+     "tau": 0.55,
+     "action": "hold",
+     "pass_rate": 1.0,
+     "p95_ms": 503.01
+    },
+    {
+     "step": 17,
+     "task_id": "mh_ar_01",
+     "tau_used": 0.55,
+     "final_tier": 2,
+     "path": [
+      "tier2:pruned"
+     ],
+     "correct": false,
+     "tau": 0.55,
+     "action": "hold",
+     "pass_rate": 1.0,
+     "p95_ms": 895.52
+    },
+    {
+     "step": 18,
+     "task_id": "aro_ar_01",
+     "tau_used": 0.55,
+     "final_tier": 2,
+     "path": [
+      "tier1:pruned",
+      "escalate:numeric_grounding",
+      "tier2:relaxed"
+     ],
+     "correct": true,
+     "tau": 0.55,
+     "action": "hold",
+     "pass_rate": 0.9375,
+     "p95_ms": 895.52
+    },
+    {
+     "step": 19,
+     "task_id": "aro_ar_02",
+     "tau_used": 0.55,
+     "final_tier": 1,
+     "path": [
+      "tier1:pruned"
+     ],
+     "correct": true,
+     "tau": 0.55,
+     "action": "hold",
+     "pass_rate": 0.9411764705882353,
+     "p95_ms": 895.52
+    },
+    {
+     "step": 20,
+     "task_id": "aro_ar_03",
+     "tau_used": 0.55,
+     "final_tier": 1,
+     "path": [
+      "tier1:pruned"
+     ],
+     "correct": true,
+     "tau": 0.55,
+     "action": "hold",
+     "pass_rate": 0.9444444444444444,
+     "p95_ms": 895.52
+    },
+    {
+     "step": 21,
+     "task_id": "aro_ar_04",
+     "tau_used": 0.55,
+     "final_tier": 1,
+     "path": [
+      "tier1:pruned"
+     ],
+     "correct": true,
+     "tau": 0.55,
+     "action": "hold",
+     "pass_rate": 0.9473684210526315,
+     "p95_ms": 895.52
+    },
+    {
+     "step": 22,
+     "task_id": "llo_en_01",
+     "tau_used": 0.55,
+     "final_tier": 1,
+     "path": [
+      "tier1:pruned"
+     ],
+     "correct": false,
+     "tau": 0.55,
+     "action": "hold",
+     "pass_rate": 0.95,
+     "p95_ms": 895.52
+    },
+    {
+     "step": 23,
+     "task_id": "llo_en_02",
+     "tau_used": 0.55,
+     "final_tier": 1,
+     "path": [
+      "tier1:pruned"
+     ],
+     "correct": false,
+     "tau": 0.55,
+     "action": "hold",
+     "pass_rate": 0.95,
+     "p95_ms": 895.52
+    },
+    {
+     "step": 24,
+     "task_id": "llo_en_03",
+     "tau_used": 0.55,
+     "final_tier": 1,
+     "path": [
+      "tier1:pruned"
+     ],
+     "correct": false,
+     "tau": 0.55,
+     "action": "hold",
+     "pass_rate": 0.95,
+     "p95_ms": 895.52
+    },
+    {
+     "step": 25,
+     "task_id": "llo_ar_01",
+     "tau_used": 0.55,
+     "final_tier": 1,
+     "path": [
+      "tier1:pruned"
+     ],
+     "correct": true,
+     "tau": 0.55,
+     "action": "hold",
+     "pass_rate": 0.95,
+     "p95_ms": 895.52
+    },
+    {
+     "step": 26,
+     "task_id": "mh_en_01",
+     "tau_used": 0.55,
+     "final_tier": 1,
+     "path": [
+      "tier1:pruned"
+     ],
+     "correct": false,
+     "tau": 0.55,
+     "action": "hold",
+     "pass_rate": 0.95,
+     "p95_ms": 895.52
+    },
+    {
+     "step": 27,
+     "task_id": "mh_en_02",
+     "tau_used": 0.55,
+     "final_tier": 2,
+     "path": [
+      "tier2:pruned"
+     ],
+     "correct": true,
+     "tau": 0.55,
+     "action": "hold",
+     "pass_rate": 0.95,
+     "p95_ms": 895.52
+    },
+    {
+     "step": 28,
+     "task_id": "mh_en_03",
+     "tau_used": 0.55,
+     "final_tier": 2,
+     "path": [
+      "tier2:pruned"
+     ],
+     "correct": false,
+     "tau": 0.55,
+     "action": "hold",
+     "pass_rate": 0.95,
+     "p95_ms": 895.52
+    },
+    {
+     "step": 29,
+     "task_id": "mh_ar_01",
+     "tau_used": 0.55,
+     "final_tier": 2,
+     "path": [
+      "tier2:pruned"
+     ],
+     "correct": false,
+     "tau": 0.55,
+     "action": "hold",
+     "pass_rate": 0.95,
+     "p95_ms": 1221.01
+    },
+    {
+     "step": 30,
+     "task_id": "aro_ar_01",
+     "tau_used": 0.55,
+     "final_tier": 2,
+     "path": [
+      "tier1:pruned",
+      "escalate:numeric_grounding",
+      "tier2:relaxed"
+     ],
+     "correct": true,
+     "tau": 0.55,
+     "action": "hold",
+     "pass_rate": 0.9,
+     "p95_ms": 1221.01
+    },
+    {
+     "step": 31,
+     "task_id": "aro_ar_02",
+     "tau_used": 0.55,
+     "final_tier": 1,
+     "path": [
+      "tier1:pruned"
+     ],
+     "correct": true,
+     "tau": 0.55,
+     "action": "hold",
+     "pass_rate": 0.9,
+     "p95_ms": 1221.01
+    },
+    {
+     "step": 32,
+     "task_id": "aro_ar_03",
+     "tau_used": 0.55,
+     "final_tier": 1,
+     "path": [
+      "tier1:pruned"
+     ],
+     "correct": true,
+     "tau": 0.55,
+     "action": "hold",
+     "pass_rate": 0.9,
+     "p95_ms": 1221.01
+    },
+    {
+     "step": 33,
+     "task_id": "aro_ar_04",
+     "tau_used": 0.55,
+     "final_tier": 1,
+     "path": [
+      "tier1:pruned"
+     ],
+     "correct": true,
+     "tau": 0.55,
+     "action": "hold",
+     "pass_rate": 0.9,
+     "p95_ms": 1221.01
+    },
+    {
+     "step": 34,
+     "task_id": "std_en_11",
+     "tau_used": 0.55,
+     "final_tier": 1,
+     "path": [
+      "tier1:pruned"
+     ],
+     "correct": true,
+     "tau": 0.55,
+     "action": "hold",
+     "pass_rate": 0.9,
+     "p95_ms": 1221.01
+    },
+    {
+     "step": 35,
+     "task_id": "std_en_12",
+     "tau_used": 0.55,
+     "final_tier": 1,
+     "path": [
+      "tier1:pruned"
+     ],
+     "correct": false,
+     "tau": 0.55,
+     "action": "hold",
+     "pass_rate": 0.9,
+     "p95_ms": 1221.01
+    },
+    {
+     "step": 36,
+     "task_id": "std_en_13",
+     "tau_used": 0.55,
+     "final_tier": 1,
+     "path": [
+      "tier1:pruned"
+     ],
+     "correct": true,
+     "tau": 0.55,
+     "action": "hold",
+     "pass_rate": 0.9,
+     "p95_ms": 1221.01
+    },
+    {
+     "step": 37,
+     "task_id": "std_ar_01",
+     "tau_used": 0.55,
+     "final_tier": 1,
+     "path": [
+      "tier1:pruned"
+     ],
+     "correct": false,
+     "tau": 0.55,
+     "action": "hold",
+     "pass_rate": 0.9,
+     "p95_ms": 895.52
+    },
+    {
+     "step": 38,
+     "task_id": "std_ar_02",
+     "tau_used": 0.55,
+     "final_tier": 1,
+     "path": [
+      "tier1:pruned"
+     ],
+     "correct": true,
+     "tau": 0.55,
+     "action": "hold",
+     "pass_rate": 0.9,
+     "p95_ms": 895.52
+    },
+    {
+     "step": 39,
+     "task_id": "std_ar_03",
+     "tau_used": 0.55,
+     "final_tier": 1,
+     "path": [
+      "tier1:pruned"
+     ],
+     "correct": true,
+     "tau": 0.55,
+     "action": "hold",
+     "pass_rate": 0.9,
+     "p95_ms": 895.52
+    },
+    {
+     "step": 40,
+     "task_id": "std_ar_04",
+     "tau_used": 0.55,
+     "final_tier": 2,
+     "path": [
+      "tier1:pruned",
+      "escalate:numeric_grounding",
+      "tier2:relaxed"
+     ],
+     "correct": true,
+     "tau": 0.55,
+     "action": "hold",
+     "pass_rate": 0.85,
+     "p95_ms": 895.52
+    },
+    {
+     "step": 41,
+     "task_id": "std_ar_05",
+     "tau_used": 0.55,
+     "final_tier": 2,
+     "path": [
+      "tier1:pruned",
+      "escalate:numeric_grounding",
+      "tier2:relaxed"
+     ],
+     "correct": true,
+     "tau": 0.55,
+     "action": "hold",
+     "pass_rate": 0.85,
+     "p95_ms": 895.52
+    },
+    {
+     "step": 42,
+     "task_id": "std_ar_06",
+     "tau_used": 0.55,
+     "final_tier": 1,
+     "path": [
+      "tier1:pruned"
+     ],
+     "correct": true,
+     "tau": 0.55,
+     "action": "hold",
+     "pass_rate": 0.85,
+     "p95_ms": 895.52
+    },
+    {
+     "step": 43,
+     "task_id": "std_ar_07",
+     "tau_used": 0.55,
+     "final_tier": 2,
+     "path": [
+      "tier1:pruned",
+      "escalate:numeric_grounding",
+      "tier2:relaxed"
+     ],
+     "correct": true,
+     "tau": 0.55,
+     "action": "hold",
+     "pass_rate": 0.8,
+     "p95_ms": 895.52
+    },
+    {
+     "step": 44,
+     "task_id": "std_en_01",
+     "tau_used": 0.55,
+     "final_tier": 1,
+     "path": [
+      "tier1:pruned"
+     ],
+     "correct": true,
+     "tau": 0.55,
+     "action": "hold",
+     "pass_rate": 0.8,
+     "p95_ms": 895.52
+    },
+    {
+     "step": 45,
+     "task_id": "std_en_02",
+     "tau_used": 0.55,
+     "final_tier": 1,
+     "path": [
+      "tier1:pruned"
+     ],
+     "correct": true,
+     "tau": 0.55,
+     "action": "hold",
+     "pass_rate": 0.8,
+     "p95_ms": 895.52
+    },
+    {
+     "step": 46,
+     "task_id": "std_en_03",
+     "tau_used": 0.55,
+     "final_tier": 1,
+     "path": [
+      "tier1:pruned"
+     ],
+     "correct": true,
+     "tau": 0.55,
+     "action": "hold",
+     "pass_rate": 0.8,
+     "p95_ms": 895.52
+    },
+    {
+     "step": 47,
+     "task_id": "std_en_04",
+     "tau_used": 0.55,
+     "final_tier": 1,
+     "path": [
+      "tier1:pruned"
+     ],
+     "correct": true,
+     "tau": 0.55,
+     "action": "hold",
+     "pass_rate": 0.8,
+     "p95_ms": 895.52
+    },
+    {
+     "step": 48,
+     "task_id": "std_en_05",
+     "tau_used": 0.55,
+     "final_tier": 1,
+     "path": [
+      "tier1:pruned"
+     ],
+     "correct": true,
+     "tau": 0.55,
+     "action": "hold",
+     "pass_rate": 0.8,
+     "p95_ms": 705.34
+    },
+    {
+     "step": 49,
+     "task_id": "std_en_06",
+     "tau_used": 0.55,
+     "final_tier": 1,
+     "path": [
+      "tier1:pruned"
+     ],
+     "correct": true,
+     "tau": 0.55,
+     "action": "hold",
+     "pass_rate": 0.8,
+     "p95_ms": 551.53
+    },
+    {
+     "step": 50,
+     "task_id": "std_en_07",
+     "tau_used": 0.55,
+     "final_tier": 1,
+     "path": [
+      "tier1:pruned"
+     ],
+     "correct": true,
+     "tau": 0.55,
+     "action": "hold",
+     "pass_rate": 0.85,
+     "p95_ms": 551.53
+    },
+    {
+     "step": 51,
+     "task_id": "std_en_08",
+     "tau_used": 0.55,
+     "final_tier": 1,
+     "path": [
+      "tier1:pruned"
+     ],
+     "correct": true,
+     "tau": 0.55,
+     "action": "hold",
+     "pass_rate": 0.85,
+     "p95_ms": 551.53
+    },
+    {
+     "step": 52,
+     "task_id": "std_en_09",
+     "tau_used": 0.55,
+     "final_tier": 1,
+     "path": [
+      "tier1:pruned"
+     ],
+     "correct": true,
+     "tau": 0.55,
+     "action": "hold",
+     "pass_rate": 0.85,
+     "p95_ms": 551.53
+    },
+    {
+     "step": 53,
+     "task_id": "std_en_10",
+     "tau_used": 0.55,
+     "final_tier": 1,
+     "path": [
+      "tier1:pruned"
+     ],
+     "correct": true,
+     "tau": 0.55,
+     "action": "hold",
+     "pass_rate": 0.85,
+     "p95_ms": 551.53
+    }
+   ]
+  },
+  "fixed_tau": {
+   "summary": {
+    "n": 54,
+    "accuracy": 0.7407407407407407,
+    "correct": 40,
+    "total_tokens": 10822,
+    "compute_units": 41.861000000000004,
+    "cps": 1.0465250000000001,
+    "p50_ms": 77.53192149941228,
+    "p95_ms": 895.5148270039284,
+    "tier0": 0,
+    "tier1": 43,
+    "tier2": 11,
+    "escalations": 5,
+    "cache_hits": 0,
+    "blocked_traps": 0,
+    "false_cache_hits": 0,
+    "n_traps": 0,
+    "overhead_ms": {
+     "pruner": 1.2489920741413867,
+     "cache": 0.0,
+     "router": 0.017648129600005363,
+     "verifier": 0.10160522213953771
+    },
+    "per_category": {
+     "standard": 0.9333333333333333,
+     "low_lexical_overlap": 0.25,
+     "multi_hop": 0.25,
+     "arabic_orthographic_variants": 1.0
+    }
+   },
+   "trace": [
+    {
+     "step": 0,
+     "task_id": "std_en_01",
+     "tau_used": 0.55,
+     "final_tier": 1,
+     "path": [
+      "tier1:pruned"
+     ],
+     "correct": true,
+     "tau": 0.55,
+     "action": "hold",
+     "pass_rate": null,
+     "p95_ms": 61.78
+    },
+    {
+     "step": 1,
+     "task_id": "std_en_02",
+     "tau_used": 0.55,
+     "final_tier": 1,
+     "path": [
+      "tier1:pruned"
+     ],
+     "correct": true,
+     "tau": 0.55,
+     "action": "hold",
+     "pass_rate": null,
+     "p95_ms": 61.78
+    },
+    {
+     "step": 2,
+     "task_id": "std_en_03",
+     "tau_used": 0.55,
+     "final_tier": 1,
+     "path": [
+      "tier1:pruned"
+     ],
+     "correct": true,
+     "tau": 0.55,
+     "action": "hold",
+     "pass_rate": null,
+     "p95_ms": 82.68
+    },
+    {
+     "step": 3,
+     "task_id": "std_en_04",
+     "tau_used": 0.55,
+     "final_tier": 1,
+     "path": [
+      "tier1:pruned"
+     ],
+     "correct": true,
+     "tau": 0.55,
+     "action": "hold",
+     "pass_rate": null,
+     "p95_ms": 82.68
+    },
+    {
+     "step": 4,
+     "task_id": "std_en_05",
+     "tau_used": 0.55,
+     "final_tier": 1,
+     "path": [
+      "tier1:pruned"
+     ],
+     "correct": true,
+     "tau": 0.55,
+     "action": "hold",
+     "pass_rate": 1.0,
+     "p95_ms": 83.37
+    },
+    {
+     "step": 5,
+     "task_id": "std_en_06",
+     "tau_used": 0.55,
+     "final_tier": 1,
+     "path": [
+      "tier1:pruned"
+     ],
+     "correct": true,
+     "tau": 0.55,
+     "action": "hold",
+     "pass_rate": 1.0,
+     "p95_ms": 111.06
+    },
+    {
+     "step": 6,
+     "task_id": "std_en_07",
+     "tau_used": 0.55,
+     "final_tier": 1,
+     "path": [
+      "tier1:pruned"
+     ],
+     "correct": true,
+     "tau": 0.55,
+     "action": "hold",
+     "pass_rate": 1.0,
+     "p95_ms": 111.06
+    },
+    {
+     "step": 7,
+     "task_id": "std_en_08",
+     "tau_used": 0.55,
+     "final_tier": 1,
+     "path": [
+      "tier1:pruned"
+     ],
+     "correct": true,
+     "tau": 0.55,
+     "action": "hold",
+     "pass_rate": 1.0,
+     "p95_ms": 111.06
+    },
+    {
+     "step": 8,
+     "task_id": "std_en_09",
+     "tau_used": 0.55,
+     "final_tier": 1,
+     "path": [
+      "tier1:pruned"
+     ],
+     "correct": true,
+     "tau": 0.55,
+     "action": "hold",
+     "pass_rate": 1.0,
+     "p95_ms": 111.06
+    },
+    {
+     "step": 9,
+     "task_id": "std_en_10",
+     "tau_used": 0.55,
+     "final_tier": 1,
+     "path": [
+      "tier1:pruned"
+     ],
+     "correct": true,
+     "tau": 0.55,
+     "action": "hold",
+     "pass_rate": 1.0,
+     "p95_ms": 111.06
+    },
+    {
+     "step": 10,
+     "task_id": "llo_en_01",
+     "tau_used": 0.55,
+     "final_tier": 1,
+     "path": [
+      "tier1:pruned"
+     ],
+     "correct": false,
+     "tau": 0.55,
+     "action": "hold",
+     "pass_rate": 1.0,
+     "p95_ms": 111.06
+    },
+    {
+     "step": 11,
+     "task_id": "llo_en_02",
+     "tau_used": 0.55,
+     "final_tier": 1,
+     "path": [
+      "tier1:pruned"
+     ],
+     "correct": false,
+     "tau": 0.55,
+     "action": "hold",
+     "pass_rate": 1.0,
+     "p95_ms": 83.37
+    },
+    {
+     "step": 12,
+     "task_id": "llo_en_03",
+     "tau_used": 0.55,
+     "final_tier": 1,
+     "path": [
+      "tier1:pruned"
+     ],
+     "correct": false,
+     "tau": 0.55,
+     "action": "hold",
+     "pass_rate": 1.0,
+     "p95_ms": 85.75
+    },
+    {
+     "step": 13,
+     "task_id": "llo_ar_01",
+     "tau_used": 0.55,
+     "final_tier": 1,
+     "path": [
+      "tier1:pruned"
+     ],
+     "correct": true,
+     "tau": 0.55,
+     "action": "hold",
+     "pass_rate": 1.0,
+     "p95_ms": 85.75
+    },
+    {
+     "step": 14,
+     "task_id": "mh_en_01",
+     "tau_used": 0.55,
+     "final_tier": 1,
+     "path": [
+      "tier1:pruned"
+     ],
+     "correct": false,
+     "tau": 0.55,
+     "action": "hold",
+     "pass_rate": 1.0,
+     "p95_ms": 111.06
+    },
+    {
+     "step": 15,
+     "task_id": "mh_en_02",
+     "tau_used": 0.55,
+     "final_tier": 2,
+     "path": [
+      "tier2:pruned"
+     ],
+     "correct": true,
+     "tau": 0.55,
+     "action": "hold",
+     "pass_rate": 1.0,
+     "p95_ms": 135.21
+    },
+    {
+     "step": 16,
+     "task_id": "mh_en_03",
+     "tau_used": 0.55,
+     "final_tier": 2,
+     "path": [
+      "tier2:pruned"
+     ],
+     "correct": false,
+     "tau": 0.55,
+     "action": "hold",
+     "pass_rate": 1.0,
+     "p95_ms": 503.04
+    },
+    {
+     "step": 17,
+     "task_id": "mh_ar_01",
+     "tau_used": 0.55,
+     "final_tier": 2,
+     "path": [
+      "tier2:pruned"
+     ],
+     "correct": false,
+     "tau": 0.55,
+     "action": "hold",
+     "pass_rate": 1.0,
+     "p95_ms": 895.52
+    },
+    {
+     "step": 18,
+     "task_id": "aro_ar_01",
+     "tau_used": 0.55,
+     "final_tier": 2,
+     "path": [
+      "tier1:pruned",
+      "escalate:numeric_grounding",
+      "tier2:relaxed"
+     ],
+     "correct": true,
+     "tau": 0.55,
+     "action": "hold",
+     "pass_rate": 0.9375,
+     "p95_ms": 895.52
+    },
+    {
+     "step": 19,
+     "task_id": "aro_ar_02",
+     "tau_used": 0.55,
+     "final_tier": 1,
+     "path": [
+      "tier1:pruned"
+     ],
+     "correct": true,
+     "tau": 0.55,
+     "action": "hold",
+     "pass_rate": 0.9411764705882353,
+     "p95_ms": 895.52
+    },
+    {
+     "step": 20,
+     "task_id": "aro_ar_03",
+     "tau_used": 0.55,
+     "final_tier": 1,
+     "path": [
+      "tier1:pruned"
+     ],
+     "correct": true,
+     "tau": 0.55,
+     "action": "hold",
+     "pass_rate": 0.9444444444444444,
+     "p95_ms": 895.52
+    },
+    {
+     "step": 21,
+     "task_id": "aro_ar_04",
+     "tau_used": 0.55,
+     "final_tier": 1,
+     "path": [
+      "tier1:pruned"
+     ],
+     "correct": true,
+     "tau": 0.55,
+     "action": "hold",
+     "pass_rate": 0.9473684210526315,
+     "p95_ms": 895.52
+    },
+    {
+     "step": 22,
+     "task_id": "llo_en_01",
+     "tau_used": 0.55,
+     "final_tier": 1,
+     "path": [
+      "tier1:pruned"
+     ],
+     "correct": false,
+     "tau": 0.55,
+     "action": "hold",
+     "pass_rate": 0.95,
+     "p95_ms": 895.52
+    },
+    {
+     "step": 23,
+     "task_id": "llo_en_02",
+     "tau_used": 0.55,
+     "final_tier": 1,
+     "path": [
+      "tier1:pruned"
+     ],
+     "correct": false,
+     "tau": 0.55,
+     "action": "hold",
+     "pass_rate": 0.95,
+     "p95_ms": 895.52
+    },
+    {
+     "step": 24,
+     "task_id": "llo_en_03",
+     "tau_used": 0.55,
+     "final_tier": 1,
+     "path": [
+      "tier1:pruned"
+     ],
+     "correct": false,
+     "tau": 0.55,
+     "action": "hold",
+     "pass_rate": 0.95,
+     "p95_ms": 895.52
+    },
+    {
+     "step": 25,
+     "task_id": "llo_ar_01",
+     "tau_used": 0.55,
+     "final_tier": 1,
+     "path": [
+      "tier1:pruned"
+     ],
+     "correct": true,
+     "tau": 0.55,
+     "action": "hold",
+     "pass_rate": 0.95,
+     "p95_ms": 895.52
+    },
+    {
+     "step": 26,
+     "task_id": "mh_en_01",
+     "tau_used": 0.55,
+     "final_tier": 1,
+     "path": [
+      "tier1:pruned"
+     ],
+     "correct": false,
+     "tau": 0.55,
+     "action": "hold",
+     "pass_rate": 0.95,
+     "p95_ms": 895.52
+    },
+    {
+     "step": 27,
+     "task_id": "mh_en_02",
+     "tau_used": 0.55,
+     "final_tier": 2,
+     "path": [
+      "tier2:pruned"
+     ],
+     "correct": true,
+     "tau": 0.55,
+     "action": "hold",
+     "pass_rate": 0.95,
+     "p95_ms": 895.52
+    },
+    {
+     "step": 28,
+     "task_id": "mh_en_03",
+     "tau_used": 0.55,
+     "final_tier": 2,
+     "path": [
+      "tier2:pruned"
+     ],
+     "correct": false,
+     "tau": 0.55,
+     "action": "hold",
+     "pass_rate": 0.95,
+     "p95_ms": 895.52
+    },
+    {
+     "step": 29,
+     "task_id": "mh_ar_01",
+     "tau_used": 0.55,
+     "final_tier": 2,
+     "path": [
+      "tier2:pruned"
+     ],
+     "correct": false,
+     "tau": 0.55,
+     "action": "hold",
+     "pass_rate": 0.95,
+     "p95_ms": 1221.02
+    },
+    {
+     "step": 30,
+     "task_id": "aro_ar_01",
+     "tau_used": 0.55,
+     "final_tier": 2,
+     "path": [
+      "tier1:pruned",
+      "escalate:numeric_grounding",
+      "tier2:relaxed"
+     ],
+     "correct": true,
+     "tau": 0.55,
+     "action": "hold",
+     "pass_rate": 0.9,
+     "p95_ms": 1221.02
+    },
+    {
+     "step": 31,
+     "task_id": "aro_ar_02",
+     "tau_used": 0.55,
+     "final_tier": 1,
+     "path": [
+      "tier1:pruned"
+     ],
+     "correct": true,
+     "tau": 0.55,
+     "action": "hold",
+     "pass_rate": 0.9,
+     "p95_ms": 1221.02
+    },
+    {
+     "step": 32,
+     "task_id": "aro_ar_03",
+     "tau_used": 0.55,
+     "final_tier": 1,
+     "path": [
+      "tier1:pruned"
+     ],
+     "correct": true,
+     "tau": 0.55,
+     "action": "hold",
+     "pass_rate": 0.9,
+     "p95_ms": 1221.02
+    },
+    {
+     "step": 33,
+     "task_id": "aro_ar_04",
+     "tau_used": 0.55,
+     "final_tier": 1,
+     "path": [
+      "tier1:pruned"
+     ],
+     "correct": true,
+     "tau": 0.55,
+     "action": "hold",
+     "pass_rate": 0.9,
+     "p95_ms": 1221.02
+    },
+    {
+     "step": 34,
+     "task_id": "std_en_11",
+     "tau_used": 0.55,
+     "final_tier": 1,
+     "path": [
+      "tier1:pruned"
+     ],
+     "correct": true,
+     "tau": 0.55,
+     "action": "hold",
+     "pass_rate": 0.9,
+     "p95_ms": 1221.02
+    },
+    {
+     "step": 35,
+     "task_id": "std_en_12",
+     "tau_used": 0.55,
+     "final_tier": 1,
+     "path": [
+      "tier1:pruned"
+     ],
+     "correct": false,
+     "tau": 0.55,
+     "action": "hold",
+     "pass_rate": 0.9,
+     "p95_ms": 1221.02
+    },
+    {
+     "step": 36,
+     "task_id": "std_en_13",
+     "tau_used": 0.55,
+     "final_tier": 1,
+     "path": [
+      "tier1:pruned"
+     ],
+     "correct": true,
+     "tau": 0.55,
+     "action": "hold",
+     "pass_rate": 0.9,
+     "p95_ms": 1221.02
+    },
+    {
+     "step": 37,
+     "task_id": "std_ar_01",
+     "tau_used": 0.55,
+     "final_tier": 1,
+     "path": [
+      "tier1:pruned"
+     ],
+     "correct": false,
+     "tau": 0.55,
+     "action": "hold",
+     "pass_rate": 0.9,
+     "p95_ms": 895.51
+    },
+    {
+     "step": 38,
+     "task_id": "std_ar_02",
+     "tau_used": 0.55,
+     "final_tier": 1,
+     "path": [
+      "tier1:pruned"
+     ],
+     "correct": true,
+     "tau": 0.55,
+     "action": "hold",
+     "pass_rate": 0.9,
+     "p95_ms": 895.51
+    },
+    {
+     "step": 39,
+     "task_id": "std_ar_03",
+     "tau_used": 0.55,
+     "final_tier": 1,
+     "path": [
+      "tier1:pruned"
+     ],
+     "correct": true,
+     "tau": 0.55,
+     "action": "hold",
+     "pass_rate": 0.9,
+     "p95_ms": 895.51
+    },
+    {
+     "step": 40,
+     "task_id": "std_ar_04",
+     "tau_used": 0.55,
+     "final_tier": 2,
+     "path": [
+      "tier1:pruned",
+      "escalate:numeric_grounding",
+      "tier2:relaxed"
+     ],
+     "correct": true,
+     "tau": 0.55,
+     "action": "hold",
+     "pass_rate": 0.85,
+     "p95_ms": 895.51
+    },
+    {
+     "step": 41,
+     "task_id": "std_ar_05",
+     "tau_used": 0.55,
+     "final_tier": 2,
+     "path": [
+      "tier1:pruned",
+      "escalate:numeric_grounding",
+      "tier2:relaxed"
+     ],
+     "correct": true,
+     "tau": 0.55,
+     "action": "hold",
+     "pass_rate": 0.85,
+     "p95_ms": 895.51
+    },
+    {
+     "step": 42,
+     "task_id": "std_ar_06",
+     "tau_used": 0.55,
+     "final_tier": 1,
+     "path": [
+      "tier1:pruned"
+     ],
+     "correct": true,
+     "tau": 0.55,
+     "action": "hold",
+     "pass_rate": 0.85,
+     "p95_ms": 895.51
+    },
+    {
+     "step": 43,
+     "task_id": "std_ar_07",
+     "tau_used": 0.55,
+     "final_tier": 2,
+     "path": [
+      "tier1:pruned",
+      "escalate:numeric_grounding",
+      "tier2:relaxed"
+     ],
+     "correct": true,
+     "tau": 0.55,
+     "action": "hold",
+     "pass_rate": 0.8,
+     "p95_ms": 895.51
+    },
+    {
+     "step": 44,
+     "task_id": "std_en_01",
+     "tau_used": 0.55,
+     "final_tier": 1,
+     "path": [
+      "tier1:pruned"
+     ],
+     "correct": true,
+     "tau": 0.55,
+     "action": "hold",
+     "pass_rate": 0.8,
+     "p95_ms": 895.51
+    },
+    {
+     "step": 45,
+     "task_id": "std_en_02",
+     "tau_used": 0.55,
+     "final_tier": 1,
+     "path": [
+      "tier1:pruned"
+     ],
+     "correct": true,
+     "tau": 0.55,
+     "action": "hold",
+     "pass_rate": 0.8,
+     "p95_ms": 895.51
+    },
+    {
+     "step": 46,
+     "task_id": "std_en_03",
+     "tau_used": 0.55,
+     "final_tier": 1,
+     "path": [
+      "tier1:pruned"
+     ],
+     "correct": true,
+     "tau": 0.55,
+     "action": "hold",
+     "pass_rate": 0.8,
+     "p95_ms": 895.51
+    },
+    {
+     "step": 47,
+     "task_id": "std_en_04",
+     "tau_used": 0.55,
+     "final_tier": 1,
+     "path": [
+      "tier1:pruned"
+     ],
+     "correct": true,
+     "tau": 0.55,
+     "action": "hold",
+     "pass_rate": 0.8,
+     "p95_ms": 895.51
+    },
+    {
+     "step": 48,
+     "task_id": "std_en_05",
+     "tau_used": 0.55,
+     "final_tier": 1,
+     "path": [
+      "tier1:pruned"
+     ],
+     "correct": true,
+     "tau": 0.55,
+     "action": "hold",
+     "pass_rate": 0.8,
+     "p95_ms": 705.32
+    },
+    {
+     "step": 49,
+     "task_id": "std_en_06",
+     "tau_used": 0.55,
+     "final_tier": 1,
+     "path": [
+      "tier1:pruned"
+     ],
+     "correct": true,
+     "tau": 0.55,
+     "action": "hold",
+     "pass_rate": 0.8,
+     "p95_ms": 551.47
+    },
+    {
+     "step": 50,
+     "task_id": "std_en_07",
+     "tau_used": 0.55,
+     "final_tier": 1,
+     "path": [
+      "tier1:pruned"
+     ],
+     "correct": true,
+     "tau": 0.55,
+     "action": "hold",
+     "pass_rate": 0.85,
+     "p95_ms": 551.47
+    },
+    {
+     "step": 51,
+     "task_id": "std_en_08",
+     "tau_used": 0.55,
+     "final_tier": 1,
+     "path": [
+      "tier1:pruned"
+     ],
+     "correct": true,
+     "tau": 0.55,
+     "action": "hold",
+     "pass_rate": 0.85,
+     "p95_ms": 551.47
+    },
+    {
+     "step": 52,
+     "task_id": "std_en_09",
+     "tau_used": 0.55,
+     "final_tier": 1,
+     "path": [
+      "tier1:pruned"
+     ],
+     "correct": true,
+     "tau": 0.55,
+     "action": "hold",
+     "pass_rate": 0.85,
+     "p95_ms": 551.47
+    },
+    {
+     "step": 53,
+     "task_id": "std_en_10",
+     "tau_used": 0.55,
+     "final_tier": 1,
+     "path": [
+      "tier1:pruned"
+     ],
+     "correct": true,
+     "tau": 0.55,
+     "action": "hold",
+     "pass_rate": 0.85,
+     "p95_ms": 551.47
+    }
+   ]
+  },
+  "adaptive_audit": {
+   "summary": {
+    "n": 54,
+    "accuracy": 0.7592592592592593,
+    "correct": 41,
+    "total_tokens": 12563,
+    "compute_units": 66.235,
+    "cps": 1.6154878048780488,
+    "p50_ms": 91.865605998924,
+    "p95_ms": 895.5389129993204,
+    "tier0": 0,
+    "tier1": 42,
+    "tier2": 12,
+    "escalations": 5,
+    "cache_hits": 0,
+    "blocked_traps": 0,
+    "false_cache_hits": 0,
+    "n_traps": 0,
+    "overhead_ms": {
+     "pruner": 1.2469003332053372,
+     "cache": 0.0,
+     "router": 0.017673222289347364,
+     "verifier": 0.1009319442986183
+    },
+    "per_category": {
+     "standard": 0.9666666666666667,
+     "low_lexical_overlap": 0.25,
+     "multi_hop": 0.25,
+     "arabic_orthographic_variants": 1.0
+    }
+   },
+   "trace": [
+    {
+     "step": 0,
+     "task_id": "std_en_01",
+     "tau_used": 0.55,
+     "final_tier": 1,
+     "path": [
+      "tier1:pruned"
+     ],
+     "correct": true,
+     "tau": 0.55,
+     "action": "hold",
+     "pass_rate": null,
+     "p95_ms": 61.84
+    },
+    {
+     "step": 1,
+     "task_id": "std_en_02",
+     "tau_used": 0.55,
+     "final_tier": 1,
+     "path": [
+      "tier1:pruned"
+     ],
+     "correct": true,
+     "tau": 0.55,
+     "action": "hold",
+     "pass_rate": null,
+     "p95_ms": 61.84
+    },
+    {
+     "step": 2,
+     "task_id": "std_en_03",
+     "tau_used": 0.55,
+     "final_tier": 1,
+     "path": [
+      "tier1:pruned"
+     ],
+     "correct": true,
+     "tau": 0.55,
+     "action": "hold",
+     "pass_rate": null,
+     "p95_ms": 82.71
+    },
+    {
+     "step": 3,
+     "task_id": "std_en_04",
+     "tau_used": 0.55,
+     "final_tier": 1,
+     "path": [
+      "tier1:pruned",
+      "shadow_audit:agree"
+     ],
+     "correct": true,
+     "tau": 0.55,
+     "action": "hold",
+     "pass_rate": null,
+     "p95_ms": 497.22
+    },
+    {
+     "step": 4,
+     "task_id": "std_en_05",
+     "tau_used": 0.55,
+     "final_tier": 1,
+     "path": [
+      "tier1:pruned"
+     ],
+     "correct": true,
+     "tau": 0.55,
+     "action": "hold",
+     "pass_rate": 1.0,
+     "p95_ms": 497.22
+    },
+    {
+     "step": 5,
+     "task_id": "std_en_06",
+     "tau_used": 0.55,
+     "final_tier": 1,
+     "path": [
+      "tier1:pruned"
+     ],
+     "correct": true,
+     "tau": 0.55,
+     "action": "hold",
+     "pass_rate": 1.0,
+     "p95_ms": 497.22
+    },
+    {
+     "step": 6,
+     "task_id": "std_en_07",
+     "tau_used": 0.55,
+     "final_tier": 1,
+     "path": [
+      "tier1:pruned"
+     ],
+     "correct": true,
+     "tau": 0.55,
+     "action": "hold",
+     "pass_rate": 1.0,
+     "p95_ms": 497.22
+    },
+    {
+     "step": 7,
+     "task_id": "std_en_08",
+     "tau_used": 0.55,
+     "final_tier": 1,
+     "path": [
+      "tier1:pruned",
+      "shadow_audit:agree"
+     ],
+     "correct": true,
+     "tau": 0.55,
+     "action": "hold",
+     "pass_rate": 1.0,
+     "p95_ms": 497.22
+    },
+    {
+     "step": 8,
+     "task_id": "std_en_09",
+     "tau_used": 0.55,
+     "final_tier": 1,
+     "path": [
+      "tier1:pruned"
+     ],
+     "correct": true,
+     "tau": 0.55,
+     "action": "hold",
+     "pass_rate": 1.0,
+     "p95_ms": 497.22
+    },
+    {
+     "step": 9,
+     "task_id": "std_en_10",
+     "tau_used": 0.55,
+     "final_tier": 1,
+     "path": [
+      "tier1:pruned"
+     ],
+     "correct": true,
+     "tau": 0.55,
+     "action": "hold",
+     "pass_rate": 1.0,
+     "p95_ms": 497.22
+    },
+    {
+     "step": 10,
+     "task_id": "llo_en_01",
+     "tau_used": 0.55,
+     "final_tier": 1,
+     "path": [
+      "tier1:pruned"
+     ],
+     "correct": false,
+     "tau": 0.55,
+     "action": "hold",
+     "pass_rate": 1.0,
+     "p95_ms": 497.22
+    },
+    {
+     "step": 11,
+     "task_id": "llo_en_02",
+     "tau_used": 0.55,
+     "final_tier": 1,
+     "path": [
+      "tier1:pruned",
+      "shadow_audit:agree"
+     ],
+     "correct": false,
+     "tau": 0.55,
+     "action": "hold",
+     "pass_rate": 1.0,
+     "p95_ms": 497.22
+    },
+    {
+     "step": 12,
+     "task_id": "llo_en_03",
+     "tau_used": 0.55,
+     "final_tier": 1,
+     "path": [
+      "tier1:pruned"
+     ],
+     "correct": false,
+     "tau": 0.55,
+     "action": "hold",
+     "pass_rate": 1.0,
+     "p95_ms": 497.22
+    },
+    {
+     "step": 13,
+     "task_id": "llo_ar_01",
+     "tau_used": 0.55,
+     "final_tier": 1,
+     "path": [
+      "tier1:pruned"
+     ],
+     "correct": true,
+     "tau": 0.55,
+     "action": "hold",
+     "pass_rate": 1.0,
+     "p95_ms": 497.22
+    },
+    {
+     "step": 14,
+     "task_id": "mh_en_01",
+     "tau_used": 0.55,
+     "final_tier": 1,
+     "path": [
+      "tier1:pruned"
+     ],
+     "correct": false,
+     "tau": 0.55,
+     "action": "hold",
+     "pass_rate": 1.0,
+     "p95_ms": 497.22
+    },
+    {
+     "step": 15,
+     "task_id": "mh_en_02",
+     "tau_used": 0.55,
+     "final_tier": 2,
+     "path": [
+      "tier2:pruned"
+     ],
+     "correct": true,
+     "tau": 0.55,
+     "action": "hold",
+     "pass_rate": 1.0,
+     "p95_ms": 502.99
+    },
+    {
+     "step": 16,
+     "task_id": "mh_en_03",
+     "tau_used": 0.55,
+     "final_tier": 2,
+     "path": [
+      "tier2:pruned"
+     ],
+     "correct": false,
+     "tau": 0.55,
+     "action": "hold",
+     "pass_rate": 1.0,
+     "p95_ms": 640.57
+    },
+    {
+     "step": 17,
+     "task_id": "mh_ar_01",
+     "tau_used": 0.55,
+     "final_tier": 2,
+     "path": [
+      "tier2:pruned"
+     ],
+     "correct": false,
+     "tau": 0.55,
+     "action": "hold",
+     "pass_rate": 1.0,
+     "p95_ms": 895.56
+    },
+    {
+     "step": 18,
+     "task_id": "aro_ar_01",
+     "tau_used": 0.55,
+     "final_tier": 2,
+     "path": [
+      "tier1:pruned",
+      "escalate:numeric_grounding",
+      "tier2:relaxed"
+     ],
+     "correct": true,
+     "tau": 0.55,
+     "action": "hold",
+     "pass_rate": 0.9375,
+     "p95_ms": 895.56
+    },
+    {
+     "step": 19,
+     "task_id": "aro_ar_02",
+     "tau_used": 0.55,
+     "final_tier": 1,
+     "path": [
+      "tier1:pruned",
+      "shadow_audit:agree"
+     ],
+     "correct": true,
+     "tau": 0.55,
+     "action": "hold",
+     "pass_rate": 0.9411764705882353,
+     "p95_ms": 895.56
+    },
+    {
+     "step": 20,
+     "task_id": "aro_ar_03",
+     "tau_used": 0.55,
+     "final_tier": 1,
+     "path": [
+      "tier1:pruned"
+     ],
+     "correct": true,
+     "tau": 0.55,
+     "action": "hold",
+     "pass_rate": 0.9444444444444444,
+     "p95_ms": 895.56
+    },
+    {
+     "step": 21,
+     "task_id": "aro_ar_04",
+     "tau_used": 0.55,
+     "final_tier": 1,
+     "path": [
+      "tier1:pruned"
+     ],
+     "correct": true,
+     "tau": 0.55,
+     "action": "hold",
+     "pass_rate": 0.9473684210526315,
+     "p95_ms": 895.56
+    },
+    {
+     "step": 22,
+     "task_id": "llo_en_01",
+     "tau_used": 0.55,
+     "final_tier": 1,
+     "path": [
+      "tier1:pruned"
+     ],
+     "correct": false,
+     "tau": 0.55,
+     "action": "hold",
+     "pass_rate": 0.95,
+     "p95_ms": 895.56
+    },
+    {
+     "step": 23,
+     "task_id": "llo_en_02",
+     "tau_used": 0.55,
+     "final_tier": 1,
+     "path": [
+      "tier1:pruned",
+      "shadow_audit:agree"
+     ],
+     "correct": false,
+     "tau": 0.55,
+     "action": "hold",
+     "pass_rate": 0.95,
+     "p95_ms": 895.56
+    },
+    {
+     "step": 24,
+     "task_id": "llo_en_03",
+     "tau_used": 0.55,
+     "final_tier": 1,
+     "path": [
+      "tier1:pruned"
+     ],
+     "correct": false,
+     "tau": 0.55,
+     "action": "hold",
+     "pass_rate": 0.95,
+     "p95_ms": 895.56
+    },
+    {
+     "step": 25,
+     "task_id": "llo_ar_01",
+     "tau_used": 0.55,
+     "final_tier": 1,
+     "path": [
+      "tier1:pruned"
+     ],
+     "correct": true,
+     "tau": 0.55,
+     "action": "hold",
+     "pass_rate": 0.95,
+     "p95_ms": 895.56
+    },
+    {
+     "step": 26,
+     "task_id": "mh_en_01",
+     "tau_used": 0.55,
+     "final_tier": 1,
+     "path": [
+      "tier1:pruned"
+     ],
+     "correct": false,
+     "tau": 0.55,
+     "action": "hold",
+     "pass_rate": 0.95,
+     "p95_ms": 895.56
+    },
+    {
+     "step": 27,
+     "task_id": "mh_en_02",
+     "tau_used": 0.55,
+     "final_tier": 2,
+     "path": [
+      "tier2:pruned"
+     ],
+     "correct": true,
+     "tau": 0.55,
+     "action": "hold",
+     "pass_rate": 0.95,
+     "p95_ms": 895.56
+    },
+    {
+     "step": 28,
+     "task_id": "mh_en_03",
+     "tau_used": 0.55,
+     "final_tier": 2,
+     "path": [
+      "tier2:pruned"
+     ],
+     "correct": false,
+     "tau": 0.55,
+     "action": "hold",
+     "pass_rate": 0.95,
+     "p95_ms": 895.56
+    },
+    {
+     "step": 29,
+     "task_id": "mh_ar_01",
+     "tau_used": 0.55,
+     "final_tier": 2,
+     "path": [
+      "tier2:pruned"
+     ],
+     "correct": false,
+     "tau": 0.55,
+     "action": "hold",
+     "pass_rate": 0.95,
+     "p95_ms": 1221.03
+    },
+    {
+     "step": 30,
+     "task_id": "aro_ar_01",
+     "tau_used": 0.55,
+     "final_tier": 2,
+     "path": [
+      "tier1:pruned",
+      "escalate:numeric_grounding",
+      "tier2:relaxed"
+     ],
+     "correct": true,
+     "tau": 0.55,
+     "action": "hold",
+     "pass_rate": 0.9,
+     "p95_ms": 1221.03
+    },
+    {
+     "step": 31,
+     "task_id": "aro_ar_02",
+     "tau_used": 0.55,
+     "final_tier": 1,
+     "path": [
+      "tier1:pruned",
+      "shadow_audit:agree"
+     ],
+     "correct": true,
+     "tau": 0.55,
+     "action": "hold",
+     "pass_rate": 0.9,
+     "p95_ms": 1221.03
+    },
+    {
+     "step": 32,
+     "task_id": "aro_ar_03",
+     "tau_used": 0.55,
+     "final_tier": 1,
+     "path": [
+      "tier1:pruned"
+     ],
+     "correct": true,
+     "tau": 0.55,
+     "action": "hold",
+     "pass_rate": 0.9,
+     "p95_ms": 1221.03
+    },
+    {
+     "step": 33,
+     "task_id": "aro_ar_04",
+     "tau_used": 0.55,
+     "final_tier": 1,
+     "path": [
+      "tier1:pruned"
+     ],
+     "correct": true,
+     "tau": 0.55,
+     "action": "hold",
+     "pass_rate": 0.9,
+     "p95_ms": 1221.03
+    },
+    {
+     "step": 34,
+     "task_id": "std_en_11",
+     "tau_used": 0.55,
+     "final_tier": 1,
+     "path": [
+      "tier1:pruned"
+     ],
+     "correct": true,
+     "tau": 0.55,
+     "action": "hold",
+     "pass_rate": 0.9,
+     "p95_ms": 1221.03
+    },
+    {
+     "step": 35,
+     "task_id": "std_en_12",
+     "tau_used": 0.55,
+     "final_tier": 2,
+     "path": [
+      "tier1:pruned",
+      "shadow_audit:disagree"
+     ],
+     "correct": true,
+     "tau": 0.55,
+     "action": "hold",
+     "pass_rate": 0.75,
+     "p95_ms": 1221.03
+    },
+    {
+     "step": 36,
+     "task_id": "std_en_13",
+     "tau_used": 0.55,
+     "final_tier": 1,
+     "path": [
+      "tier1:pruned"
+     ],
+     "correct": true,
+     "tau": 0.55,
+     "action": "hold",
+     "pass_rate": 0.75,
+     "p95_ms": 1221.03
+    },
+    {
+     "step": 37,
+     "task_id": "std_ar_01",
+     "tau_used": 0.55,
+     "final_tier": 1,
+     "path": [
+      "tier1:pruned"
+     ],
+     "correct": false,
+     "tau": 0.55,
+     "action": "hold",
+     "pass_rate": 0.75,
+     "p95_ms": 895.54
+    },
+    {
+     "step": 38,
+     "task_id": "std_ar_02",
+     "tau_used": 0.55,
+     "final_tier": 1,
+     "path": [
+      "tier1:pruned"
+     ],
+     "correct": true,
+     "tau": 0.55,
+     "action": "hold",
+     "pass_rate": 0.75,
+     "p95_ms": 895.54
+    },
+    {
+     "step": 39,
+     "task_id": "std_ar_03",
+     "tau_used": 0.55,
+     "final_tier": 1,
+     "path": [
+      "tier1:pruned",
+      "shadow_audit:agree"
+     ],
+     "correct": true,
+     "tau": 0.55,
+     "action": "hold",
+     "pass_rate": 0.75,
+     "p95_ms": 895.54
+    },
+    {
+     "step": 40,
+     "task_id": "std_ar_04",
+     "tau_used": 0.55,
+     "final_tier": 2,
+     "path": [
+      "tier1:pruned",
+      "escalate:numeric_grounding",
+      "tier2:relaxed"
+     ],
+     "correct": true,
+     "tau": 0.55,
+     "action": "hold",
+     "pass_rate": 0.7083333333333334,
+     "p95_ms": 895.54
+    },
+    {
+     "step": 41,
+     "task_id": "std_ar_05",
+     "tau_used": 0.55,
+     "final_tier": 2,
+     "path": [
+      "tier1:pruned",
+      "escalate:numeric_grounding",
+      "tier2:relaxed"
+     ],
+     "correct": true,
+     "tau": 0.55,
+     "action": "hold",
+     "pass_rate": 0.7083333333333334,
+     "p95_ms": 895.54
+    },
+    {
+     "step": 42,
+     "task_id": "std_ar_06",
+     "tau_used": 0.55,
+     "final_tier": 1,
+     "path": [
+      "tier1:pruned"
+     ],
+     "correct": true,
+     "tau": 0.55,
+     "action": "hold",
+     "pass_rate": 0.7083333333333334,
+     "p95_ms": 895.54
+    },
+    {
+     "step": 43,
+     "task_id": "std_ar_07",
+     "tau_used": 0.55,
+     "final_tier": 2,
+     "path": [
+      "tier1:pruned",
+      "escalate:numeric_grounding",
+      "tier2:relaxed"
+     ],
+     "correct": true,
+     "tau": 0.47,
+     "action": "tighten",
+     "pass_rate": null,
+     "p95_ms": 895.54
+    },
+    {
+     "step": 44,
+     "task_id": "std_en_01",
+     "tau_used": 0.47,
+     "final_tier": 1,
+     "path": [
+      "tier1:pruned"
+     ],
+     "correct": true,
+     "tau": 0.47,
+     "action": "hold",
+     "pass_rate": null,
+     "p95_ms": 895.54
+    },
+    {
+     "step": 45,
+     "task_id": "std_en_02",
+     "tau_used": 0.47,
+     "final_tier": 1,
+     "path": [
+      "tier1:pruned"
+     ],
+     "correct": true,
+     "tau": 0.47,
+     "action": "hold",
+     "pass_rate": null,
+     "p95_ms": 895.54
+    },
+    {
+     "step": 46,
+     "task_id": "std_en_03",
+     "tau_used": 0.47,
+     "final_tier": 1,
+     "path": [
+      "tier1:pruned",
+      "shadow_audit:agree"
+     ],
+     "correct": true,
+     "tau": 0.47,
+     "action": "hold",
+     "pass_rate": null,
+     "p95_ms": 895.54
+    },
+    {
+     "step": 47,
+     "task_id": "std_en_04",
+     "tau_used": 0.47,
+     "final_tier": 1,
+     "path": [
+      "tier1:pruned"
+     ],
+     "correct": true,
+     "tau": 0.47,
+     "action": "hold",
+     "pass_rate": null,
+     "p95_ms": 895.54
+    },
+    {
+     "step": 48,
+     "task_id": "std_en_05",
+     "tau_used": 0.47,
+     "final_tier": 1,
+     "path": [
+      "tier1:pruned"
+     ],
+     "correct": true,
+     "tau": 0.47,
+     "action": "hold",
+     "pass_rate": 1.0,
+     "p95_ms": 742.7
+    },
+    {
+     "step": 49,
+     "task_id": "std_en_06",
+     "tau_used": 0.47,
+     "final_tier": 1,
+     "path": [
+      "tier1:pruned"
+     ],
+     "correct": true,
+     "tau": 0.47,
+     "action": "hold",
+     "pass_rate": 1.0,
+     "p95_ms": 705.35
+    },
+    {
+     "step": 50,
+     "task_id": "std_en_07",
+     "tau_used": 0.47,
+     "final_tier": 1,
+     "path": [
+      "tier1:pruned",
+      "shadow_audit:agree"
+     ],
+     "correct": true,
+     "tau": 0.47,
+     "action": "hold",
+     "pass_rate": 1.0,
+     "p95_ms": 705.35
+    },
+    {
+     "step": 51,
+     "task_id": "std_en_08",
+     "tau_used": 0.47,
+     "final_tier": 1,
+     "path": [
+      "tier1:pruned"
+     ],
+     "correct": true,
+     "tau": 0.47,
+     "action": "hold",
+     "pass_rate": 1.0,
+     "p95_ms": 551.5
+    },
+    {
+     "step": 52,
+     "task_id": "std_en_09",
+     "tau_used": 0.47,
+     "final_tier": 1,
+     "path": [
+      "tier1:pruned"
+     ],
+     "correct": true,
+     "tau": 0.52,
+     "action": "recover",
+     "pass_rate": 1.0,
+     "p95_ms": 551.5
+    },
+    {
+     "step": 53,
+     "task_id": "std_en_10",
+     "tau_used": 0.52,
+     "final_tier": 1,
+     "path": [
+      "tier1:pruned"
+     ],
+     "correct": true,
+     "tau": 0.55,
+     "action": "recover",
+     "pass_rate": 1.0,
+     "p95_ms": 551.5
+    }
+   ]
+  },
+  "fixed_tau_audit": {
+   "summary": {
+    "n": 54,
+    "accuracy": 0.7592592592592593,
+    "correct": 41,
+    "total_tokens": 12563,
+    "compute_units": 66.235,
+    "cps": 1.6154878048780488,
+    "p50_ms": 91.87735449859755,
+    "p95_ms": 895.5439620009496,
+    "tier0": 0,
+    "tier1": 42,
+    "tier2": 12,
+    "escalations": 5,
+    "cache_hits": 0,
+    "blocked_traps": 0,
+    "false_cache_hits": 0,
+    "n_traps": 0,
+    "overhead_ms": {
+     "pruner": 1.2474587596510969,
+     "cache": 0.0,
+     "router": 0.017321092754072096,
+     "verifier": 0.09968385186059298
+    },
+    "per_category": {
+     "standard": 0.9666666666666667,
+     "low_lexical_overlap": 0.25,
+     "multi_hop": 0.25,
+     "arabic_orthographic_variants": 1.0
+    }
+   },
+   "trace": [
+    {
+     "step": 0,
+     "task_id": "std_en_01",
+     "tau_used": 0.55,
+     "final_tier": 1,
+     "path": [
+      "tier1:pruned"
+     ],
+     "correct": true,
+     "tau": 0.55,
+     "action": "hold",
+     "pass_rate": null,
+     "p95_ms": 61.81
+    },
+    {
+     "step": 1,
+     "task_id": "std_en_02",
+     "tau_used": 0.55,
+     "final_tier": 1,
+     "path": [
+      "tier1:pruned"
+     ],
+     "correct": true,
+     "tau": 0.55,
+     "action": "hold",
+     "pass_rate": null,
+     "p95_ms": 61.81
+    },
+    {
+     "step": 2,
+     "task_id": "std_en_03",
+     "tau_used": 0.55,
+     "final_tier": 1,
+     "path": [
+      "tier1:pruned"
+     ],
+     "correct": true,
+     "tau": 0.55,
+     "action": "hold",
+     "pass_rate": null,
+     "p95_ms": 82.7
+    },
+    {
+     "step": 3,
+     "task_id": "std_en_04",
+     "tau_used": 0.55,
+     "final_tier": 1,
+     "path": [
+      "tier1:pruned",
+      "shadow_audit:agree"
+     ],
+     "correct": true,
+     "tau": 0.55,
+     "action": "hold",
+     "pass_rate": null,
+     "p95_ms": 497.24
+    },
+    {
+     "step": 4,
+     "task_id": "std_en_05",
+     "tau_used": 0.55,
+     "final_tier": 1,
+     "path": [
+      "tier1:pruned"
+     ],
+     "correct": true,
+     "tau": 0.55,
+     "action": "hold",
+     "pass_rate": 1.0,
+     "p95_ms": 497.24
+    },
+    {
+     "step": 5,
+     "task_id": "std_en_06",
+     "tau_used": 0.55,
+     "final_tier": 1,
+     "path": [
+      "tier1:pruned"
+     ],
+     "correct": true,
+     "tau": 0.55,
+     "action": "hold",
+     "pass_rate": 1.0,
+     "p95_ms": 497.24
+    },
+    {
+     "step": 6,
+     "task_id": "std_en_07",
+     "tau_used": 0.55,
+     "final_tier": 1,
+     "path": [
+      "tier1:pruned"
+     ],
+     "correct": true,
+     "tau": 0.55,
+     "action": "hold",
+     "pass_rate": 1.0,
+     "p95_ms": 497.24
+    },
+    {
+     "step": 7,
+     "task_id": "std_en_08",
+     "tau_used": 0.55,
+     "final_tier": 1,
+     "path": [
+      "tier1:pruned",
+      "shadow_audit:agree"
+     ],
+     "correct": true,
+     "tau": 0.55,
+     "action": "hold",
+     "pass_rate": 1.0,
+     "p95_ms": 497.24
+    },
+    {
+     "step": 8,
+     "task_id": "std_en_09",
+     "tau_used": 0.55,
+     "final_tier": 1,
+     "path": [
+      "tier1:pruned"
+     ],
+     "correct": true,
+     "tau": 0.55,
+     "action": "hold",
+     "pass_rate": 1.0,
+     "p95_ms": 497.24
+    },
+    {
+     "step": 9,
+     "task_id": "std_en_10",
+     "tau_used": 0.55,
+     "final_tier": 1,
+     "path": [
+      "tier1:pruned"
+     ],
+     "correct": true,
+     "tau": 0.55,
+     "action": "hold",
+     "pass_rate": 1.0,
+     "p95_ms": 497.24
+    },
+    {
+     "step": 10,
+     "task_id": "llo_en_01",
+     "tau_used": 0.55,
+     "final_tier": 1,
+     "path": [
+      "tier1:pruned"
+     ],
+     "correct": false,
+     "tau": 0.55,
+     "action": "hold",
+     "pass_rate": 1.0,
+     "p95_ms": 497.24
+    },
+    {
+     "step": 11,
+     "task_id": "llo_en_02",
+     "tau_used": 0.55,
+     "final_tier": 1,
+     "path": [
+      "tier1:pruned",
+      "shadow_audit:agree"
+     ],
+     "correct": false,
+     "tau": 0.55,
+     "action": "hold",
+     "pass_rate": 1.0,
+     "p95_ms": 497.24
+    },
+    {
+     "step": 12,
+     "task_id": "llo_en_03",
+     "tau_used": 0.55,
+     "final_tier": 1,
+     "path": [
+      "tier1:pruned"
+     ],
+     "correct": false,
+     "tau": 0.55,
+     "action": "hold",
+     "pass_rate": 1.0,
+     "p95_ms": 497.24
+    },
+    {
+     "step": 13,
+     "task_id": "llo_ar_01",
+     "tau_used": 0.55,
+     "final_tier": 1,
+     "path": [
+      "tier1:pruned"
+     ],
+     "correct": true,
+     "tau": 0.55,
+     "action": "hold",
+     "pass_rate": 1.0,
+     "p95_ms": 497.24
+    },
+    {
+     "step": 14,
+     "task_id": "mh_en_01",
+     "tau_used": 0.55,
+     "final_tier": 1,
+     "path": [
+      "tier1:pruned"
+     ],
+     "correct": false,
+     "tau": 0.55,
+     "action": "hold",
+     "pass_rate": 1.0,
+     "p95_ms": 497.24
+    },
+    {
+     "step": 15,
+     "task_id": "mh_en_02",
+     "tau_used": 0.55,
+     "final_tier": 2,
+     "path": [
+      "tier2:pruned"
+     ],
+     "correct": true,
+     "tau": 0.55,
+     "action": "hold",
+     "pass_rate": 1.0,
+     "p95_ms": 503.02
+    },
+    {
+     "step": 16,
+     "task_id": "mh_en_03",
+     "tau_used": 0.55,
+     "final_tier": 2,
+     "path": [
+      "tier2:pruned"
+     ],
+     "correct": false,
+     "tau": 0.55,
+     "action": "hold",
+     "pass_rate": 1.0,
+     "p95_ms": 640.61
+    },
+    {
+     "step": 17,
+     "task_id": "mh_ar_01",
+     "tau_used": 0.55,
+     "final_tier": 2,
+     "path": [
+      "tier2:pruned"
+     ],
+     "correct": false,
+     "tau": 0.55,
+     "action": "hold",
+     "pass_rate": 1.0,
+     "p95_ms": 895.54
+    },
+    {
+     "step": 18,
+     "task_id": "aro_ar_01",
+     "tau_used": 0.55,
+     "final_tier": 2,
+     "path": [
+      "tier1:pruned",
+      "escalate:numeric_grounding",
+      "tier2:relaxed"
+     ],
+     "correct": true,
+     "tau": 0.55,
+     "action": "hold",
+     "pass_rate": 0.9375,
+     "p95_ms": 895.54
+    },
+    {
+     "step": 19,
+     "task_id": "aro_ar_02",
+     "tau_used": 0.55,
+     "final_tier": 1,
+     "path": [
+      "tier1:pruned",
+      "shadow_audit:agree"
+     ],
+     "correct": true,
+     "tau": 0.55,
+     "action": "hold",
+     "pass_rate": 0.9411764705882353,
+     "p95_ms": 895.54
+    },
+    {
+     "step": 20,
+     "task_id": "aro_ar_03",
+     "tau_used": 0.55,
+     "final_tier": 1,
+     "path": [
+      "tier1:pruned"
+     ],
+     "correct": true,
+     "tau": 0.55,
+     "action": "hold",
+     "pass_rate": 0.9444444444444444,
+     "p95_ms": 895.54
+    },
+    {
+     "step": 21,
+     "task_id": "aro_ar_04",
+     "tau_used": 0.55,
+     "final_tier": 1,
+     "path": [
+      "tier1:pruned"
+     ],
+     "correct": true,
+     "tau": 0.55,
+     "action": "hold",
+     "pass_rate": 0.9473684210526315,
+     "p95_ms": 895.54
+    },
+    {
+     "step": 22,
+     "task_id": "llo_en_01",
+     "tau_used": 0.55,
+     "final_tier": 1,
+     "path": [
+      "tier1:pruned"
+     ],
+     "correct": false,
+     "tau": 0.55,
+     "action": "hold",
+     "pass_rate": 0.95,
+     "p95_ms": 895.54
+    },
+    {
+     "step": 23,
+     "task_id": "llo_en_02",
+     "tau_used": 0.55,
+     "final_tier": 1,
+     "path": [
+      "tier1:pruned",
+      "shadow_audit:agree"
+     ],
+     "correct": false,
+     "tau": 0.55,
+     "action": "hold",
+     "pass_rate": 0.95,
+     "p95_ms": 895.54
+    },
+    {
+     "step": 24,
+     "task_id": "llo_en_03",
+     "tau_used": 0.55,
+     "final_tier": 1,
+     "path": [
+      "tier1:pruned"
+     ],
+     "correct": false,
+     "tau": 0.55,
+     "action": "hold",
+     "pass_rate": 0.95,
+     "p95_ms": 895.54
+    },
+    {
+     "step": 25,
+     "task_id": "llo_ar_01",
+     "tau_used": 0.55,
+     "final_tier": 1,
+     "path": [
+      "tier1:pruned"
+     ],
+     "correct": true,
+     "tau": 0.55,
+     "action": "hold",
+     "pass_rate": 0.95,
+     "p95_ms": 895.54
+    },
+    {
+     "step": 26,
+     "task_id": "mh_en_01",
+     "tau_used": 0.55,
+     "final_tier": 1,
+     "path": [
+      "tier1:pruned"
+     ],
+     "correct": false,
+     "tau": 0.55,
+     "action": "hold",
+     "pass_rate": 0.95,
+     "p95_ms": 895.54
+    },
+    {
+     "step": 27,
+     "task_id": "mh_en_02",
+     "tau_used": 0.55,
+     "final_tier": 2,
+     "path": [
+      "tier2:pruned"
+     ],
+     "correct": true,
+     "tau": 0.55,
+     "action": "hold",
+     "pass_rate": 0.95,
+     "p95_ms": 895.54
+    },
+    {
+     "step": 28,
+     "task_id": "mh_en_03",
+     "tau_used": 0.55,
+     "final_tier": 2,
+     "path": [
+      "tier2:pruned"
+     ],
+     "correct": false,
+     "tau": 0.55,
+     "action": "hold",
+     "pass_rate": 0.95,
+     "p95_ms": 895.56
+    },
+    {
+     "step": 29,
+     "task_id": "mh_ar_01",
+     "tau_used": 0.55,
+     "final_tier": 2,
+     "path": [
+      "tier2:pruned"
+     ],
+     "correct": false,
+     "tau": 0.55,
+     "action": "hold",
+     "pass_rate": 0.95,
+     "p95_ms": 1221.04
+    },
+    {
+     "step": 30,
+     "task_id": "aro_ar_01",
+     "tau_used": 0.55,
+     "final_tier": 2,
+     "path": [
+      "tier1:pruned",
+      "escalate:numeric_grounding",
+      "tier2:relaxed"
+     ],
+     "correct": true,
+     "tau": 0.55,
+     "action": "hold",
+     "pass_rate": 0.9,
+     "p95_ms": 1221.04
+    },
+    {
+     "step": 31,
+     "task_id": "aro_ar_02",
+     "tau_used": 0.55,
+     "final_tier": 1,
+     "path": [
+      "tier1:pruned",
+      "shadow_audit:agree"
+     ],
+     "correct": true,
+     "tau": 0.55,
+     "action": "hold",
+     "pass_rate": 0.9,
+     "p95_ms": 1221.04
+    },
+    {
+     "step": 32,
+     "task_id": "aro_ar_03",
+     "tau_used": 0.55,
+     "final_tier": 1,
+     "path": [
+      "tier1:pruned"
+     ],
+     "correct": true,
+     "tau": 0.55,
+     "action": "hold",
+     "pass_rate": 0.9,
+     "p95_ms": 1221.04
+    },
+    {
+     "step": 33,
+     "task_id": "aro_ar_04",
+     "tau_used": 0.55,
+     "final_tier": 1,
+     "path": [
+      "tier1:pruned"
+     ],
+     "correct": true,
+     "tau": 0.55,
+     "action": "hold",
+     "pass_rate": 0.9,
+     "p95_ms": 1221.04
+    },
+    {
+     "step": 34,
+     "task_id": "std_en_11",
+     "tau_used": 0.55,
+     "final_tier": 1,
+     "path": [
+      "tier1:pruned"
+     ],
+     "correct": true,
+     "tau": 0.55,
+     "action": "hold",
+     "pass_rate": 0.9,
+     "p95_ms": 1221.04
+    },
+    {
+     "step": 35,
+     "task_id": "std_en_12",
+     "tau_used": 0.55,
+     "final_tier": 2,
+     "path": [
+      "tier1:pruned",
+      "shadow_audit:disagree"
+     ],
+     "correct": true,
+     "tau": 0.55,
+     "action": "hold",
+     "pass_rate": 0.75,
+     "p95_ms": 1221.04
+    },
+    {
+     "step": 36,
+     "task_id": "std_en_13",
+     "tau_used": 0.55,
+     "final_tier": 1,
+     "path": [
+      "tier1:pruned"
+     ],
+     "correct": true,
+     "tau": 0.55,
+     "action": "hold",
+     "pass_rate": 0.75,
+     "p95_ms": 1221.04
+    },
+    {
+     "step": 37,
+     "task_id": "std_ar_01",
+     "tau_used": 0.55,
+     "final_tier": 1,
+     "path": [
+      "tier1:pruned"
+     ],
+     "correct": false,
+     "tau": 0.55,
+     "action": "hold",
+     "pass_rate": 0.75,
+     "p95_ms": 895.56
+    },
+    {
+     "step": 38,
+     "task_id": "std_ar_02",
+     "tau_used": 0.55,
+     "final_tier": 1,
+     "path": [
+      "tier1:pruned"
+     ],
+     "correct": true,
+     "tau": 0.55,
+     "action": "hold",
+     "pass_rate": 0.75,
+     "p95_ms": 895.56
+    },
+    {
+     "step": 39,
+     "task_id": "std_ar_03",
+     "tau_used": 0.55,
+     "final_tier": 1,
+     "path": [
+      "tier1:pruned",
+      "shadow_audit:agree"
+     ],
+     "correct": true,
+     "tau": 0.55,
+     "action": "hold",
+     "pass_rate": 0.75,
+     "p95_ms": 895.56
+    },
+    {
+     "step": 40,
+     "task_id": "std_ar_04",
+     "tau_used": 0.55,
+     "final_tier": 2,
+     "path": [
+      "tier1:pruned",
+      "escalate:numeric_grounding",
+      "tier2:relaxed"
+     ],
+     "correct": true,
+     "tau": 0.55,
+     "action": "hold",
+     "pass_rate": 0.7083333333333334,
+     "p95_ms": 895.56
+    },
+    {
+     "step": 41,
+     "task_id": "std_ar_05",
+     "tau_used": 0.55,
+     "final_tier": 2,
+     "path": [
+      "tier1:pruned",
+      "escalate:numeric_grounding",
+      "tier2:relaxed"
+     ],
+     "correct": true,
+     "tau": 0.55,
+     "action": "hold",
+     "pass_rate": 0.7083333333333334,
+     "p95_ms": 895.56
+    },
+    {
+     "step": 42,
+     "task_id": "std_ar_06",
+     "tau_used": 0.55,
+     "final_tier": 1,
+     "path": [
+      "tier1:pruned"
+     ],
+     "correct": true,
+     "tau": 0.55,
+     "action": "hold",
+     "pass_rate": 0.7083333333333334,
+     "p95_ms": 895.56
+    },
+    {
+     "step": 43,
+     "task_id": "std_ar_07",
+     "tau_used": 0.55,
+     "final_tier": 2,
+     "path": [
+      "tier1:pruned",
+      "escalate:numeric_grounding",
+      "tier2:relaxed"
+     ],
+     "correct": true,
+     "tau": 0.55,
+     "action": "hold",
+     "pass_rate": 0.6666666666666666,
+     "p95_ms": 895.56
+    },
+    {
+     "step": 44,
+     "task_id": "std_en_01",
+     "tau_used": 0.55,
+     "final_tier": 1,
+     "path": [
+      "tier1:pruned"
+     ],
+     "correct": true,
+     "tau": 0.55,
+     "action": "hold",
+     "pass_rate": 0.6666666666666666,
+     "p95_ms": 895.56
+    },
+    {
+     "step": 45,
+     "task_id": "std_en_02",
+     "tau_used": 0.55,
+     "final_tier": 1,
+     "path": [
+      "tier1:pruned"
+     ],
+     "correct": true,
+     "tau": 0.55,
+     "action": "hold",
+     "pass_rate": 0.6666666666666666,
+     "p95_ms": 895.56
+    },
+    {
+     "step": 46,
+     "task_id": "std_en_03",
+     "tau_used": 0.55,
+     "final_tier": 1,
+     "path": [
+      "tier1:pruned",
+      "shadow_audit:agree"
+     ],
+     "correct": true,
+     "tau": 0.55,
+     "action": "hold",
+     "pass_rate": 0.6666666666666666,
+     "p95_ms": 895.56
+    },
+    {
+     "step": 47,
+     "task_id": "std_en_04",
+     "tau_used": 0.55,
+     "final_tier": 1,
+     "path": [
+      "tier1:pruned"
+     ],
+     "correct": true,
+     "tau": 0.55,
+     "action": "hold",
+     "pass_rate": 0.6666666666666666,
+     "p95_ms": 895.56
+    },
+    {
+     "step": 48,
+     "task_id": "std_en_05",
+     "tau_used": 0.55,
+     "final_tier": 1,
+     "path": [
+      "tier1:pruned"
+     ],
+     "correct": true,
+     "tau": 0.55,
+     "action": "hold",
+     "pass_rate": 0.6666666666666666,
+     "p95_ms": 742.72
+    },
+    {
+     "step": 49,
+     "task_id": "std_en_06",
+     "tau_used": 0.55,
+     "final_tier": 1,
+     "path": [
+      "tier1:pruned"
+     ],
+     "correct": true,
+     "tau": 0.55,
+     "action": "hold",
+     "pass_rate": 0.6666666666666666,
+     "p95_ms": 705.35
+    },
+    {
+     "step": 50,
+     "task_id": "std_en_07",
+     "tau_used": 0.55,
+     "final_tier": 1,
+     "path": [
+      "tier1:pruned",
+      "shadow_audit:agree"
+     ],
+     "correct": true,
+     "tau": 0.55,
+     "action": "hold",
+     "pass_rate": 0.7083333333333334,
+     "p95_ms": 705.35
+    },
+    {
+     "step": 51,
+     "task_id": "std_en_08",
+     "tau_used": 0.55,
+     "final_tier": 1,
+     "path": [
+      "tier1:pruned"
+     ],
+     "correct": true,
+     "tau": 0.55,
+     "action": "hold",
+     "pass_rate": 0.7083333333333334,
+     "p95_ms": 551.49
+    },
+    {
+     "step": 52,
+     "task_id": "std_en_09",
+     "tau_used": 0.55,
+     "final_tier": 1,
+     "path": [
+      "tier1:pruned"
+     ],
+     "correct": true,
+     "tau": 0.55,
+     "action": "hold",
+     "pass_rate": 0.7083333333333334,
+     "p95_ms": 551.49
+    },
+    {
+     "step": 53,
+     "task_id": "std_en_10",
+     "tau_used": 0.55,
+     "final_tier": 1,
+     "path": [
+      "tier1:pruned"
+     ],
+     "correct": true,
+     "tau": 0.55,
+     "action": "hold",
+     "pass_rate": 0.7083333333333334,
+     "p95_ms": 551.49
+    }
+   ]
+  },
+  "tier1_model": "qwen2.5:0.5b",
+  "source": "data/recorded_runs_t1-qwen2.5-0.5b.jsonl"
+ },
+ "cross_model": [
+  {
+   "file": "recorded_runs.jsonl",
+   "tier1": "qwen2.5:3b (3B)",
+   "tier2": "qwen2.5:14b (14B)",
+   "configs": {
+    "1_Always_Tier2_Raw": {
+     "n": 36,
+     "accuracy": 0.8888888888888888,
+     "correct": 32,
+     "total_tokens": 13712,
+     "compute_units": 191.968,
+     "cps": 5.999,
+     "p50_ms": 472.33158249951083,
+     "p95_ms": 1028.078407998446,
+     "tier0": 0,
+     "tier1": 0,
+     "tier2": 36,
+     "escalations": 0,
+     "cache_hits": 0,
+     "blocked_traps": 0,
+     "false_cache_hits": 0,
+     "n_traps": 2,
+     "overhead_ms": {
+      "pruner": 0.0,
+      "cache": 0.0,
+      "router": 1.2121083605557539,
+      "verifier": 0.0
+     },
+     "per_category": {
+      "standard": 1.0,
+      "low_lexical_overlap": 1.0,
+      "multi_hop": 0.5,
+      "arabic_orthographic_variants": 0.75,
+      "cache_near_duplicates": 0.75
+     }
+    },
+    "2_Always_Tier1_Raw": {
+     "n": 36,
+     "accuracy": 0.8611111111111112,
+     "correct": 31,
+     "total_tokens": 13363,
+     "compute_units": 40.089,
+     "cps": 1.2931935483870967,
+     "p50_ms": 128.83186000319546,
+     "p95_ms": 198.5827909999434,
+     "tier0": 0,
+     "tier1": 36,
+     "tier2": 0,
+     "escalations": 0,
+     "cache_hits": 0,
+     "blocked_traps": 0,
+     "false_cache_hits": 0,
+     "n_traps": 2,
+     "overhead_ms": {
+      "pruner": 0.0,
+      "cache": 0.0,
+      "router": 1.214608916901246,
+      "verifier": 0.0
+     },
+     "per_category": {
+      "standard": 0.95,
+      "low_lexical_overlap": 1.0,
+      "multi_hop": 0.25,
+      "arabic_orthographic_variants": 1.0,
+      "cache_near_duplicates": 0.75
+     }
+    },
+    "5_OptiRoute_Full": {
+     "n": 36,
+     "accuracy": 0.8611111111111112,
+     "correct": 31,
+     "total_tokens": 6847,
+     "compute_units": 39.164,
+     "cps": 1.2633548387096776,
+     "p50_ms": 151.79256600103574,
+     "p95_ms": 647.8660679977271,
+     "tier0": 2,
+     "tier1": 28,
+     "tier2": 6,
+     "escalations": 2,
+     "cache_hits": 2,
+     "blocked_traps": 2,
+     "false_cache_hits": 0,
+     "n_traps": 2,
+     "overhead_ms": {
+      "pruner": 1.2164338886577752,
+      "cache": 0.1636199720249149,
+      "router": 0.015051805651940716,
+      "verifier": 0.09565647239166235
+     },
+     "per_category": {
+      "standard": 1.0,
+      "low_lexical_overlap": 0.75,
+      "multi_hop": 0.25,
+      "arabic_orthographic_variants": 1.0,
+      "cache_near_duplicates": 0.75
+     }
+    }
+   },
+   "verifier": {
+    "variant": "pruned",
+    "tp": 4,
+    "fp": 0,
+    "fn": 3,
+    "tn": 29,
+    "precision": 1.0,
+    "recall": 0.5714285714285714,
+    "tier1_error_rate": 0.19444444444444445
+   }
+  },
+  {
+   "file": "recorded_runs_t1-llama3.2-3b.jsonl",
+   "tier1": "llama3.2:3b (3.2B)",
+   "tier2": "qwen2.5:14b (14B)",
+   "configs": {
+    "1_Always_Tier2_Raw": {
+     "n": 36,
+     "accuracy": 0.8888888888888888,
+     "correct": 32,
+     "total_tokens": 13712,
+     "compute_units": 191.968,
+     "cps": 5.999,
+     "p50_ms": 472.3442065006122,
+     "p95_ms": 1028.0812240014075,
+     "tier0": 0,
+     "tier1": 0,
+     "tier2": 36,
+     "escalations": 0,
+     "cache_hits": 0,
+     "blocked_traps": 0,
+     "false_cache_hits": 0,
+     "n_traps": 2,
+     "overhead_ms": {
+      "pruner": 0.0,
+      "cache": 0.0,
+      "router": 1.2228085558187256,
+      "verifier": 0.0
+     },
+     "per_category": {
+      "standard": 1.0,
+      "low_lexical_overlap": 1.0,
+      "multi_hop": 0.5,
+      "arabic_orthographic_variants": 0.75,
+      "cache_near_duplicates": 0.75
+     }
+    },
+    "2_Always_Tier1_Raw": {
+     "n": 36,
+     "accuracy": 0.8888888888888888,
+     "correct": 32,
+     "total_tokens": 13961,
+     "compute_units": 44.675200000000004,
+     "cps": 1.3961000000000001,
+     "p50_ms": 149.3777369985945,
+     "p95_ms": 631.4058219988132,
+     "tier0": 0,
+     "tier1": 36,
+     "tier2": 0,
+     "escalations": 0,
+     "cache_hits": 0,
+     "blocked_traps": 0,
+     "false_cache_hits": 0,
+     "n_traps": 2,
+     "overhead_ms": {
+      "pruner": 0.0,
+      "cache": 0.0,
+      "router": 1.213210916325301,
+      "verifier": 0.0
+     },
+     "per_category": {
+      "standard": 0.95,
+      "low_lexical_overlap": 1.0,
+      "multi_hop": 0.5,
+      "arabic_orthographic_variants": 1.0,
+      "cache_near_duplicates": 0.75
+     }
+    },
+    "5_OptiRoute_Full": {
+     "n": 36,
+     "accuracy": 0.8611111111111112,
+     "correct": 31,
+     "total_tokens": 6951,
+     "compute_units": 39.75,
+     "cps": 1.282258064516129,
+     "p50_ms": 169.7057680030976,
+     "p95_ms": 682.2900590019055,
+     "tier0": 2,
+     "tier1": 28,
+     "tier2": 6,
+     "escalations": 2,
+     "cache_hits": 2,
+     "blocked_traps": 2,
+     "false_cache_hits": 0,
+     "n_traps": 2,
+     "overhead_ms": {
+      "pruner": 1.2083864441794705,
+      "cache": 0.1629798614683548,
+      "router": 0.015057389242024833,
+      "verifier": 0.1403098056269098
+     },
+     "per_category": {
+      "standard": 1.0,
+      "low_lexical_overlap": 0.5,
+      "multi_hop": 0.5,
+      "arabic_orthographic_variants": 1.0,
+      "cache_near_duplicates": 0.75
+     }
+    }
+   },
+   "verifier": {
+    "variant": "pruned",
+    "tp": 3,
+    "fp": 1,
+    "fn": 3,
+    "tn": 29,
+    "precision": 0.75,
+    "recall": 0.5,
+    "tier1_error_rate": 0.16666666666666666
+   }
+  },
+  {
+   "file": "recorded_runs_t1-qwen2.5-0.5b.jsonl",
+   "tier1": "qwen2.5:0.5b (0.5B)",
+   "tier2": "qwen2.5:14b (14B)",
+   "configs": {
+    "1_Always_Tier2_Raw": {
+     "n": 36,
+     "accuracy": 0.8888888888888888,
+     "correct": 32,
+     "total_tokens": 13712,
+     "compute_units": 191.968,
+     "cps": 5.999,
+     "p50_ms": 472.3335755007167,
+     "p95_ms": 1028.1044869986818,
+     "tier0": 0,
+     "tier1": 0,
+     "tier2": 36,
+     "escalations": 0,
+     "cache_hits": 0,
+     "blocked_traps": 0,
+     "false_cache_hits": 0,
+     "n_traps": 2,
+     "overhead_ms": {
+      "pruner": 0.0,
+      "cache": 0.0,
+      "router": 1.2200889444405523,
+      "verifier": 0.0
+     },
+     "per_category": {
+      "standard": 1.0,
+      "low_lexical_overlap": 1.0,
+      "multi_hop": 0.5,
+      "arabic_orthographic_variants": 0.75,
+      "cache_near_duplicates": 0.75
+     }
+    },
+    "2_Always_Tier1_Raw": {
+     "n": 36,
+     "accuracy": 0.5555555555555556,
+     "correct": 20,
+     "total_tokens": 13458,
+     "compute_units": 6.729,
+     "cps": 0.33645,
+     "p50_ms": 70.12945549987373,
+     "p95_ms": 128.60133600067815,
+     "tier0": 0,
+     "tier1": 36,
+     "tier2": 0,
+     "escalations": 0,
+     "cache_hits": 0,
+     "blocked_traps": 0,
+     "false_cache_hits": 0,
+     "n_traps": 2,
+     "overhead_ms": {
+      "pruner": 0.0,
+      "cache": 0.0,
+      "router": 1.2381384723185975,
+      "verifier": 0.0
+     },
+     "per_category": {
+      "standard": 0.7,
+      "low_lexical_overlap": 0.5,
+      "multi_hop": 0.0,
+      "arabic_orthographic_variants": 0.5,
+      "cache_near_duplicates": 0.5
+     }
+    },
+    "5_OptiRoute_Full": {
+     "n": 36,
+     "accuracy": 0.75,
+     "correct": 27,
+     "total_tokens": 7082,
+     "compute_units": 30.487000000000002,
+     "cps": 1.1291481481481482,
+     "p50_ms": 73.15224849810184,
+     "p95_ms": 705.4956119970418,
+     "tier0": 2,
+     "tier1": 26,
+     "tier2": 8,
+     "escalations": 4,
+     "cache_hits": 2,
+     "blocked_traps": 2,
+     "false_cache_hits": 0,
+     "n_traps": 2,
+     "overhead_ms": {
+      "pruner": 1.2397704719357232,
+      "cache": 0.16619377775997338,
+      "router": 0.01581758321359909,
+      "verifier": 0.09357786095481263
+     },
+     "per_category": {
+      "standard": 0.9,
+      "low_lexical_overlap": 0.25,
+      "multi_hop": 0.25,
+      "arabic_orthographic_variants": 1.0,
+      "cache_near_duplicates": 0.75
+     }
+    }
+   },
+   "verifier": {
+    "variant": "pruned",
+    "tp": 7,
+    "fp": 0,
+    "fn": 8,
+    "tn": 21,
+    "precision": 1.0,
+    "recall": 0.4666666666666667,
+    "tier1_error_rate": 0.4166666666666667
+   }
+  }
+ ]
+}
