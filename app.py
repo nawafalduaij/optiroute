@@ -33,6 +33,7 @@ PRESETS = [
     ("Near-duplicate trap · #INV-8842", "cache_en_trap"),
     ("Low-overlap → escalation", "llo_en_01"),
     ("Multi-hop policy math (JSON)", "mh_en_02"),
+    ("Multi-hop Arabic · late penalty", "mh_ar_01"),
     ("Arabic spelling variants", "aro_ar_03"),
 ]
 

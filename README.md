@@ -1,5 +1,7 @@
 # OptiRoute: Deliver AI with Less Compute
 
+[![tests](https://github.com/nawafalduaij/optiroute/actions/workflows/tests.yml/badge.svg)](https://github.com/nawafalduaij/optiroute/actions/workflows/tests.yml)
+
 A bilingual (Arabic/English) **3-tier compute cascade** built for the HUMAIN Hackathon, Challenge 2. Cheap, deterministic CPU guards decide whether a request is answered from a **Tier-0 cache** (0 tokens), a **Tier-1 small model** on a pruned context, or a **Tier-2 large model**. It is hardware-agnostic: each tier is any OpenAI-compatible endpoint (Ollama, vLLM, LM Studio, Groq, OpenAI…), and ready-made **deployment profiles** cover everything from a laptop to cloud-only.
 
 ```

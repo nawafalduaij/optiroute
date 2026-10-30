@@ -1,0 +1,32 @@
+name: tests
+
+on:
+  push:
+  pull_request:
+
+jobs:
+  test:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+          cache: pip
+      - run: pip install -r requirements.txt
+      - name: Unit tests (simulator)
+        run: OPTIROUTE_MODE=sim pytest -v
+      - name: Replay benchmark reproduces the committed headline numbers
+        run: |
+          cp results/metrics.json /tmp/committed_metrics.json
+          python evaluate.py --replay data/recorded_runs.jsonl
+          python - <<'PY'
+          import json
+          old = json.load(open("/tmp/committed_metrics.json"))
+          new = json.load(open("results/metrics.json"))
+          for section in ("cumulative", "loo"):
+              for name, row in old[section].items():
+                  for key in ("correct", "total_tokens", "compute_units", "tier0", "tier1", "tier2", "false_cache_hits"):
+                      assert row[key] == new[section][name][key], (section, name, key, row[key], new[section][name][key])
+          print("headline numbers reproduced")
+          PY

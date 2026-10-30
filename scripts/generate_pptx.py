@@ -6,6 +6,7 @@ from __future__ import annotations
 
 import json
 import os
+import re
 import subprocess
 import sys
 from pathlib import Path
@@ -60,6 +61,7 @@ XM = M.get("cross_model") or []
 GITHUB = "github.com/nawafalduaij/optiroute"
 SHOTS = ROOT / "deliverables" / "screenshots"
 TOTAL = 10
+N_PRESETS = len(re.findall(r'^    \("[^"]+", "[a-z_0-9]+"\),$', (ROOT / "app.py").read_text(encoding="utf-8"), re.M))
 
 prs = Presentation()
 prs.slide_width, prs.slide_height = Inches(13.333), Inches(7.5)
@@ -194,7 +196,7 @@ kpi(s, 9.75, 4.0, 2.75, f"{CPU_MS:.1f} ms", "total CPU overhead per task for all
 text(s, 0.9, 6.1, 11.5, 0.8, [("Nawaf Alduaij", {"size": 16, "bold": True}),
      ("Runs anywhere from a laptop to a cloud API · 4 deployment profiles benchmarked · headline measured on one "
       "consumer GPU (RX 7900 XTX) · "
-      "deterministic replay in under 2 s", {"size": 12, "color": MUTED})])
+      f"deterministic replay in {M['eval_seconds']:.0f} s", {"size": 12, "color": MUTED})])
 
 # ================================================================ 2. The issue
 s = new_slide(2, "The issue", "Most enterprise requests overpay for compute")
@@ -295,7 +297,7 @@ text(s, x0, 1.5, 5.3, 3.4, [
     ("WHAT WAS BUILT", {"bold": True, "size": 12, "color": EM2, "space": 6}),
     ("Cascade engine (src/): pruner, entity-guarded cache, router, verifier, adaptive τ, orchestrator; "
      "every component can be switched off for ablation", {"bullet": True, "size": 12, "space": 5}),
-    ("Interactive UI: 8 bilingual presets replay recorded runs; custom questions run on the live models; every "
+    (f"Interactive UI: {N_PRESETS} bilingual presets replay recorded runs; custom questions run on the live models; every "
      "stage visualised with its cost vs always-14B", {"bullet": True, "size": 12, "space": 5}),
     ("evaluate.py: --record / --replay / --sim, 2 ablation tables, 5 robustness experiments", {"bullet": True, "size": 12, "space": 5}),
     (f"{N_TESTS} unit tests; slides and reports generated from measured results", {"bullet": True, "size": 12}),
