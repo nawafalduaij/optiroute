@@ -1,27 +1,54 @@
-"""Runtime configuration loaded from environment / `.env` (no external dotenv dependency)."""
+"""Runtime configuration: deployment profiles + environment / `.env` (no external dotenv dependency).
+
+Precedence: shell environment variables > active profile (`profiles/<name>.env`, chosen via `get_settings(profile=)`
+or `OPTIROUTE_PROFILE`) > the `.env` file > built-in defaults. So a one-off `TIER1_MODEL=... python evaluate.py`
+beats the profile, while a profile beats whatever `.env` contains. Profiles never contain secrets: they name the environment
+variable that holds the key (`TIER2_API_KEY_ENV=GROQ_API_KEY`), and the key itself lives in the git-ignored `.env`.
+"""
 from __future__ import annotations
 
+import json
 import os
 from dataclasses import dataclass, field
 from pathlib import Path
 
 ROOT = Path(__file__).resolve().parent.parent
+PROFILES = ROOT / "profiles"
 
 
-def load_dotenv(path: Path = ROOT / ".env") -> None:
-    """Populate os.environ from a simple KEY=VALUE file without overriding existing vars."""
-    if not path.exists():
-        return
+def parse_env_file(path: Path) -> dict[str, str]:
+    out = {}
     for line in path.read_text(encoding="utf-8").splitlines():
         line = line.strip()
         if not line or line.startswith("#") or "=" not in line:
             continue
         key, _, value = line.partition("=")
-        os.environ.setdefault(key.strip(), value.strip().strip('"').strip("'"))
+        out[key.strip()] = value.strip().strip('"').strip("'")
+    return out
 
 
-def _env(key: str, default: str) -> str:
-    return os.environ.get(key, default)
+def load_dotenv(path: Path = ROOT / ".env") -> dict[str, str]:
+    """Read the `.env` file (without touching os.environ, so shell variables stay distinguishable)."""
+    return parse_env_file(path) if path.exists() else {}
+
+
+def load_profile(name: str) -> dict[str, str]:
+    path = PROFILES / f"{name}.env"
+    if not path.exists():
+        raise ValueError(f"unknown profile {name!r}; available: {[p['name'] for p in list_profiles()]}")
+    return parse_env_file(path)
+
+
+def list_profiles() -> list[dict]:
+    """Profile metadata, with whether its recorded benchmark exists in this checkout."""
+    out = []
+    for path in sorted(PROFILES.glob("*.env")):
+        p = parse_env_file(path)
+        rec = p.get("PROFILE_RECORDING")
+        out.append({"name": path.stem, "title": p.get("PROFILE_TITLE", path.stem),
+                    "description": p.get("PROFILE_DESCRIPTION", ""), "recording": rec,
+                    "measured": bool(rec and (ROOT / rec).exists())})
+    return out
 
 
 @dataclass(frozen=True)
@@ -31,6 +58,9 @@ class TierConfig:
     model: str
     api_key: str
     params_b: float  # active parameters in billions, used for compute units
+    extra_body: dict = field(default_factory=dict)  # provider-specific request options, e.g. reasoning_effort
+    price_in_per_mtok: float | None = None  # optional USD per 1M input tokens (from your provider's price list)
+    price_out_per_mtok: float | None = None
 
 
 @dataclass(frozen=True)
@@ -70,30 +100,40 @@ class Settings:
     cascade: CascadeConfig = field(default_factory=CascadeConfig)
     tokenizer_encoding: str = "o200k_base"
     request_timeout_s: float = 180.0
+    profile: str | None = None
 
 
-def get_settings() -> Settings:
-    load_dotenv()
-    tier1 = TierConfig(
-        name="tier1",
-        base_url=_env("TIER1_BASE_URL", "http://localhost:11434/v1"),
-        model=_env("TIER1_MODEL", "qwen2.5:3b"),
-        api_key=_env("TIER1_API_KEY", "ollama"),
-        params_b=float(_env("TIER1_PARAMS_B", "3")),
-    )
-    tier2 = TierConfig(
-        name="tier2",
-        base_url=_env("TIER2_BASE_URL", "http://localhost:11434/v1"),
-        model=_env("TIER2_MODEL", "qwen2.5:14b"),
-        api_key=_env("TIER2_API_KEY", "ollama"),
-        params_b=float(_env("TIER2_PARAMS_B", "14")),
-    )
-    cascade = CascadeConfig(latency_slo_ms=float(_env("LATENCY_SLO_MS", "8000")))
+def get_settings(profile: str | None = None) -> Settings:
+    dotenv = load_dotenv()
+    name = profile or os.environ.get("OPTIROUTE_PROFILE") or dotenv.get("OPTIROUTE_PROFILE") or None
+    prof = load_profile(name) if name else {}
+
+    def get(key: str, default: str) -> str:
+        return os.environ.get(key) or prof.get(key) or dotenv.get(key) or default
+
+    def secret(var: str) -> str | None:
+        return os.environ.get(var) or dotenv.get(var)
+
+    def tier(n: int, model: str, params: str) -> TierConfig:
+        key_env = get(f"TIER{n}_API_KEY_ENV", "")
+        price_in, price_out = get(f"TIER{n}_PRICE_IN_PER_MTOK", ""), get(f"TIER{n}_PRICE_OUT_PER_MTOK", "")
+        return TierConfig(
+            name=f"tier{n}",
+            base_url=get(f"TIER{n}_BASE_URL", "http://localhost:11434/v1"),
+            model=get(f"TIER{n}_MODEL", model),
+            api_key=(secret(key_env) if key_env else None) or get(f"TIER{n}_API_KEY", "ollama"),
+            params_b=float(get(f"TIER{n}_PARAMS_B", params)),
+            extra_body=json.loads(get(f"TIER{n}_EXTRA_BODY", "{}")),
+            price_in_per_mtok=float(price_in) if price_in else None,
+            price_out_per_mtok=float(price_out) if price_out else None,
+        )
+
     return Settings(
-        mode=_env("OPTIROUTE_MODE", "replay"),
-        tier1=tier1,
-        tier2=tier2,
-        cascade=cascade,
-        tokenizer_encoding=_env("TOKENIZER_ENCODING", "o200k_base"),
-        request_timeout_s=float(_env("REQUEST_TIMEOUT_S", "180")),
+        mode=get("OPTIROUTE_MODE", "replay"),
+        tier1=tier(1, "qwen2.5:3b", "3"),
+        tier2=tier(2, "qwen2.5:14b", "14"),
+        cascade=CascadeConfig(latency_slo_ms=float(get("LATENCY_SLO_MS", "8000"))),
+        tokenizer_encoding=get("TOKENIZER_ENCODING", "o200k_base"),
+        request_timeout_s=float(get("REQUEST_TIMEOUT_S", "180")),
+        profile=name,
     )

@@ -192,7 +192,8 @@ kpi(s, 6.8, 4.0, 2.75, f"{pct(FULL['accuracy'])}", f"accuracy on 36 held-out cas
     color=TEXT)
 kpi(s, 9.75, 4.0, 2.75, f"{CPU_MS:.1f} ms", "total CPU overhead per task for all 4 guard components", color=TEXT)
 text(s, 0.9, 6.1, 11.5, 0.8, [("Nawaf Alduaij", {"size": 16, "bold": True}),
-     ("qwen2.5:3b → qwen2.5:14b, both co-resident on one AMD RX 7900 XTX (24 GB) · 180 recorded calls · "
+     ("Runs anywhere from a laptop to a cloud API · 4 deployment profiles benchmarked · headline measured on one "
+      "consumer GPU (RX 7900 XTX) · "
       "deterministic replay in under 2 s", {"size": 12, "color": MUTED})])
 
 # ================================================================ 2. The issue
@@ -302,7 +303,8 @@ text(s, x0, 1.5, 5.3, 3.4, [
 rect(s, x0, 4.95, 5.25, 1.75, fill=PANEL2)
 text(s, x0 + 0.15, 5.02, 5.0, 1.65, [
     ("TECH STACK", {"bold": True, "size": 11, "color": EM2, "space": 4}),
-    ("Python · Ollama on ROCm (AMD RX 7900 XTX, 24 GB) · qwen2.5 3B / 14B (+ llama3.2 3B, qwen2.5 0.5B) · "
+    ("Python · any OpenAI-compatible endpoint (Ollama, vLLM, Groq…) · 4 deployment profiles (profiles/*.env) · "
+     "measured with qwen2.5/3.5, llama3.2, ALLaM-2, gpt-oss-120b · "
      "OpenAI-compatible client · tiktoken · FastAPI + Chart.js · pytest · python-pptx", {"size": 11.5, "space": 8}),
     (GITHUB, {"bold": True, "size": 13, "color": EM2}),
 ])
@@ -388,26 +390,28 @@ table(s, 0.6, 1.5, 12.1, metric_rows(L, names), [2.6, 1.45, 0.95, 1.35, 1.05, 0.
 ng = L["LOO_No_Cache_Entity_Guard"]
 nv = L["LOO_No_Verifier"]
 npr = L["LOO_No_Pruner"]
-xrows = [["Tier-1 model (Tier-2: qwen2.5:14b)", "Tier-1 alone", "OptiRoute", "Compute vs 14B", "CPS 14B → OptiRoute",
-          "Verifier P / R"]]
-for r in XM:
+ORDER = ["single-gpu", "hybrid", "edge", "cloud"]
+PROF = sorted((r for r in XM if r.get("profile")), key=lambda r: ORDER.index(r["profile"]) if r["profile"] in ORDER else 9)
+short = lambda m: m.split(" (")[0].replace("openai/", "")
+xrows = [["Profile", "Tier-1 → Tier-2", "Tier-1 alone", "Always T2", "OptiRoute", "Sent to T2", "T2 tokens"]]
+for r in PROF:
     c = r["configs"]
-    xrows.append([r["tier1"], pct(c["2_Always_Tier1_Raw"]["accuracy"]), pct(c["5_OptiRoute_Full"]["accuracy"]),
-                  f"{c['5_OptiRoute_Full']['compute_units'] / c['1_Always_Tier2_Raw']['compute_units'] - 1:+.1%}",
-                  f"{c['1_Always_Tier2_Raw']['cps']:.2f} → {c['5_OptiRoute_Full']['cps']:.2f}",
-                  f"{pct(r['verifier']['precision'], 0)} / {pct(r['verifier']['recall'], 0)}"])
-text(s, 0.6, 3.95, 8.3, 0.3, "SAME CASCADE, DIFFERENT RECORDED MODELS (only the recording changes)", size=11,
+    f, t2 = c["5_OptiRoute_Full"], c["1_Always_Tier2_Raw"]
+    xrows.append([r["profile"], f"{short(r['tier1'])} → {short(r['tier2'])}", pct(c["2_Always_Tier1_Raw"]["accuracy"]),
+                  pct(t2["accuracy"]), pct(f["accuracy"]), f"{f['tasks_reaching_tier2']}/{f['n']}",
+                  f"{f['tier2_tokens'] / t2['tier2_tokens'] - 1:+.0%}"])
+text(s, 0.6, 3.95, 8.4, 0.3, "DEPLOYMENT PROFILES: same cascade code, laptop to cloud (all recorded real runs)", size=11,
      bold=True, color=EM2)
-table(s, 0.6, 4.28, 8.4, xrows, [2.55, 1.05, 1.05, 1.2, 1.45, 1.1], highlight=(1,), size=10.5, row_h=0.36)
-weak = min(XM, key=lambda r: r["configs"]["2_Always_Tier1_Raw"]["accuracy"]) if XM else None
-text(s, 0.6, 5.85, 8.4, 0.9, [
-    (f"Entity guard: {L['Full_OptiRoute']['false_cache_hits']}/{L['Full_OptiRoute']['n_traps']} false cache hits vs "
-     f"{ng['false_cache_hits']}/{ng['n_traps']} without it · Verifier: +{(FULL['accuracy'] - nv['accuracy']) * 100:.1f} "
-     f"pts accuracy · Pruner: −{pct(1 - FULL['total_tokens'] / npr['total_tokens'], 0)} tokens vs no pruner",
-     {"size": 11, "color": MUTED, "space": 3}),
-    (f"With a weak {weak['tier1']} Tier-1 the cascade adds "
-     f"{(weak['configs']['5_OptiRoute_Full']['accuracy'] - weak['configs']['2_Always_Tier1_Raw']['accuracy']) * 100:.1f} "
-     "pts over using that model alone." if weak else "", {"size": 11, "color": MUTED}),
+table(s, 0.6, 4.28, 8.4, xrows, [1.0, 2.75, 0.95, 0.9, 0.95, 0.9, 0.95], highlight=(1,), size=10, row_h=0.34)
+cloud = next((r for r in PROF if r["profile"] == "cloud"), None)
+text(s, 0.6, 6.05, 8.4, 0.75, [
+    (f"Entity guard {L['Full_OptiRoute']['false_cache_hits']}/{L['Full_OptiRoute']['n_traps']} vs "
+     f"{ng['false_cache_hits']}/{ng['n_traps']} false hits · verifier +{(FULL['accuracy'] - nv['accuracy']) * 100:.1f} pts · "
+     f"pruner −{pct(1 - FULL['total_tokens'] / npr['total_tokens'], 0)} tokens (leave-one-out, single-gpu)",
+     {"size": 10.5, "color": MUTED, "space": 2}),
+    ("Cloud profile: the cascade scores below ALLaM alone: refusal rules written for Qwen miss ALLaM's phrasing "
+     "(see limitations)." if cloud and cloud["configs"]["5_OptiRoute_Full"]["accuracy"]
+     < cloud["configs"]["2_Always_Tier1_Raw"]["accuracy"] else "", {"size": 10.5, "color": AMBER}),
 ])
 tau_img = SHOTS / "crop_tau.png"
 if tau_img.exists():
@@ -428,7 +432,7 @@ lims = [
     ("A lexical pruner is blind to zero-overlap paraphrases",
      f"Low-overlap accuracy is {pct(llo_full, 0)} with the pruner vs "
      f"{pct(npr['per_category'].get('low_lexical_overlap', 0), 0)} without it. Recovery only works when the 3B admits "
-     "it doesn't know; a confident wrong answer (\"USB copy forbidden by the encryption policy\") passes."),
+     "it doesn't know, and the refusal rules are model-specific: written for Qwen, they miss ALLaM's phrasing."),
     ("Adaptation needs a costly signal; small benchmark",
      f"Rule checks miss confident errors: verifier-only health never fell below {pct(MIN_RATE, 0)}, so τ stayed flat. "
      f"Shadow audits make τ react on real runs but cost +{pct(AUD_COST, 0)} compute, and since complexity scores "
@@ -443,6 +447,8 @@ rect(s, 8.1, 1.55, 4.6, 5.0, fill=PANEL2, line=EM)
 text(s, 8.3, 1.65, 4.3, 4.8, [
     ("PRODUCTION ROADMAP", {"bold": True, "size": 12, "color": EM2, "space": 10}),
     ("Calculator tool + program-of-thought for multi-hop math, with the verifier recomputing the expression",
+     {"bullet": True, "size": 12, "space": 8}),
+    ("Per-model verifier calibration on the dev set (refusal phrasing differs between model families)",
      {"bullet": True, "size": 12, "space": 8}),
     ("Small bilingual embedding re-ranker as a fallback when the lexical scores are flat",
      {"bullet": True, "size": 12, "space": 8}),
@@ -469,7 +475,8 @@ text(s, 0.6, 3.2, 6.2, 3.5, [
     ("Bilingual by construction: Arabic normalization in the pruner, cache and verifier", {"bullet": True, "size": 13, "space": 6}),
     ("Runs fully local on one 24 GB GPU: no rate limits, no API cost, data stays on-premise",
      {"bullet": True, "size": 13, "space": 6}),
-    (f"Model-agnostic: any OpenAI-compatible endpoint; verified with {len(XM)} recorded model pairs",
+    (f"Hardware-agnostic: {len(PROF)} deployment profiles from laptop to cloud, same code; "
+     f"{len(XM)} recorded model pairs",
      {"bullet": True, "size": 13, "space": 6}),
     (f"Every guard is inspectable and costs about {CPU_MS:.1f} ms of CPU time", {"bullet": True, "size": 13}),
 ])

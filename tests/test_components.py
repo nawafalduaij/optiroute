@@ -25,6 +25,8 @@ def test_arabic_normalization_and_clitics():
 def test_numbers_and_entities():
     assert extract_numbers("٢٤٠٬٠٠٠ ريال و٢٥ ريالاً ٠٫٥٪") == [240000.0, 25.0, 0.5]
     assert extract_numbers("SAR 12,400 due 2025-09-15 for PO-5520") == [12400.0]
+    assert extract_numbers("= **7\u202f200\u202fريال**, 1\u00a0200 SAR") == [7200.0, 1200.0]  # space thousands
+    assert extract_numbers("order PO\u20115520 for 6\u202fdays") == [6.0]  # non-breaking hyphen ID
     e = extract_entities("Amount of #INV-8841 at 15%")
     assert "id:INV-8841" in e and "pct:15" in e
     assert extract_entities("invoice INV-8841") != extract_entities("invoice INV-8842")

@@ -16,14 +16,13 @@ import statistics
 import sys
 import time
 from collections import Counter, defaultdict
-from dataclasses import replace
 from pathlib import Path
 
 from src import pruner as pruner_mod
 from src.adaptation import p95
-from src.config import ROOT, get_settings
+from src.config import ROOT, get_settings, list_profiles
 from src.ground_truth_scorer import score
-from src.llm_client import LiveClient, ReplayClient, SimClient
+from src.llm_client import LiveClient, ReplayClient, SimClient, bind_recorded_models
 from src.pipeline import OptiRoutePipeline, PipelineFlags
 from src.schemas import CascadeResult, Task
 from src.verifier import verify
@@ -72,6 +71,9 @@ def summarize(tasks: list[Task], results: list[CascadeResult]) -> dict:
         "accuracy": correct / len(results),
         "correct": correct,
         "total_tokens": sum(r.total_tokens for r in results),
+        "tier2_tokens": sum(c.total_tokens for r in results for c in r.calls if c.tier == 2),
+        "cost_usd": (sum(r.cost_usd for r in results) if all(r.cost_usd is not None for r in results) else None),
+        "tasks_reaching_tier2": sum(any(c.tier == 2 for c in r.calls) for r in results),
         "compute_units": compute,
         "cps": compute / correct if correct else float("inf"),
         "p50_ms": statistics.median(lat),
@@ -194,6 +196,9 @@ def write_report(out_dir: Path, mode: str, settings, cum, loo, vpr, noise, wave,
               "outputs across 3 models. Dataset answers and model outputs were never edited.", "",
               "## Table 1 — Cumulative Progression", "", HEADER]
     lines += [fmt_row(k, v, base) for k, v in cum.items()]
+    if full_cost := cum["5_OptiRoute_Full"].get("cost_usd"):
+        lines += ["", f"Cost (USD, from configured prices): always-Tier-2 ${base['cost_usd']:.4f} → "
+                      f"OptiRoute ${full_cost:.4f}"]
     lines += ["", "## Table 2 — Leave-One-Out Ablation", "", HEADER]
     lines += [fmt_row(k, v, base) for k, v in loo.items()]
 
@@ -259,21 +264,7 @@ def rel(path: Path) -> str:
     return str(p.relative_to(ROOT)) if p.is_relative_to(ROOT) else str(path)
 
 
-def settings_for(settings, client):
-    """Bind tier model names and sizes to what a recording actually contains, never to `.env`."""
-    if not isinstance(client, ReplayClient):
-        return settings
-    tiers = {}
-    for tier, (model, params) in client.tier_models().items():
-        attr = f"tier{tier}"
-        cfg = getattr(settings, attr)
-        if params is None:
-            raise ValueError(f"{client.path}: tier {tier} records lack params_b; re-record or backfill it")
-        if model != cfg.model:
-            print(f"note: {client.path.name} tier {tier} was recorded with {model}, .env says {cfg.model}; "
-                  f"using the recorded model", file=sys.stderr)
-        tiers[attr] = replace(cfg, model=model, params_b=params)
-    return replace(settings, **tiers)
+settings_for = bind_recorded_models  # reports name the models that produced a recording
 
 
 def stress_experiment(settings, path: Path, tasks: list[Task]) -> dict:
@@ -293,7 +284,9 @@ def cross_model(settings, paths: list[Path], tasks: list[Task]) -> list[dict]:
         s = settings_for(settings, client)
         res = {k: summarize(tasks, run_config(s, client, CUMULATIVE[k], tasks))
                for k in ("1_Always_Tier2_Raw", "2_Always_Tier1_Raw", "5_OptiRoute_Full")}
-        rows.append({"file": path.name, "tier1": f"{s.tier1.model} ({s.tier1.params_b:g}B)",
+        profile = next((p["name"] for p in list_profiles() if p["recording"] and (ROOT / p["recording"]).resolve()
+                        == path.resolve()), None)
+        rows.append({"file": path.name, "profile": profile, "tier1": f"{s.tier1.model} ({s.tier1.params_b:g}B)",
                      "tier2": f"{s.tier2.model} ({s.tier2.params_b:g}B)", "configs": res,
                      "verifier": verifier_pr(tasks, client, "pruned")})
     return rows
@@ -323,15 +316,18 @@ def extra_sections(stress: dict | None, xmodel: list[dict], cfg) -> list[str]:
                   "included in compute.", ""]
     if xmodel:
         lines += ["## Experiment 5 — Cross-Model Generalization (same cascade, different recorded models)", "",
-                  "| Recording | Tier-1 | Tier-2 | Always-T2 acc | Always-T1 acc | Full acc | Full compute Δ vs T2 "
-                  "| CPS T2 → Full | Verifier P / R |", "|---|---|---|---|---|---|---|---|---|"]
+                  "| Profile | Recording | Tier-1 | Tier-2 | Always-T2 acc | Always-T1 acc | Full acc | Full compute Δ vs T2 "
+                  "| CPS T2 → Full | Verifier P / R | Tasks sent to Tier-2 | Tier-2 tokens vs always-T2 |",
+                  "|---|---|---|---|---|---|---|---|---|---|---|---|"]
         for r in xmodel:
             c = r["configs"]
             t2, t1, full = c["1_Always_Tier2_Raw"], c["2_Always_Tier1_Raw"], c["5_OptiRoute_Full"]
             v = r["verifier"]
-            lines.append(f"| `{r['file']}` | {r['tier1']} | {r['tier2']} | {t2['accuracy']:.1%} | {t1['accuracy']:.1%} | "
+            lines.append(f"| {('**' + r['profile'] + '**') if r.get('profile') else '—'} | `{r['file']}` | {r['tier1']} | {r['tier2']} | {t2['accuracy']:.1%} | {t1['accuracy']:.1%} | "
                          f"**{full['accuracy']:.1%}** | {full['compute_units'] / t2['compute_units'] - 1:+.1%} | "
-                         f"{t2['cps']:.2f} → {full['cps']:.2f} | {v['precision']:.0%} / {v['recall']:.0%} |")
+                         f"{t2['cps']:.2f} → {full['cps']:.2f} | {v['precision']:.0%} / {v['recall']:.0%} | "
+                         f"{full['tasks_reaching_tier2']}/{full['n']} | "
+                         f"{full['tier2_tokens'] / t2['tier2_tokens'] - 1:+.1%} |")
         lines.append("")
     return lines
 
@@ -407,6 +403,25 @@ def record(settings, output: Path, fresh: bool, tiers: set[int], reuse: Path | N
               f"{r.prompt_tokens}+{r.completion_tokens}tok :: {r.raw_output[:70]!r}", flush=True)
 
 
+def assemble(output: Path, tier1_from: Path, tier2_from: Path) -> None:
+    """Combine Tier-1 records of one recording with Tier-2 records of another (no model calls).
+
+    Valid because prompts do not depend on the tier: every (task, variant) prompt hash must match.
+    """
+    def load(path: Path, tier: int) -> list[dict]:
+        return [r for r in (json.loads(x) for x in path.read_text(encoding="utf-8").splitlines() if x.strip())
+                if r["tier"] == tier]
+    t1, t2 = load(tier1_from, 1), load(tier2_from, 2)
+    shas = {(r["task_id"], r["variant"]): r["prompt_sha"] for r in t1 + t2}
+    for r in t1 + t2:
+        if shas[(r["task_id"], r["variant"])] != r["prompt_sha"]:
+            raise ValueError(f"prompt mismatch for {r['task_id']}/{r['variant']}; cannot assemble")
+    with output.open("w", encoding="utf-8") as f:
+        for r, src in [(r, tier1_from) for r in t1] + [(r, tier2_from) for r in t2]:
+            f.write(json.dumps({**r, "reused_from": src.name}, ensure_ascii=False) + "\n")
+    print(f"assembled {output.name}: {len(t1)} Tier-1 ({tier1_from.name}) + {len(t2)} Tier-2 ({tier2_from.name})")
+
+
 STRESS_DEFAULT = DATA / "recorded_runs_t1-qwen2.5-0.5b.jsonl"
 
 
@@ -416,6 +431,8 @@ def main() -> int:
     g.add_argument("--sim", action="store_true", help="offline synthetic model (control-flow smoke test)")
     g.add_argument("--record", action="store_true", help="call live models and append to --output")
     g.add_argument("--replay", type=Path, metavar="JSONL", help="replay recorded runs (headline numbers)")
+    g.add_argument("--assemble", nargs=3, type=Path, metavar=("OUT", "TIER1_FROM", "TIER2_FROM"),
+                   help="build a recording from Tier-1 of one file and Tier-2 of another (no model calls)")
     ap.add_argument("--output", type=Path, default=DATA / "recorded_runs.jsonl")
     ap.add_argument("--fresh", action="store_true", help="with --record: delete existing recordings first")
     ap.add_argument("--tiers", default="1,2", help="with --record: tiers to call live, e.g. '1'")
@@ -423,11 +440,14 @@ def main() -> int:
     ap.add_argument("--stress", type=Path, help=f"weak-Tier-1 recording for Experiment 4 "
                                                 f"(default: {STRESS_DEFAULT.name} if present)")
     ap.add_argument("--compare", type=Path, nargs="*", help="extra recordings for Experiment 5 "
-                                                            "(default: data/recorded_runs_t1-*.jsonl)")
+                                                            "(default: data/recorded_runs_t[12]-*.jsonl)")
     ap.add_argument("--results", type=Path, default=None, help="results directory")
     args = ap.parse_args()
     settings = get_settings()
 
+    if args.assemble:
+        assemble(*args.assemble)
+        return 0
     if args.sim:
         evaluate("sim", SimClient(settings), settings, args.results or ROOT / "results" / "sim",
                  "SimClient (synthetic)")
@@ -440,7 +460,7 @@ def main() -> int:
     else:
         path = args.replay
     stress = args.stress or (STRESS_DEFAULT if STRESS_DEFAULT.exists() else None)
-    compare = args.compare if args.compare is not None else sorted(DATA.glob("recorded_runs_t1-*.jsonl"))
+    compare = args.compare if args.compare is not None else sorted(DATA.glob("recorded_runs_t[12]-*.jsonl"))
     evaluate("replay", ReplayClient(path), settings, args.results or ROOT / "results",
              f"replay of `{rel(path)}`",
              stress_path=stress, compare=compare)

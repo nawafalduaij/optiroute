@@ -10,7 +10,7 @@
 
 | Config | Accuracy | Tokens | Δ Tokens vs T2 | Compute (kTok·B) | Δ Compute | CPS (kTok·B / success) | P50 ms | P95 ms | Final tier 0/1/2 | Escalations | False cache hits / traps |
 |---|---|---|---|---|---|---|---|---|---|---|---|
-| 1_Always_Tier2_Raw | 88.9% (32/36) | 13,712 | +0.0% | 191.97 | +0.0% | 5.999 | 472 | 1028 | 0/0/36 | 0 | 0/2 |
+| 1_Always_Tier2_Raw | 88.9% (32/36) | 13,712 | +0.0% | 191.97 | +0.0% | 5.999 | 473 | 1028 | 0/0/36 | 0 | 0/2 |
 | 2_Always_Tier1_Raw | 86.1% (31/36) | 13,363 | +2.5% | 40.09 | +79.1% | 1.293 | 129 | 199 | 0/36/0 | 0 | 0/2 |
 | 3_Router_Only | 86.1% (31/36) | 13,580 | +1.0% | 60.63 | +68.4% | 1.956 | 146 | 819 | 0/32/4 | 0 | 0/2 |
 | 4_Pruner_Plus_Router | 80.6% (29/36) | 6,519 | +52.5% | 30.08 | +84.3% | 1.037 | 148 | 648 | 0/32/4 | 0 | 0/2 |
@@ -24,7 +24,7 @@
 | LOO_No_Cache | 86.1% (31/36) | 7,255 | +47.1% | 40.39 | +79.0% | 1.303 | 152 | 648 | 0/30/6 | 2 | 0/2 |
 | LOO_No_Cache_Entity_Guard | 83.3% (30/36) | 6,401 | +53.3% | 35.10 | +81.7% | 1.170 | 148 | 586 | 4/27/5 | 2 | 2/2 |
 | LOO_No_Pruner | 86.1% (31/36) | 13,235 | +3.5% | 64.51 | +66.4% | 2.081 | 142 | 1218 | 2/29/5 | 1 | 0/2 |
-| LOO_No_Verifier | 80.6% (29/36) | 6,111 | +55.4% | 28.86 | +85.0% | 0.995 | 142 | 648 | 2/30/4 | 0 | 0/2 |
+| LOO_No_Verifier | 80.6% (29/36) | 6,111 | +55.4% | 28.86 | +85.0% | 0.995 | 143 | 648 | 2/30/4 | 0 | 0/2 |
 | LOO_No_Adaptation | 86.1% (31/36) | 6,847 | +50.1% | 39.16 | +79.6% | 1.263 | 152 | 648 | 2/28/6 | 2 | 0/2 |
 
 ## Accuracy by Category
@@ -53,16 +53,16 @@
 
 | Pruner | Cache | Router | Verifier | Total CPU | Mean LLM latency |
 |---|---|---|---|---|---|
-| 1.34 | 0.18 | 0.02 | 0.11 | 1.65 | 152 (P50 end-to-end) |
+| 1.36 | 0.18 | 0.02 | 0.12 | 1.68 | 152 (P50 end-to-end) |
 
 ## Experiment 1 — Bilingual Context Noise Scaling (pruner only, CPU)
 
 | Distractors | Evidence recall | Tokens before | Tokens after | Reduction | Prune ms |
 |---|---|---|---|---|---|
-| 0x | 91.7% | 8,999 | 2,693 | 70.1% | 1.17 |
-| 1x | 91.7% | 17,836 | 2,823 | 84.2% | 2.34 |
-| 2x | 91.7% | 26,522 | 2,718 | 89.8% | 2.47 |
-| 4x | 88.9% | 43,821 | 2,642 | 94.0% | 3.07 |
+| 0x | 91.7% | 8,999 | 2,693 | 70.1% | 1.21 |
+| 1x | 91.7% | 17,836 | 2,823 | 84.2% | 2.41 |
+| 2x | 91.7% | 26,522 | 2,718 | 89.8% | 2.55 |
+| 4x | 88.9% | 43,821 | 2,642 | 94.0% | 3.16 |
 
 ## Experiment 2 — Wave Workload (easy → hard burst → easy), cache off
 
@@ -109,8 +109,13 @@ Controller actions (adaptive_audit, step:action): 43:tighten 52:recover 53:recov
 
 ## Experiment 5 — Cross-Model Generalization (same cascade, different recorded models)
 
-| Recording | Tier-1 | Tier-2 | Always-T2 acc | Always-T1 acc | Full acc | Full compute Δ vs T2 | CPS T2 → Full | Verifier P / R |
-|---|---|---|---|---|---|---|---|---|
-| `recorded_runs.jsonl` | qwen2.5:3b (3B) | qwen2.5:14b (14B) | 88.9% | 86.1% | **86.1%** | -79.6% | 6.00 → 1.26 | 100% / 57% |
-| `recorded_runs_t1-llama3.2-3b.jsonl` | llama3.2:3b (3.2B) | qwen2.5:14b (14B) | 88.9% | 88.9% | **86.1%** | -79.3% | 6.00 → 1.28 | 75% / 50% |
-| `recorded_runs_t1-qwen2.5-0.5b.jsonl` | qwen2.5:0.5b (0.5B) | qwen2.5:14b (14B) | 88.9% | 55.6% | **75.0%** | -84.1% | 6.00 → 1.13 | 100% / 47% |
+| Profile | Recording | Tier-1 | Tier-2 | Always-T2 acc | Always-T1 acc | Full acc | Full compute Δ vs T2 | CPS T2 → Full | Verifier P / R | Tasks sent to Tier-2 | Tier-2 tokens vs always-T2 |
+|---|---|---|---|---|---|---|---|---|---|---|---|
+| **single-gpu** | `recorded_runs.jsonl` | qwen2.5:3b (3B) | qwen2.5:14b (14B) | 88.9% | 86.1% | **86.1%** | -79.6% | 6.00 → 1.26 | 100% / 57% | 6/36 | -87.7% |
+| — | `recorded_runs_t1-llama3.2-3b.jsonl` | llama3.2:3b (3.2B) | qwen2.5:14b (14B) | 88.9% | 88.9% | **86.1%** | -79.3% | 6.00 → 1.28 | 75% / 50% | 6/36 | -88.2% |
+| — | `recorded_runs_t1-qwen2.5-0.5b.jsonl` | qwen2.5:0.5b (0.5B) | qwen2.5:14b (14B) | 88.9% | 55.6% | **75.0%** | -84.1% | 6.00 → 1.13 | 100% / 47% | 8/36 | -85.4% |
+| — | `recorded_runs_t1-qwen2.5-7b.jsonl` | qwen2.5:7b (7B) | qwen2.5:14b (14B) | 88.9% | 86.1% | **86.1%** | -71.2% | 6.00 → 1.78 | 100% / 57% | 5/36 | -89.9% |
+| **cloud** | `recorded_runs_t2-gpt-oss-120b_t1-allam-2-7b.jsonl` | allam-2-7b (7B) | openai/gpt-oss-120b (5.1B) | 97.2% | 94.4% | **86.1%** | -31.2% | 2.16 → 1.68 | 60% / 38% | 6/36 | -86.6% |
+| **edge** | `recorded_runs_t2-gpt-oss-120b_t1-qwen2.5-0.5b.jsonl` | qwen2.5:0.5b (0.5B) | openai/gpt-oss-120b (5.1B) | 97.2% | 55.6% | **83.3%** | -80.0% | 2.16 → 0.50 | 100% / 47% | 8/36 | -83.4% |
+| — | `recorded_runs_t2-gpt-oss-120b_t1-qwen2.5-3b.jsonl` | qwen2.5:3b (3B) | openai/gpt-oss-120b (5.1B) | 97.2% | 86.1% | **94.4%** | -65.4% | 2.16 → 0.77 | 100% / 57% | 6/36 | -85.8% |
+| **hybrid** | `recorded_runs_t2-gpt-oss-120b_t1-qwen3.5-9b.jsonl` | qwen3.5:9b (9B) | openai/gpt-oss-120b (5.1B) | 97.2% | 91.7% | **100.0%** | -19.9% | 2.16 → 1.68 | 100% / 83% | 7/36 | -83.6% |

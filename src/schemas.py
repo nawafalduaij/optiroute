@@ -88,6 +88,7 @@ class CascadeResult:
     cache_event: str = "miss"  # hit | miss | blocked_trap | disabled
     tau: float = 0.0
     trace: dict[str, Any] = field(default_factory=dict)  # per-stage detail for the demo UI
+    cost_usd: float | None = None  # only when every used tier has a configured price
 
     @property
     def total_tokens(self) -> int:

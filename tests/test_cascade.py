@@ -157,3 +157,60 @@ def test_replay_binds_recorded_models_not_env(tmp_path, settings, held_out):
                     json.dumps({**rows[1], "tier": 1, "task_id": "x"}) + "\n")
     with pytest.raises(ValueError):  # one tier, two models -> refuse to label
         evaluate.settings_for(settings, ReplayClient(path))
+
+
+def test_live_client_retries_rate_limits(settings, held_out):
+    """Cloud tiers return 429 under free-tier limits: retry, and time only the successful attempt."""
+    import httpx
+
+    from src.llm_client import LiveClient
+
+    calls = {"n": 0}
+
+    def handler(request):
+        calls["n"] += 1
+        if calls["n"] <= 2:
+            return httpx.Response(429, headers={"retry-after": "0.01"}, json={"error": "rate limited"})
+        return httpx.Response(200, json={"choices": [{"message": {"content": "SAR 48,000"}}], "usage": {}})
+
+    client = LiveClient(settings)
+    client.http = httpx.Client(transport=httpx.MockTransport(handler))
+    t = held_out["std_en_01"]
+    r = client.complete(t, "raw", 2, t.context)
+    assert r.raw_output == "SAR 48,000" and calls["n"] == 3 and r.latency_ms < 1000
+
+
+def test_profiles_load_and_keep_secrets_out(monkeypatch):
+    from src.config import PROFILES, get_settings, list_profiles
+
+    names = {p["name"] for p in list_profiles()}
+    assert {"single-gpu", "hybrid", "edge", "cloud"} <= names
+    for path in PROFILES.glob("*.env"):  # profiles reference key variables, never key values
+        assert "gsk_" not in path.read_text() and "sk-" not in path.read_text()
+    monkeypatch.setenv("GROQ_API_KEY", "test-key")
+    s = get_settings("hybrid")
+    assert (s.tier1.model, s.tier2.model, s.tier2.api_key, s.profile) == \
+        ("qwen3.5:9b", "openai/gpt-oss-120b", "test-key", "hybrid")
+    assert s.tier1.extra_body == {"reasoning_effort": "none"} and s.tier2.params_b == 5.1
+    assert get_settings("single-gpu").tier2.model == "qwen2.5:14b"
+
+
+def test_cost_only_when_prices_configured(settings, held_out):
+    from dataclasses import replace
+
+    t = held_out["std_en_07"]
+    unpriced = OptiRoutePipeline(settings, SimClient(settings), PipelineFlags(use_cache=False)).process(t)
+    assert unpriced.cost_usd is None  # no prices -> no invented dollar figures
+    priced = replace(settings, tier1=replace(settings.tier1, price_in_per_mtok=1.0, price_out_per_mtok=2.0),
+                     tier2=replace(settings.tier2, price_in_per_mtok=10.0, price_out_per_mtok=20.0))
+    r = OptiRoutePipeline(priced, SimClient(priced), PipelineFlags(use_cache=False)).process(t)
+    c = r.calls[0]
+    assert r.cost_usd == pytest.approx((c.prompt_tokens * 1.0 + c.completion_tokens * 2.0) / 1e6)
+
+
+def test_settings_precedence_shell_over_profile(monkeypatch):
+    from src.config import get_settings
+
+    monkeypatch.setenv("TIER1_MODEL", "one-off-model")  # explicit shell override wins over the profile
+    s = get_settings("hybrid")
+    assert s.tier1.model == "one-off-model" and s.tier2.model == "openai/gpt-oss-120b"

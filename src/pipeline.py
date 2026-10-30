@@ -44,6 +44,16 @@ class OptiRoutePipeline:
     def _params(self, tier: int) -> float:
         return self.settings.tier1.params_b if tier == 1 else self.settings.tier2.params_b
 
+    def _cost(self, calls: list[LLMResponse]) -> float | None:
+        """USD from the configured per-1M-token prices; None if any used tier has no price set."""
+        total = 0.0
+        for c in calls:
+            cfg = self.settings.tier1 if c.tier == 1 else self.settings.tier2
+            if cfg.price_in_per_mtok is None or cfg.price_out_per_mtok is None:
+                return None
+            total += (c.prompt_tokens * cfg.price_in_per_mtok + c.completion_tokens * cfg.price_out_per_mtok) / 1e6
+        return total
+
     def _call(self, task: Task, variant: str, tier: int, chunks: list[str]) -> LLMResponse:
         return self.client.complete(task, variant, tier, chunks)
 
@@ -89,7 +99,7 @@ class OptiRoutePipeline:
                     task_id=task.task_id, answer=look.entry.answer, final_tier=0,
                     path=[f"cache_hit:{look.entry.task_id}"], calls=[], tokens_raw_context=raw_tokens,
                     tokens_pruned_context=pruned_tokens, compute_units=0.0, llm_latency_ms=0.0,
-                    overhead_ms=overhead, cache_event="hit", tau=self.adapt.tau, trace=trace,
+                    overhead_ms=overhead, cache_event="hit", tau=self.adapt.tau, trace=trace, cost_usd=0.0,
                 )
                 self.adapt.observe(res.latency_ms, None)
                 return res
@@ -156,7 +166,7 @@ class OptiRoutePipeline:
             tokens_raw_context=raw_tokens, tokens_pruned_context=pruned_tokens,
             compute_units=sum(c.total_tokens / 1000 * self._params(c.tier) for c in calls),
             llm_latency_ms=sum(c.latency_ms for c in calls), overhead_ms=overhead, route=decision,
-            verifier=ver, cache_event=cache_event, tau=tau, trace=trace,
+            verifier=ver, cache_event=cache_event, tau=tau, trace=trace, cost_usd=self._cost(calls),
         )
         # 5. Feedback: adaptation + cache population (only accepted answers are cached)
         self.adapt.observe(res.latency_ms, tier1_passed, audit_agree)

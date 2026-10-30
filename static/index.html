@@ -24,6 +24,10 @@ header{display:flex;align-items:center;gap:20px;padding:14px 24px;border-bottom:
 .tabs button.on{background:var(--emdim);color:var(--em2)}
 .pill{font:12px var(--mono);padding:4px 10px;border-radius:99px;background:var(--panel2);border:1px solid var(--line);color:var(--muted)}
 .pill b{color:var(--text)}
+.pill select{background:transparent;border:0;color:var(--text);font:600 12px Inter,sans-serif;cursor:pointer;outline:none}
+.pill select option{background:var(--panel)}
+.where{font:10px var(--mono);padding:1px 6px;border-radius:5px;margin-left:4px;vertical-align:1px}
+.where.local{background:#0b3b2c;color:var(--em2)}.where.cloud{background:#13233d;color:var(--blue)}
 .btn{background:var(--panel2);border:1px solid var(--line);color:var(--text);padding:7px 12px;border-radius:8px;font:inherit;font-weight:600;cursor:pointer}
 .btn:hover{border-color:var(--em)}.btn.primary{background:var(--em);color:#04120c;border-color:var(--em)}
 main{padding:20px 24px;max-width:1500px;margin:0 auto}
@@ -91,6 +95,8 @@ tr.hl td{background:#0b2a20;color:var(--em2);font-weight:600}
     <div class="logo">Opti<b>Route</b></div>
     <div class="sub" id="models">bilingual compute cascade</div>
   </div>
+  <label class="pill" style="display:flex;align-items:center;gap:6px;margin:0">profile
+    <select id="profile" title="Deployment profile: which models run each tier"></select></label>
   <span class="pill">τ <b id="tau">0.55</b></span>
   <span class="pill">cache entries <b id="csize">0</b></span>
   <button class="btn" id="reset" title="Clear cache and reset τ">Reset session</button>
@@ -105,7 +111,7 @@ tr.hl td{background:#0b2a20;color:var(--em2);font-weight:600}
       <div class="card">
         <h3>Preset cases</h3>
         <div class="presets" id="presets"></div>
-        <p class="note">Presets replay the recorded real outputs of qwen2.5 on this GPU. Run the cache seed (#INV-8841) before the paraphrase and trap cases.</p>
+        <p class="note">Presets replay the recorded real outputs of the selected profile's models. Run the cache seed (#INV-8841) before the paraphrase and trap cases.</p>
       </div>
       <div class="card" style="margin-top:14px">
         <h3>Custom input (live models)</h3>
@@ -171,9 +177,25 @@ document.querySelectorAll('.tabs button').forEach(b => b.onclick = () => {
   if (b.dataset.v === 'bench') loadBench();
 });
 
+function showModels(m) {
+  const tag = t => `${esc(t[0])} (${t[1]}B)<span class="where ${t[2]}">${t[2]}</span>`;
+  $('#models').innerHTML = `Tier-1 ${tag(m.tier1)} → Tier-2 ${tag(m.tier2)}`;
+}
+function clearRun(msg) {
+  $('#qcard').innerHTML = `<div class="empty">${msg}</div>`;
+  $('#details').innerHTML = ''; setStages({}); $('#csize').textContent = 0;
+  document.querySelectorAll('.preset').forEach(x => x.classList.remove('on'));
+}
 async function init() {
+  const P = await (await fetch('/api/profiles')).json();
+  $('#profile').innerHTML = P.profiles.map(p => `<option value="${esc(p.name)}" title="${esc(p.description)}" ${p.name === P.active ? 'selected' : ''}>${esc(p.title)}</option>`).join('');
+  $('#profile').onchange = async e => {
+    const r = await (await fetch('/api/profile', {method:'POST', headers:{'Content-Type':'application/json'}, body: JSON.stringify({name: e.target.value})})).json();
+    showModels(r.models); $('#tau').textContent = r.tau.toFixed(2);
+    clearRun(`Switched to <b>${esc(r.profile.title)}</b>: ${esc(r.profile.description)}<br>Same cascade code; only the models changed. Session reset.`);
+  };
   META = await (await fetch('/api/presets')).json();
-  $('#models').textContent = `Tier-1 ${META.models.tier1[0]} (${META.models.tier1[1]}B) → Tier-2 ${META.models.tier2[0]} (${META.models.tier2[1]}B) · local GPU`;
+  showModels(META.models);
   $('#presets').innerHTML = META.presets.map((p, i) =>
     `<button class="preset" data-i="${i}">${esc(p.label)}<small dir="auto">${esc(p.query)}</small></button>`).join('');
   document.querySelectorAll('.preset').forEach(b => b.onclick = () => {
@@ -183,9 +205,8 @@ async function init() {
 }
 $('#reset').onclick = async () => {
   const r = await (await fetch('/api/reset', {method:'POST'})).json();
-  $('#tau').textContent = r.tau.toFixed(2); $('#csize').textContent = 0;
-  $('#qcard').innerHTML = '<div class="empty">Session reset: cache cleared, τ back to baseline.</div>';
-  $('#details').innerHTML = ''; setStages({});
+  $('#tau').textContent = r.tau.toFixed(2);
+  clearRun('Session reset: cache cleared, τ back to baseline.');
 };
 $('#crun').onclick = () => {
   const q = $('#cq').value.trim(), c = $('#cc').value.trim();

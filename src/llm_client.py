@@ -7,6 +7,8 @@ from __future__ import annotations
 
 import hashlib
 import json
+import re
+import sys
 import time
 from pathlib import Path
 from typing import Protocol
@@ -15,6 +17,8 @@ from .config import Settings, TierConfig
 from .normalize import is_arabic
 from .schemas import LLMResponse, Task
 from .tokenizer import count_chat_tokens, count_tokens
+
+_THINK = re.compile(r"<think>.*?</think>", re.DOTALL)  # strip inline reasoning if a server leaves it in content
 
 SYSTEM_PROMPT = (
     "You are an enterprise document assistant. Answer strictly from the provided context. "
@@ -48,6 +52,8 @@ class LLMBackend(Protocol):
 class LiveClient:
     """Calls the configured OpenAI-compatible endpoints; optionally appends every call to a JSONL file."""
 
+    MAX_RETRIES = 8
+
     def __init__(self, settings: Settings, record_path: Path | None = None):
         import httpx
 
@@ -61,14 +67,23 @@ class LiveClient:
 
     def _post(self, cfg: TierConfig, messages: list[dict[str, str]], max_tokens: int) -> tuple[str, dict, float]:
         body = {"model": cfg.model, "messages": messages, "temperature": self.settings.cascade.temperature,
-                "max_tokens": max_tokens, "seed": 0}
-        t0 = time.perf_counter()
-        r = self.http.post(f"{cfg.base_url.rstrip('/')}/chat/completions", json=body,
-                           headers={"Authorization": f"Bearer {cfg.api_key}"})
-        latency = (time.perf_counter() - t0) * 1000
-        r.raise_for_status()
-        data = r.json()
-        return data["choices"][0]["message"]["content"] or "", data.get("usage", {}), latency
+                "max_tokens": max_tokens, "seed": 0, **cfg.extra_body}
+        for attempt in range(self.MAX_RETRIES + 1):
+            t0 = time.perf_counter()  # only the successful attempt is timed
+            r = self.http.post(f"{cfg.base_url.rstrip('/')}/chat/completions", json=body,
+                               headers={"Authorization": f"Bearer {cfg.api_key}"})
+            latency = (time.perf_counter() - t0) * 1000
+            if r.status_code in (429, 500, 502, 503, 504) and attempt < self.MAX_RETRIES:
+                # cloud rate limits: honour Retry-After when given, else exponential backoff
+                wait = float(r.headers.get("retry-after", 0) or 0) or min(60.0, 2.0 * 2 ** attempt)
+                print(f"  {cfg.model}: HTTP {r.status_code}, retrying in {wait:.1f}s", flush=True)
+                time.sleep(wait)
+                continue
+            r.raise_for_status()
+            data = r.json()
+            text = _THINK.sub("", data["choices"][0]["message"].get("content") or "").strip()
+            return text, data.get("usage", {}), latency
+        raise RuntimeError("unreachable")
 
     def warmup(self) -> dict[str, float]:
         """Load both models before timing so first-call model load is not counted as inference latency."""
@@ -88,11 +103,15 @@ class LiveClient:
         else:
             text, usage, latency = self._post(cfg, messages, self.settings.cascade.max_tokens)
             enc = self.settings.tokenizer_encoding
+            visible = count_tokens(text, enc)
+            # Reasoning models bill hidden thinking tokens: count them as generated work when reported.
+            generated = max(visible, int(usage.get("completion_tokens") or 0))
             rec = {
                 "task_id": task.task_id, "variant": variant, "tier": tier, "model_id": cfg.model,
                 "params_b": cfg.params_b, "prompt_sha": sha, "prompt_tokens": count_chat_tokens(messages, enc),
-                "completion_tokens": count_tokens(text, enc), "latency_ms": round(latency, 2),
-                "api_usage": usage, "raw_output": text,
+                "completion_tokens": generated, "hidden_reasoning_tokens": generated - visible,
+                "latency_ms": round(latency, 2), "api_usage": usage, "request_options": cfg.extra_body,
+                "raw_output": text,
             }
             self._seen[(sha, tier)] = rec
         if self.record_path:
@@ -198,6 +217,25 @@ def _to_response(rec: dict, source: str) -> LLMResponse:
         prompt_tokens=rec["prompt_tokens"], completion_tokens=rec["completion_tokens"],
         latency_ms=rec["latency_ms"], raw_output=rec["raw_output"], source=source,
     )
+
+
+def bind_recorded_models(settings: Settings, client) -> Settings:
+    """Bind tier model names and sizes to what a recording actually contains, never to configuration."""
+    from dataclasses import replace
+
+    if not isinstance(client, ReplayClient):
+        return settings
+    tiers = {}
+    for tier, (model, params) in client.tier_models().items():
+        attr = f"tier{tier}"
+        cfg = getattr(settings, attr)
+        if params is None:
+            raise ValueError(f"{client.path}: tier {tier} records lack params_b; re-record or backfill it")
+        if model != cfg.model:
+            print(f"note: {client.path.name} tier {tier} was recorded with {model}, configuration says "
+                  f"{cfg.model}; using the recorded model", file=sys.stderr)
+        tiers[attr] = replace(cfg, model=model, params_b=params)
+    return replace(settings, **tiers)
 
 
 def make_client(settings: Settings, mode: str, path: Path | None = None) -> LLMBackend:

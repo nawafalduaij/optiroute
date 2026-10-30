@@ -18,9 +18,15 @@ _NUM = re.compile(r"(?<![A-Za-z0-9.])-?\d{1,3}(?:,\d{3})+(?:\.\d+)?%?|(?<![A-Za-
 _DATE = re.compile(r"\b\d{4}-\d{2}-\d{2}\b|\b\d{1,2}/\d{1,2}/\d{2,4}\b")
 
 
+_HYPHENS = str.maketrans({c: "-" for c in "\u2010\u2011\u2012\u2013\u2212"})
+# "7 200" with a narrow/no-break/thin space as thousands separator (common in typeset model output)
+_SPACE_THOUSANDS = re.compile(r"(?<=\d)[\u202f\u00a0\u2009](?=\d{3}(?!\d))")
+
+
 def to_western_digits(text: str) -> str:
-    # Arabic thousands (٬) and decimal (٫) separators -> ASCII
-    return text.translate(_DIGITS).replace("٬", ",").replace("٫", ".").replace("٪", "%")
+    # Arabic thousands (٬) and decimal (٫) separators -> ASCII; typographic hyphens -> "-"
+    text = text.translate(_DIGITS).translate(_HYPHENS).replace("٬", ",").replace("٫", ".").replace("٪", "%")
+    return _SPACE_THOUSANDS.sub(",", text)
 
 
 def normalize_arabic(text: str) -> str:
