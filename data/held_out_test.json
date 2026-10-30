@@ -587,6 +587,895 @@
   "doc": "returns_ar"
  },
  {
+  "task_id": "std_en_14",
+  "language": "en",
+  "category": "standard",
+  "query": "What is the monthly fuel reimbursement limit for assigned vehicles?",
+  "context": [
+   "Fleet & Vehicle Policy — Al-Waha Retail Co., version 2.1, effective 2025-04-01.",
+   "Eligibility: company cars are assigned to employees in Grade 10 and above and to field sales staff.",
+   "Fuel: fuel is reimbursed up to SAR 1,100 per month for assigned vehicles; fuel cards must not be shared.",
+   "Replacement: vehicles are replaced after 4 years or 120,000 km, whichever comes first.",
+   "Traffic fines: the driver is personally responsible for traffic fines; fines paid by the company are deducted from the next salary.",
+   "Accidents: any accident must be reported to the Fleet Office within 24 hours, together with the Najm accident report.",
+   "Private use: limited private use is allowed within the Kingdom; cross-border trips require written approval from the Fleet Manager.",
+   "Insurance: all fleet vehicles carry comprehensive insurance with a deductible of SAR 2,000 per claim, paid by the company for the first claim in a year and by the driver for any further claim in the same year.",
+   "Fleet Office, Building C, ground floor. Page 1 of 1."
+  ],
+  "expected_answer": 1100,
+  "answer_type": "number",
+  "required_facts": [
+   "1,100"
+  ],
+  "evidence": [
+   "up to SAR 1,100 per month"
+  ],
+  "schema": null,
+  "cache_of": null,
+  "expect_cache_hit": null,
+  "doc": "fleet_en"
+ },
+ {
+  "task_id": "std_en_15",
+  "language": "en",
+  "category": "standard",
+  "query": "Within how many hours must an accident be reported to the Fleet Office?",
+  "context": [
+   "Fleet & Vehicle Policy — Al-Waha Retail Co., version 2.1, effective 2025-04-01.",
+   "Eligibility: company cars are assigned to employees in Grade 10 and above and to field sales staff.",
+   "Fuel: fuel is reimbursed up to SAR 1,100 per month for assigned vehicles; fuel cards must not be shared.",
+   "Replacement: vehicles are replaced after 4 years or 120,000 km, whichever comes first.",
+   "Traffic fines: the driver is personally responsible for traffic fines; fines paid by the company are deducted from the next salary.",
+   "Accidents: any accident must be reported to the Fleet Office within 24 hours, together with the Najm accident report.",
+   "Private use: limited private use is allowed within the Kingdom; cross-border trips require written approval from the Fleet Manager.",
+   "Insurance: all fleet vehicles carry comprehensive insurance with a deductible of SAR 2,000 per claim, paid by the company for the first claim in a year and by the driver for any further claim in the same year.",
+   "Fleet Office, Building C, ground floor. Page 1 of 1."
+  ],
+  "expected_answer": 24,
+  "answer_type": "number",
+  "required_facts": [
+   "24"
+  ],
+  "evidence": [
+   "within 24 hours"
+  ],
+  "schema": null,
+  "cache_of": null,
+  "expect_cache_hit": null,
+  "doc": "fleet_en"
+ },
+ {
+  "task_id": "std_en_16",
+  "language": "en",
+  "category": "standard",
+  "query": "After how many kilometres is a fleet vehicle replaced?",
+  "context": [
+   "Fleet & Vehicle Policy — Al-Waha Retail Co., version 2.1, effective 2025-04-01.",
+   "Eligibility: company cars are assigned to employees in Grade 10 and above and to field sales staff.",
+   "Fuel: fuel is reimbursed up to SAR 1,100 per month for assigned vehicles; fuel cards must not be shared.",
+   "Replacement: vehicles are replaced after 4 years or 120,000 km, whichever comes first.",
+   "Traffic fines: the driver is personally responsible for traffic fines; fines paid by the company are deducted from the next salary.",
+   "Accidents: any accident must be reported to the Fleet Office within 24 hours, together with the Najm accident report.",
+   "Private use: limited private use is allowed within the Kingdom; cross-border trips require written approval from the Fleet Manager.",
+   "Insurance: all fleet vehicles carry comprehensive insurance with a deductible of SAR 2,000 per claim, paid by the company for the first claim in a year and by the driver for any further claim in the same year.",
+   "Fleet Office, Building C, ground floor. Page 1 of 1."
+  ],
+  "expected_answer": 120000,
+  "answer_type": "number",
+  "required_facts": [
+   "120,000"
+  ],
+  "evidence": [
+   "120,000 km"
+  ],
+  "schema": null,
+  "cache_of": null,
+  "expect_cache_hit": null,
+  "doc": "fleet_en"
+ },
+ {
+  "task_id": "std_en_17",
+  "language": "en",
+  "category": "standard",
+  "query": "Who is responsible for paying traffic fines?",
+  "context": [
+   "Fleet & Vehicle Policy — Al-Waha Retail Co., version 2.1, effective 2025-04-01.",
+   "Eligibility: company cars are assigned to employees in Grade 10 and above and to field sales staff.",
+   "Fuel: fuel is reimbursed up to SAR 1,100 per month for assigned vehicles; fuel cards must not be shared.",
+   "Replacement: vehicles are replaced after 4 years or 120,000 km, whichever comes first.",
+   "Traffic fines: the driver is personally responsible for traffic fines; fines paid by the company are deducted from the next salary.",
+   "Accidents: any accident must be reported to the Fleet Office within 24 hours, together with the Najm accident report.",
+   "Private use: limited private use is allowed within the Kingdom; cross-border trips require written approval from the Fleet Manager.",
+   "Insurance: all fleet vehicles carry comprehensive insurance with a deductible of SAR 2,000 per claim, paid by the company for the first claim in a year and by the driver for any further claim in the same year.",
+   "Fleet Office, Building C, ground floor. Page 1 of 1."
+  ],
+  "expected_answer": "The driver is personally responsible.",
+  "answer_type": "text",
+  "required_facts": [
+   "driver"
+  ],
+  "evidence": [
+   "the driver is personally responsible for traffic fines"
+  ],
+  "schema": null,
+  "cache_of": null,
+  "expect_cache_hit": null,
+  "doc": "fleet_en"
+ },
+ {
+  "task_id": "std_en_18",
+  "language": "en",
+  "category": "standard",
+  "query": "Which employees are eligible for a company car?",
+  "context": [
+   "Fleet & Vehicle Policy — Al-Waha Retail Co., version 2.1, effective 2025-04-01.",
+   "Eligibility: company cars are assigned to employees in Grade 10 and above and to field sales staff.",
+   "Fuel: fuel is reimbursed up to SAR 1,100 per month for assigned vehicles; fuel cards must not be shared.",
+   "Replacement: vehicles are replaced after 4 years or 120,000 km, whichever comes first.",
+   "Traffic fines: the driver is personally responsible for traffic fines; fines paid by the company are deducted from the next salary.",
+   "Accidents: any accident must be reported to the Fleet Office within 24 hours, together with the Najm accident report.",
+   "Private use: limited private use is allowed within the Kingdom; cross-border trips require written approval from the Fleet Manager.",
+   "Insurance: all fleet vehicles carry comprehensive insurance with a deductible of SAR 2,000 per claim, paid by the company for the first claim in a year and by the driver for any further claim in the same year.",
+   "Fleet Office, Building C, ground floor. Page 1 of 1."
+  ],
+  "expected_answer": "Employees in Grade 10 and above, and field sales staff.",
+  "answer_type": "text",
+  "required_facts": [
+   "Grade 10",
+   "field sales"
+  ],
+  "evidence": [
+   "Grade 10 and above and to field sales staff"
+  ],
+  "schema": null,
+  "cache_of": null,
+  "expect_cache_hit": null,
+  "doc": "fleet_en"
+ },
+ {
+  "task_id": "std_en_19",
+  "language": "en",
+  "category": "standard",
+  "query": "What is the annual rent for Unit 14-B?",
+  "context": [
+   "OFFICE LEASE AGREEMENT between Olaya Towers Real Estate Co. (\"Landlord\") and Al-Waha Retail Co. (\"Tenant\") for Unit 14-B, signed 2024-11-20.",
+   "Olaya Towers Real Estate Co. — Confidential.",
+   "Clause 2 – Term. The lease term is 5 years starting 2025-01-01, renewable for one further term of 3 years.",
+   "Clause 3 – Rent. Annual rent is SAR 360,000, payable in four equal quarterly instalments in advance.",
+   "Clause 4 – Escalation. Rent increases by 3% at the start of each lease year from year 3 onwards.",
+   "Clause 5 – Security Deposit. The Tenant pays a security deposit equal to 2 months of rent, refundable within 60 days after handover.",
+   "Clause 6 – Parking. The Tenant is allocated 12 parking bays; additional bays cost SAR 250 per bay per month.",
+   "Clause 7 – Maintenance. The Landlord maintains the structure, lifts and central air-conditioning; the Tenant maintains the interior fit-out.",
+   "Clause 9 – Early Termination. The Tenant may terminate after year 2 with 6 months' notice and a penalty of 3 months' rent.",
+   "Olaya Towers Real Estate Co. — Confidential."
+  ],
+  "expected_answer": 360000,
+  "answer_type": "number",
+  "required_facts": [
+   "360,000"
+  ],
+  "evidence": [
+   "Annual rent is SAR 360,000"
+  ],
+  "schema": null,
+  "cache_of": null,
+  "expect_cache_hit": null,
+  "doc": "lease_en"
+ },
+ {
+  "task_id": "std_en_20",
+  "language": "en",
+  "category": "standard",
+  "query": "How long is the lease term?",
+  "context": [
+   "OFFICE LEASE AGREEMENT between Olaya Towers Real Estate Co. (\"Landlord\") and Al-Waha Retail Co. (\"Tenant\") for Unit 14-B, signed 2024-11-20.",
+   "Olaya Towers Real Estate Co. — Confidential.",
+   "Clause 2 – Term. The lease term is 5 years starting 2025-01-01, renewable for one further term of 3 years.",
+   "Clause 3 – Rent. Annual rent is SAR 360,000, payable in four equal quarterly instalments in advance.",
+   "Clause 4 – Escalation. Rent increases by 3% at the start of each lease year from year 3 onwards.",
+   "Clause 5 – Security Deposit. The Tenant pays a security deposit equal to 2 months of rent, refundable within 60 days after handover.",
+   "Clause 6 – Parking. The Tenant is allocated 12 parking bays; additional bays cost SAR 250 per bay per month.",
+   "Clause 7 – Maintenance. The Landlord maintains the structure, lifts and central air-conditioning; the Tenant maintains the interior fit-out.",
+   "Clause 9 – Early Termination. The Tenant may terminate after year 2 with 6 months' notice and a penalty of 3 months' rent.",
+   "Olaya Towers Real Estate Co. — Confidential."
+  ],
+  "expected_answer": "5 years, renewable once for 3 years.",
+  "answer_type": "text",
+  "required_facts": [
+   [
+    "5 years",
+    "five years",
+    "5-year"
+   ]
+  ],
+  "evidence": [
+   "The lease term is 5 years"
+  ],
+  "schema": null,
+  "cache_of": null,
+  "expect_cache_hit": null,
+  "doc": "lease_en"
+ },
+ {
+  "task_id": "std_en_21",
+  "language": "en",
+  "category": "standard",
+  "query": "How many parking bays are allocated to the tenant?",
+  "context": [
+   "OFFICE LEASE AGREEMENT between Olaya Towers Real Estate Co. (\"Landlord\") and Al-Waha Retail Co. (\"Tenant\") for Unit 14-B, signed 2024-11-20.",
+   "Olaya Towers Real Estate Co. — Confidential.",
+   "Clause 2 – Term. The lease term is 5 years starting 2025-01-01, renewable for one further term of 3 years.",
+   "Clause 3 – Rent. Annual rent is SAR 360,000, payable in four equal quarterly instalments in advance.",
+   "Clause 4 – Escalation. Rent increases by 3% at the start of each lease year from year 3 onwards.",
+   "Clause 5 – Security Deposit. The Tenant pays a security deposit equal to 2 months of rent, refundable within 60 days after handover.",
+   "Clause 6 – Parking. The Tenant is allocated 12 parking bays; additional bays cost SAR 250 per bay per month.",
+   "Clause 7 – Maintenance. The Landlord maintains the structure, lifts and central air-conditioning; the Tenant maintains the interior fit-out.",
+   "Clause 9 – Early Termination. The Tenant may terminate after year 2 with 6 months' notice and a penalty of 3 months' rent.",
+   "Olaya Towers Real Estate Co. — Confidential."
+  ],
+  "expected_answer": 12,
+  "answer_type": "number",
+  "required_facts": [
+   "12"
+  ],
+  "evidence": [
+   "allocated 12 parking bays"
+  ],
+  "schema": null,
+  "cache_of": null,
+  "expect_cache_hit": null,
+  "doc": "lease_en"
+ },
+ {
+  "task_id": "std_en_22",
+  "language": "en",
+  "category": "standard",
+  "query": "Who maintains the central air-conditioning?",
+  "context": [
+   "OFFICE LEASE AGREEMENT between Olaya Towers Real Estate Co. (\"Landlord\") and Al-Waha Retail Co. (\"Tenant\") for Unit 14-B, signed 2024-11-20.",
+   "Olaya Towers Real Estate Co. — Confidential.",
+   "Clause 2 – Term. The lease term is 5 years starting 2025-01-01, renewable for one further term of 3 years.",
+   "Clause 3 – Rent. Annual rent is SAR 360,000, payable in four equal quarterly instalments in advance.",
+   "Clause 4 – Escalation. Rent increases by 3% at the start of each lease year from year 3 onwards.",
+   "Clause 5 – Security Deposit. The Tenant pays a security deposit equal to 2 months of rent, refundable within 60 days after handover.",
+   "Clause 6 – Parking. The Tenant is allocated 12 parking bays; additional bays cost SAR 250 per bay per month.",
+   "Clause 7 – Maintenance. The Landlord maintains the structure, lifts and central air-conditioning; the Tenant maintains the interior fit-out.",
+   "Clause 9 – Early Termination. The Tenant may terminate after year 2 with 6 months' notice and a penalty of 3 months' rent.",
+   "Olaya Towers Real Estate Co. — Confidential."
+  ],
+  "expected_answer": "The Landlord.",
+  "answer_type": "text",
+  "required_facts": [
+   "landlord"
+  ],
+  "evidence": [
+   "The Landlord maintains the structure, lifts and central air-conditioning"
+  ],
+  "schema": null,
+  "cache_of": null,
+  "expect_cache_hit": null,
+  "doc": "lease_en"
+ },
+ {
+  "task_id": "std_en_23",
+  "language": "en",
+  "category": "standard",
+  "query": "Within how many days is the security deposit refunded after handover?",
+  "context": [
+   "OFFICE LEASE AGREEMENT between Olaya Towers Real Estate Co. (\"Landlord\") and Al-Waha Retail Co. (\"Tenant\") for Unit 14-B, signed 2024-11-20.",
+   "Olaya Towers Real Estate Co. — Confidential.",
+   "Clause 2 – Term. The lease term is 5 years starting 2025-01-01, renewable for one further term of 3 years.",
+   "Clause 3 – Rent. Annual rent is SAR 360,000, payable in four equal quarterly instalments in advance.",
+   "Clause 4 – Escalation. Rent increases by 3% at the start of each lease year from year 3 onwards.",
+   "Clause 5 – Security Deposit. The Tenant pays a security deposit equal to 2 months of rent, refundable within 60 days after handover.",
+   "Clause 6 – Parking. The Tenant is allocated 12 parking bays; additional bays cost SAR 250 per bay per month.",
+   "Clause 7 – Maintenance. The Landlord maintains the structure, lifts and central air-conditioning; the Tenant maintains the interior fit-out.",
+   "Clause 9 – Early Termination. The Tenant may terminate after year 2 with 6 months' notice and a penalty of 3 months' rent.",
+   "Olaya Towers Real Estate Co. — Confidential."
+  ],
+  "expected_answer": 60,
+  "answer_type": "number",
+  "required_facts": [
+   "60"
+  ],
+  "evidence": [
+   "refundable within 60 days after handover"
+  ],
+  "schema": null,
+  "cache_of": null,
+  "expect_cache_hit": null,
+  "doc": "lease_en"
+ },
+ {
+  "task_id": "std_en_24",
+  "language": "en",
+  "category": "standard",
+  "query": "Which courts handle disputes under the agreement?",
+  "context": [
+   "MASTER SERVICES AGREEMENT between Najd Cloud Services LLC (\"Provider\") and Al-Waha Retail Co. (\"Customer\"), effective 2025-03-01.",
+   "Najd Cloud Services LLC — Confidential. All rights reserved.",
+   "Section 2 – Fees. The Customer shall pay a monthly platform fee of SAR 48,000, invoiced on the first business day of each month. Payment is due within 30 days of the invoice date.",
+   "Section 3 – Late Payment. Overdue amounts accrue a late charge of 1.5% per month on the outstanding balance.",
+   "Section 4 – Support. Priority-1 incidents are acknowledged within 15 minutes, 24/7. Priority-2 incidents are acknowledged within 4 business hours.",
+   "Section 5 – Data Residency. All customer data shall be stored in data centres located within the Kingdom of Saudi Arabia (Riyadh and Dammam regions).",
+   "Section 6 – Service Credits. If monthly availability falls below 99.9%, the Customer receives a service credit of 10% of the monthly platform fee. If availability falls below 99.0%, the credit increases to 25% of the monthly platform fee.",
+   "Section 7 – Termination. Either party may terminate this Agreement for convenience with 90 days' written notice.",
+   "Section 8 – Governing Law. This Agreement is governed by the laws of the Kingdom of Saudi Arabia; disputes are referred to the Riyadh commercial courts.",
+   "Najd Cloud Services LLC — Confidential. All rights reserved."
+  ],
+  "expected_answer": "The Riyadh commercial courts.",
+  "answer_type": "text",
+  "required_facts": [
+   "Riyadh",
+   "commercial"
+  ],
+  "evidence": [
+   "disputes are referred to the Riyadh commercial courts"
+  ],
+  "schema": null,
+  "cache_of": null,
+  "expect_cache_hit": null,
+  "doc": "msa_en"
+ },
+ {
+  "task_id": "std_en_25",
+  "language": "en",
+  "category": "standard",
+  "query": "What is the status of invoice #INV-9120?",
+  "context": [
+   "Accounts Payable Register — Q3 2025, Al-Waha Retail Co. Prepared by the Finance Shared Services team.",
+   "Invoice #INV-8841 from Gulf Packaging Est.: amount SAR 12,400, due 2025-09-15, status unpaid. Invoice #INV-8842 from Gulf Packaging Est.: amount SAR 9,850, due 2025-09-30, status paid.",
+   "Invoice #INV-9017 from Red Sea Logistics: amount SAR 31,200, due 2025-10-05, status disputed because of a quantity mismatch against purchase order PO-5520.",
+   "VAT: all supplier invoices are subject to 15% VAT, which is already included in the amounts listed in this register unless stated otherwise.",
+   "Early payment discount: suppliers on the Preferred list (Gulf Packaging Est., Najm Office Supplies) grant a 2% discount on the invoice amount if paid within 10 days of the invoice date.",
+   "Invoice #INV-9120 from Najm Office Supplies: amount SAR 4,600, due 2025-10-12, status unpaid.",
+   "The AP team sits on the 3rd floor of Olaya Tower and can be reached at extension 4410.",
+   "Page 1 of 1 — Confidential."
+  ],
+  "expected_answer": "Unpaid.",
+  "answer_type": "text",
+  "required_facts": [
+   "unpaid"
+  ],
+  "evidence": [
+   "amount SAR 4,600, due 2025-10-12, status unpaid"
+  ],
+  "schema": null,
+  "cache_of": null,
+  "expect_cache_hit": null,
+  "doc": "ap_en"
+ },
+ {
+  "task_id": "std_en_26",
+  "language": "en",
+  "category": "standard",
+  "query": "How often must passwords be rotated?",
+  "context": [
+   "Information Security Policy — Al-Waha Retail Co., version 4.2, approved by the CISO.",
+   "Password Policy: passwords must be at least 14 characters long and rotated every 90 days. Reuse of the last 5 passwords is prohibited.",
+   "Multi-Factor Authentication: MFA is mandatory for all remote access and for every privileged account.",
+   "Incident Reporting: suspected security incidents must be reported to the Security Operations Centre (SOC) within 1 hour of detection.",
+   "Data Classification: data is classified as Public, Internal, Confidential or Restricted. Restricted data may not be stored on removable media.",
+   "Laptop Encryption: all company laptops must use full-disk encryption (BitLocker or FileVault).",
+   "Access Reviews: managers must review user access rights every quarter; privileged access is reviewed monthly.",
+   "Cafeteria opening hours are 7:30 to 15:00 on working days."
+  ],
+  "expected_answer": 90,
+  "answer_type": "number",
+  "required_facts": [
+   "90"
+  ],
+  "evidence": [
+   "rotated every 90 days"
+  ],
+  "schema": null,
+  "cache_of": null,
+  "expect_cache_hit": null,
+  "doc": "sec_en"
+ },
+ {
+  "task_id": "std_en_27",
+  "language": "en",
+  "category": "standard",
+  "query": "What is the hotel cap per night outside Riyadh, Jeddah and Dubai?",
+  "context": [
+   "Travel & Expense Policy — Al-Waha Retail Co., effective 2025-01-01.",
+   "Per diem: employees travelling domestically receive a per diem of SAR 450 per day; the international travel per diem is SAR 900 per day.",
+   "Flights: economy class is used for flights under 6 hours; business class is permitted for flights of 6 hours or longer for Grade 12 and above.",
+   "Hotel cap: hotel accommodation is reimbursed up to SAR 1,200 per night in Riyadh, Jeddah and Dubai, and up to SAR 800 per night elsewhere.",
+   "Claims must be submitted within 30 days of return, together with original receipts.",
+   "Mileage: use of a personal car for business is reimbursed at SAR 0.75 per kilometre.",
+   "Corporate cards may not be used for personal expenses under any circumstances.",
+   "This document is property of Al-Waha Retail Co. Page 1 of 2."
+  ],
+  "expected_answer": 800,
+  "answer_type": "number",
+  "required_facts": [
+   "800"
+  ],
+  "evidence": [
+   "up to SAR 800 per night elsewhere"
+  ],
+  "schema": null,
+  "cache_of": null,
+  "expect_cache_hit": null,
+  "doc": "travel_en"
+ },
+ {
+  "task_id": "std_en_28",
+  "language": "en",
+  "category": "standard",
+  "query": "To whom must suspected security incidents be reported?",
+  "context": [
+   "Information Security Policy — Al-Waha Retail Co., version 4.2, approved by the CISO.",
+   "Password Policy: passwords must be at least 14 characters long and rotated every 90 days. Reuse of the last 5 passwords is prohibited.",
+   "Multi-Factor Authentication: MFA is mandatory for all remote access and for every privileged account.",
+   "Incident Reporting: suspected security incidents must be reported to the Security Operations Centre (SOC) within 1 hour of detection.",
+   "Data Classification: data is classified as Public, Internal, Confidential or Restricted. Restricted data may not be stored on removable media.",
+   "Laptop Encryption: all company laptops must use full-disk encryption (BitLocker or FileVault).",
+   "Access Reviews: managers must review user access rights every quarter; privileged access is reviewed monthly.",
+   "Cafeteria opening hours are 7:30 to 15:00 on working days."
+  ],
+  "expected_answer": "The Security Operations Centre (SOC).",
+  "answer_type": "text",
+  "required_facts": [
+   [
+    "Security Operations Centre",
+    "Security Operations Center",
+    "SOC"
+   ]
+  ],
+  "evidence": [
+   "reported to the Security Operations Centre (SOC)"
+  ],
+  "schema": null,
+  "cache_of": null,
+  "expect_cache_hit": null,
+  "doc": "sec_en"
+ },
+ {
+  "task_id": "std_ar_08",
+  "language": "ar",
+  "category": "standard",
+  "query": "كم تبلغ ميزانية التدريب السنوية لكل موظف؟",
+  "context": [
+   "سياسة التدريب والتطوير لشركة الواحة للتجزئة — الإصدار ٢، مارس ٢٠٢٥.",
+   "المادة ١ – الميزانية: يخصص لكل موظف مبلغ تدريب سنوي قدره ٦٬٠٠٠ ريال.",
+   "المادة ٢ – الشهادات المهنية: تتحمل الشركة رسوم الشهادة المهنية الأولى بالكامل، و٥٠٪ من رسوم أي محاولة إعادة.",
+   "المادة ٣ – الالتزام بالخدمة: إذا تجاوزت تكلفة البرنامج التدريبي ٢٠٬٠٠٠ ريال يلتزم الموظف بالعمل لدى الشركة مدة ١٨ شهراً بعد انتهاء البرنامج.",
+   "المادة ٤ – الحضور: يجب ألا تقل نسبة حضور الموظف عن ٨٠٪ من ساعات البرنامج لاعتماد الشهادة.",
+   "المادة ٦ – التعلم الإلكتروني: يُطلب من كل موظف إكمال ١٢ ساعة تعلم إلكتروني على الأقل في كل ربع سنة.",
+   "المادة ٧ – الاسترداد: إذا استقال الموظف قبل انتهاء مدة الالتزام يُسترد من تكلفة البرنامج مبلغ يتناسب مع الأشهر المتبقية.",
+   "مقصف المبنى الرئيسي مفتوح من الساعة ٧ صباحاً حتى ٣ عصراً.",
+   "سري — للاستخدام الداخلي فقط."
+  ],
+  "expected_answer": 6000,
+  "answer_type": "number",
+  "required_facts": [
+   "6,000"
+  ],
+  "evidence": [
+   "مبلغ تدريب سنوي قدره ٦٬٠٠٠ ريال"
+  ],
+  "schema": null,
+  "cache_of": null,
+  "expect_cache_hit": null,
+  "doc": "training_ar"
+ },
+ {
+  "task_id": "std_ar_09",
+  "language": "ar",
+  "category": "standard",
+  "query": "ما الحد الأدنى لنسبة الحضور لاعتماد الشهادة؟",
+  "context": [
+   "سياسة التدريب والتطوير لشركة الواحة للتجزئة — الإصدار ٢، مارس ٢٠٢٥.",
+   "المادة ١ – الميزانية: يخصص لكل موظف مبلغ تدريب سنوي قدره ٦٬٠٠٠ ريال.",
+   "المادة ٢ – الشهادات المهنية: تتحمل الشركة رسوم الشهادة المهنية الأولى بالكامل، و٥٠٪ من رسوم أي محاولة إعادة.",
+   "المادة ٣ – الالتزام بالخدمة: إذا تجاوزت تكلفة البرنامج التدريبي ٢٠٬٠٠٠ ريال يلتزم الموظف بالعمل لدى الشركة مدة ١٨ شهراً بعد انتهاء البرنامج.",
+   "المادة ٤ – الحضور: يجب ألا تقل نسبة حضور الموظف عن ٨٠٪ من ساعات البرنامج لاعتماد الشهادة.",
+   "المادة ٦ – التعلم الإلكتروني: يُطلب من كل موظف إكمال ١٢ ساعة تعلم إلكتروني على الأقل في كل ربع سنة.",
+   "المادة ٧ – الاسترداد: إذا استقال الموظف قبل انتهاء مدة الالتزام يُسترد من تكلفة البرنامج مبلغ يتناسب مع الأشهر المتبقية.",
+   "مقصف المبنى الرئيسي مفتوح من الساعة ٧ صباحاً حتى ٣ عصراً.",
+   "سري — للاستخدام الداخلي فقط."
+  ],
+  "expected_answer": "٨٠٪ من ساعات البرنامج",
+  "answer_type": "text",
+  "required_facts": [
+   [
+    "80%",
+    "80"
+   ]
+  ],
+  "evidence": [
+   "عن ٨٠٪ من ساعات البرنامج"
+  ],
+  "schema": null,
+  "cache_of": null,
+  "expect_cache_hit": null,
+  "doc": "training_ar"
+ },
+ {
+  "task_id": "std_ar_10",
+  "language": "ar",
+  "category": "standard",
+  "query": "كم ساعة تعلم إلكتروني مطلوبة في كل ربع سنة؟",
+  "context": [
+   "سياسة التدريب والتطوير لشركة الواحة للتجزئة — الإصدار ٢، مارس ٢٠٢٥.",
+   "المادة ١ – الميزانية: يخصص لكل موظف مبلغ تدريب سنوي قدره ٦٬٠٠٠ ريال.",
+   "المادة ٢ – الشهادات المهنية: تتحمل الشركة رسوم الشهادة المهنية الأولى بالكامل، و٥٠٪ من رسوم أي محاولة إعادة.",
+   "المادة ٣ – الالتزام بالخدمة: إذا تجاوزت تكلفة البرنامج التدريبي ٢٠٬٠٠٠ ريال يلتزم الموظف بالعمل لدى الشركة مدة ١٨ شهراً بعد انتهاء البرنامج.",
+   "المادة ٤ – الحضور: يجب ألا تقل نسبة حضور الموظف عن ٨٠٪ من ساعات البرنامج لاعتماد الشهادة.",
+   "المادة ٦ – التعلم الإلكتروني: يُطلب من كل موظف إكمال ١٢ ساعة تعلم إلكتروني على الأقل في كل ربع سنة.",
+   "المادة ٧ – الاسترداد: إذا استقال الموظف قبل انتهاء مدة الالتزام يُسترد من تكلفة البرنامج مبلغ يتناسب مع الأشهر المتبقية.",
+   "مقصف المبنى الرئيسي مفتوح من الساعة ٧ صباحاً حتى ٣ عصراً.",
+   "سري — للاستخدام الداخلي فقط."
+  ],
+  "expected_answer": 12,
+  "answer_type": "number",
+  "required_facts": [
+   "12"
+  ],
+  "evidence": [
+   "إكمال ١٢ ساعة"
+  ],
+  "schema": null,
+  "cache_of": null,
+  "expect_cache_hit": null,
+  "doc": "training_ar"
+ },
+ {
+  "task_id": "std_ar_11",
+  "language": "ar",
+  "category": "standard",
+  "query": "ما مدة الالتزام بالخدمة بعد البرامج التدريبية المكلفة؟",
+  "context": [
+   "سياسة التدريب والتطوير لشركة الواحة للتجزئة — الإصدار ٢، مارس ٢٠٢٥.",
+   "المادة ١ – الميزانية: يخصص لكل موظف مبلغ تدريب سنوي قدره ٦٬٠٠٠ ريال.",
+   "المادة ٢ – الشهادات المهنية: تتحمل الشركة رسوم الشهادة المهنية الأولى بالكامل، و٥٠٪ من رسوم أي محاولة إعادة.",
+   "المادة ٣ – الالتزام بالخدمة: إذا تجاوزت تكلفة البرنامج التدريبي ٢٠٬٠٠٠ ريال يلتزم الموظف بالعمل لدى الشركة مدة ١٨ شهراً بعد انتهاء البرنامج.",
+   "المادة ٤ – الحضور: يجب ألا تقل نسبة حضور الموظف عن ٨٠٪ من ساعات البرنامج لاعتماد الشهادة.",
+   "المادة ٦ – التعلم الإلكتروني: يُطلب من كل موظف إكمال ١٢ ساعة تعلم إلكتروني على الأقل في كل ربع سنة.",
+   "المادة ٧ – الاسترداد: إذا استقال الموظف قبل انتهاء مدة الالتزام يُسترد من تكلفة البرنامج مبلغ يتناسب مع الأشهر المتبقية.",
+   "مقصف المبنى الرئيسي مفتوح من الساعة ٧ صباحاً حتى ٣ عصراً.",
+   "سري — للاستخدام الداخلي فقط."
+  ],
+  "expected_answer": 18,
+  "answer_type": "number",
+  "required_facts": [
+   "18"
+  ],
+  "evidence": [
+   "مدة ١٨ شهراً"
+  ],
+  "schema": null,
+  "cache_of": null,
+  "expect_cache_hit": null,
+  "doc": "training_ar"
+ },
+ {
+  "task_id": "std_ar_12",
+  "language": "ar",
+  "category": "standard",
+  "query": "كم مدة الوردية الواحدة في المستودع؟",
+  "context": [
+   "دليل إجراءات المستودع المركزي في الدمام — شركة الواحة للتجزئة، الإصدار ٤.",
+   "الورديات: يعمل المستودع بثلاث ورديات مدة كل منها ٨ ساعات، وتبدأ الوردية الأولى الساعة ٦ صباحاً.",
+   "السلامة: يُلزم جميع العاملين بارتداء الخوذة وحذاء السلامة والسترة العاكسة داخل منطقة التخزين.",
+   "الرافعات الشوكية: لا يجوز تشغيل الرافعة الشوكية إلا لحاملي رخصة تشغيل سارية، والسرعة القصوى داخل الممرات ١٠ كم/ساعة.",
+   "الجرد: يُجرى جرد دوري للأصناف عالية القيمة كل شهر، وجرد شامل لجميع الأصناف مرتين في السنة.",
+   "الاستلام: تُفحص الشحنات الواردة خلال ٤ ساعات من وصولها، ويُرفض أي صنف تالف أو غير مطابق لأمر الشراء.",
+   "التبريد: تُحفظ المواد الغذائية المبردة بين ٢ و٨ درجات مئوية، وتُسجل الحرارة كل ساعتين.",
+   "السعة: تبلغ السعة التخزينية للمستودع ٤٬٥٠٠ موقع منصة نقالة.",
+   "هذه الوثيقة ملك لشركة الواحة للتجزئة — صفحة ٢ من ٥."
+  ],
+  "expected_answer": 8,
+  "answer_type": "number",
+  "required_facts": [
+   "8"
+  ],
+  "evidence": [
+   "مدة كل منها ٨ ساعات"
+  ],
+  "schema": null,
+  "cache_of": null,
+  "expect_cache_hit": null,
+  "doc": "warehouse_ar"
+ },
+ {
+  "task_id": "std_ar_13",
+  "language": "ar",
+  "category": "standard",
+  "query": "ما السرعة القصوى للرافعات الشوكية داخل الممرات؟",
+  "context": [
+   "دليل إجراءات المستودع المركزي في الدمام — شركة الواحة للتجزئة، الإصدار ٤.",
+   "الورديات: يعمل المستودع بثلاث ورديات مدة كل منها ٨ ساعات، وتبدأ الوردية الأولى الساعة ٦ صباحاً.",
+   "السلامة: يُلزم جميع العاملين بارتداء الخوذة وحذاء السلامة والسترة العاكسة داخل منطقة التخزين.",
+   "الرافعات الشوكية: لا يجوز تشغيل الرافعة الشوكية إلا لحاملي رخصة تشغيل سارية، والسرعة القصوى داخل الممرات ١٠ كم/ساعة.",
+   "الجرد: يُجرى جرد دوري للأصناف عالية القيمة كل شهر، وجرد شامل لجميع الأصناف مرتين في السنة.",
+   "الاستلام: تُفحص الشحنات الواردة خلال ٤ ساعات من وصولها، ويُرفض أي صنف تالف أو غير مطابق لأمر الشراء.",
+   "التبريد: تُحفظ المواد الغذائية المبردة بين ٢ و٨ درجات مئوية، وتُسجل الحرارة كل ساعتين.",
+   "السعة: تبلغ السعة التخزينية للمستودع ٤٬٥٠٠ موقع منصة نقالة.",
+   "هذه الوثيقة ملك لشركة الواحة للتجزئة — صفحة ٢ من ٥."
+  ],
+  "expected_answer": 10,
+  "answer_type": "number",
+  "required_facts": [
+   "10"
+  ],
+  "evidence": [
+   "الممرات ١٠ كم/ساعة"
+  ],
+  "schema": null,
+  "cache_of": null,
+  "expect_cache_hit": null,
+  "doc": "warehouse_ar"
+ },
+ {
+  "task_id": "std_ar_14",
+  "language": "ar",
+  "category": "standard",
+  "query": "كم مرة يُجرى الجرد الشامل لجميع الأصناف؟",
+  "context": [
+   "دليل إجراءات المستودع المركزي في الدمام — شركة الواحة للتجزئة، الإصدار ٤.",
+   "الورديات: يعمل المستودع بثلاث ورديات مدة كل منها ٨ ساعات، وتبدأ الوردية الأولى الساعة ٦ صباحاً.",
+   "السلامة: يُلزم جميع العاملين بارتداء الخوذة وحذاء السلامة والسترة العاكسة داخل منطقة التخزين.",
+   "الرافعات الشوكية: لا يجوز تشغيل الرافعة الشوكية إلا لحاملي رخصة تشغيل سارية، والسرعة القصوى داخل الممرات ١٠ كم/ساعة.",
+   "الجرد: يُجرى جرد دوري للأصناف عالية القيمة كل شهر، وجرد شامل لجميع الأصناف مرتين في السنة.",
+   "الاستلام: تُفحص الشحنات الواردة خلال ٤ ساعات من وصولها، ويُرفض أي صنف تالف أو غير مطابق لأمر الشراء.",
+   "التبريد: تُحفظ المواد الغذائية المبردة بين ٢ و٨ درجات مئوية، وتُسجل الحرارة كل ساعتين.",
+   "السعة: تبلغ السعة التخزينية للمستودع ٤٬٥٠٠ موقع منصة نقالة.",
+   "هذه الوثيقة ملك لشركة الواحة للتجزئة — صفحة ٢ من ٥."
+  ],
+  "expected_answer": "مرتين في السنة",
+  "answer_type": "text",
+  "required_facts": [
+   [
+    "مرتين",
+    "مرتان",
+    "2"
+   ]
+  ],
+  "evidence": [
+   "مرتين في السنة"
+  ],
+  "schema": null,
+  "cache_of": null,
+  "expect_cache_hit": null,
+  "doc": "warehouse_ar"
+ },
+ {
+  "task_id": "std_ar_15",
+  "language": "ar",
+  "category": "standard",
+  "query": "ما السعة التخزينية للمستودع؟",
+  "context": [
+   "دليل إجراءات المستودع المركزي في الدمام — شركة الواحة للتجزئة، الإصدار ٤.",
+   "الورديات: يعمل المستودع بثلاث ورديات مدة كل منها ٨ ساعات، وتبدأ الوردية الأولى الساعة ٦ صباحاً.",
+   "السلامة: يُلزم جميع العاملين بارتداء الخوذة وحذاء السلامة والسترة العاكسة داخل منطقة التخزين.",
+   "الرافعات الشوكية: لا يجوز تشغيل الرافعة الشوكية إلا لحاملي رخصة تشغيل سارية، والسرعة القصوى داخل الممرات ١٠ كم/ساعة.",
+   "الجرد: يُجرى جرد دوري للأصناف عالية القيمة كل شهر، وجرد شامل لجميع الأصناف مرتين في السنة.",
+   "الاستلام: تُفحص الشحنات الواردة خلال ٤ ساعات من وصولها، ويُرفض أي صنف تالف أو غير مطابق لأمر الشراء.",
+   "التبريد: تُحفظ المواد الغذائية المبردة بين ٢ و٨ درجات مئوية، وتُسجل الحرارة كل ساعتين.",
+   "السعة: تبلغ السعة التخزينية للمستودع ٤٬٥٠٠ موقع منصة نقالة.",
+   "هذه الوثيقة ملك لشركة الواحة للتجزئة — صفحة ٢ من ٥."
+  ],
+  "expected_answer": 4500,
+  "answer_type": "number",
+  "required_facts": [
+   "4,500"
+  ],
+  "evidence": [
+   "٤٬٥٠٠ موقع منصة نقالة"
+  ],
+  "schema": null,
+  "cache_of": null,
+  "expect_cache_hit": null,
+  "doc": "warehouse_ar"
+ },
+ {
+  "task_id": "std_ar_16",
+  "language": "ar",
+  "category": "standard",
+  "query": "خلال كم ساعة تُفحص الشحنات الواردة؟",
+  "context": [
+   "دليل إجراءات المستودع المركزي في الدمام — شركة الواحة للتجزئة، الإصدار ٤.",
+   "الورديات: يعمل المستودع بثلاث ورديات مدة كل منها ٨ ساعات، وتبدأ الوردية الأولى الساعة ٦ صباحاً.",
+   "السلامة: يُلزم جميع العاملين بارتداء الخوذة وحذاء السلامة والسترة العاكسة داخل منطقة التخزين.",
+   "الرافعات الشوكية: لا يجوز تشغيل الرافعة الشوكية إلا لحاملي رخصة تشغيل سارية، والسرعة القصوى داخل الممرات ١٠ كم/ساعة.",
+   "الجرد: يُجرى جرد دوري للأصناف عالية القيمة كل شهر، وجرد شامل لجميع الأصناف مرتين في السنة.",
+   "الاستلام: تُفحص الشحنات الواردة خلال ٤ ساعات من وصولها، ويُرفض أي صنف تالف أو غير مطابق لأمر الشراء.",
+   "التبريد: تُحفظ المواد الغذائية المبردة بين ٢ و٨ درجات مئوية، وتُسجل الحرارة كل ساعتين.",
+   "السعة: تبلغ السعة التخزينية للمستودع ٤٬٥٠٠ موقع منصة نقالة.",
+   "هذه الوثيقة ملك لشركة الواحة للتجزئة — صفحة ٢ من ٥."
+  ],
+  "expected_answer": 4,
+  "answer_type": "number",
+  "required_facts": [
+   "4"
+  ],
+  "evidence": [
+   "خلال ٤ ساعات من وصولها"
+  ],
+  "schema": null,
+  "cache_of": null,
+  "expect_cache_hit": null,
+  "doc": "warehouse_ar"
+ },
+ {
+  "task_id": "std_ar_17",
+  "language": "ar",
+  "category": "standard",
+  "query": "كم نسبة الأجر المدفوعة في الإجازة المرضية بعد أول ٣٠ يوماً؟",
+  "context": [
+   "سياسة الموارد البشرية لشركة الواحة للتجزئة — الإصدار ٣، يناير ٢٠٢٥.",
+   "سري للغاية — جميع الحقوق محفوظة لشركة الواحة للتجزئة.",
+   "المادة ٤ – الإجازة السنوية: يستحق الموظف إجازة سنوية مدفوعة الأجر مدتها ٢١ يوماً، تزداد إلى ٣٠ يوماً بعد إتمام خمس سنوات من الخدمة المتصلة.",
+   "المادة ٥ – الإجازة المرضية: تُدفع الإجازة المرضية بالأجر الكامل لأول ٣٠ يوماً، ثم بثلاثة أرباع الأجر للـ ٦٠ يوماً التالية.",
+   "المادة ٦ – بدل السكن: يُصرف للموظف بدل سكن يعادل ٢٥٪ من الراتب الأساسي، ويُدفع شهرياً مع الراتب.",
+   "المادة ٧ – بدل النقل: يُصرف بدل نقل ثابت قدره ٨٠٠ ريال شهرياً لجميع الموظفين.",
+   "المادة ٩ – العمل عن بُعد: يجوز للموظف العمل عن بُعد بحد أقصى يومين في الأسبوع بعد موافقة المدير المباشر.",
+   "المادة ١٢ – فترة التجربة: تكون فترة التجربة ٩٠ يوماً، ويجوز تمديدها مرة واحدة بموافقة كتابية.",
+   "سري للغاية — جميع الحقوق محفوظة لشركة الواحة للتجزئة."
+  ],
+  "expected_answer": "ثلاثة أرباع الأجر",
+  "answer_type": "text",
+  "required_facts": [
+   [
+    "ثلاثة أرباع",
+    "ثلاثه ارباع",
+    "75%",
+    "3/4"
+   ]
+  ],
+  "evidence": [
+   "بثلاثة أرباع الأجر"
+  ],
+  "schema": null,
+  "cache_of": null,
+  "expect_cache_hit": null,
+  "doc": "hr_ar"
+ },
+ {
+  "task_id": "std_ar_18",
+  "language": "ar",
+  "category": "standard",
+  "query": "ما اللغة المعتمدة عند الاختلاف بين نصي العقد؟",
+  "context": [
+   "عقد توريد بين شركة الواحة للتجزئة ومؤسسة الخليج للتغليف، حُرر في الرياض بتاريخ ٢٠٢٥/٠٢/١٠.",
+   "البند ٣ – قيمة العقد: القيمة الإجمالية لأمر الشراء PO-7310 هي ٢٤٠٬٠٠٠ ريال سعودي، وقيمة أمر الشراء الملحق PO-7311 هي ٣٦٬٥٠٠ ريال سعودي، غير شاملة ضريبة القيمة المضافة.",
+   "البند ٥ – مدة التوريد: يلتزم المورد بتسليم الطلبات خلال ١٤ يوم عمل من تاريخ أمر الشراء.",
+   "البند ٨ – غرامة التأخير: في حال تأخر التسليم تُفرض غرامة قدرها ٠٫٥٪ من قيمة أمر الشراء PO-7310 عن كل يوم تأخير، بحد أقصى ١٠٪ من قيمة العقد.",
+   "البند ١٠ – الضمان: يضمن المورد المنتجات ضد عيوب التصنيع لمدة ١٢ شهراً من تاريخ الاستلام.",
+   "البند ١١ – الدفع: تُسدد الفواتير خلال ٤٥ يوماً من تاريخ استلام الفاتورة المعتمدة.",
+   "البند ١٥ – اللغة: حُرر هذا العقد باللغتين العربية والإنجليزية، ويُعتمد النص العربي عند الاختلاف.",
+   "هذه الوثيقة ملك لشركة الواحة للتجزئة — صفحة ١ من ٣."
+  ],
+  "expected_answer": "العربية",
+  "answer_type": "text",
+  "required_facts": [
+   "العربي"
+  ],
+  "evidence": [
+   "ويُعتمد النص العربي عند الاختلاف"
+  ],
+  "schema": null,
+  "cache_of": null,
+  "expect_cache_hit": null,
+  "doc": "proc_ar"
+ },
+ {
+  "task_id": "std_ar_19",
+  "language": "ar",
+  "category": "standard",
+  "query": "ما قيمة أمر الشراء الملحق PO-7311؟",
+  "context": [
+   "عقد توريد بين شركة الواحة للتجزئة ومؤسسة الخليج للتغليف، حُرر في الرياض بتاريخ ٢٠٢٥/٠٢/١٠.",
+   "البند ٣ – قيمة العقد: القيمة الإجمالية لأمر الشراء PO-7310 هي ٢٤٠٬٠٠٠ ريال سعودي، وقيمة أمر الشراء الملحق PO-7311 هي ٣٦٬٥٠٠ ريال سعودي، غير شاملة ضريبة القيمة المضافة.",
+   "البند ٥ – مدة التوريد: يلتزم المورد بتسليم الطلبات خلال ١٤ يوم عمل من تاريخ أمر الشراء.",
+   "البند ٨ – غرامة التأخير: في حال تأخر التسليم تُفرض غرامة قدرها ٠٫٥٪ من قيمة أمر الشراء PO-7310 عن كل يوم تأخير، بحد أقصى ١٠٪ من قيمة العقد.",
+   "البند ١٠ – الضمان: يضمن المورد المنتجات ضد عيوب التصنيع لمدة ١٢ شهراً من تاريخ الاستلام.",
+   "البند ١١ – الدفع: تُسدد الفواتير خلال ٤٥ يوماً من تاريخ استلام الفاتورة المعتمدة.",
+   "البند ١٥ – اللغة: حُرر هذا العقد باللغتين العربية والإنجليزية، ويُعتمد النص العربي عند الاختلاف.",
+   "هذه الوثيقة ملك لشركة الواحة للتجزئة — صفحة ١ من ٣."
+  ],
+  "expected_answer": 36500,
+  "answer_type": "number",
+  "required_facts": [
+   "36,500"
+  ],
+  "evidence": [
+   "هي ٣٦٬٥٠٠ ريال سعودي"
+  ],
+  "schema": null,
+  "cache_of": null,
+  "expect_cache_hit": null,
+  "doc": "proc_ar"
+ },
+ {
+  "task_id": "std_ar_20",
+  "language": "ar",
+  "category": "standard",
+  "query": "ما قيمة الخصم الذي تعادله ١٠٠ نقطة؟",
+  "context": [
+   "سياسة الإرجاع والاستبدال لمتاجر الواحة — سارية من ١ مارس ٢٠٢٥.",
+   "يحق للعميل إرجاع المنتجات غير المستخدمة خلال ١٤ يوماً من تاريخ الشراء مع تقديم الفاتورة الأصلية.",
+   "تُسترد المبالغ إلى وسيلة الدفع الأصلية خلال ٧ أيام عمل من استلام المنتج المرتجع.",
+   "لا تشمل سياسة الإرجاع المنتجات المخفضة بنسبة ٥٠٪ أو أكثر، ولا المواد الغذائية، ولا البطاقات مسبقة الدفع.",
+   "رسوم شحن الإرجاع: مجانية للطلبات التي تزيد قيمتها على ٣٠٠ ريال، و٢٥ ريالاً للطلبات الأقل من ذلك.",
+   "برنامج الولاء: يحصل العميل على نقطة واحدة لكل ١٠ ريالات يتم إنفاقها، وتعادل كل ١٠٠ نقطة خصماً بقيمة ٥ ريالات.",
+   "جميع الحقوق محفوظة لمتاجر الواحة."
+  ],
+  "expected_answer": 5,
+  "answer_type": "number",
+  "required_facts": [
+   "5"
+  ],
+  "evidence": [
+   "خصماً بقيمة ٥ ريالات"
+  ],
+  "schema": null,
+  "cache_of": null,
+  "expect_cache_hit": null,
+  "doc": "returns_ar"
+ },
+ {
+  "task_id": "std_ar_21",
+  "language": "ar",
+  "category": "standard",
+  "query": "ما الحد الأدنى لقيمة الطلب ليكون شحن الإرجاع مجانياً؟",
+  "context": [
+   "سياسة الإرجاع والاستبدال لمتاجر الواحة — سارية من ١ مارس ٢٠٢٥.",
+   "يحق للعميل إرجاع المنتجات غير المستخدمة خلال ١٤ يوماً من تاريخ الشراء مع تقديم الفاتورة الأصلية.",
+   "تُسترد المبالغ إلى وسيلة الدفع الأصلية خلال ٧ أيام عمل من استلام المنتج المرتجع.",
+   "لا تشمل سياسة الإرجاع المنتجات المخفضة بنسبة ٥٠٪ أو أكثر، ولا المواد الغذائية، ولا البطاقات مسبقة الدفع.",
+   "رسوم شحن الإرجاع: مجانية للطلبات التي تزيد قيمتها على ٣٠٠ ريال، و٢٥ ريالاً للطلبات الأقل من ذلك.",
+   "برنامج الولاء: يحصل العميل على نقطة واحدة لكل ١٠ ريالات يتم إنفاقها، وتعادل كل ١٠٠ نقطة خصماً بقيمة ٥ ريالات.",
+   "جميع الحقوق محفوظة لمتاجر الواحة."
+  ],
+  "expected_answer": 300,
+  "answer_type": "number",
+  "required_facts": [
+   "300"
+  ],
+  "evidence": [
+   "تزيد قيمتها على ٣٠٠ ريال"
+  ],
+  "schema": null,
+  "cache_of": null,
+  "expect_cache_hit": null,
+  "doc": "returns_ar"
+ },
+ {
+  "task_id": "std_ar_22",
+  "language": "ar",
+  "category": "standard",
+  "query": "ما درجة حرارة حفظ المواد الغذائية المبردة؟",
+  "context": [
+   "دليل إجراءات المستودع المركزي في الدمام — شركة الواحة للتجزئة، الإصدار ٤.",
+   "الورديات: يعمل المستودع بثلاث ورديات مدة كل منها ٨ ساعات، وتبدأ الوردية الأولى الساعة ٦ صباحاً.",
+   "السلامة: يُلزم جميع العاملين بارتداء الخوذة وحذاء السلامة والسترة العاكسة داخل منطقة التخزين.",
+   "الرافعات الشوكية: لا يجوز تشغيل الرافعة الشوكية إلا لحاملي رخصة تشغيل سارية، والسرعة القصوى داخل الممرات ١٠ كم/ساعة.",
+   "الجرد: يُجرى جرد دوري للأصناف عالية القيمة كل شهر، وجرد شامل لجميع الأصناف مرتين في السنة.",
+   "الاستلام: تُفحص الشحنات الواردة خلال ٤ ساعات من وصولها، ويُرفض أي صنف تالف أو غير مطابق لأمر الشراء.",
+   "التبريد: تُحفظ المواد الغذائية المبردة بين ٢ و٨ درجات مئوية، وتُسجل الحرارة كل ساعتين.",
+   "السعة: تبلغ السعة التخزينية للمستودع ٤٬٥٠٠ موقع منصة نقالة.",
+   "هذه الوثيقة ملك لشركة الواحة للتجزئة — صفحة ٢ من ٥."
+  ],
+  "expected_answer": "بين ٢ و٨ درجات مئوية",
+  "answer_type": "text",
+  "required_facts": [
+   "2",
+   "8"
+  ],
+  "evidence": [
+   "بين ٢ و٨ درجات مئوية"
+  ],
+  "schema": null,
+  "cache_of": null,
+  "expect_cache_hit": null,
+  "doc": "warehouse_ar"
+ },
+ {
   "task_id": "llo_en_01",
   "language": "en",
   "category": "low_lexical_overlap",
@@ -1076,5 +1965,914 @@
   "cache_of": "mh_ar_01",
   "expect_cache_hit": false,
   "doc": "proc_ar"
+ },
+ {
+  "task_id": "llo_en_04",
+  "language": "en",
+  "category": "low_lexical_overlap",
+  "query": "If I crash the company car, how long do I have to tell someone?",
+  "context": [
+   "Fleet & Vehicle Policy — Al-Waha Retail Co., version 2.1, effective 2025-04-01.",
+   "Eligibility: company cars are assigned to employees in Grade 10 and above and to field sales staff.",
+   "Fuel: fuel is reimbursed up to SAR 1,100 per month for assigned vehicles; fuel cards must not be shared.",
+   "Replacement: vehicles are replaced after 4 years or 120,000 km, whichever comes first.",
+   "Traffic fines: the driver is personally responsible for traffic fines; fines paid by the company are deducted from the next salary.",
+   "Accidents: any accident must be reported to the Fleet Office within 24 hours, together with the Najm accident report.",
+   "Private use: limited private use is allowed within the Kingdom; cross-border trips require written approval from the Fleet Manager.",
+   "Insurance: all fleet vehicles carry comprehensive insurance with a deductible of SAR 2,000 per claim, paid by the company for the first claim in a year and by the driver for any further claim in the same year.",
+   "Fleet Office, Building C, ground floor. Page 1 of 1."
+  ],
+  "expected_answer": "Within 24 hours, to the Fleet Office, with the Najm report.",
+  "answer_type": "text",
+  "required_facts": [
+   [
+    "24 hours",
+    "24 hrs",
+    "one day",
+    "1 day"
+   ]
+  ],
+  "evidence": [
+   "within 24 hours"
+  ],
+  "schema": null,
+  "cache_of": null,
+  "expect_cache_hit": null,
+  "doc": "fleet_en"
+ },
+ {
+  "task_id": "llo_en_05",
+  "language": "en",
+  "category": "low_lexical_overlap",
+  "query": "How much cash do we have to park with the landlord up front as a guarantee?",
+  "context": [
+   "OFFICE LEASE AGREEMENT between Olaya Towers Real Estate Co. (\"Landlord\") and Al-Waha Retail Co. (\"Tenant\") for Unit 14-B, signed 2024-11-20.",
+   "Olaya Towers Real Estate Co. — Confidential.",
+   "Clause 2 – Term. The lease term is 5 years starting 2025-01-01, renewable for one further term of 3 years.",
+   "Clause 3 – Rent. Annual rent is SAR 360,000, payable in four equal quarterly instalments in advance.",
+   "Clause 4 – Escalation. Rent increases by 3% at the start of each lease year from year 3 onwards.",
+   "Clause 5 – Security Deposit. The Tenant pays a security deposit equal to 2 months of rent, refundable within 60 days after handover.",
+   "Clause 6 – Parking. The Tenant is allocated 12 parking bays; additional bays cost SAR 250 per bay per month.",
+   "Clause 7 – Maintenance. The Landlord maintains the structure, lifts and central air-conditioning; the Tenant maintains the interior fit-out.",
+   "Clause 9 – Early Termination. The Tenant may terminate after year 2 with 6 months' notice and a penalty of 3 months' rent.",
+   "Olaya Towers Real Estate Co. — Confidential."
+  ],
+  "expected_answer": "Two months of rent (SAR 60,000).",
+  "answer_type": "text",
+  "required_facts": [
+   [
+    "2 months",
+    "two months",
+    "60,000"
+   ]
+  ],
+  "evidence": [
+   "security deposit equal to 2 months of rent"
+  ],
+  "schema": null,
+  "cache_of": null,
+  "expect_cache_hit": null,
+  "doc": "lease_en"
+ },
+ {
+  "task_id": "llo_en_06",
+  "language": "en",
+  "category": "low_lexical_overlap",
+  "query": "Can I drive the company car to Bahrain for the weekend?",
+  "context": [
+   "Fleet & Vehicle Policy — Al-Waha Retail Co., version 2.1, effective 2025-04-01.",
+   "Eligibility: company cars are assigned to employees in Grade 10 and above and to field sales staff.",
+   "Fuel: fuel is reimbursed up to SAR 1,100 per month for assigned vehicles; fuel cards must not be shared.",
+   "Replacement: vehicles are replaced after 4 years or 120,000 km, whichever comes first.",
+   "Traffic fines: the driver is personally responsible for traffic fines; fines paid by the company are deducted from the next salary.",
+   "Accidents: any accident must be reported to the Fleet Office within 24 hours, together with the Najm accident report.",
+   "Private use: limited private use is allowed within the Kingdom; cross-border trips require written approval from the Fleet Manager.",
+   "Insurance: all fleet vehicles carry comprehensive insurance with a deductible of SAR 2,000 per claim, paid by the company for the first claim in a year and by the driver for any further claim in the same year.",
+   "Fleet Office, Building C, ground floor. Page 1 of 1."
+  ],
+  "expected_answer": "Only with written approval from the Fleet Manager.",
+  "answer_type": "text",
+  "required_facts": [
+   "approval"
+  ],
+  "evidence": [
+   "cross-border trips require written approval from the Fleet Manager"
+  ],
+  "schema": null,
+  "cache_of": null,
+  "expect_cache_hit": null,
+  "doc": "fleet_en"
+ },
+ {
+  "task_id": "llo_en_07",
+  "language": "en",
+  "category": "low_lexical_overlap",
+  "query": "Can I put a family dinner on the company credit card?",
+  "context": [
+   "Travel & Expense Policy — Al-Waha Retail Co., effective 2025-01-01.",
+   "Per diem: employees travelling domestically receive a per diem of SAR 450 per day; the international travel per diem is SAR 900 per day.",
+   "Flights: economy class is used for flights under 6 hours; business class is permitted for flights of 6 hours or longer for Grade 12 and above.",
+   "Hotel cap: hotel accommodation is reimbursed up to SAR 1,200 per night in Riyadh, Jeddah and Dubai, and up to SAR 800 per night elsewhere.",
+   "Claims must be submitted within 30 days of return, together with original receipts.",
+   "Mileage: use of a personal car for business is reimbursed at SAR 0.75 per kilometre.",
+   "Corporate cards may not be used for personal expenses under any circumstances.",
+   "This document is property of Al-Waha Retail Co. Page 1 of 2."
+  ],
+  "expected_answer": "No. Corporate cards may not be used for personal expenses.",
+  "answer_type": "text",
+  "required_facts": [
+   [
+    "no",
+    "not",
+    "cannot",
+    "prohibited"
+   ],
+   "personal"
+  ],
+  "evidence": [
+   "may not be used for personal expenses"
+  ],
+  "schema": null,
+  "cache_of": null,
+  "expect_cache_hit": null,
+  "doc": "travel_en"
+ },
+ {
+  "task_id": "llo_ar_02",
+  "language": "ar",
+  "category": "low_lexical_overlap",
+  "query": "إذا تركت الشركة بعد دورة غالية، هل علي أن أدفع شيئاً؟",
+  "context": [
+   "سياسة التدريب والتطوير لشركة الواحة للتجزئة — الإصدار ٢، مارس ٢٠٢٥.",
+   "المادة ١ – الميزانية: يخصص لكل موظف مبلغ تدريب سنوي قدره ٦٬٠٠٠ ريال.",
+   "المادة ٢ – الشهادات المهنية: تتحمل الشركة رسوم الشهادة المهنية الأولى بالكامل، و٥٠٪ من رسوم أي محاولة إعادة.",
+   "المادة ٣ – الالتزام بالخدمة: إذا تجاوزت تكلفة البرنامج التدريبي ٢٠٬٠٠٠ ريال يلتزم الموظف بالعمل لدى الشركة مدة ١٨ شهراً بعد انتهاء البرنامج.",
+   "المادة ٤ – الحضور: يجب ألا تقل نسبة حضور الموظف عن ٨٠٪ من ساعات البرنامج لاعتماد الشهادة.",
+   "المادة ٦ – التعلم الإلكتروني: يُطلب من كل موظف إكمال ١٢ ساعة تعلم إلكتروني على الأقل في كل ربع سنة.",
+   "المادة ٧ – الاسترداد: إذا استقال الموظف قبل انتهاء مدة الالتزام يُسترد من تكلفة البرنامج مبلغ يتناسب مع الأشهر المتبقية.",
+   "مقصف المبنى الرئيسي مفتوح من الساعة ٧ صباحاً حتى ٣ عصراً.",
+   "سري — للاستخدام الداخلي فقط."
+  ],
+  "expected_answer": "نعم، يُسترد من تكلفة البرنامج مبلغ يتناسب مع الأشهر المتبقية من مدة الالتزام.",
+  "answer_type": "text",
+  "required_facts": [
+   [
+    "يسترد",
+    "استرداد",
+    "يتناسب",
+    "المتبقية"
+   ]
+  ],
+  "evidence": [
+   "يُسترد من تكلفة البرنامج مبلغ يتناسب مع"
+  ],
+  "schema": null,
+  "cache_of": null,
+  "expect_cache_hit": null,
+  "doc": "training_ar"
+ },
+ {
+  "task_id": "llo_ar_03",
+  "language": "ar",
+  "category": "low_lexical_overlap",
+  "query": "ماذا أرتدي قبل دخول منطقة الرفوف؟",
+  "context": [
+   "دليل إجراءات المستودع المركزي في الدمام — شركة الواحة للتجزئة، الإصدار ٤.",
+   "الورديات: يعمل المستودع بثلاث ورديات مدة كل منها ٨ ساعات، وتبدأ الوردية الأولى الساعة ٦ صباحاً.",
+   "السلامة: يُلزم جميع العاملين بارتداء الخوذة وحذاء السلامة والسترة العاكسة داخل منطقة التخزين.",
+   "الرافعات الشوكية: لا يجوز تشغيل الرافعة الشوكية إلا لحاملي رخصة تشغيل سارية، والسرعة القصوى داخل الممرات ١٠ كم/ساعة.",
+   "الجرد: يُجرى جرد دوري للأصناف عالية القيمة كل شهر، وجرد شامل لجميع الأصناف مرتين في السنة.",
+   "الاستلام: تُفحص الشحنات الواردة خلال ٤ ساعات من وصولها، ويُرفض أي صنف تالف أو غير مطابق لأمر الشراء.",
+   "التبريد: تُحفظ المواد الغذائية المبردة بين ٢ و٨ درجات مئوية، وتُسجل الحرارة كل ساعتين.",
+   "السعة: تبلغ السعة التخزينية للمستودع ٤٬٥٠٠ موقع منصة نقالة.",
+   "هذه الوثيقة ملك لشركة الواحة للتجزئة — صفحة ٢ من ٥."
+  ],
+  "expected_answer": "الخوذة وحذاء السلامة والسترة العاكسة.",
+  "answer_type": "text",
+  "required_facts": [
+   "خوذ",
+   "حذاء"
+  ],
+  "evidence": [
+   "بارتداء الخوذة وحذاء السلامة والسترة العاكسة"
+  ],
+  "schema": null,
+  "cache_of": null,
+  "expect_cache_hit": null,
+  "doc": "warehouse_ar"
+ },
+ {
+  "task_id": "llo_ar_04",
+  "language": "ar",
+  "category": "low_lexical_overlap",
+  "query": "كم يعطوني فلوس للمواصلات كل شهر؟",
+  "context": [
+   "سياسة الموارد البشرية لشركة الواحة للتجزئة — الإصدار ٣، يناير ٢٠٢٥.",
+   "سري للغاية — جميع الحقوق محفوظة لشركة الواحة للتجزئة.",
+   "المادة ٤ – الإجازة السنوية: يستحق الموظف إجازة سنوية مدفوعة الأجر مدتها ٢١ يوماً، تزداد إلى ٣٠ يوماً بعد إتمام خمس سنوات من الخدمة المتصلة.",
+   "المادة ٥ – الإجازة المرضية: تُدفع الإجازة المرضية بالأجر الكامل لأول ٣٠ يوماً، ثم بثلاثة أرباع الأجر للـ ٦٠ يوماً التالية.",
+   "المادة ٦ – بدل السكن: يُصرف للموظف بدل سكن يعادل ٢٥٪ من الراتب الأساسي، ويُدفع شهرياً مع الراتب.",
+   "المادة ٧ – بدل النقل: يُصرف بدل نقل ثابت قدره ٨٠٠ ريال شهرياً لجميع الموظفين.",
+   "المادة ٩ – العمل عن بُعد: يجوز للموظف العمل عن بُعد بحد أقصى يومين في الأسبوع بعد موافقة المدير المباشر.",
+   "المادة ١٢ – فترة التجربة: تكون فترة التجربة ٩٠ يوماً، ويجوز تمديدها مرة واحدة بموافقة كتابية.",
+   "سري للغاية — جميع الحقوق محفوظة لشركة الواحة للتجزئة."
+  ],
+  "expected_answer": 800,
+  "answer_type": "number",
+  "required_facts": [
+   "800"
+  ],
+  "evidence": [
+   "بدل نقل ثابت قدره ٨٠٠ ريال"
+  ],
+  "schema": null,
+  "cache_of": null,
+  "expect_cache_hit": null,
+  "doc": "hr_ar"
+ },
+ {
+  "task_id": "llo_ar_05",
+  "language": "ar",
+  "category": "low_lexical_overlap",
+  "query": "اشتريت شيئاً ولم أفتحه، كم لدي من الوقت لأعيده؟",
+  "context": [
+   "سياسة الإرجاع والاستبدال لمتاجر الواحة — سارية من ١ مارس ٢٠٢٥.",
+   "يحق للعميل إرجاع المنتجات غير المستخدمة خلال ١٤ يوماً من تاريخ الشراء مع تقديم الفاتورة الأصلية.",
+   "تُسترد المبالغ إلى وسيلة الدفع الأصلية خلال ٧ أيام عمل من استلام المنتج المرتجع.",
+   "لا تشمل سياسة الإرجاع المنتجات المخفضة بنسبة ٥٠٪ أو أكثر، ولا المواد الغذائية، ولا البطاقات مسبقة الدفع.",
+   "رسوم شحن الإرجاع: مجانية للطلبات التي تزيد قيمتها على ٣٠٠ ريال، و٢٥ ريالاً للطلبات الأقل من ذلك.",
+   "برنامج الولاء: يحصل العميل على نقطة واحدة لكل ١٠ ريالات يتم إنفاقها، وتعادل كل ١٠٠ نقطة خصماً بقيمة ٥ ريالات.",
+   "جميع الحقوق محفوظة لمتاجر الواحة."
+  ],
+  "expected_answer": 14,
+  "answer_type": "number",
+  "required_facts": [
+   "14"
+  ],
+  "evidence": [
+   "خلال ١٤ يوماً من تاريخ الشراء"
+  ],
+  "schema": null,
+  "cache_of": null,
+  "expect_cache_hit": null,
+  "doc": "returns_ar"
+ },
+ {
+  "task_id": "mh_en_04",
+  "language": "en",
+  "category": "multi_hop",
+  "query": "Calculate the annual rent in year 3 after the escalation.",
+  "context": [
+   "OFFICE LEASE AGREEMENT between Olaya Towers Real Estate Co. (\"Landlord\") and Al-Waha Retail Co. (\"Tenant\") for Unit 14-B, signed 2024-11-20.",
+   "Olaya Towers Real Estate Co. — Confidential.",
+   "Clause 2 – Term. The lease term is 5 years starting 2025-01-01, renewable for one further term of 3 years.",
+   "Clause 3 – Rent. Annual rent is SAR 360,000, payable in four equal quarterly instalments in advance.",
+   "Clause 4 – Escalation. Rent increases by 3% at the start of each lease year from year 3 onwards.",
+   "Clause 5 – Security Deposit. The Tenant pays a security deposit equal to 2 months of rent, refundable within 60 days after handover.",
+   "Clause 6 – Parking. The Tenant is allocated 12 parking bays; additional bays cost SAR 250 per bay per month.",
+   "Clause 7 – Maintenance. The Landlord maintains the structure, lifts and central air-conditioning; the Tenant maintains the interior fit-out.",
+   "Clause 9 – Early Termination. The Tenant may terminate after year 2 with 6 months' notice and a penalty of 3 months' rent.",
+   "Olaya Towers Real Estate Co. — Confidential."
+  ],
+  "expected_answer": 370800,
+  "answer_type": "number",
+  "required_facts": [
+   "370,800"
+  ],
+  "evidence": [
+   "Annual rent is SAR 360,000",
+   "increases by 3%"
+  ],
+  "schema": null,
+  "cache_of": null,
+  "expect_cache_hit": null,
+  "doc": "lease_en"
+ },
+ {
+  "task_id": "mh_en_05",
+  "language": "en",
+  "category": "multi_hop",
+  "query": "Calculate the early termination penalty in SAR.",
+  "context": [
+   "OFFICE LEASE AGREEMENT between Olaya Towers Real Estate Co. (\"Landlord\") and Al-Waha Retail Co. (\"Tenant\") for Unit 14-B, signed 2024-11-20.",
+   "Olaya Towers Real Estate Co. — Confidential.",
+   "Clause 2 – Term. The lease term is 5 years starting 2025-01-01, renewable for one further term of 3 years.",
+   "Clause 3 – Rent. Annual rent is SAR 360,000, payable in four equal quarterly instalments in advance.",
+   "Clause 4 – Escalation. Rent increases by 3% at the start of each lease year from year 3 onwards.",
+   "Clause 5 – Security Deposit. The Tenant pays a security deposit equal to 2 months of rent, refundable within 60 days after handover.",
+   "Clause 6 – Parking. The Tenant is allocated 12 parking bays; additional bays cost SAR 250 per bay per month.",
+   "Clause 7 – Maintenance. The Landlord maintains the structure, lifts and central air-conditioning; the Tenant maintains the interior fit-out.",
+   "Clause 9 – Early Termination. The Tenant may terminate after year 2 with 6 months' notice and a penalty of 3 months' rent.",
+   "Olaya Towers Real Estate Co. — Confidential."
+  ],
+  "expected_answer": 90000,
+  "answer_type": "number",
+  "required_facts": [
+   "90,000"
+  ],
+  "evidence": [
+   "Annual rent is SAR 360,000",
+   "a penalty of 3 months' rent"
+  ],
+  "schema": null,
+  "cache_of": null,
+  "expect_cache_hit": null,
+  "doc": "lease_en"
+ },
+ {
+  "task_id": "mh_en_06",
+  "language": "en",
+  "category": "multi_hop",
+  "query": "Calculate the total deductible the driver pays if a vehicle has 3 insurance claims in one year.",
+  "context": [
+   "Fleet & Vehicle Policy — Al-Waha Retail Co., version 2.1, effective 2025-04-01.",
+   "Eligibility: company cars are assigned to employees in Grade 10 and above and to field sales staff.",
+   "Fuel: fuel is reimbursed up to SAR 1,100 per month for assigned vehicles; fuel cards must not be shared.",
+   "Replacement: vehicles are replaced after 4 years or 120,000 km, whichever comes first.",
+   "Traffic fines: the driver is personally responsible for traffic fines; fines paid by the company are deducted from the next salary.",
+   "Accidents: any accident must be reported to the Fleet Office within 24 hours, together with the Najm accident report.",
+   "Private use: limited private use is allowed within the Kingdom; cross-border trips require written approval from the Fleet Manager.",
+   "Insurance: all fleet vehicles carry comprehensive insurance with a deductible of SAR 2,000 per claim, paid by the company for the first claim in a year and by the driver for any further claim in the same year.",
+   "Fleet Office, Building C, ground floor. Page 1 of 1."
+  ],
+  "expected_answer": 4000,
+  "answer_type": "number",
+  "required_facts": [
+   "4,000"
+  ],
+  "evidence": [
+   "deductible of SAR 2,000 per claim",
+   "by the driver for any further claim"
+  ],
+  "schema": null,
+  "cache_of": null,
+  "expect_cache_hit": null,
+  "doc": "fleet_en"
+ },
+ {
+  "task_id": "mh_en_07",
+  "language": "en",
+  "category": "multi_hop",
+  "query": "Calculate the total amount of all unpaid invoices in the register.",
+  "context": [
+   "Accounts Payable Register — Q3 2025, Al-Waha Retail Co. Prepared by the Finance Shared Services team.",
+   "Invoice #INV-8841 from Gulf Packaging Est.: amount SAR 12,400, due 2025-09-15, status unpaid. Invoice #INV-8842 from Gulf Packaging Est.: amount SAR 9,850, due 2025-09-30, status paid.",
+   "Invoice #INV-9017 from Red Sea Logistics: amount SAR 31,200, due 2025-10-05, status disputed because of a quantity mismatch against purchase order PO-5520.",
+   "VAT: all supplier invoices are subject to 15% VAT, which is already included in the amounts listed in this register unless stated otherwise.",
+   "Early payment discount: suppliers on the Preferred list (Gulf Packaging Est., Najm Office Supplies) grant a 2% discount on the invoice amount if paid within 10 days of the invoice date.",
+   "Invoice #INV-9120 from Najm Office Supplies: amount SAR 4,600, due 2025-10-12, status unpaid.",
+   "The AP team sits on the 3rd floor of Olaya Tower and can be reached at extension 4410.",
+   "Page 1 of 1 — Confidential."
+  ],
+  "expected_answer": 17000,
+  "answer_type": "number",
+  "required_facts": [
+   "17,000"
+  ],
+  "evidence": [
+   "amount SAR 12,400",
+   "amount SAR 4,600"
+  ],
+  "schema": null,
+  "cache_of": null,
+  "expect_cache_hit": null,
+  "doc": "ap_en"
+ },
+ {
+  "task_id": "mh_ar_02",
+  "language": "ar",
+  "category": "multi_hop",
+  "query": "احسب المبلغ الذي تتحمله الشركة إذا كانت رسوم الشهادة ٣٬٠٠٠ ريال واحتاج الموظف إلى محاولة إعادة واحدة.",
+  "context": [
+   "سياسة التدريب والتطوير لشركة الواحة للتجزئة — الإصدار ٢، مارس ٢٠٢٥.",
+   "المادة ١ – الميزانية: يخصص لكل موظف مبلغ تدريب سنوي قدره ٦٬٠٠٠ ريال.",
+   "المادة ٢ – الشهادات المهنية: تتحمل الشركة رسوم الشهادة المهنية الأولى بالكامل، و٥٠٪ من رسوم أي محاولة إعادة.",
+   "المادة ٣ – الالتزام بالخدمة: إذا تجاوزت تكلفة البرنامج التدريبي ٢٠٬٠٠٠ ريال يلتزم الموظف بالعمل لدى الشركة مدة ١٨ شهراً بعد انتهاء البرنامج.",
+   "المادة ٤ – الحضور: يجب ألا تقل نسبة حضور الموظف عن ٨٠٪ من ساعات البرنامج لاعتماد الشهادة.",
+   "المادة ٦ – التعلم الإلكتروني: يُطلب من كل موظف إكمال ١٢ ساعة تعلم إلكتروني على الأقل في كل ربع سنة.",
+   "المادة ٧ – الاسترداد: إذا استقال الموظف قبل انتهاء مدة الالتزام يُسترد من تكلفة البرنامج مبلغ يتناسب مع الأشهر المتبقية.",
+   "مقصف المبنى الرئيسي مفتوح من الساعة ٧ صباحاً حتى ٣ عصراً.",
+   "سري — للاستخدام الداخلي فقط."
+  ],
+  "expected_answer": 4500,
+  "answer_type": "number",
+  "required_facts": [
+   "4,500"
+  ],
+  "evidence": [
+   "رسوم الشهادة المهنية الأولى بالكامل",
+   "و٥٠٪ من رسوم"
+  ],
+  "schema": null,
+  "cache_of": null,
+  "expect_cache_hit": null,
+  "doc": "training_ar"
+ },
+ {
+  "task_id": "mh_ar_03",
+  "language": "ar",
+  "category": "multi_hop",
+  "query": "احسب مجموع بدل السكن وبدل النقل الشهري لموظف راتبه الأساسي ١٢٬٠٠٠ ريال.",
+  "context": [
+   "سياسة الموارد البشرية لشركة الواحة للتجزئة — الإصدار ٣، يناير ٢٠٢٥.",
+   "سري للغاية — جميع الحقوق محفوظة لشركة الواحة للتجزئة.",
+   "المادة ٤ – الإجازة السنوية: يستحق الموظف إجازة سنوية مدفوعة الأجر مدتها ٢١ يوماً، تزداد إلى ٣٠ يوماً بعد إتمام خمس سنوات من الخدمة المتصلة.",
+   "المادة ٥ – الإجازة المرضية: تُدفع الإجازة المرضية بالأجر الكامل لأول ٣٠ يوماً، ثم بثلاثة أرباع الأجر للـ ٦٠ يوماً التالية.",
+   "المادة ٦ – بدل السكن: يُصرف للموظف بدل سكن يعادل ٢٥٪ من الراتب الأساسي، ويُدفع شهرياً مع الراتب.",
+   "المادة ٧ – بدل النقل: يُصرف بدل نقل ثابت قدره ٨٠٠ ريال شهرياً لجميع الموظفين.",
+   "المادة ٩ – العمل عن بُعد: يجوز للموظف العمل عن بُعد بحد أقصى يومين في الأسبوع بعد موافقة المدير المباشر.",
+   "المادة ١٢ – فترة التجربة: تكون فترة التجربة ٩٠ يوماً، ويجوز تمديدها مرة واحدة بموافقة كتابية.",
+   "سري للغاية — جميع الحقوق محفوظة لشركة الواحة للتجزئة."
+  ],
+  "expected_answer": 3800,
+  "answer_type": "number",
+  "required_facts": [
+   "3,800"
+  ],
+  "evidence": [
+   "بدل سكن يعادل ٢٥٪",
+   "٨٠٠ ريال"
+  ],
+  "schema": null,
+  "cache_of": null,
+  "expect_cache_hit": null,
+  "doc": "hr_ar"
+ },
+ {
+  "task_id": "mh_ar_04",
+  "language": "ar",
+  "category": "multi_hop",
+  "query": "احسب عدد مرات الجرد في السنة (الجرد الدوري للأصناف عالية القيمة والجرد الشامل معاً).",
+  "context": [
+   "دليل إجراءات المستودع المركزي في الدمام — شركة الواحة للتجزئة، الإصدار ٤.",
+   "الورديات: يعمل المستودع بثلاث ورديات مدة كل منها ٨ ساعات، وتبدأ الوردية الأولى الساعة ٦ صباحاً.",
+   "السلامة: يُلزم جميع العاملين بارتداء الخوذة وحذاء السلامة والسترة العاكسة داخل منطقة التخزين.",
+   "الرافعات الشوكية: لا يجوز تشغيل الرافعة الشوكية إلا لحاملي رخصة تشغيل سارية، والسرعة القصوى داخل الممرات ١٠ كم/ساعة.",
+   "الجرد: يُجرى جرد دوري للأصناف عالية القيمة كل شهر، وجرد شامل لجميع الأصناف مرتين في السنة.",
+   "الاستلام: تُفحص الشحنات الواردة خلال ٤ ساعات من وصولها، ويُرفض أي صنف تالف أو غير مطابق لأمر الشراء.",
+   "التبريد: تُحفظ المواد الغذائية المبردة بين ٢ و٨ درجات مئوية، وتُسجل الحرارة كل ساعتين.",
+   "السعة: تبلغ السعة التخزينية للمستودع ٤٬٥٠٠ موقع منصة نقالة.",
+   "هذه الوثيقة ملك لشركة الواحة للتجزئة — صفحة ٢ من ٥."
+  ],
+  "expected_answer": 14,
+  "answer_type": "number",
+  "required_facts": [
+   "14"
+  ],
+  "evidence": [
+   "كل شهر",
+   "مرتين في السنة"
+  ],
+  "schema": null,
+  "cache_of": null,
+  "expect_cache_hit": null,
+  "doc": "warehouse_ar"
+ },
+ {
+  "task_id": "mh_ar_05",
+  "language": "ar",
+  "category": "multi_hop",
+  "query": "احسب مجموع قيمة أمري الشراء PO-7310 وPO-7311.",
+  "context": [
+   "عقد توريد بين شركة الواحة للتجزئة ومؤسسة الخليج للتغليف، حُرر في الرياض بتاريخ ٢٠٢٥/٠٢/١٠.",
+   "البند ٣ – قيمة العقد: القيمة الإجمالية لأمر الشراء PO-7310 هي ٢٤٠٬٠٠٠ ريال سعودي، وقيمة أمر الشراء الملحق PO-7311 هي ٣٦٬٥٠٠ ريال سعودي، غير شاملة ضريبة القيمة المضافة.",
+   "البند ٥ – مدة التوريد: يلتزم المورد بتسليم الطلبات خلال ١٤ يوم عمل من تاريخ أمر الشراء.",
+   "البند ٨ – غرامة التأخير: في حال تأخر التسليم تُفرض غرامة قدرها ٠٫٥٪ من قيمة أمر الشراء PO-7310 عن كل يوم تأخير، بحد أقصى ١٠٪ من قيمة العقد.",
+   "البند ١٠ – الضمان: يضمن المورد المنتجات ضد عيوب التصنيع لمدة ١٢ شهراً من تاريخ الاستلام.",
+   "البند ١١ – الدفع: تُسدد الفواتير خلال ٤٥ يوماً من تاريخ استلام الفاتورة المعتمدة.",
+   "البند ١٥ – اللغة: حُرر هذا العقد باللغتين العربية والإنجليزية، ويُعتمد النص العربي عند الاختلاف.",
+   "هذه الوثيقة ملك لشركة الواحة للتجزئة — صفحة ١ من ٣."
+  ],
+  "expected_answer": 276500,
+  "answer_type": "number",
+  "required_facts": [
+   "276,500"
+  ],
+  "evidence": [
+   "٢٤٠٬٠٠٠ ريال",
+   "٣٦٬٥٠٠ ريال"
+  ],
+  "schema": null,
+  "cache_of": null,
+  "expect_cache_hit": null,
+  "doc": "proc_ar"
+ },
+ {
+  "task_id": "aro_ar_05",
+  "language": "ar",
+  "category": "arabic_orthographic_variants",
+  "query": "هل تدفع الشركه رسوم الشهاده المهنيه الاولي كامله؟",
+  "context": [
+   "سياسة التدريب والتطوير لشركة الواحة للتجزئة — الإصدار ٢، مارس ٢٠٢٥.",
+   "المادة ١ – الميزانية: يخصص لكل موظف مبلغ تدريب سنوي قدره ٦٬٠٠٠ ريال.",
+   "المادة ٢ – الشهادات المهنية: تتحمل الشركة رسوم الشهادة المهنية الأولى بالكامل، و٥٠٪ من رسوم أي محاولة إعادة.",
+   "المادة ٣ – الالتزام بالخدمة: إذا تجاوزت تكلفة البرنامج التدريبي ٢٠٬٠٠٠ ريال يلتزم الموظف بالعمل لدى الشركة مدة ١٨ شهراً بعد انتهاء البرنامج.",
+   "المادة ٤ – الحضور: يجب ألا تقل نسبة حضور الموظف عن ٨٠٪ من ساعات البرنامج لاعتماد الشهادة.",
+   "المادة ٦ – التعلم الإلكتروني: يُطلب من كل موظف إكمال ١٢ ساعة تعلم إلكتروني على الأقل في كل ربع سنة.",
+   "المادة ٧ – الاسترداد: إذا استقال الموظف قبل انتهاء مدة الالتزام يُسترد من تكلفة البرنامج مبلغ يتناسب مع الأشهر المتبقية.",
+   "مقصف المبنى الرئيسي مفتوح من الساعة ٧ صباحاً حتى ٣ عصراً.",
+   "سري — للاستخدام الداخلي فقط."
+  ],
+  "expected_answer": "نعم، بالكامل.",
+  "answer_type": "text",
+  "required_facts": [
+   [
+    "نعم",
+    "بالكامل",
+    "كامل"
+   ]
+  ],
+  "evidence": [
+   "رسوم الشهادة المهنية الأولى بالكامل"
+  ],
+  "schema": null,
+  "cache_of": null,
+  "expect_cache_hit": null,
+  "doc": "training_ar"
+ },
+ {
+  "task_id": "aro_ar_06",
+  "language": "ar",
+  "category": "arabic_orthographic_variants",
+  "query": "متي تبدا الورديه الاولي في المستودع؟",
+  "context": [
+   "دليل إجراءات المستودع المركزي في الدمام — شركة الواحة للتجزئة، الإصدار ٤.",
+   "الورديات: يعمل المستودع بثلاث ورديات مدة كل منها ٨ ساعات، وتبدأ الوردية الأولى الساعة ٦ صباحاً.",
+   "السلامة: يُلزم جميع العاملين بارتداء الخوذة وحذاء السلامة والسترة العاكسة داخل منطقة التخزين.",
+   "الرافعات الشوكية: لا يجوز تشغيل الرافعة الشوكية إلا لحاملي رخصة تشغيل سارية، والسرعة القصوى داخل الممرات ١٠ كم/ساعة.",
+   "الجرد: يُجرى جرد دوري للأصناف عالية القيمة كل شهر، وجرد شامل لجميع الأصناف مرتين في السنة.",
+   "الاستلام: تُفحص الشحنات الواردة خلال ٤ ساعات من وصولها، ويُرفض أي صنف تالف أو غير مطابق لأمر الشراء.",
+   "التبريد: تُحفظ المواد الغذائية المبردة بين ٢ و٨ درجات مئوية، وتُسجل الحرارة كل ساعتين.",
+   "السعة: تبلغ السعة التخزينية للمستودع ٤٬٥٠٠ موقع منصة نقالة.",
+   "هذه الوثيقة ملك لشركة الواحة للتجزئة — صفحة ٢ من ٥."
+  ],
+  "expected_answer": "الساعة ٦ صباحاً",
+  "answer_type": "text",
+  "required_facts": [
+   "6"
+  ],
+  "evidence": [
+   "الساعة ٦ صباحاً"
+  ],
+  "schema": null,
+  "cache_of": null,
+  "expect_cache_hit": null,
+  "doc": "warehouse_ar"
+ },
+ {
+  "task_id": "aro_ar_07",
+  "language": "ar",
+  "category": "arabic_orthographic_variants",
+  "query": "كل كم ساعه تسجل درجه الحراره في التبريد؟",
+  "context": [
+   "دليل إجراءات المستودع المركزي في الدمام — شركة الواحة للتجزئة، الإصدار ٤.",
+   "الورديات: يعمل المستودع بثلاث ورديات مدة كل منها ٨ ساعات، وتبدأ الوردية الأولى الساعة ٦ صباحاً.",
+   "السلامة: يُلزم جميع العاملين بارتداء الخوذة وحذاء السلامة والسترة العاكسة داخل منطقة التخزين.",
+   "الرافعات الشوكية: لا يجوز تشغيل الرافعة الشوكية إلا لحاملي رخصة تشغيل سارية، والسرعة القصوى داخل الممرات ١٠ كم/ساعة.",
+   "الجرد: يُجرى جرد دوري للأصناف عالية القيمة كل شهر، وجرد شامل لجميع الأصناف مرتين في السنة.",
+   "الاستلام: تُفحص الشحنات الواردة خلال ٤ ساعات من وصولها، ويُرفض أي صنف تالف أو غير مطابق لأمر الشراء.",
+   "التبريد: تُحفظ المواد الغذائية المبردة بين ٢ و٨ درجات مئوية، وتُسجل الحرارة كل ساعتين.",
+   "السعة: تبلغ السعة التخزينية للمستودع ٤٬٥٠٠ موقع منصة نقالة.",
+   "هذه الوثيقة ملك لشركة الواحة للتجزئة — صفحة ٢ من ٥."
+  ],
+  "expected_answer": "كل ساعتين",
+  "answer_type": "text",
+  "required_facts": [
+   [
+    "ساعتين",
+    "2"
+   ]
+  ],
+  "evidence": [
+   "كل ساعتين"
+  ],
+  "schema": null,
+  "cache_of": null,
+  "expect_cache_hit": null,
+  "doc": "warehouse_ar"
+ },
+ {
+  "task_id": "aro_ar_08",
+  "language": "ar",
+  "category": "arabic_orthographic_variants",
+  "query": "هل يمكن تمديد فتره التجربه اكثر من مره؟",
+  "context": [
+   "سياسة الموارد البشرية لشركة الواحة للتجزئة — الإصدار ٣، يناير ٢٠٢٥.",
+   "سري للغاية — جميع الحقوق محفوظة لشركة الواحة للتجزئة.",
+   "المادة ٤ – الإجازة السنوية: يستحق الموظف إجازة سنوية مدفوعة الأجر مدتها ٢١ يوماً، تزداد إلى ٣٠ يوماً بعد إتمام خمس سنوات من الخدمة المتصلة.",
+   "المادة ٥ – الإجازة المرضية: تُدفع الإجازة المرضية بالأجر الكامل لأول ٣٠ يوماً، ثم بثلاثة أرباع الأجر للـ ٦٠ يوماً التالية.",
+   "المادة ٦ – بدل السكن: يُصرف للموظف بدل سكن يعادل ٢٥٪ من الراتب الأساسي، ويُدفع شهرياً مع الراتب.",
+   "المادة ٧ – بدل النقل: يُصرف بدل نقل ثابت قدره ٨٠٠ ريال شهرياً لجميع الموظفين.",
+   "المادة ٩ – العمل عن بُعد: يجوز للموظف العمل عن بُعد بحد أقصى يومين في الأسبوع بعد موافقة المدير المباشر.",
+   "المادة ١٢ – فترة التجربة: تكون فترة التجربة ٩٠ يوماً، ويجوز تمديدها مرة واحدة بموافقة كتابية.",
+   "سري للغاية — جميع الحقوق محفوظة لشركة الواحة للتجزئة."
+  ],
+  "expected_answer": "لا، يجوز تمديدها مرة واحدة فقط.",
+  "answer_type": "text",
+  "required_facts": [
+   [
+    "مره واحده",
+    "مرة واحدة"
+   ]
+  ],
+  "evidence": [
+   "ويجوز تمديدها مرة واحدة"
+  ],
+  "schema": null,
+  "cache_of": null,
+  "expect_cache_hit": null,
+  "doc": "hr_ar"
+ },
+ {
+  "task_id": "aro_ar_09",
+  "language": "ar",
+  "category": "arabic_orthographic_variants",
+  "query": "ما هي المنتجات المستثناه من سياسه الارجاع؟",
+  "context": [
+   "سياسة الإرجاع والاستبدال لمتاجر الواحة — سارية من ١ مارس ٢٠٢٥.",
+   "يحق للعميل إرجاع المنتجات غير المستخدمة خلال ١٤ يوماً من تاريخ الشراء مع تقديم الفاتورة الأصلية.",
+   "تُسترد المبالغ إلى وسيلة الدفع الأصلية خلال ٧ أيام عمل من استلام المنتج المرتجع.",
+   "لا تشمل سياسة الإرجاع المنتجات المخفضة بنسبة ٥٠٪ أو أكثر، ولا المواد الغذائية، ولا البطاقات مسبقة الدفع.",
+   "رسوم شحن الإرجاع: مجانية للطلبات التي تزيد قيمتها على ٣٠٠ ريال، و٢٥ ريالاً للطلبات الأقل من ذلك.",
+   "برنامج الولاء: يحصل العميل على نقطة واحدة لكل ١٠ ريالات يتم إنفاقها، وتعادل كل ١٠٠ نقطة خصماً بقيمة ٥ ريالات.",
+   "جميع الحقوق محفوظة لمتاجر الواحة."
+  ],
+  "expected_answer": "المنتجات المخفضة ٥٠٪ أو أكثر، والمواد الغذائية، والبطاقات مسبقة الدفع.",
+  "answer_type": "text",
+  "required_facts": [
+   "غذائي",
+   [
+    "مسبقه",
+    "مسبقة"
+   ]
+  ],
+  "evidence": [
+   "ولا المواد الغذائية، ولا البطاقات مسبقة الدفع"
+  ],
+  "schema": null,
+  "cache_of": null,
+  "expect_cache_hit": null,
+  "doc": "returns_ar"
+ },
+ {
+  "task_id": "aro_ar_10",
+  "language": "ar",
+  "category": "arabic_orthographic_variants",
+  "query": "اين حرر عقد التوريد؟",
+  "context": [
+   "عقد توريد بين شركة الواحة للتجزئة ومؤسسة الخليج للتغليف، حُرر في الرياض بتاريخ ٢٠٢٥/٠٢/١٠.",
+   "البند ٣ – قيمة العقد: القيمة الإجمالية لأمر الشراء PO-7310 هي ٢٤٠٬٠٠٠ ريال سعودي، وقيمة أمر الشراء الملحق PO-7311 هي ٣٦٬٥٠٠ ريال سعودي، غير شاملة ضريبة القيمة المضافة.",
+   "البند ٥ – مدة التوريد: يلتزم المورد بتسليم الطلبات خلال ١٤ يوم عمل من تاريخ أمر الشراء.",
+   "البند ٨ – غرامة التأخير: في حال تأخر التسليم تُفرض غرامة قدرها ٠٫٥٪ من قيمة أمر الشراء PO-7310 عن كل يوم تأخير، بحد أقصى ١٠٪ من قيمة العقد.",
+   "البند ١٠ – الضمان: يضمن المورد المنتجات ضد عيوب التصنيع لمدة ١٢ شهراً من تاريخ الاستلام.",
+   "البند ١١ – الدفع: تُسدد الفواتير خلال ٤٥ يوماً من تاريخ استلام الفاتورة المعتمدة.",
+   "البند ١٥ – اللغة: حُرر هذا العقد باللغتين العربية والإنجليزية، ويُعتمد النص العربي عند الاختلاف.",
+   "هذه الوثيقة ملك لشركة الواحة للتجزئة — صفحة ١ من ٣."
+  ],
+  "expected_answer": "في الرياض",
+  "answer_type": "text",
+  "required_facts": [
+   "الرياض"
+  ],
+  "evidence": [
+   "حُرر في الرياض"
+  ],
+  "schema": null,
+  "cache_of": null,
+  "expect_cache_hit": null,
+  "doc": "proc_ar"
+ },
+ {
+  "task_id": "cache_en_hit2",
+  "language": "en",
+  "category": "cache_near_duplicates",
+  "query": "what's the status of invoice #INV-9120",
+  "context": [
+   "Accounts Payable Register — Q3 2025, Al-Waha Retail Co. Prepared by the Finance Shared Services team.",
+   "Invoice #INV-8841 from Gulf Packaging Est.: amount SAR 12,400, due 2025-09-15, status unpaid. Invoice #INV-8842 from Gulf Packaging Est.: amount SAR 9,850, due 2025-09-30, status paid.",
+   "Invoice #INV-9017 from Red Sea Logistics: amount SAR 31,200, due 2025-10-05, status disputed because of a quantity mismatch against purchase order PO-5520.",
+   "VAT: all supplier invoices are subject to 15% VAT, which is already included in the amounts listed in this register unless stated otherwise.",
+   "Early payment discount: suppliers on the Preferred list (Gulf Packaging Est., Najm Office Supplies) grant a 2% discount on the invoice amount if paid within 10 days of the invoice date.",
+   "Invoice #INV-9120 from Najm Office Supplies: amount SAR 4,600, due 2025-10-12, status unpaid.",
+   "The AP team sits on the 3rd floor of Olaya Tower and can be reached at extension 4410.",
+   "Page 1 of 1 — Confidential."
+  ],
+  "expected_answer": "Unpaid.",
+  "answer_type": "text",
+  "required_facts": [
+   "unpaid"
+  ],
+  "evidence": [
+   "status unpaid"
+  ],
+  "schema": null,
+  "cache_of": "std_en_25",
+  "expect_cache_hit": true,
+  "doc": "ap_en"
+ },
+ {
+  "task_id": "cache_en_trap2",
+  "language": "en",
+  "category": "cache_near_duplicates",
+  "query": "What is the status of invoice #INV-9017?",
+  "context": [
+   "Accounts Payable Register — Q3 2025, Al-Waha Retail Co. Prepared by the Finance Shared Services team.",
+   "Invoice #INV-8841 from Gulf Packaging Est.: amount SAR 12,400, due 2025-09-15, status unpaid. Invoice #INV-8842 from Gulf Packaging Est.: amount SAR 9,850, due 2025-09-30, status paid.",
+   "Invoice #INV-9017 from Red Sea Logistics: amount SAR 31,200, due 2025-10-05, status disputed because of a quantity mismatch against purchase order PO-5520.",
+   "VAT: all supplier invoices are subject to 15% VAT, which is already included in the amounts listed in this register unless stated otherwise.",
+   "Early payment discount: suppliers on the Preferred list (Gulf Packaging Est., Najm Office Supplies) grant a 2% discount on the invoice amount if paid within 10 days of the invoice date.",
+   "Invoice #INV-9120 from Najm Office Supplies: amount SAR 4,600, due 2025-10-12, status unpaid.",
+   "The AP team sits on the 3rd floor of Olaya Tower and can be reached at extension 4410.",
+   "Page 1 of 1 — Confidential."
+  ],
+  "expected_answer": "Disputed.",
+  "answer_type": "text",
+  "required_facts": [
+   "disputed"
+  ],
+  "evidence": [
+   "status disputed"
+  ],
+  "schema": null,
+  "cache_of": "std_en_25",
+  "expect_cache_hit": false,
+  "doc": "ap_en"
+ },
+ {
+  "task_id": "cache_en_hit3",
+  "language": "en",
+  "category": "cache_near_duplicates",
+  "query": "what's the annual rent for unit 14-B",
+  "context": [
+   "OFFICE LEASE AGREEMENT between Olaya Towers Real Estate Co. (\"Landlord\") and Al-Waha Retail Co. (\"Tenant\") for Unit 14-B, signed 2024-11-20.",
+   "Olaya Towers Real Estate Co. — Confidential.",
+   "Clause 2 – Term. The lease term is 5 years starting 2025-01-01, renewable for one further term of 3 years.",
+   "Clause 3 – Rent. Annual rent is SAR 360,000, payable in four equal quarterly instalments in advance.",
+   "Clause 4 – Escalation. Rent increases by 3% at the start of each lease year from year 3 onwards.",
+   "Clause 5 – Security Deposit. The Tenant pays a security deposit equal to 2 months of rent, refundable within 60 days after handover.",
+   "Clause 6 – Parking. The Tenant is allocated 12 parking bays; additional bays cost SAR 250 per bay per month.",
+   "Clause 7 – Maintenance. The Landlord maintains the structure, lifts and central air-conditioning; the Tenant maintains the interior fit-out.",
+   "Clause 9 – Early Termination. The Tenant may terminate after year 2 with 6 months' notice and a penalty of 3 months' rent.",
+   "Olaya Towers Real Estate Co. — Confidential."
+  ],
+  "expected_answer": 360000,
+  "answer_type": "number",
+  "required_facts": [
+   "360,000"
+  ],
+  "evidence": [
+   "Annual rent is SAR 360,000"
+  ],
+  "schema": null,
+  "cache_of": "std_en_19",
+  "expect_cache_hit": true,
+  "doc": "lease_en"
+ },
+ {
+  "task_id": "cache_en_trap3",
+  "language": "en",
+  "category": "cache_near_duplicates",
+  "query": "Calculate the total deductible the driver pays if a vehicle has 4 insurance claims in one year.",
+  "context": [
+   "Fleet & Vehicle Policy — Al-Waha Retail Co., version 2.1, effective 2025-04-01.",
+   "Eligibility: company cars are assigned to employees in Grade 10 and above and to field sales staff.",
+   "Fuel: fuel is reimbursed up to SAR 1,100 per month for assigned vehicles; fuel cards must not be shared.",
+   "Replacement: vehicles are replaced after 4 years or 120,000 km, whichever comes first.",
+   "Traffic fines: the driver is personally responsible for traffic fines; fines paid by the company are deducted from the next salary.",
+   "Accidents: any accident must be reported to the Fleet Office within 24 hours, together with the Najm accident report.",
+   "Private use: limited private use is allowed within the Kingdom; cross-border trips require written approval from the Fleet Manager.",
+   "Insurance: all fleet vehicles carry comprehensive insurance with a deductible of SAR 2,000 per claim, paid by the company for the first claim in a year and by the driver for any further claim in the same year.",
+   "Fleet Office, Building C, ground floor. Page 1 of 1."
+  ],
+  "expected_answer": 6000,
+  "answer_type": "number",
+  "required_facts": [
+   "6,000"
+  ],
+  "evidence": [
+   "deductible of SAR 2,000 per claim",
+   "by the driver for any further claim"
+  ],
+  "schema": null,
+  "cache_of": "mh_en_06",
+  "expect_cache_hit": false,
+  "doc": "fleet_en"
+ },
+ {
+  "task_id": "cache_ar_hit2",
+  "language": "ar",
+  "category": "cache_near_duplicates",
+  "query": "ما هي قيمة امر الشراء الملحق PO-7311؟",
+  "context": [
+   "عقد توريد بين شركة الواحة للتجزئة ومؤسسة الخليج للتغليف، حُرر في الرياض بتاريخ ٢٠٢٥/٠٢/١٠.",
+   "البند ٣ – قيمة العقد: القيمة الإجمالية لأمر الشراء PO-7310 هي ٢٤٠٬٠٠٠ ريال سعودي، وقيمة أمر الشراء الملحق PO-7311 هي ٣٦٬٥٠٠ ريال سعودي، غير شاملة ضريبة القيمة المضافة.",
+   "البند ٥ – مدة التوريد: يلتزم المورد بتسليم الطلبات خلال ١٤ يوم عمل من تاريخ أمر الشراء.",
+   "البند ٨ – غرامة التأخير: في حال تأخر التسليم تُفرض غرامة قدرها ٠٫٥٪ من قيمة أمر الشراء PO-7310 عن كل يوم تأخير، بحد أقصى ١٠٪ من قيمة العقد.",
+   "البند ١٠ – الضمان: يضمن المورد المنتجات ضد عيوب التصنيع لمدة ١٢ شهراً من تاريخ الاستلام.",
+   "البند ١١ – الدفع: تُسدد الفواتير خلال ٤٥ يوماً من تاريخ استلام الفاتورة المعتمدة.",
+   "البند ١٥ – اللغة: حُرر هذا العقد باللغتين العربية والإنجليزية، ويُعتمد النص العربي عند الاختلاف.",
+   "هذه الوثيقة ملك لشركة الواحة للتجزئة — صفحة ١ من ٣."
+  ],
+  "expected_answer": 36500,
+  "answer_type": "number",
+  "required_facts": [
+   "36,500"
+  ],
+  "evidence": [
+   "هي ٣٦٬٥٠٠ ريال سعودي"
+  ],
+  "schema": null,
+  "cache_of": "std_ar_19",
+  "expect_cache_hit": true,
+  "doc": "proc_ar"
+ },
+ {
+  "task_id": "cache_ar_trap2",
+  "language": "ar",
+  "category": "cache_near_duplicates",
+  "query": "احسب المبلغ الذي تتحمله الشركة إذا كانت رسوم الشهادة ٤٬٠٠٠ ريال واحتاج الموظف إلى محاولة إعادة واحدة.",
+  "context": [
+   "سياسة التدريب والتطوير لشركة الواحة للتجزئة — الإصدار ٢، مارس ٢٠٢٥.",
+   "المادة ١ – الميزانية: يخصص لكل موظف مبلغ تدريب سنوي قدره ٦٬٠٠٠ ريال.",
+   "المادة ٢ – الشهادات المهنية: تتحمل الشركة رسوم الشهادة المهنية الأولى بالكامل، و٥٠٪ من رسوم أي محاولة إعادة.",
+   "المادة ٣ – الالتزام بالخدمة: إذا تجاوزت تكلفة البرنامج التدريبي ٢٠٬٠٠٠ ريال يلتزم الموظف بالعمل لدى الشركة مدة ١٨ شهراً بعد انتهاء البرنامج.",
+   "المادة ٤ – الحضور: يجب ألا تقل نسبة حضور الموظف عن ٨٠٪ من ساعات البرنامج لاعتماد الشهادة.",
+   "المادة ٦ – التعلم الإلكتروني: يُطلب من كل موظف إكمال ١٢ ساعة تعلم إلكتروني على الأقل في كل ربع سنة.",
+   "المادة ٧ – الاسترداد: إذا استقال الموظف قبل انتهاء مدة الالتزام يُسترد من تكلفة البرنامج مبلغ يتناسب مع الأشهر المتبقية.",
+   "مقصف المبنى الرئيسي مفتوح من الساعة ٧ صباحاً حتى ٣ عصراً.",
+   "سري — للاستخدام الداخلي فقط."
+  ],
+  "expected_answer": 6000,
+  "answer_type": "number",
+  "required_facts": [
+   "6,000"
+  ],
+  "evidence": [
+   "رسوم الشهادة المهنية الأولى بالكامل",
+   "و٥٠٪ من رسوم"
+  ],
+  "schema": null,
+  "cache_of": "mh_ar_02",
+  "expect_cache_hit": false,
+  "doc": "training_ar"
+ },
+ {
+  "task_id": "cache_ar_hit3",
+  "language": "ar",
+  "category": "cache_near_duplicates",
+  "query": "ما هي السعة التخزينية للمستودع؟",
+  "context": [
+   "دليل إجراءات المستودع المركزي في الدمام — شركة الواحة للتجزئة، الإصدار ٤.",
+   "الورديات: يعمل المستودع بثلاث ورديات مدة كل منها ٨ ساعات، وتبدأ الوردية الأولى الساعة ٦ صباحاً.",
+   "السلامة: يُلزم جميع العاملين بارتداء الخوذة وحذاء السلامة والسترة العاكسة داخل منطقة التخزين.",
+   "الرافعات الشوكية: لا يجوز تشغيل الرافعة الشوكية إلا لحاملي رخصة تشغيل سارية، والسرعة القصوى داخل الممرات ١٠ كم/ساعة.",
+   "الجرد: يُجرى جرد دوري للأصناف عالية القيمة كل شهر، وجرد شامل لجميع الأصناف مرتين في السنة.",
+   "الاستلام: تُفحص الشحنات الواردة خلال ٤ ساعات من وصولها، ويُرفض أي صنف تالف أو غير مطابق لأمر الشراء.",
+   "التبريد: تُحفظ المواد الغذائية المبردة بين ٢ و٨ درجات مئوية، وتُسجل الحرارة كل ساعتين.",
+   "السعة: تبلغ السعة التخزينية للمستودع ٤٬٥٠٠ موقع منصة نقالة.",
+   "هذه الوثيقة ملك لشركة الواحة للتجزئة — صفحة ٢ من ٥."
+  ],
+  "expected_answer": 4500,
+  "answer_type": "number",
+  "required_facts": [
+   "4,500"
+  ],
+  "evidence": [
+   "٤٬٥٠٠ موقع منصة نقالة"
+  ],
+  "schema": null,
+  "cache_of": "std_ar_15",
+  "expect_cache_hit": true,
+  "doc": "warehouse_ar"
+ },
+ {
+  "task_id": "cache_ar_trap3",
+  "language": "ar",
+  "category": "cache_near_duplicates",
+  "query": "احسب مجموع بدل السكن وبدل النقل الشهري لموظف راتبه الأساسي ١٥٬٠٠٠ ريال.",
+  "context": [
+   "سياسة الموارد البشرية لشركة الواحة للتجزئة — الإصدار ٣، يناير ٢٠٢٥.",
+   "سري للغاية — جميع الحقوق محفوظة لشركة الواحة للتجزئة.",
+   "المادة ٤ – الإجازة السنوية: يستحق الموظف إجازة سنوية مدفوعة الأجر مدتها ٢١ يوماً، تزداد إلى ٣٠ يوماً بعد إتمام خمس سنوات من الخدمة المتصلة.",
+   "المادة ٥ – الإجازة المرضية: تُدفع الإجازة المرضية بالأجر الكامل لأول ٣٠ يوماً، ثم بثلاثة أرباع الأجر للـ ٦٠ يوماً التالية.",
+   "المادة ٦ – بدل السكن: يُصرف للموظف بدل سكن يعادل ٢٥٪ من الراتب الأساسي، ويُدفع شهرياً مع الراتب.",
+   "المادة ٧ – بدل النقل: يُصرف بدل نقل ثابت قدره ٨٠٠ ريال شهرياً لجميع الموظفين.",
+   "المادة ٩ – العمل عن بُعد: يجوز للموظف العمل عن بُعد بحد أقصى يومين في الأسبوع بعد موافقة المدير المباشر.",
+   "المادة ١٢ – فترة التجربة: تكون فترة التجربة ٩٠ يوماً، ويجوز تمديدها مرة واحدة بموافقة كتابية.",
+   "سري للغاية — جميع الحقوق محفوظة لشركة الواحة للتجزئة."
+  ],
+  "expected_answer": 4550,
+  "answer_type": "number",
+  "required_facts": [
+   "4,550"
+  ],
+  "evidence": [
+   "بدل سكن يعادل ٢٥٪",
+   "٨٠٠ ريال"
+  ],
+  "schema": null,
+  "cache_of": "mh_ar_03",
+  "expect_cache_hit": false,
+  "doc": "hr_ar"
  }
 ]

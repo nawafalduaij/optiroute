@@ -141,14 +141,15 @@ def noise_scaling(tasks: list[Task], settings) -> list[dict]:
 def wave_stream(tasks: list[Task]) -> list[Task]:
     std = [t for t in tasks if t.category == "standard"]
     hard = [t for t in tasks if t.category in ("multi_hop", "low_lexical_overlap", "arabic_orthographic_variants")]
-    # easy -> sustained hard burst -> long easy recovery (cache is off, so repeated tasks are re-inferred)
-    return std[:10] + hard * 2 + std[10:] + std[:10]
+    # easy (10) -> sustained hard burst (every hard task twice) -> easy recovery (20); cache is off, so repeated
+    # tasks are re-inferred
+    return std[:10] + hard * 2 + std[10:30]
 
 
 def wave_experiment(settings, client, tasks) -> dict:
     stream = wave_stream(tasks)
-    out = {"phases": {"easy_1": [0, 10], "hard_burst": [10, len(stream) - 20],
-                      "easy_2": [len(stream) - 20, len(stream)]}}
+    n_hard = 2 * sum(t.category in ("multi_hop", "low_lexical_overlap", "arabic_orthographic_variants") for t in tasks)
+    out = {"phases": {"easy_1": [0, 10], "hard_burst": [10, 10 + n_hard], "easy_2": [10 + n_hard, len(stream)]}}
     for name, flags in (("adaptive", PipelineFlags(use_cache=False)),
                         ("fixed_tau", PipelineFlags(use_cache=False, use_adaptation=False)),
                         ("adaptive_audit", PipelineFlags(use_cache=False, shadow_audit_every=4)),

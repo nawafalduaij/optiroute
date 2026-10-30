@@ -70,5 +70,50 @@
   "رسوم شحن الإرجاع: مجانية للطلبات التي تزيد قيمتها على ٣٠٠ ريال، و٢٥ ريالاً للطلبات الأقل من ذلك.",
   "برنامج الولاء: يحصل العميل على نقطة واحدة لكل ١٠ ريالات يتم إنفاقها، وتعادل كل ١٠٠ نقطة خصماً بقيمة ٥ ريالات.",
   "جميع الحقوق محفوظة لمتاجر الواحة."
+ ],
+ "fleet_en": [
+  "Fleet & Vehicle Policy — Al-Waha Retail Co., version 2.1, effective 2025-04-01.",
+  "Eligibility: company cars are assigned to employees in Grade 10 and above and to field sales staff.",
+  "Fuel: fuel is reimbursed up to SAR 1,100 per month for assigned vehicles; fuel cards must not be shared.",
+  "Replacement: vehicles are replaced after 4 years or 120,000 km, whichever comes first.",
+  "Traffic fines: the driver is personally responsible for traffic fines; fines paid by the company are deducted from the next salary.",
+  "Accidents: any accident must be reported to the Fleet Office within 24 hours, together with the Najm accident report.",
+  "Private use: limited private use is allowed within the Kingdom; cross-border trips require written approval from the Fleet Manager.",
+  "Insurance: all fleet vehicles carry comprehensive insurance with a deductible of SAR 2,000 per claim, paid by the company for the first claim in a year and by the driver for any further claim in the same year.",
+  "Fleet Office, Building C, ground floor. Page 1 of 1."
+ ],
+ "lease_en": [
+  "OFFICE LEASE AGREEMENT between Olaya Towers Real Estate Co. (\"Landlord\") and Al-Waha Retail Co. (\"Tenant\") for Unit 14-B, signed 2024-11-20.",
+  "Olaya Towers Real Estate Co. — Confidential.",
+  "Clause 2 – Term. The lease term is 5 years starting 2025-01-01, renewable for one further term of 3 years.",
+  "Clause 3 – Rent. Annual rent is SAR 360,000, payable in four equal quarterly instalments in advance.",
+  "Clause 4 – Escalation. Rent increases by 3% at the start of each lease year from year 3 onwards.",
+  "Clause 5 – Security Deposit. The Tenant pays a security deposit equal to 2 months of rent, refundable within 60 days after handover.",
+  "Clause 6 – Parking. The Tenant is allocated 12 parking bays; additional bays cost SAR 250 per bay per month.",
+  "Clause 7 – Maintenance. The Landlord maintains the structure, lifts and central air-conditioning; the Tenant maintains the interior fit-out.",
+  "Clause 9 – Early Termination. The Tenant may terminate after year 2 with 6 months' notice and a penalty of 3 months' rent.",
+  "Olaya Towers Real Estate Co. — Confidential."
+ ],
+ "training_ar": [
+  "سياسة التدريب والتطوير لشركة الواحة للتجزئة — الإصدار ٢، مارس ٢٠٢٥.",
+  "المادة ١ – الميزانية: يخصص لكل موظف مبلغ تدريب سنوي قدره ٦٬٠٠٠ ريال.",
+  "المادة ٢ – الشهادات المهنية: تتحمل الشركة رسوم الشهادة المهنية الأولى بالكامل، و٥٠٪ من رسوم أي محاولة إعادة.",
+  "المادة ٣ – الالتزام بالخدمة: إذا تجاوزت تكلفة البرنامج التدريبي ٢٠٬٠٠٠ ريال يلتزم الموظف بالعمل لدى الشركة مدة ١٨ شهراً بعد انتهاء البرنامج.",
+  "المادة ٤ – الحضور: يجب ألا تقل نسبة حضور الموظف عن ٨٠٪ من ساعات البرنامج لاعتماد الشهادة.",
+  "المادة ٦ – التعلم الإلكتروني: يُطلب من كل موظف إكمال ١٢ ساعة تعلم إلكتروني على الأقل في كل ربع سنة.",
+  "المادة ٧ – الاسترداد: إذا استقال الموظف قبل انتهاء مدة الالتزام يُسترد من تكلفة البرنامج مبلغ يتناسب مع الأشهر المتبقية.",
+  "مقصف المبنى الرئيسي مفتوح من الساعة ٧ صباحاً حتى ٣ عصراً.",
+  "سري — للاستخدام الداخلي فقط."
+ ],
+ "warehouse_ar": [
+  "دليل إجراءات المستودع المركزي في الدمام — شركة الواحة للتجزئة، الإصدار ٤.",
+  "الورديات: يعمل المستودع بثلاث ورديات مدة كل منها ٨ ساعات، وتبدأ الوردية الأولى الساعة ٦ صباحاً.",
+  "السلامة: يُلزم جميع العاملين بارتداء الخوذة وحذاء السلامة والسترة العاكسة داخل منطقة التخزين.",
+  "الرافعات الشوكية: لا يجوز تشغيل الرافعة الشوكية إلا لحاملي رخصة تشغيل سارية، والسرعة القصوى داخل الممرات ١٠ كم/ساعة.",
+  "الجرد: يُجرى جرد دوري للأصناف عالية القيمة كل شهر، وجرد شامل لجميع الأصناف مرتين في السنة.",
+  "الاستلام: تُفحص الشحنات الواردة خلال ٤ ساعات من وصولها، ويُرفض أي صنف تالف أو غير مطابق لأمر الشراء.",
+  "التبريد: تُحفظ المواد الغذائية المبردة بين ٢ و٨ درجات مئوية، وتُسجل الحرارة كل ساعتين.",
+  "السعة: تبلغ السعة التخزينية للمستودع ٤٬٥٠٠ موقع منصة نقالة.",
+  "هذه الوثيقة ملك لشركة الواحة للتجزئة — صفحة ٢ من ٥."
  ]
 }

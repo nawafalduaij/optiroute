@@ -145,7 +145,7 @@ tr.hl td{background:#0b2a20;color:var(--em2);font-weight:600}
 <!-- ============================ BENCH ============================ -->
 <section class="view" id="v-bench">
   <div class="card">
-    <h3>Held-out benchmark: 36 bilingual cases, replayed from recorded real runs <span class="badge b-ok" id="srcbadge">REPLAY</span></h3>
+    <h3>Held-out benchmark: <span id="ncases">96</span> bilingual cases, replayed from recorded real runs <span class="badge b-ok" id="srcbadge">REPLAY</span></h3>
     <div class="kpis" id="kpis"></div>
   </div>
   <div class="grid2" style="margin-top:14px">
@@ -332,6 +332,7 @@ async function loadBench() {
   if (!resp.ok) { $('#kpis').innerHTML = `<div class="err">${esc((await resp.json()).detail)}</div>`; return; }
   RESULTS = await resp.json();
   const C = RESULTS.cumulative, L = RESULTS.loo, full = C['5_OptiRoute_Full'], t2 = C['1_Always_Tier2_Raw'], v = RESULTS.verifier[0];
+  $('#ncases').textContent = Object.values(RESULTS.cumulative)[0].n;
   $('#srcbadge').textContent = RESULTS.mode.toUpperCase();
   $('#kpis').innerHTML = [
     [pct(full.accuracy), `accuracy, Full cascade (always-Tier-2: ${pct(t2.accuracy)})`],
