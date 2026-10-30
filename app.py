@@ -9,7 +9,6 @@ from __future__ import annotations
 
 import hashlib
 import json
-from pathlib import Path
 
 from fastapi import FastAPI, HTTPException
 from fastapi.responses import FileResponse
@@ -163,9 +162,6 @@ def results():
     m = json.loads(path.read_text(encoding="utf-8"))
     out = {k: m.get(k) for k in ("mode", "source", "cumulative", "loo", "verifier", "noise_scaling", "wave",
                                  "stress", "cross_model")}
-    sim = RESULTS / "sim" / "metrics.json"  # controller illustration only; labelled SIMULATED in the UI
-    if sim.exists():
-        out["sim_wave_tau"] = [x["tau"] for x in json.loads(sim.read_text(encoding="utf-8"))["wave"]["adaptive"]["trace"]]
     return out
 
 

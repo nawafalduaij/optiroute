@@ -13,10 +13,10 @@ from pathlib import Path
 from pptx import Presentation
 from pptx.chart.data import CategoryChartData
 from pptx.dml.color import RGBColor
-from pptx.enum.chart import XL_CHART_TYPE, XL_LEGEND_POSITION, XL_LABEL_POSITION
+from pptx.enum.chart import XL_CHART_TYPE, XL_LABEL_POSITION
 from pptx.enum.shapes import MSO_CONNECTOR, MSO_SHAPE
 from pptx.enum.text import MSO_ANCHOR, PP_ALIGN
-from pptx.util import Emu, Inches, Pt
+from pptx.util import Inches, Pt
 
 ROOT = Path(__file__).resolve().parent.parent
 M = json.loads((ROOT / "results" / "metrics.json").read_text(encoding="utf-8"))
@@ -372,7 +372,7 @@ ch.chart_title.text_frame.text = "Compute per configuration (kTok·B, lower is b
 ch.chart_title.text_frame.paragraphs[0].runs[0].font.size = Pt(11)
 ch.chart_title.text_frame.paragraphs[0].runs[0].font.color.rgb = rgb(MUTED)
 text(s, 8.3, 4.2, 4.4, 2.7, [
-    (f"Full cascade vs always-14B", {"bold": True, "size": 15, "color": EM2}),
+    ("Full cascade vs always-14B", {"bold": True, "size": 15, "color": EM2}),
     (f"−{pct(COMPUTE_CUT)} compute, −{pct(TOKEN_CUT)} tokens", {"bullet": True, "size": 13}),
     (f"CPS {FULL['cps']:.2f} vs {T2['cps']:.2f} kTok·B per success ({CPS_X:.1f}× cheaper)", {"bullet": True, "size": 13}),
     (f"P50 latency {FULL['p50_ms']:.0f} ms vs {T2['p50_ms']:.0f} ms", {"bullet": True, "size": 13}),

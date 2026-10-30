@@ -16,7 +16,7 @@ import statistics
 import sys
 import time
 from collections import Counter, defaultdict
-from dataclasses import asdict, replace
+from dataclasses import replace
 from pathlib import Path
 
 from src import pruner as pruner_mod
@@ -186,7 +186,7 @@ def write_report(out_dir: Path, mode: str, settings, cum, loo, vpr, noise, wave,
               f"- Tier-1: `{settings.tier1.model}` ({settings.tier1.params_b:g}B) · Tier-2: `{settings.tier2.model}` "
               f"({settings.tier2.params_b:g}B) · tokenizer: tiktoken `{settings.tokenizer_encoding}`",
               f"- Held-out cases: {base['n']} · Compute = Σ tokens/1000 × active params (B); Tier-0 cache = 0",
-              f"- Latency = recorded LLM latency + measured CPU overhead (`time.perf_counter`)",
+              "- Latency = recorded LLM latency + measured CPU overhead (`time.perf_counter`)",
               "- Iteration disclosure (after inspecting held-out failures): (1) the verifier's refusal detector was "
               "generalized from a phrase list to a negation+information-verb pattern; (2) numeric grounding now "
               "requires verbatim numbers for lookup questions and allows derived (+ − × ÷ %) numbers only when the "

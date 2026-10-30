@@ -4,3 +4,5 @@ pytest>=8.0
 fastapi>=0.110
 uvicorn>=0.29
 python-pptx>=1.0
+# optional, only for scripts/capture_screenshots.py:
+# playwright>=1.40

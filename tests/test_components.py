@@ -1,5 +1,4 @@
 """Unit tests for the deterministic CPU components (tokenizer, normalizer, pruner, cache, router, verifier)."""
-import json
 
 from src.cache import SemanticCache, context_hash
 from src.normalize import extract_entities, extract_numbers, is_arabic, normalize_text
