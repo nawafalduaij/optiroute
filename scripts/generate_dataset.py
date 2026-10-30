@@ -285,7 +285,9 @@ HARD_CASES = [
 ]
 
 # ---------------------------------------------------------------- held-out v2: +60 cases (written and frozen
-# before any model was run on them; 4 of the 11 documents are new in v2)
+# before any model was run on them; 4 of the 11 documents are new in v2). After the first run, two reference
+# fact lists were widened because they rejected correct answers (llo_ar_02: masculine المتبقي; aro_ar_08:
+# "لا يمكن تمديد ... أكثر من مرة"). No system component was changed.
 STANDARD_V2 = [
     case("std_en_14", "fleet_en", "standard", "What is the monthly fuel reimbursement limit for assigned vehicles?",
          1100, ["1,100"], ["up to SAR 1,100 per month"], "number"),
@@ -368,7 +370,7 @@ HARD_CASES_V2 = [
          [["no", "not", "cannot", "prohibited"], "personal"], ["may not be used for personal expenses"]),
     case("llo_ar_02", "training_ar", "low_lexical_overlap", "إذا تركت الشركة بعد دورة غالية، هل علي أن أدفع شيئاً؟",
          "نعم، يُسترد من تكلفة البرنامج مبلغ يتناسب مع الأشهر المتبقية من مدة الالتزام.",
-         [["يسترد", "استرداد", "يتناسب", "المتبقية"]], ["يُسترد من تكلفة البرنامج مبلغ يتناسب مع"]),
+         [["يسترد", "استرداد", "يتناسب", "المتبقي"]], ["يُسترد من تكلفة البرنامج مبلغ يتناسب مع"]),
     case("llo_ar_03", "warehouse_ar", "low_lexical_overlap", "ماذا أرتدي قبل دخول منطقة الرفوف؟",
          "الخوذة وحذاء السلامة والسترة العاكسة.", ["خوذ", "حذاء"], ["بارتداء الخوذة وحذاء السلامة والسترة العاكسة"]),
     case("llo_ar_04", "hr_ar", "low_lexical_overlap", "كم يعطوني فلوس للمواصلات كل شهر؟",
@@ -402,7 +404,7 @@ HARD_CASES_V2 = [
     case("aro_ar_07", "warehouse_ar", "arabic_orthographic_variants", "كل كم ساعه تسجل درجه الحراره في التبريد؟",
          "كل ساعتين", [["ساعتين", "2"]], ["كل ساعتين"]),
     case("aro_ar_08", "hr_ar", "arabic_orthographic_variants", "هل يمكن تمديد فتره التجربه اكثر من مره؟",
-         "لا، يجوز تمديدها مرة واحدة فقط.", [["مره واحده", "مرة واحدة"]], ["ويجوز تمديدها مرة واحدة"]),
+         "لا، يجوز تمديدها مرة واحدة فقط.", [["مره واحده", "مرة واحدة", "لا يمكن تمديد"]], ["ويجوز تمديدها مرة واحدة"]),
     case("aro_ar_09", "returns_ar", "arabic_orthographic_variants", "ما هي المنتجات المستثناه من سياسه الارجاع؟",
          "المنتجات المخفضة ٥٠٪ أو أكثر، والمواد الغذائية، والبطاقات مسبقة الدفع.", ["غذائي", ["مسبقه", "مسبقة"]],
          ["ولا المواد الغذائية، ولا البطاقات مسبقة الدفع"]),

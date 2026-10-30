@@ -61,6 +61,9 @@ XM = M.get("cross_model") or []
 GITHUB = "github.com/nawafalduaij/optiroute"
 SHOTS = ROOT / "deliverables" / "screenshots"
 TOTAL = 10
+N = FULL["n"]
+N_CALLS = sum(1 for x in (ROOT / "data" / "recorded_runs.jsonl").read_text(encoding="utf-8").splitlines() if x.strip())
+NPR = M["loo"]["LOO_No_Pruner"]
 N_PRESETS = len(re.findall(r'^    \("[^"]+", "[a-z_0-9]+"\),$', (ROOT / "app.py").read_text(encoding="utf-8"), re.M))
 
 prs = Presentation()
@@ -190,7 +193,7 @@ text(s, 0.9, 2.55, 11.5, 1.0, "A bilingual (Arabic / English) compute cascade th
      "tier able to answer it correctly, with every number measured on recorded real model runs.", size=20, color=MUTED)
 kpi(s, 0.9, 4.0, 2.75, f"−{pct(COMPUTE_CUT)}", "compute vs always-large-model (kTok × active params)")
 kpi(s, 3.85, 4.0, 2.75, f"{CPS_X:.1f}×", "cheaper per successful task (CPS)")
-kpi(s, 6.8, 4.0, 2.75, f"{pct(FULL['accuracy'])}", f"accuracy on 36 held-out cases (always-14B: {pct(T2['accuracy'])})",
+kpi(s, 6.8, 4.0, 2.75, f"{pct(FULL['accuracy'])}", f"accuracy on {N} held-out cases (always-14B: {pct(T2['accuracy'])})",
     color=TEXT)
 kpi(s, 9.75, 4.0, 2.75, f"{CPU_MS:.1f} ms", "total CPU overhead per task for all 4 guard components", color=TEXT)
 text(s, 0.9, 6.1, 11.5, 0.8, [("Nawaf Alduaij", {"size": 16, "bold": True}),
@@ -203,7 +206,7 @@ s = new_slide(2, "The issue", "Most enterprise requests overpay for compute")
 text(s, 0.6, 1.55, 6.0, 4.8, [
     ("The default setup sends every request to the largest model with the whole document attached.",
      {"size": 16, "space": 14}),
-    ("Measured on our 36 held-out bilingual tasks:", {"size": 14, "color": MUTED, "space": 8}),
+    (f"Measured on our {N} held-out bilingual tasks:", {"size": 14, "color": MUTED, "space": 8}),
     (f"Always-14B on raw context: {T2['compute_units']:.0f} kTok·B, {T2['total_tokens']:,} tokens, "
      f"{pct(T2['accuracy'])} accuracy", {"bullet": True, "size": 14}),
     (f"Always-3B: {pct(1 - T1['compute_units'] / T2['compute_units'])} cheaper and only "
@@ -264,7 +267,7 @@ steps = [
     ("2", "Complexity routing & Tier-1 execution",
      ["C = 0.30 multi-hop + 0.30 arithmetic + 0.25 strict JSON/table + 0.15 relevance dispersion",
       "C < τ → qwen2.5:3b on the pruned context; C ≥ τ → qwen2.5:14b directly",
-      f"Measured: {FULL['tier1']} of 36 tasks finished on Tier-1, {FULL['tier0']} on Tier-0 cache"]),
+      f"Measured: {FULL['tier1']} of {N} tasks finished on Tier-1, {FULL['tier0']} on Tier-0 cache"]),
     ("3", "Verification & full-context escalation",
      ["Refusal/degeneracy · JSON schema · numeric grounding (each output number must appear in, or follow by + − × ÷ % "
       "from, the context) · Arabic-in/Arabic-out",
@@ -273,8 +276,8 @@ steps = [
     ("4", "Bidirectional τ adaptation + shadow audit",
      ["Estimated Tier-1 health = verifier pass rate × agreement on sampled Tier-2 audits (every 4th verified answer)",
       "Tightens when health < 70% or P95 > SLO; recovers +0.05/step after 5 healthy steps (hysteresis)",
-      f"Recorded wave: τ 0.55 → {AUD_TAU_MIN:.2f} in the hard burst (request {AUD_TIGHTEN}) → back to 0.55 "
-      f"(requests {', '.join(map(str, AUD_RECOVER))})"]),
+      f"Recorded wave: τ 0.55 → {AUD_TAU_MIN:.2f} during the hard burst (first tightening at request {AUD_TIGHTEN}), "
+      f"back to 0.55 by request {AUD_RECOVER[-1]}"]),
 ]
 for i, (n, title, bullets) in enumerate(steps):
     x, y = 0.6 + (i % 2) * 6.15, 1.6 + (i // 2) * 2.7
@@ -323,15 +326,15 @@ desc = {"standard": "single-chunk policy / invoice lookups",
         "low_lexical_overlap": "paraphrased query, almost no shared keywords",
         "multi_hop": "facts from 2 chunks + arithmetic (SLA credit, penalties)",
         "arabic_orthographic_variants": "missing hamza, ه/ة, ي/ى, clitics, mixed numerals",
-        "cache_near_duplicates": "2 paraphrase hits + 2 traps (#INV-8841→8842, 6→8 days)"}
+        "cache_near_duplicates": f"{cats.get('cache_near_duplicates', 0) // 2} paraphrase hits + {cats.get('cache_near_duplicates', 0) // 2} traps (changed IDs, days, fees)"}
 for k in ["standard", "low_lexical_overlap", "multi_hop", "arabic_orthographic_variants", "cache_near_duplicates"]:
     rows.append([k.replace("_", " "), cats.get(k, 0), desc[k]])
 rows.append(["total", len(held), f"{len(held) - n_ar} English / {n_ar} Arabic · separate 10-case dev set"])
 table(s, 0.6, 1.6, 7.3, rows, [2.4, 0.7, 4.2], highlight=(len(rows) - 1,), size=11, row_h=0.42)
 text(s, 8.3, 1.55, 4.4, 5.2, [
     ("Record & replay", {"bold": True, "size": 15, "color": EM2, "space": 4}),
-    ("180 real calls (36 tasks × raw/pruned/relaxed × tier), temperature 0, models pre-warmed so load time is "
-     "excluded, prompt hash stored to detect drift", {"size": 12, "color": MUTED, "space": 12}),
+    (f"{N_CALLS} real calls ({N} tasks on 11 synthetic documents × raw/pruned/relaxed × tier), temperature 0, "
+     "models pre-warmed, prompt hash stored to detect drift", {"size": 12, "color": MUTED, "space": 12}),
     ("No circular metrics", {"bold": True, "size": 15, "color": EM2, "space": 4}),
     ("Accuracy comes from a ground-truth scorer (numeric tolerance, required facts, JSON fields). The runtime "
      "verifier is graded against it, never used for it.", {"size": 12, "color": MUTED, "space": 12}),
@@ -381,7 +384,9 @@ text(s, 8.3, 4.2, 4.4, 2.7, [
     (f"CPS {FULL['cps']:.2f} vs {T2['cps']:.2f} kTok·B per success ({CPS_X:.1f}× cheaper)", {"bullet": True, "size": 13}),
     (f"P50 latency {FULL['p50_ms']:.0f} ms vs {T2['p50_ms']:.0f} ms", {"bullet": True, "size": 13}),
     (f"Accuracy {pct(FULL['accuracy'])} vs {pct(T2['accuracy'])}: {round((T2['accuracy'] - FULL['accuracy']) * FULL['n'])} "
-     f"fewer correct answers out of 36", {"bullet": True, "size": 13, "color": AMBER}),
+     f"fewer correct answers out of {N}", {"bullet": True, "size": 13, "color": AMBER}),
+    (f"Accuracy-first setting (pruner off): {pct(NPR['accuracy'])} at "
+     f"−{pct(1 - NPR['compute_units'] / T2['compute_units'], 0)} compute", {"bullet": True, "size": 13, "color": EM2}),
 ])
 
 # ================================================================ 8. LOO + cross-model + adaptation
@@ -434,11 +439,13 @@ lims = [
     ("A lexical pruner is blind to zero-overlap paraphrases",
      f"Low-overlap accuracy is {pct(llo_full, 0)} with the pruner vs "
      f"{pct(npr['per_category'].get('low_lexical_overlap', 0), 0)} without it. Recovery only works when the 3B admits "
-     "it doesn't know, and the refusal rules are model-specific: written for Qwen, they miss ALLaM's phrasing."),
+     "it doesn't know, and phrase-based refusal rules miss wordings like \"No … is mentioned\". Turning the pruner "
+     f"off gives {pct(npr['accuracy'])} accuracy at −{pct(1 - npr['compute_units'] / T2['compute_units'], 0)} compute."),
     ("Adaptation needs a costly signal; small benchmark",
      f"Rule checks miss confident errors: verifier-only health never fell below {pct(MIN_RATE, 0)}, so τ stayed flat. "
-     f"Shadow audits make τ react on real runs but cost +{pct(AUD_COST, 0)} compute, and since complexity scores "
-     "cluster, a 0.08 τ shift barely re-routes tasks. n = 36 synthetic docs: ±1 task = 2.8 pts."),
+     f"Shadow audits make τ react on real runs but cost +{pct(AUD_COST, 0)} compute and did not raise accuracy "
+     f"on the wave ({pct(AUD['summary']['accuracy'])} vs {pct(M['wave']['adaptive']['summary']['accuracy'])}). "
+     f"n = {N} synthetic cases: ±1 task = {100 / N:.1f} pts."),
 ]
 for i, (h, d) in enumerate(lims):
     y = 1.55 + i * 1.72

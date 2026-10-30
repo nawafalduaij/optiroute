@@ -10,21 +10,23 @@ query + context ─► Pruner ─► Cache Guard ─► Router ─► Tier-1 sma
                                                └───────► Tier-2 large ◄┘  (refusal → full context)
 ```
 
-## Headline results: `single-gpu` profile (qwen2.5 3B → 14B, 36 held-out cases)
+## Headline results: `single-gpu` profile (qwen2.5 3B → 14B, 96 held-out cases)
 
 Measured on one consumer GPU (AMD RX 7900 XTX). Compute is counted in hardware-independent units (tokens × active parameters), so these savings apply on any hardware; latency is specific to this machine.
 
-Source: [`results/summary_tables.md`](results/summary_tables.md), a replay of [`data/recorded_runs.jsonl`](data/recorded_runs.jsonl) (180 calls, temperature 0).
+Source: [`results/summary_tables.md`](results/summary_tables.md), a replay of [`data/recorded_runs.jsonl`](data/recorded_runs.jsonl) (480 calls, temperature 0).
 
 | Config | Accuracy | Tokens | Compute (kTok·B) | CPS (kTok·B / success) | P50 ms |
 |---|---|---|---|---|---|
-| Always Tier-2 (14B), raw context | 88.9% | 13,712 | 192.0 | 6.00 | 472 |
-| Always Tier-1 (3B), raw context | 86.1% | 13,363 | 40.1 | 1.29 | 129 |
-| **OptiRoute Full** | **86.1%** | **6,847** | **39.2 (−79.6%)** | **1.26 (4.7× cheaper)** | **152** |
+| Always Tier-2 (14B), raw context | 91.7% | 36,785 | 515.0 | 5.85 | 462 |
+| Always Tier-1 (3B), raw context | 85.4% | 35,956 | 107.9 | 1.32 | 138 |
+| **OptiRoute Full** | **84.4%** | **18,177** | **106.9 (−79.2%)** | **1.32 (4.4× cheaper)** | **145** |
+| OptiRoute, accuracy-first (pruner off) | 89.6% | 34,960 | 172.7 (−66.5%) | 2.01 (2.9× cheaper) | 147 |
 
-- Entity guard: **0/2** false cache hits on near-duplicate traps (2/2 without it).
-- Runtime verifier: **100% precision, 57% recall** on Tier-1 outputs (graded offline; it never sees ground truth).
-- Pruner: −70% context tokens at 0× noise and −94% at 4× noise, with 89–92% evidence recall.
+- The two OptiRoute rows are two measured operating points: maximum savings, or near-large-model accuracy at two thirds less compute. The gap between them is the pruner on low-overlap questions (50% vs 100%), see Limitations.
+- Entity guard: **0/6** false cache hits on near-duplicate traps (3/6 without it).
+- Runtime verifier: **78% precision, 33% recall** on Tier-1 outputs (graded offline; it never sees ground truth). Removing it costs 3 correct answers.
+- Pruner: −72% context tokens at 0× noise and −94% at 4× noise, with 89–90% evidence recall.
 - CPU overhead for all four guards: **under 2 ms** per request.
 
 ## Deployment profiles (same code, all recorded real runs)
@@ -33,19 +35,20 @@ Pick the profile that matches your hardware and data rules: `OPTIROUTE_PROFILE=<
 
 | Profile | Tier-1 → Tier-2 | Who it's for | Tier-1 alone | Always Tier-2 | OptiRoute | Tasks sent to Tier-2 | Tier-2 tokens |
 |---|---|---|---|---|---|---|---|
-| `single-gpu` | qwen2.5 3B → qwen2.5 14B (both local) | data must stay on-premise | 86.1% | 88.9% | 86.1% | 6/36 | −88% |
-| `hybrid` | qwen3.5 9B local → gpt-oss-120b cloud | best accuracy, most data stays local | 91.7% | 97.2% | **100%** | 7/36 | −84% |
-| `edge` | qwen2.5 0.5B local (CPU-friendly) → gpt-oss-120b cloud | no GPU | 55.6% | 97.2% | 83.3% | 8/36 | −83% |
-| `cloud` | ALLaM-2 7B → gpt-oss-120b (both Groq) | no local hardware | 94.4% | 97.2% | 86.1% | 6/36 | −87% |
+| `single-gpu` | qwen2.5 3B → qwen2.5 14B (both local) | data must stay on-premise | 85.4% | 91.7% | 84.4% | 18/96 | −87% |
+| `hybrid` | qwen3.5 9B local → gpt-oss-120b cloud | best accuracy, most data stays local | 94.8% | 99.0% | **95.8%** | 19/96 | −85% |
+| `edge` | qwen2.5 0.5B local (CPU-friendly) → gpt-oss-120b cloud | no GPU | 57.3% | 99.0% | 80.2% | 25/96 | −83% |
+| `cloud` | ALLaM-2 7B → gpt-oss-120b (both Groq) | no local hardware | 90.6% | 99.0% | 90.6% | 20/96 | −85% |
 
 - **"Tier-2 tokens"** is the cut in large-model traffic versus sending every request to Tier-2. For a cloud Tier-2, that is the API bill and the data leaving your premises.
-- **hybrid:** the 100% matches the cloud model rather than beating it. Always-cloud's single miss is a correct paraphrase that the strict scorer rejects.
-- **cloud:** here the cascade scores *below* ALLaM alone. The refusal rules were written from Qwen's phrasing and miss ALLaM's ("does not give information…"), so starved-context refusals aren't escalated. We did not tune them on these test answers; per-model calibration on the dev set is on the roadmap.
-- More recorded pairs (llama3.2 3B, qwen2.5 0.5B/7B with a local 14B) are in [`results/summary_tables.md`](results/summary_tables.md) (Experiment 5). With a weak 0.5B, the cascade adds 19.4 points over that model alone.
+- **hybrid:** within 3.2 points of always-cloud while 77 of 96 requests never leave the machine.
+- **cloud:** the cascade matches ALLaM alone at 85% less large-model traffic, but does not improve on it: refusal rules written from Qwen's phrasing miss some of ALLaM's, so those refusals aren't escalated. Per-model calibration on the dev set is on the roadmap.
+- **edge:** the cascade adds 22.9 points over the 0.5B alone.
+- More recorded pairs (llama3.2 3B, qwen2.5 0.5B/7B with a local 14B, qwen2.5 3B with a cloud Tier-2) are in [`results/summary_tables.md`](results/summary_tables.md) (Experiment 5).
 - Optional cost in USD: set `TIER*_PRICE_IN_PER_MTOK` / `TIER*_PRICE_OUT_PER_MTOK` from your provider's price list. No prices are built in.
-- **Adaptation on real runs:** rule checks alone can't see confident errors (during the burst the 0.5B passed verification 96% of the time at 50% true accuracy), so τ stays flat. With a **shadow audit**, every 4th verified answer is re-asked to Tier-2 and disagreement lowers the health estimate. τ then goes 0.55 → 0.47 in the hard burst and recovers to 0.55 afterwards, at +42% compute on that stream.
+- **Adaptation on real runs:** rule checks alone can't see confident errors (during the hard burst the 0.5B passed verification 81% of the time, but only 38% of those answers were right), so τ stays flat. With a **shadow audit**, every 4th verified answer is re-asked to Tier-2 and disagreement lowers the health estimate. τ then goes 0.55 → 0.39 in the hard burst and recovers to 0.55 afterwards, at +34% compute on that stream, without improving accuracy there.
 
-**Limitations** (deck slide 9): the verifier misses grounded-but-wrong arithmetic (multi-hop is weak even for the local 14B); a lexical pruner cannot see zero-overlap paraphrases, and the refusal rules are model-specific; adaptation needs a costly audit signal and rarely changes routing because complexity scores cluster; n = 36.
+**Limitations** (deck slide 9): the pruner is lexical and drops the right paragraph on zero-overlap paraphrases (low-overlap accuracy 50% with it, 100% without); recovery depends on the small model admitting it doesn't know, and the refusal rules are phrase-based. The verifier misses grounded-but-wrong arithmetic (multi-hop is weak even for the local 14B, which sometimes answers Arabic arithmetic in Chinese). Adaptation needs a costly audit signal. n = 96 synthetic cases (±1 task ≈ 1 point).
 
 ## Quick start
 
@@ -78,7 +81,7 @@ Two tiers that both run locally need enough memory for both models at once (`OLL
 | `src/pipeline.py` | cascade orchestrator with per-component ablation flags |
 | `src/llm_client.py` | OpenAI-compatible client + recorder / replayer / simulator |
 | `src/ground_truth_scorer.py` | offline benchmark judge (used only by `evaluate.py`) |
-| `scripts/generate_dataset.py` | 36 held-out + 10 dev bilingual cases (synthetic enterprise documents) |
+| `scripts/generate_dataset.py` | 96 held-out + 10 dev bilingual cases on 11 synthetic enterprise documents |
 | `evaluate.py` | cumulative + LOO ablations, verifier P/R, noise scaling, wave workload, near-duplicate audit |
 | `app.py`, `static/index.html` | interactive demo (presets replay recordings; custom input runs live) |
 | `scripts/generate_pptx.py` | builds `deliverables/OptiRoute_Presentation.pptx` (10 slides) from `results/metrics.json` |
@@ -86,7 +89,7 @@ Two tiers that both run locally need enough memory for both models at once (`OLL
 | `profiles/*.env` | deployment profiles: `single-gpu`, `hybrid`, `edge`, `cloud` |
 | `data/recorded_runs*.jsonl` | main recording (single-gpu) + profile and model-swap recordings (`--assemble` combines tiers without new calls) |
 
-**Data:** all documents are synthetic and the companies are fictional, as permitted by the organizers. **Iteration disclosure:** after inspecting held-out failures, two verifier rules were generalized: (1) refusal detection now uses a negation + information-verb pattern instead of a phrase list; (2) lookups must quote numbers verbatim, and derived arithmetic is allowed only for computational questions. Both were re-checked for false positives on all 540 recorded Tier-1 outputs. Dataset answers and model outputs were never edited.
+**Data:** all documents are synthetic and the companies are fictional, as permitted by the organizers. **Iteration disclosure:** after inspecting held-out failures, two verifier rules were generalized: (1) refusal detection now uses a negation + information-verb pattern instead of a phrase list; (2) lookups must quote numbers verbatim, and derived arithmetic is allowed only for computational questions. Both were re-checked for false positives on all 540 recorded Tier-1 outputs. The held-out set was then expanded from 36 to 96 cases; the 60 new cases (4 new documents) were written and committed before any model was run on them, and no system component was changed afterwards. After the first run, two new reference answers were widened because they rejected correct answers (listed in `scripts/generate_dataset.py`). Model outputs were never edited.
 
 Re-record a Tier-1 swap (Tier-2 reused):
 ```bash
