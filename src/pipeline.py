@@ -2,7 +2,7 @@
 from __future__ import annotations
 
 import time
-from dataclasses import dataclass, replace
+from dataclasses import dataclass
 
 from . import pruner as pruner_mod
 from .adaptation import AdaptationController
@@ -26,9 +26,6 @@ class PipelineFlags:
     use_adaptation: bool = True
     force_tier: int | None = None  # 1 or 2 bypasses the router
     shadow_audit_every: int = 0  # >0: every k-th verified Tier-1 answer is re-asked to Tier-2 as a health probe
-
-    def but(self, **kw) -> "PipelineFlags":
-        return replace(self, **kw)
 
 
 class OptiRoutePipeline:

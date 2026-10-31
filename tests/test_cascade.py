@@ -167,7 +167,7 @@ def test_live_client_retries_rate_limits(settings, held_out):
 
     calls = {"n": 0}
 
-    def handler(request):
+    def handler(_request):
         calls["n"] += 1
         if calls["n"] <= 2:
             return httpx.Response(429, headers={"retry-after": "0.01"}, json={"error": "rate limited"})

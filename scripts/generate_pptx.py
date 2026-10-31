@@ -24,7 +24,7 @@ M = json.loads((ROOT / "results" / "metrics.json").read_text(encoding="utf-8"))
 assert M["mode"] == "replay", "deck must be built from recorded (replay) results, not sim"
 
 BG, PANEL, PANEL2, LINE = "07110E", "0D1A16", "112520", "1D3A32"
-TEXT, MUTED, EM, EM2, AMBER, RED = "E6F2EE", "8AA69D", "10B981", "34D399", "F59E0B", "F87171"
+TEXT, MUTED, EM, EM2, AMBER = "E6F2EE", "8AA69D", "10B981", "34D399", "F59E0B"
 FONT = "Segoe UI"
 
 C, L, V = M["cumulative"], M["loo"], M["verifier"]
@@ -50,7 +50,6 @@ N_TESTS = sum(1 for line in subprocess.run(
     [sys.executable, "-m", "pytest", "--collect-only", "-q", str(ROOT / "tests")], capture_output=True, text=True,
     cwd=ROOT, env={**os.environ, "OPTIROUTE_MODE": "sim"}).stdout.splitlines() if "::" in line)
 MIN_RATE = min(x["pass_rate"] for x in WAVE if x["pass_rate"] is not None)
-MAX_P95 = max(x["p95_ms"] for x in WAVE)
 AUD = M["wave"]["adaptive_audit"]
 AUD_ACTS = [x for x in AUD["trace"] if x["action"] != "hold"]
 AUD_TIGHTEN = next(x["step"] for x in AUD_ACTS if x["action"] == "tighten")

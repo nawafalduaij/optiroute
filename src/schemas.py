@@ -1,7 +1,7 @@
 """Typed records shared across the cascade."""
 from __future__ import annotations
 
-from dataclasses import asdict, dataclass, field
+from dataclasses import dataclass, field
 from typing import Any
 
 
@@ -23,9 +23,6 @@ class Task:
     @classmethod
     def from_dict(cls, d: dict[str, Any]) -> "Task":
         return cls(**{k: d[k] for k in cls.__dataclass_fields__ if k in d})
-
-    def to_dict(self) -> dict[str, Any]:
-        return asdict(self)
 
 
 @dataclass

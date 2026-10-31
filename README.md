@@ -86,6 +86,9 @@ Two tiers that both run locally need enough memory for both models at once (`OLL
 | `src/adaptation.py` | bidirectional τ controller with hysteresis |
 | `src/pipeline.py` | cascade orchestrator with per-component ablation flags |
 | `src/llm_client.py` | OpenAI-compatible client + recorder / replayer / simulator |
+| `src/config.py`, `src/schemas.py` | settings and deployment-profile loading; typed records shared across the cascade |
+| `src/textsim.py`, `src/tokenizer.py` | dependency-free TF-IDF cosine similarity; tiktoken token counting |
+| `tests/`, `.github/workflows/tests.yml` | 35 unit tests (sim mode) + CI that re-checks the headline numbers on every push |
 | `src/ground_truth_scorer.py` | offline benchmark judge (used only by `evaluate.py`) |
 | `scripts/generate_dataset.py` | 96 held-out + 10 dev bilingual cases on 11 synthetic enterprise documents |
 | `evaluate.py` | cumulative + LOO ablations, verifier P/R, noise scaling, wave workload, near-duplicate audit |

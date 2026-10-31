@@ -236,15 +236,3 @@ def bind_recorded_models(settings: Settings, client) -> Settings:
                   f"{cfg.model}; using the recorded model", file=sys.stderr)
         tiers[attr] = replace(cfg, model=model, params_b=params)
     return replace(settings, **tiers)
-
-
-def make_client(settings: Settings, mode: str, path: Path | None = None) -> LLMBackend:
-    if mode == "sim":
-        return SimClient(settings)
-    if mode == "replay":
-        if path is None:
-            raise ValueError("replay mode needs a recorded JSONL path")
-        return ReplayClient(path)
-    if mode in ("live", "record"):
-        return LiveClient(settings, record_path=path if mode == "record" else None)
-    raise ValueError(f"unknown mode {mode!r}")
