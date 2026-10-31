@@ -10,6 +10,12 @@ query + context ─► Pruner ─► Cache Guard ─► Router ─► Tier-1 sma
                                                └───────► Tier-2 large ◄┘  (refusal → full context)
 ```
 
+**Why it matters:** most enterprise requests are simple lookups, yet the default setup sends every one to the largest model with the whole document attached. OptiRoute cuts that compute by 79% and keeps the data on-premise, and it never trades correctness for cost silently. The entity guard blocks cached answers for a different invoice ID, and the verifier escalates answers it can't trust.
+
+**Submission materials:** [presentation (PDF)](deliverables/OptiRoute_Presentation.pdf) · [presentation (PPTX)](deliverables/OptiRoute_Presentation.pptx) · [UI screenshots](deliverables/screenshots/)
+
+**Tech stack:** Python 3.12+ · FastAPI + Uvicorn (demo server) · vanilla JS + Chart.js (UI) · tiktoken (token counting) · httpx (OpenAI-compatible client for Ollama, vLLM, Groq…) · pytest + GitHub Actions (tests and reproducibility check) · python-pptx (deck generated from measured results). Models measured: qwen2.5 0.5B/3B/7B/14B, qwen3.5 9B, llama3.2 3B, ALLaM-2 7B, gpt-oss-120b.
+
 ## Headline results: `single-gpu` profile (qwen2.5 3B → 14B, 96 held-out cases)
 
 Measured on one consumer GPU (AMD RX 7900 XTX). Compute is counted in hardware-independent units (tokens × active parameters), so these savings apply on any hardware; latency is specific to this machine.
