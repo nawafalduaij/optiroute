@@ -11,7 +11,7 @@ _WORD = re.compile(r"[\w؀-ۿ]+", re.UNICODE)
 _ARABIC_CHAR = re.compile(r"[؀-ۿ]")
 _LATIN_CHAR = re.compile(r"[A-Za-z]")
 
-# Identifier: INV-8841, PO-2231, #INV-8841, SLA-3, etc. (letters, dash, digits)
+# Identifier: INV-8841, PO-2231, #INV-8841, etc. (letters, optional dash, 2+ digits; "SLA-3" stays the number 3)
 _ID = re.compile(r"#?\b([A-Za-z]{2,6})[-_]?(\d{2,})\b")
 # Number with optional thousands separators, decimals and percent sign.
 _NUM = re.compile(r"(?<![A-Za-z0-9.])-?\d{1,3}(?:,\d{3})+(?:\.\d+)?%?|(?<![A-Za-z0-9.])-?\d+(?:\.\d+)?%?")

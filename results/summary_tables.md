@@ -4,28 +4,28 @@
 - Tier-1: `qwen2.5:3b` (3B) · Tier-2: `qwen2.5:14b` (14B) · tokenizer: tiktoken `o200k_base`
 - Held-out cases: 96 · Compute = Σ tokens/1000 × active params (B); Tier-0 cache = 0
 - Latency = recorded LLM latency + measured CPU overhead (`time.perf_counter`)
-- Iteration disclosure (after inspecting held-out failures): (1) the verifier's refusal detector was generalized from a phrase list to a negation+information-verb pattern; (2) numeric grounding now requires verbatim numbers for lookup questions and allows derived (+ − × ÷ %) numbers only when the query asks for computation. Both were re-checked for false positives on all 540 recorded Tier-1 outputs across 3 models. Dataset answers and model outputs were never edited.
+- Iteration disclosure (after inspecting held-out failures): (1) the verifier's refusal detector was generalized from a phrase list to a negation+information-verb pattern; (2) numeric grounding now requires verbatim numbers for lookup questions and allows derived (+ − × ÷ %) numbers only when the query asks for computation. Both were re-checked for false positives on all 540 recorded Tier-1 outputs across 3 models. A later code review (3) stopped the boilerplate filter deleting paragraphs that merely contain the word "confidential" and made its Arabic footer phrases match, and (4) limited the cache to answers that pass the runtime checks; only the affected prompts were re-recorded. Dataset answers and model outputs were never edited.
 
 ## Table 1 — Cumulative Progression
 
 | Config | Accuracy | Tokens | Δ Tokens vs T2 | Compute (kTok·B) | Δ Compute | CPS (kTok·B / success) | P50 ms | P95 ms | Final tier 0/1/2 | Escalations | False cache hits / traps |
 |---|---|---|---|---|---|---|---|---|---|---|---|
-| 1_Always_Tier2_Raw | 91.7% (88/96) | 36,785 | +0.0% | 514.99 | +0.0% | 5.852 | 462 | 1125 | 0/0/96 | 0 | 0/6 |
+| 1_Always_Tier2_Raw | 91.7% (88/96) | 36,785 | +0.0% | 514.99 | +0.0% | 5.852 | 466 | 1125 | 0/0/96 | 0 | 0/6 |
 | 2_Always_Tier1_Raw | 85.4% (82/96) | 35,956 | +2.3% | 107.87 | +79.1% | 1.315 | 138 | 241 | 0/96/0 | 0 | 0/6 |
 | 3_Router_Only | 89.6% (86/96) | 36,494 | +0.8% | 168.05 | +67.4% | 1.954 | 148 | 1159 | 0/84/12 | 0 | 0/6 |
-| 4_Pruner_Plus_Router | 81.2% (78/96) | 17,452 | +52.6% | 84.04 | +83.7% | 1.077 | 141 | 896 | 0/84/12 | 0 | 0/6 |
-| 5_OptiRoute_Full | 84.4% (81/96) | 18,177 | +50.6% | 106.87 | +79.2% | 1.319 | 145 | 980 | 6/72/18 | 6 | 0/6 |
+| 4_Pruner_Plus_Router | 81.2% (78/96) | 17,455 | +52.5% | 84.05 | +83.7% | 1.078 | 141 | 896 | 0/84/12 | 0 | 0/6 |
+| 5_OptiRoute_Full | 84.4% (81/96) | 18,180 | +50.6% | 106.88 | +79.2% | 1.319 | 145 | 981 | 6/72/18 | 6 | 0/6 |
 
 ## Table 2 — Leave-One-Out Ablation
 
 | Config | Accuracy | Tokens | Δ Tokens vs T2 | Compute (kTok·B) | Δ Compute | CPS (kTok·B / success) | P50 ms | P95 ms | Final tier 0/1/2 | Escalations | False cache hits / traps |
 |---|---|---|---|---|---|---|---|---|---|---|---|
-| Full_OptiRoute | 84.4% (81/96) | 18,177 | +50.6% | 106.87 | +79.2% | 1.319 | 145 | 980 | 6/72/18 | 6 | 0/6 |
-| LOO_No_Cache | 84.4% (81/96) | 19,330 | +47.5% | 110.33 | +78.6% | 1.362 | 149 | 979 | 0/78/18 | 6 | 0/6 |
-| LOO_No_Cache_Entity_Guard | 83.3% (80/96) | 17,479 | +52.5% | 99.27 | +80.7% | 1.241 | 141 | 896 | 9/71/16 | 6 | 3/6 |
-| LOO_No_Pruner | 89.6% (86/96) | 34,960 | +5.0% | 172.73 | +66.5% | 2.008 | 147 | 1218 | 6/76/14 | 2 | 0/6 |
-| LOO_No_Verifier | 81.2% (78/96) | 16,299 | +55.7% | 80.58 | +84.4% | 1.033 | 139 | 896 | 6/78/12 | 0 | 0/6 |
-| LOO_No_Adaptation | 84.4% (81/96) | 18,177 | +50.6% | 106.87 | +79.2% | 1.319 | 145 | 980 | 6/72/18 | 6 | 0/6 |
+| Full_OptiRoute | 84.4% (81/96) | 18,180 | +50.6% | 106.88 | +79.2% | 1.319 | 145 | 981 | 6/72/18 | 6 | 0/6 |
+| LOO_No_Cache | 84.4% (81/96) | 19,333 | +47.4% | 110.34 | +78.6% | 1.362 | 148 | 979 | 0/78/18 | 6 | 0/6 |
+| LOO_No_Cache_Entity_Guard | 83.3% (80/96) | 17,982 | +51.1% | 106.28 | +79.4% | 1.329 | 145 | 981 | 7/71/18 | 6 | 1/6 |
+| LOO_No_Pruner | 89.6% (86/96) | 34,960 | +5.0% | 172.73 | +66.5% | 2.008 | 147 | 1219 | 6/76/14 | 2 | 0/6 |
+| LOO_No_Verifier | 81.2% (78/96) | 16,302 | +55.7% | 80.59 | +84.4% | 1.033 | 139 | 896 | 6/78/12 | 0 | 0/6 |
+| LOO_No_Adaptation | 84.4% (81/96) | 18,180 | +50.6% | 106.88 | +79.2% | 1.319 | 145 | 981 | 6/72/18 | 6 | 0/6 |
 
 ## Accuracy by Category
 
@@ -51,18 +51,18 @@
 
 ## Measured Component Overhead (mean ms per task, Full cascade)
 
-| Pruner | Cache | Router | Verifier | Total CPU | Mean LLM latency |
+| Pruner | Cache | Router | Verifier | Total CPU | P50 end-to-end |
 |---|---|---|---|---|---|
-| 1.34 | 0.32 | 0.02 | 0.11 | 1.79 | 145 (P50 end-to-end) |
+| 1.33 | 0.32 | 0.02 | 0.19 | 1.87 | 145 |
 
 ## Experiment 1 — Bilingual Context Noise Scaling (pruner only, CPU)
 
 | Distractors | Evidence recall | Tokens before | Tokens after | Reduction | Prune ms |
 |---|---|---|---|---|---|
-| 0x | 89.6% | 24,072 | 6,766 | 71.9% | 1.27 |
-| 1x | 89.6% | 47,435 | 7,003 | 85.2% | 2.52 |
-| 2x | 88.5% | 70,926 | 7,175 | 89.9% | 3.64 |
-| 4x | 88.5% | 117,530 | 7,450 | 93.7% | 5.30 |
+| 0x | 89.6% | 24,072 | 6,773 | 71.9% | 1.30 |
+| 1x | 88.5% | 47,435 | 6,966 | 85.3% | 2.55 |
+| 2x | 88.5% | 70,926 | 7,180 | 89.9% | 3.70 |
+| 4x | 88.5% | 117,530 | 7,438 | 93.7% | 5.46 |
 
 ## Experiment 2 — Wave Workload (easy → hard burst → easy), cache off
 
@@ -70,10 +70,10 @@ Phases (step index): {'easy_1': [0, 10], 'hard_burst': [10, 78], 'easy_2': [78, 
 
 | Controller | Accuracy | Compute | CPS | Escalations | Final tier 0/1/2 | τ min | τ final |
 |---|---|---|---|---|---|---|---|
-| adaptive | 73.5% | 139.39 | 1.936 | 10 | 0/72/26 | 0.55 | 0.55 |
-| fixed_tau | 73.5% | 139.39 | 1.936 | 10 | 0/72/26 | 0.55 | 0.55 |
-| adaptive_audit | 72.4% | 186.17 | 2.622 | 9 | 0/66/32 | 0.39 | 0.55 |
-| fixed_tau_audit | 73.5% | 184.04 | 2.556 | 10 | 0/68/30 | 0.55 | 0.55 |
+| adaptive | 73.5% | 139.40 | 1.936 | 10 | 0/72/26 | 0.55 | 0.55 |
+| fixed_tau | 73.5% | 139.40 | 1.936 | 10 | 0/72/26 | 0.55 | 0.55 |
+| adaptive_audit | 72.4% | 186.18 | 2.622 | 9 | 0/66/32 | 0.39 | 0.55 |
+| fixed_tau_audit | 73.5% | 184.05 | 2.556 | 10 | 0/68/30 | 0.55 | 0.55 |
 
 τ(t) trace (adaptive): 0.55 0.55 0.55 0.55 0.55 0.55 0.55 0.55 0.55 0.55 0.55 0.55 0.55 0.55 0.55 0.55 0.55 0.55 0.55 0.55 0.55 0.55 0.55 0.55 0.55 0.55 0.55 0.55 0.55 0.55 0.55 0.55 0.55 0.55 0.55 0.55 0.55 0.55 0.55 0.55 0.55 0.55 0.55 0.55 0.55 0.55 0.55 0.55 0.55 0.55 0.55 0.55 0.55 0.55 0.55 0.55 0.55 0.55 0.55 0.55 0.55 0.55 0.55 0.55 0.55 0.55 0.55 0.55 0.55 0.55 0.55 0.55 0.55 0.55 0.55 0.55 0.55 0.55 0.55 0.55 0.55 0.55 0.55 0.55 0.55 0.55 0.55 0.55 0.55 0.55 0.55 0.55 0.55 0.55 0.55 0.55 0.55 0.55
 
@@ -83,8 +83,8 @@ Trigger check: min windowed Tier-1 verifier pass rate = 75% (tighten if < 70%); 
 
 | Config | Cache hits | Blocked traps | False cache hits / traps | Cache-category accuracy |
 |---|---|---|---|---|
-| With entity guard | 6 | 3 | 0/6 | 83% |
-| Without entity guard | 9 | 0 | 3/6 | 75% |
+| With entity guard | 6 | 1 | 0/6 | 83% |
+| Without entity guard | 7 | 0 | 1/6 | 75% |
 
 ## Experiment 4 — Real Tier-1 Degradation Stress (adaptation under genuine failures)
 
@@ -114,8 +114,8 @@ Controller actions (adaptive_audit, step:action): 25:tighten 44:tighten 74:tight
 | **single-gpu** | `recorded_runs.jsonl` | qwen2.5:3b (3B) | qwen2.5:14b (14B) | 91.7% | 85.4% | **84.4%** | -79.2% | 5.85 → 1.32 | 78% / 33% | 18/96 | -87.1% |
 | — | `recorded_runs_t1-llama3.2-3b.jsonl` | llama3.2:3b (3.2B) | qwen2.5:14b (14B) | 91.7% | 85.4% | **84.4%** | -77.9% | 5.85 → 1.41 | 64% / 50% | 19/96 | -86.8% |
 | — | `recorded_runs_t1-qwen2.5-0.5b.jsonl` | qwen2.5:0.5b (0.5B) | qwen2.5:14b (14B) | 91.7% | 57.3% | **74.0%** | -81.8% | 5.85 → 1.32 | 90% / 41% | 25/96 | -83.1% |
-| — | `recorded_runs_t1-qwen2.5-7b.jsonl` | qwen2.5:7b (7B) | qwen2.5:14b (14B) | 91.7% | 88.5% | **87.5%** | -69.2% | 5.85 → 1.89 | 89% / 42% | 17/96 | -87.4% |
+| — | `recorded_runs_t1-qwen2.5-7b.jsonl` | qwen2.5:7b (7B) | qwen2.5:14b (14B) | 91.7% | 88.5% | **87.5%** | -69.1% | 5.85 → 1.89 | 89% / 42% | 17/96 | -87.4% |
 | **cloud** | `recorded_runs_t2-gpt-oss-120b_t1-allam-2-7b.jsonl` | allam-2-7b (7B) | openai/gpt-oss-120b (5.1B) | 99.0% | 90.6% | **90.6%** | -30.4% | 2.11 → 1.60 | 50% / 42% | 20/96 | -85.1% |
 | **edge** | `recorded_runs_t2-gpt-oss-120b_t1-qwen2.5-0.5b.jsonl` | qwen2.5:0.5b (0.5B) | openai/gpt-oss-120b (5.1B) | 99.0% | 57.3% | **80.2%** | -79.2% | 2.11 → 0.54 | 90% / 41% | 25/96 | -82.5% |
 | — | `recorded_runs_t2-gpt-oss-120b_t1-qwen2.5-3b.jsonl` | qwen2.5:3b (3B) | openai/gpt-oss-120b (5.1B) | 99.0% | 85.4% | **91.7%** | -66.3% | 2.11 → 0.77 | 78% / 33% | 18/96 | -86.4% |
-| **hybrid** | `recorded_runs_t2-gpt-oss-120b_t1-qwen3.5-9b.jsonl` | qwen3.5:9b (9B) | openai/gpt-oss-120b (5.1B) | 99.0% | 94.8% | **95.8%** | -23.0% | 2.11 → 1.68 | 85% / 69% | 19/96 | -84.6% |
+| **hybrid** | `recorded_runs_t2-gpt-oss-120b_t1-qwen3.5-9b.jsonl` | qwen3.5:9b (9B) | openai/gpt-oss-120b (5.1B) | 99.0% | 94.8% | **95.8%** | -22.9% | 2.11 → 1.68 | 85% / 69% | 19/96 | -84.6% |

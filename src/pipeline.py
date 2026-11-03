@@ -12,7 +12,6 @@ from .llm_client import LLMBackend
 from .normalize import extract_entities
 from .router import route
 from .schemas import CascadeResult, LLMResponse, RouteDecision, Task
-from .tokenizer import count_tokens
 from .verifier import answers_agree, verify
 
 
@@ -58,7 +57,6 @@ class OptiRoutePipeline:
         enc = self.settings.tokenizer_encoding
         f = self.flags
         overhead = {"pruner": 0.0, "cache": 0.0, "router": 0.0, "verifier": 0.0}
-        raw_tokens = count_tokens(pruner_mod.join_context(task.context), enc)
 
         # 1. Context pruning (or just relevance scoring for router/cache when pruning is disabled)
         t0 = time.perf_counter()
@@ -69,8 +67,9 @@ class OptiRoutePipeline:
         else:
             chunks, variant, scores = task.context, "raw", pr.scores
             overhead["router"] += (time.perf_counter() - t0) * 1000  # scoring cost charged to router
-        pruned_tokens = count_tokens(pruner_mod.join_context(chunks), enc)
-        candidates, _ = pruner_mod.drop_boilerplate(task.context)
+        raw_tokens = pr.tokens_before
+        pruned_tokens = pr.tokens_after if f.use_pruner else raw_tokens
+        candidates = pr.candidates
         trace: dict = {"prune": {
             "enabled": f.use_pruner, "scores": {candidates[j]: round(s, 4) for j, s in enumerate(scores)},
             "kept": pr.kept_indices, "boilerplate": [i for i in range(len(task.context)) if i not in candidates],
@@ -117,6 +116,7 @@ class OptiRoutePipeline:
         ver = None
         tier1_passed = None
         audit_agree = None
+        answer_chunks = chunks  # the context the final answer was produced from
         if tier == 1:
             r1 = self._call(task, variant, 1, chunks)
             calls.append(r1)
@@ -133,6 +133,7 @@ class OptiRoutePipeline:
                         esc_chunks, esc_variant = task.context, "raw"
                     elif f.use_pruner:
                         rel = pruner_mod.relaxed(task.query, task.context, pr, self.cfg.relaxed_k, enc)
+                        overhead["pruner"] += rel.elapsed_ms
                         esc_chunks, esc_variant = rel.kept, "relaxed"
                     else:
                         esc_chunks, esc_variant = task.context, "raw"
@@ -140,7 +141,7 @@ class OptiRoutePipeline:
                     calls.append(r2)
                     path.append(f"escalate:{'+'.join(ver.failed_checks)}")
                     path.append(f"tier2:{esc_variant}")
-                    answer, final_tier = r2.raw_output, 2
+                    answer, final_tier, answer_chunks = r2.raw_output, 2, esc_chunks
                 elif f.shadow_audit_every:
                     self.accepted_tier1 += 1
                     if self.accepted_tier1 % f.shadow_audit_every == 0:
@@ -158,6 +159,14 @@ class OptiRoutePipeline:
             path.append(f"tier2:{variant}")
             answer, final_tier = r2.raw_output, 2
 
+        # A Tier-2 answer is final without checks (there is nothing above it to escalate to), but it may only be
+        # re-served from the cache if it passes them. This runs once per Tier-2 answer and spends no tokens.
+        cacheable = f.use_cache
+        if cacheable and f.use_verifier and final_tier == 2:
+            check = verify(task.query, pruner_mod.join_context(answer_chunks), answer, task.schema)
+            overhead["verifier"] += check.elapsed_ms
+            cacheable = check.passed
+
         res = CascadeResult(
             task_id=task.task_id, answer=answer, final_tier=final_tier, path=path, calls=calls,
             tokens_raw_context=raw_tokens, tokens_pruned_context=pruned_tokens,
@@ -165,9 +174,9 @@ class OptiRoutePipeline:
             llm_latency_ms=sum(c.latency_ms for c in calls), overhead_ms=overhead, route=decision,
             verifier=ver, cache_event=cache_event, tau=tau, trace=trace, cost_usd=self._cost(calls),
         )
-        # 5. Feedback: adaptation + cache population (only accepted answers are cached)
+        # 5. Feedback: adaptation + cache population (only answers that passed the runtime checks are cached)
         self.adapt.observe(res.latency_ms, tier1_passed, audit_agree)
-        if f.use_cache:
+        if cacheable:
             self.cache.insert(task.task_id, task.query, ctx_hash, answer)
         return res
 

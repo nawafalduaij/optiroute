@@ -11,23 +11,34 @@ from .textsim import char_ngrams, cosine, idf_from, tfidf, word_terms
 from .tokenizer import count_tokens
 
 W_CHAR, W_WORD, W_ENT = 0.50, 0.35, 0.15
+MAX_BOILERPLATE_WORDS = 15  # footers and headers are short; a longer paragraph is content whatever words it uses
 
-_BOILERPLATE = re.compile(
-    r"(confidential|all rights reserved|page \d+ of \d+|this document is (the )?property of"
-    r"|جميع الحقوق محفوظه|سري للغايه|صفحه \d+ من \d+|هذه الوثيقه ملك)",
-    re.IGNORECASE,
-)
+# Footer/header phrases. They go through the same normalization as the text they are matched against, which
+# strips Arabic clitics such as ال, so writing them in normalized form by hand would silently never match.
+_FOOTER_PHRASES = ["all rights reserved", "this document is property of", "this document is the property of",
+                   "جميع الحقوق محفوظة", "هذه الوثيقة ملك"]
+_BOILERPLATE = re.compile("|".join(re.escape(normalize_text(p)) for p in _FOOTER_PHRASES)
+                          + r"|page \d+ of \d+|صفحه \d+ من \d+")
+# A bare marking set off from the rest of the line ("Acme Co. — Confidential."), matched on raw text because
+# normalization removes the separator. A sentence that merely uses the word ("Salaries are confidential.") is content.
+_MARKING = re.compile(r"(?:^|\s[—–|-]\s*)(?:confidential|سري للغاي[ةه])\.?\s*$", re.IGNORECASE)
 
 
 def join_context(chunks: list[str]) -> str:
     return "\n\n".join(chunks)
 
 
+def _is_footer(raw: str, norm: str) -> bool:
+    if len(norm.split()) > MAX_BOILERPLATE_WORDS:
+        return False
+    return bool(_BOILERPLATE.search(norm) or _MARKING.search(raw.strip()))
+
+
 def drop_boilerplate(chunks: list[str]) -> tuple[list[int], int]:
     """Indices of non-boilerplate chunks: removes repeated paragraphs and known footer/header text."""
     norm = [normalize_text(c) for c in chunks]
     counts = Counter(norm)
-    keep = [i for i, n in enumerate(norm) if counts[n] < 2 and not _BOILERPLATE.search(n) and n]
+    keep = [i for i, n in enumerate(norm) if n and counts[n] < 2 and not _is_footer(chunks[i], n)]
     return keep, len(chunks) - len(keep)
 
 
@@ -64,15 +75,17 @@ def prune(query: str, chunks: list[str], theta: float = 0.18, min_k: int = 2,
     kept_local = sorted(chosen)  # preserve original document order
     kept_indices = [candidates[j] for j in kept_local]
     kept = [chunks[i] for i in kept_indices]
-    elapsed = (time.perf_counter() - t0) * 1000
+    tokens_before = count_tokens(join_context(chunks), encoding)
+    tokens_after = count_tokens(join_context(kept), encoding)
     return PruneResult(
         kept=kept,
         kept_indices=kept_indices,
+        candidates=candidates,
         scores=scores,
         dropped_boilerplate=n_boiler,
-        tokens_before=count_tokens(join_context(chunks), encoding),
-        tokens_after=count_tokens(join_context(kept), encoding),
-        elapsed_ms=elapsed,
+        tokens_before=tokens_before,
+        tokens_after=tokens_after,
+        elapsed_ms=(time.perf_counter() - t0) * 1000,
     )
 
 
@@ -80,16 +93,16 @@ def relaxed(query: str, chunks: list[str], base: PruneResult, k: int = 4,
             encoding: str = "o200k_base") -> PruneResult:
     """Escalation-safety variant: union of the pruned set and the top-k chunks."""
     t0 = time.perf_counter()
-    candidates, n_boiler = drop_boilerplate(chunks)
     ranked = sorted(range(len(base.scores)), key=lambda j: -base.scores[j])
-    chosen = {candidates[j] for j in ranked[:k]} | set(base.kept_indices)
+    chosen = {base.candidates[j] for j in ranked[:k]} | set(base.kept_indices)
     kept_indices = sorted(chosen)
     kept = [chunks[i] for i in kept_indices]
     return PruneResult(
         kept=kept,
         kept_indices=kept_indices,
+        candidates=base.candidates,
         scores=base.scores,
-        dropped_boilerplate=n_boiler,
+        dropped_boilerplate=base.dropped_boilerplate,
         tokens_before=base.tokens_before,
         tokens_after=count_tokens(join_context(kept), encoding),
         elapsed_ms=(time.perf_counter() - t0) * 1000,

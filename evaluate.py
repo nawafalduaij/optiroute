@@ -22,7 +22,7 @@ from src import pruner as pruner_mod
 from src.adaptation import p95
 from src.config import ROOT, get_settings, list_profiles
 from src.ground_truth_scorer import score
-from src.llm_client import LiveClient, ReplayClient, SimClient, bind_recorded_models
+from src.llm_client import LiveClient, ReplayClient, SimClient, bind_recorded_models, build_messages, prompt_sha
 from src.pipeline import OptiRoutePipeline, PipelineFlags
 from src.schemas import CascadeResult, Task
 from src.verifier import verify
@@ -194,7 +194,10 @@ def write_report(out_dir: Path, mode: str, settings, cum, loo, vpr, noise, wave,
               "generalized from a phrase list to a negation+information-verb pattern; (2) numeric grounding now "
               "requires verbatim numbers for lookup questions and allows derived (+ − × ÷ %) numbers only when the "
               "query asks for computation. Both were re-checked for false positives on all 540 recorded Tier-1 "
-              "outputs across 3 models. Dataset answers and model outputs were never edited.", "",
+              "outputs across 3 models. A later code review (3) stopped the boilerplate filter deleting paragraphs that "
+              "merely contain the word \"confidential\" and made its Arabic footer phrases match, and (4) limited the "
+              "cache to answers that pass the runtime checks; only the affected prompts were re-recorded. Dataset "
+              "answers and model outputs were never edited.", "",
               "## Table 1 — Cumulative Progression", "", HEADER]
     lines += [fmt_row(k, v, base) for k, v in cum.items()]
     if full_cost := cum["5_OptiRoute_Full"].get("cost_usd"):
@@ -218,9 +221,9 @@ def write_report(out_dir: Path, mode: str, settings, cum, loo, vpr, noise, wave,
 
     full = cum["5_OptiRoute_Full"]
     lines += ["", "## Measured Component Overhead (mean ms per task, Full cascade)", "",
-              "| Pruner | Cache | Router | Verifier | Total CPU | Mean LLM latency |", "|---|---|---|---|---|---|",
+              "| Pruner | Cache | Router | Verifier | Total CPU | P50 end-to-end |", "|---|---|---|---|---|---|",
               "| " + " | ".join(f"{full['overhead_ms'][k]:.2f}" for k in ("pruner", "cache", "router", "verifier"))
-              + f" | {sum(full['overhead_ms'].values()):.2f} | {full['p50_ms']:.0f} (P50 end-to-end) |"]
+              + f" | {sum(full['overhead_ms'].values()):.2f} | {full['p50_ms']:.0f} |"]
 
     lines += ["", "## Experiment 1 — Bilingual Context Noise Scaling (pruner only, CPU)", "",
               "| Distractors | Evidence recall | Tokens before | Tokens after | Reduction | Prune ms |",
@@ -372,22 +375,35 @@ def evaluate(mode: str, client, settings, out_dir: Path, source_note: str,
     return report
 
 
+def prompt_chunks(task: Task, variant: str, settings) -> list[str]:
+    """The context chunks the cascade sends for a variant."""
+    if variant == "raw":
+        return task.context
+    p = pruner_mod.prune(task.query, task.context, settings.cascade.prune_theta, settings.cascade.prune_min_k)
+    return p.kept if variant == "pruned" else pruner_mod.relaxed(task.query, task.context, p, settings.cascade.relaxed_k).kept
+
+
 def record(settings, output: Path, fresh: bool, tiers: set[int], reuse: Path | None) -> None:
     """Record live calls for `tiers`; records for other tiers are copied verbatim from `reuse`."""
     tasks = load_tasks("held_out_test.json")
     if fresh and output.exists():
         output.unlink()
+    current = {(t.task_id, v): prompt_sha(build_messages(t, prompt_chunks(t, v, settings)))
+               for t in tasks for v in {variant for variant, _ in RECORD_PLAN}}
+    is_stale = lambda r: current.get((r["task_id"], r["variant"])) != r.get("prompt_sha")
     done = set()
     if output.exists():
-        for line in output.read_text(encoding="utf-8").splitlines():
-            if line.strip():
-                r = json.loads(line)
-                done.add((r["task_id"], r["variant"], r["tier"]))
+        rows = [json.loads(line) for line in output.read_text(encoding="utf-8").splitlines() if line.strip()]
+        fresh_rows = [r for r in rows if not is_stale(r)]
+        if len(fresh_rows) != len(rows):  # the prompts changed since recording: those outputs no longer apply
+            print(f"Dropping {len(rows) - len(fresh_rows)} stale records from {output}")
+            output.write_text("".join(json.dumps(r, ensure_ascii=False) + "\n" for r in fresh_rows), encoding="utf-8")
+        done = {(r["task_id"], r["variant"], r["tier"]) for r in fresh_rows}
     if reuse:
         with output.open("a", encoding="utf-8") as f:
             for line in reuse.read_text(encoding="utf-8").splitlines():
                 r = json.loads(line) if line.strip() else None
-                if r and r["tier"] not in tiers and (r["task_id"], r["variant"], r["tier"]) not in done:
+                if r and r["tier"] not in tiers and not is_stale(r) and (r["task_id"], r["variant"], r["tier"]) not in done:
                     f.write(json.dumps({**r, "reused_from": reuse.name}, ensure_ascii=False) + "\n")
                     done.add((r["task_id"], r["variant"], r["tier"]))
     client = LiveClient(settings, record_path=output)
@@ -396,10 +412,7 @@ def record(settings, output: Path, fresh: bool, tiers: set[int], reuse: Path | N
             if tier in tiers and (t.task_id, v, tier) not in done]
     print(f"Recording {len(todo)} calls ({len(done)} already present) -> {output}")
     for i, (t, variant, tier) in enumerate(todo, 1):
-        p = pruner_mod.prune(t.query, t.context, settings.cascade.prune_theta, settings.cascade.prune_min_k)
-        chunks = {"raw": t.context, "pruned": p.kept,
-                  "relaxed": pruner_mod.relaxed(t.query, t.context, p, settings.cascade.relaxed_k).kept}[variant]
-        r = client.complete(t, variant, tier, chunks)
+        r = client.complete(t, variant, tier, prompt_chunks(t, variant, settings))
         print(f"[{i}/{len(todo)}] {t.task_id} {variant} T{tier} {r.latency_ms:.0f}ms "
               f"{r.prompt_tokens}+{r.completion_tokens}tok :: {r.raw_output[:70]!r}", flush=True)
 

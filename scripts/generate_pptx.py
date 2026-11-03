@@ -1,4 +1,4 @@
-"""Build deliverables/OptiRoute_Presentation.pptx (9 slides) from measured numbers in results/metrics.json.
+"""Build deliverables/OptiRoute_Presentation.pptx (10 slides) from measured numbers in results/metrics.json.
 
   .venv/bin/python scripts/generate_pptx.py
 """

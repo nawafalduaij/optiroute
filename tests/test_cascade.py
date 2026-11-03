@@ -8,6 +8,7 @@ from src.config import CascadeConfig
 from src.ground_truth_scorer import score
 from src.llm_client import ReplayClient, SimClient, build_messages, prompt_sha
 from src.pipeline import OptiRoutePipeline, PipelineFlags
+from src.schemas import LLMResponse
 
 
 # ---------------------------------------------------------------- adaptation
@@ -114,6 +115,66 @@ def test_full_cascade_paths(settings, held_out):
     # low-overlap cases whose evidence was pruned away are recovered via escalation
     assert all(score(held_out[t], res[t].answer).correct for t in ("llo_en_01", "llo_en_02", "llo_en_03"))
     assert set(pipe.cache.stats) <= {"hit", "miss", "blocked_trap"}
+
+
+def test_only_verified_tier2_answers_enter_the_cache(settings, held_out):
+    """A Tier-2 answer is final either way, but one failing the runtime checks must not be re-served."""
+    from dataclasses import replace
+
+    class FixedAnswer:
+        def __init__(self, text):
+            self.text = text
+
+        def complete(self, task, variant, tier, chunks):
+            return LLMResponse(tier=tier, model_id="m", variant=variant, prompt_tokens=1, completion_tokens=1,
+                               latency_ms=1.0, raw_output=self.text)
+
+    t = replace(held_out["std_en_01"], query="Compare and calculate the monthly platform fee.")  # routes to Tier-2
+    bad = OptiRoutePipeline(settings, FixedAnswer("SAR 987,654.21"), PipelineFlags())
+    res = bad.process(t)
+    assert res.final_tier == 2 and res.answer == "SAR 987,654.21" and bad.cache.entries == []
+    assert res.overhead_ms["verifier"] > 0  # the check is measured, not free
+    good = OptiRoutePipeline(settings, FixedAnswer("SAR 48,000"), PipelineFlags())
+    assert good.process(t).final_tier == 2 and len(good.cache.entries) == 1
+    unchecked = OptiRoutePipeline(settings, FixedAnswer("SAR 987,654.21"), PipelineFlags(use_verifier=False))
+    unchecked.process(t)
+    assert len(unchecked.cache.entries) == 1  # no verifier in this configuration, so nothing can reject it
+
+
+def test_record_replaces_stale_prompts_only(tmp_path, monkeypatch, settings, held_out):
+    """After a pruner change, --record must re-call only the prompts that changed, and never reuse stale ones."""
+    import evaluate
+
+    t = held_out["std_en_01"]
+    rec = lambda variant, tier, sha, source: {
+        "task_id": t.task_id, "variant": variant, "tier": tier, "model_id": "m", "prompt_sha": sha,
+        "prompt_tokens": 1, "completion_tokens": 1, "latency_ms": 1.0, "raw_output": source}
+    current = prompt_sha(build_messages(t, t.context))
+    output, reuse = tmp_path / "runs.jsonl", tmp_path / "other.jsonl"
+    output.write_text(json.dumps(rec("raw", 1, current, "kept")) + "\n" + json.dumps(rec("pruned", 1, "old", "stale")) + "\n")
+    reuse.write_text(json.dumps(rec("raw", 2, current, "reused")) + "\n" + json.dumps(rec("pruned", 2, "old", "stale")) + "\n")
+    called = []
+
+    class FakeLive:
+        def __init__(self, _settings, record_path):
+            self.path = record_path
+
+        def warmup(self):
+            return {}
+
+        def complete(self, task, variant, tier, chunks):
+            called.append((variant, tier))
+            with self.path.open("a") as f:
+                f.write(json.dumps(rec(variant, tier, prompt_sha(build_messages(task, chunks)), "new")) + "\n")
+            return LLMResponse(tier=tier, model_id="m", variant=variant, prompt_tokens=1, completion_tokens=1,
+                               latency_ms=1.0, raw_output="new")
+
+    monkeypatch.setattr(evaluate, "load_tasks", lambda _name: [t])
+    monkeypatch.setattr(evaluate, "LiveClient", FakeLive)
+    evaluate.record(settings, output, fresh=False, tiers={1}, reuse=reuse)
+    assert called == [("pruned", 1)]  # raw T1 was still valid, so it was not re-called
+    rows = {(r["variant"], r["tier"]): r["raw_output"] for r in map(json.loads, output.read_text().splitlines())}
+    assert rows == {("raw", 1): "kept", ("pruned", 1): "new", ("raw", 2): "reused"}  # stale records are gone
 
 
 def test_no_guard_causes_false_hits(settings, held_out):

@@ -39,6 +39,23 @@ def test_boilerplate_dropped():
     chunks = ["Confidential. All rights reserved.", "Fee is SAR 10.", "Footer X", "Footer X"]
     keep, n = drop_boilerplate(chunks)
     assert keep == [1] and n == 3
+    footers = ["Olaya Towers Real Estate Co. — Confidential.", "Page 1 of 1 — Confidential.", "Confidential",
+               "This document is property of Al-Waha Retail Co. Page 1 of 2.", "سري للغاية",
+               "سري للغاية — جميع الحقوق محفوظة لشركة الواحة للتجزئة.", "شركة الواحة — سري للغاية",
+               "هذه الوثيقة ملك لشركة الواحة للتجزئة."]  # Arabic phrases must survive clitic stripping
+    assert drop_boilerplate(footers)[0] == []
+
+
+def test_boilerplate_keeps_content_that_uses_footer_words():
+    content = [
+        "Data Classification: data is classified as Public, Internal, Confidential or Restricted. Restricted data "
+        "may not be stored on removable media.",
+        "Salaries are confidential.",
+        "Non-confidential.",
+        "Pricing is set out in the annex; see page 3 of 5 of the signed order form for the full list of unit rates.",
+        "رواتب الموظفين سري للغاية ولا يجوز مشاركتها.",
+    ]
+    assert drop_boilerplate(content)[0] == list(range(len(content)))
 
 
 def test_pruner_keeps_evidence_and_saves_tokens(held_out):

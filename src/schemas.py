@@ -29,6 +29,7 @@ class Task:
 class PruneResult:
     kept: list[str]
     kept_indices: list[int]
+    candidates: list[int]  # indices of the non-boilerplate chunks; scores[j] belongs to chunk candidates[j]
     scores: list[float]  # score per surviving (non-boilerplate) chunk, original order
     dropped_boilerplate: int
     tokens_before: int
